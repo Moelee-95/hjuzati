@@ -132,7 +132,7 @@ if(isset($_SESSION['guest'])){
                 <!-- 
                     <img src="imgs/logo.png" style="width: 65px;height: 65px">
                 -->
-                    <span class="u-header__navbar-brand-text">Hima Hotels</span>
+                    <span class="u-header__navbar-brand-text">Hjuzati Hotels</span>
                 </a>
                 <!-- End Logo -->
 
@@ -451,7 +451,7 @@ if(isset($_SESSION['guest'])){
                             <-- End Rental Submenu ->
                         </li>
                         <-- End Rental ->
-                        @by HIMA Hotels Co. 
+                        @by Hjuzati Hotels Co. 
                         @auther Mohammed S. Hazim
                         ## End the disable comment
                         ## Don't forget to add ! to the begining of each above comments and - to it's end to enable them again
