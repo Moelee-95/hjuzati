@@ -1,12 +1,8 @@
-SET GLOBAL log_bin_trust_function_creators = 1;
-
-CREATE DATABASE  IF NOT EXISTS `hima` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `hima`;
--- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: hima
+-- Host: localhost    Database: hima
 -- ------------------------------------------------------
--- Server version	8.0.22
+-- Server version	8.0.27
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,7 +27,7 @@ CREATE TABLE `account` (
   `name` varchar(45) DEFAULT NULL,
   `amount` double DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +68,7 @@ CREATE TABLE `adminhistory` (
   `ahEmail` varchar(45) DEFAULT NULL,
   `ahAtTime` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ahID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +96,7 @@ CREATE TABLE `admins` (
   `aEmail` varchar(45) DEFAULT NULL,
   `aCreatingDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`aAdminID`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -112,37 +108,6 @@ LOCK TABLES `admins` WRITE;
 INSERT INTO `admins` VALUES (1,'mohammed','mo','mo','mo@mo.com','2021-02-18 08:15:45'),(2,'ali','ali','ali','ali@ali.com','2021-02-18 08:15:45');
 /*!40000 ALTER TABLE `admins` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `adminToUpper` BEFORE INSERT ON `admins` FOR EACH ROW SET NEW.aUserName =lower(new.aUserName) */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `adminInfoHistory` AFTER UPDATE ON `admins` FOR EACH ROW INSERT INTO adminhistory(ahFullName,ahUserName,ahPassword,ahEmail,ahAtTime)
-VALUES(old.aFullName, old.aUserName, old.aPassword, old.aEmail, NOW()) */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `amenitiesoptions`
@@ -158,7 +123,7 @@ CREATE TABLE `amenitiesoptions` (
   `aKu` varchar(45) DEFAULT NULL,
   `aDescription` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`aID`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -188,7 +153,7 @@ CREATE TABLE `amenitiesvalues` (
   PRIMARY KEY (`avID`),
   KEY `fk_amenities_amenitiesOptions1_idx` (`amenitieOptionID`),
   CONSTRAINT `fk_amenities_amenitiesOptions1` FOREIGN KEY (`amenitieOptionID`) REFERENCES `amenitiesoptions` (`aID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -296,14 +261,23 @@ CREATE TABLE `bookings` (
   `bCreatingDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `bDisscount` double DEFAULT NULL,
   `bRate` double DEFAULT NULL,
+  `paymentMethod` int DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `totalAmount` double DEFAULT NULL,
+  `fullName` varchar(45) DEFAULT NULL,
+  `phoneNumber` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`bBookingID`),
   KEY `fk_bookings_guests1_idx` (`bGuestID`),
   KEY `fk_bookings_bookingStatus1_idx` (`bBookingStatusID`),
   KEY `fk_bookings_paymentstatus1_idx` (`bPaymentStatusID`),
+  KEY `fk_bookings_paymentMethod_idx` (`paymentMethod`),
   CONSTRAINT `fk_bookings_bookingStatus1` FOREIGN KEY (`bBookingStatusID`) REFERENCES `bookingstatus` (`bsBookingStatusID`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_bookings_guests1` FOREIGN KEY (`bGuestID`) REFERENCES `guests` (`gGuestID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_bookings_payment` FOREIGN KEY (`paymentMethod`) REFERENCES `payments` (`pID`) ON DELETE SET NULL ON UPDATE SET NULL,
   CONSTRAINT `fk_bookings_paymentstatus1` FOREIGN KEY (`bPaymentStatusID`) REFERENCES `paymentstatus` (`paymentStatusId`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=158 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -312,24 +286,9 @@ CREATE TABLE `bookings` (
 
 LOCK TABLES `bookings` WRITE;
 /*!40000 ALTER TABLE `bookings` DISABLE KEYS */;
-INSERT INTO `bookings` VALUES (8,16,6,1,2,'2021-08-13','2021-08-15',2,2,1,'2021-08-13 14:22:27',NULL,NULL);
+INSERT INTO `bookings` VALUES (61,16,5,NULL,1,'2021-11-05','2021-11-11',6,1,1,'2021-12-18 10:24:25',NULL,NULL,3,NULL,NULL,NULL,NULL,NULL,NULL),(62,16,5,NULL,1,'2021-11-05','2021-11-11',6,1,1,'2021-12-18 10:50:24',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),(63,16,5,NULL,1,'2021-11-05','2021-11-11',6,1,1,'2021-12-18 10:50:27',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),(64,16,5,NULL,1,'2021-11-05','2021-11-11',6,1,1,'2021-12-18 10:50:27',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),(65,16,5,NULL,1,'2021-11-05','2021-11-11',6,1,1,'2021-12-18 10:52:45',NULL,NULL,2,NULL,NULL,NULL,NULL,NULL,NULL),(66,16,5,NULL,1,'2021-11-04','2021-11-13',9,1,1,'2021-12-18 10:57:58',NULL,NULL,4,NULL,NULL,NULL,NULL,NULL,NULL),(88,16,5,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-27 18:41:50',NULL,NULL,2,NULL,200,NULL,NULL,NULL,NULL),(89,16,5,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-27 18:42:15',NULL,NULL,2,NULL,200,NULL,NULL,NULL,NULL),(90,16,104,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-27 18:49:16',NULL,NULL,2,NULL,200,NULL,NULL,NULL,NULL),(91,16,105,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-27 19:41:02',NULL,NULL,2,NULL,200,NULL,NULL,NULL,NULL),(92,16,106,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-27 19:53:26',NULL,NULL,2,NULL,200,NULL,NULL,NULL,NULL),(93,16,107,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-27 19:53:54',NULL,NULL,2,NULL,200,NULL,NULL,NULL,NULL),(94,16,108,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-27 19:55:39',NULL,NULL,2,NULL,200,NULL,NULL,NULL,NULL),(95,16,109,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-27 20:19:52',NULL,NULL,2,NULL,200,NULL,NULL,NULL,NULL),(96,16,110,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-27 20:20:16',NULL,NULL,2,NULL,200,NULL,NULL,NULL,NULL),(97,16,111,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-27 20:20:46',NULL,NULL,2,NULL,200,NULL,NULL,NULL,NULL),(98,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 16:03:50',NULL,NULL,2,NULL,200,'','','',''),(99,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 16:04:04',NULL,NULL,2,NULL,200,'','','',''),(100,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 16:04:12',NULL,NULL,2,NULL,200,'','','',''),(101,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 16:05:24',NULL,NULL,2,NULL,200,'','','',''),(102,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 16:05:27',NULL,NULL,2,NULL,200,'','','',''),(103,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 16:06:00',NULL,NULL,2,NULL,200,'','','',''),(104,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 16:06:36',NULL,NULL,2,NULL,200,'','','',''),(105,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 16:06:39',NULL,NULL,2,NULL,200,'','','',''),(106,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 16:07:55',NULL,NULL,2,NULL,200,'','','',''),(107,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 16:17:18',NULL,NULL,2,NULL,200,'','','',''),(108,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 16:17:18',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647705555555','ali@ali.com','Erbil'),(109,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 16:18:21',NULL,NULL,2,NULL,200,'','','',''),(110,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 16:18:21',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647705555555','ali@ali.com','Erbil'),(111,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 16:30:15',NULL,NULL,2,NULL,200,'','','',''),(112,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 16:30:15',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647705555555','ali@ali.com','Erbil'),(113,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:01:56',NULL,NULL,2,NULL,200,'','','',''),(114,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:01:56',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647705555555','ali@ali.com','Erbil'),(115,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:02:41',NULL,NULL,2,NULL,200,'','','',''),(116,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:02:41',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647705555555','ali@ali.com','Erbil'),(117,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:03:36',NULL,NULL,2,NULL,200,'','','',''),(118,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:03:36',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647705555555','ali@ali.com','Erbil'),(119,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:03:38',NULL,NULL,2,NULL,200,'','','',''),(120,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:03:38',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647705555555','ali@ali.com','Erbil'),(121,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:05:20',NULL,NULL,2,NULL,200,'','','',''),(122,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:05:20',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647705555555','ali@ali.com','Erbil'),(123,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:05:21',NULL,NULL,2,NULL,200,'','','',''),(124,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:05:21',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647705555555','ali@ali.com','Erbil'),(125,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:06:08',NULL,NULL,2,NULL,200,'','','',''),(126,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:06:08',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647705555555','ali@ali.com','Erbil'),(127,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:10:31',NULL,NULL,2,NULL,200,'','','',''),(128,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:10:31',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647705555555','ali@ali.com','Erbil'),(129,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:10:32',NULL,NULL,2,NULL,200,'','','',''),(130,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:10:37',NULL,NULL,2,NULL,200,'','','',''),(131,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:11:08',NULL,NULL,2,NULL,200,'','','',''),(132,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:11:08',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647709999999','ali@ali.com','Erbil'),(133,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:11:08',NULL,NULL,2,NULL,200,'','','',''),(134,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:13:26',NULL,NULL,2,NULL,200,'','','',''),(135,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:13:52',NULL,NULL,2,NULL,200,'','','',''),(136,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:22:13',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647701222321','ali@ali.com','Erbil'),(137,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:29:31',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647704544545','ali@ali.com','Erbil'),(138,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:31:49',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647704544545','ali@ali.com','Erbil'),(139,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:33:25',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647704544545','ali@ali.com','Erbil'),(140,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:34:49',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647704544545','ali@ali.com','Erbil'),(141,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-28 17:46:25',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647709999999','ali@ali.com','Erbil'),(142,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-29 14:14:30',NULL,NULL,2,NULL,200,'Ali Ali Ali','+9647704444444','ali@ali.com','Erbil'),(143,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-29 17:13:49',NULL,NULL,2,'12345',200,'Ali Ali Ali','+9647701231231','ali@ali.com','Erbil'),(144,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-29 18:42:56',NULL,NULL,2,NULL,200,'sali sali sali','+9647704564561','sali@sali.com','Erbil'),(145,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-29 18:43:24',NULL,NULL,2,NULL,200,'sali sali sali','+9647704564561','sali@sali.com','Erbil'),(146,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-29 18:46:15',NULL,NULL,2,NULL,200,'sali sali sali','+9647704564561','sali@sali.com','Erbil'),(147,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-29 18:48:28',NULL,NULL,2,NULL,200,'sali sali sali','+9647704564561','sali@sali.com','Erbil'),(148,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-29 18:51:11',NULL,NULL,2,NULL,200,'sali sali sali','+9647704564561','sali@sali.com','Erbil'),(149,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-29 18:57:51',NULL,NULL,2,NULL,200,'sali sali salwa','+9647708899889','sali@sali.com','Erbil'),(150,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-29 19:20:01',NULL,NULL,2,NULL,200,'sali sali salwa','+9647704455445','sali@sali.com','Erbil'),(151,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-29 19:28:26',NULL,NULL,2,NULL,200,'sali sali salwa','+9647708899889','sali@sali.com','Erbil'),(152,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-29 19:34:22',NULL,NULL,2,'NewPasswordHere',200,'sali sali salwa','+9647701233654','sali@sali.com','Erbil'),(153,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-29 19:40:55',NULL,NULL,2,NULL,200,'sali sali salwa','+9647704566546','sali@sali.com','Erbil'),(154,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-29 19:46:12',NULL,NULL,2,'0000000',200,'ali alia li','+9647704444444','ali@ali.com','Erbil'),(155,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-29 19:47:18',NULL,NULL,2,NULL,200,'ali alia li','+9647705555555','ali@ali.com','Erbil'),(156,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-29 19:52:00',NULL,NULL,2,NULL,5106,'ali alia li','+9647704566545','ali@ali.com','Erbil'),(157,16,NULL,NULL,1,'2021-11-05','2021-11-11',6,1,0,'2021-12-31 21:30:39',NULL,NULL,2,'19951995',230,'Mohammed Hazim','+9647708138928','mohamadsalah1995@yahoo.com','Erbil');
 /*!40000 ALTER TABLE `bookings` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `insertNights` BEFORE INSERT ON `bookings` FOR EACH ROW SET NEW.bNumOfNights = DATEDIFF(NEW.bDateTo, NEW.bDateFrom) */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `bookingstatus`
@@ -345,7 +304,7 @@ CREATE TABLE `bookingstatus` (
   `bsSortOrder` varchar(45) DEFAULT NULL,
   `bsActive` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`bsBookingStatusID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -356,6 +315,31 @@ LOCK TABLES `bookingstatus` WRITE;
 /*!40000 ALTER TABLE `bookingstatus` DISABLE KEYS */;
 INSERT INTO `bookingstatus` VALUES (1,'Pending','wating for the hotel to confirm','',''),(2,'Canceled-hotel','Canceld by hotel','',''),(3,'Canceled-guest','Canceld by the guest or agency','',''),(4,'Paid-confirmd','Paid and confirmed','',''),(5,'Paid-unconfirmd','Paid but not confirmd by hotel','','');
 /*!40000 ALTER TABLE `bookingstatus` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cities`
+--
+
+DROP TABLE IF EXISTS `cities`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cities` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `city` varchar(45) DEFAULT NULL,
+  `city_ar` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cities`
+--
+
+LOCK TABLES `cities` WRITE;
+/*!40000 ALTER TABLE `cities` DISABLE KEYS */;
+INSERT INTO `cities` VALUES (1,'Baghdad',NULL),(2,'Mosul',NULL),(3,'Al Basrah',NULL),(4,'Kirkuk',NULL),(5,'Erbil',NULL),(6,'An Najaf',NULL),(7,'Karbala\'',NULL),(8,'As Sulaymaniyah',NULL),(9,'An Nasiriyah',NULL),(10,'Al Hillah',NULL),(11,'Ba`qubah',NULL),(12,'Ar Ramadi',NULL),(13,'Ad Diwaniyah',NULL),(14,'Az Zubayr',NULL),(15,'Al `Amarah',NULL),(16,'Dahuk',NULL),(17,'Al Fallujah',NULL),(18,'Al Kut',NULL),(19,'As Samawah',NULL),(20,'Al Kufah',NULL),(21,'Ash Shatrah',NULL),(22,'Samarra\'',NULL),(23,'Zakhu',NULL),(24,'Umm Qasr',NULL),(25,'Tikrit',NULL),(26,'Al Faw',NULL),(27,'Nahiyat al Karmah',NULL),(28,'Sinjar',NULL),(29,'Al Hayy',NULL),(30,'Tall `Afar',NULL),(31,'Balad',NULL),(32,'Al Musayyib',NULL),(33,'Az Zubaydiyah',NULL),(34,'Hit',NULL),(35,'Halabjah',NULL),(36,'Qaladizay',NULL),(37,'Mandali',NULL),(38,'Shaqlawah',NULL),(39,'Ar Rutbah',NULL),(40,'Kuysinjaq',NULL),(41,'Rawah',NULL),(42,'Hammam al `Alil',NULL),(43,'Al `Amadiyah',NULL);
+/*!40000 ALTER TABLE `cities` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -373,7 +357,7 @@ CREATE TABLE `facilitesvalues` (
   PRIMARY KEY (`fID`),
   KEY `fk_facilites_facilitiesOptions1_idx` (`fFacilitesOptionsID`),
   CONSTRAINT `fk_facilites_facilitiesOptions1` FOREIGN KEY (`fFacilitesOptionsID`) REFERENCES `facilitiesoptions` (`fFaciliteID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -400,7 +384,7 @@ CREATE TABLE `facilitiesoptions` (
   `fFaciliteNameKu` varchar(45) DEFAULT NULL,
   `fFaciliteDescription` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`fFaciliteID`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -437,8 +421,9 @@ CREATE TABLE `guests` (
   `gStatus` int DEFAULT NULL,
   `avatar` varchar(254) DEFAULT NULL,
   `gCreatingDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `gDOB` date DEFAULT NULL,
   PRIMARY KEY (`gGuestID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -447,24 +432,9 @@ CREATE TABLE `guests` (
 
 LOCK TABLES `guests` WRITE;
 /*!40000 ALTER TABLE `guests` DISABLE KEYS */;
-INSERT INTO `guests` VALUES (5,'Mohammed s. Hazim','mo','mo','qularaesee',NULL,NULL,NULL,NULL,NULL,'07700000000','mohammed@mail.com','male',NULL,'','2021-08-13 12:14:48'),(6,'Ali Abdullah m','ali','ali','Sarchanaer',NULL,NULL,NULL,NULL,NULL,'7700333223','ali@mail.com','male',NULL,'gcp/guests/6/img.jpg','2021-08-13 12:15:45');
+INSERT INTO `guests` VALUES (5,'Mohammed Hazim','mo','mohammed','qularaesee',NULL,NULL,NULL,NULL,NULL,'+9647707000000','mohammed@mail.com','male',NULL,'','2021-12-31 18:41:38','1995-01-10'),(6,'Ali Abdullah m','ali','+9647706363332','Sarchanaer',NULL,NULL,NULL,NULL,NULL,'7700333223','ali@mail.com','Female',NULL,'gcp/guests/6/img.jpg','2021-12-27 11:32:21','2020-10-10'),(92,'ali abdullah','mohammed122','password','somewhere',NULL,NULL,NULL,NULL,NULL,'07701222122',NULL,'Mohammed',NULL,NULL,'2021-12-26 18:43:17','2021-12-26'),(93,'salim abdullah','salim000','moe',NULL,NULL,NULL,NULL,NULL,NULL,'+9647709000000',NULL,NULL,NULL,NULL,'2021-12-25 19:41:54',NULL),(94,'falah moe','falah000','moe',NULL,NULL,NULL,NULL,NULL,NULL,'+9647704000000',NULL,NULL,NULL,NULL,'2021-12-25 19:42:39',NULL),(95,'fatima sweet','fatima000','moe',NULL,NULL,NULL,NULL,NULL,NULL,'+9647702000000',NULL,NULL,NULL,NULL,'2021-12-25 19:48:18',NULL),(96,'Adil Mala','adil000','moe',NULL,NULL,NULL,NULL,NULL,NULL,'+9647708000000',NULL,NULL,NULL,NULL,'2021-12-25 19:49:11',NULL),(97,'rebaz ali','rebaz000','moe','somwher',NULL,NULL,NULL,NULL,NULL,'+9647705000000',NULL,NULL,NULL,NULL,'2021-12-25 21:18:03',NULL),(98,'Mohammed','moe','moe111',NULL,NULL,NULL,NULL,NULL,NULL,'+96477887743',NULL,NULL,NULL,NULL,'2021-12-25 19:56:57',NULL),(99,'salwan lole','salwan212','moe',NULL,NULL,NULL,NULL,NULL,NULL,'+964077012121212',NULL,NULL,NULL,NULL,'2021-12-25 19:58:26',NULL),(100,'Hjuzati admin','hjuzati333','moe',NULL,NULL,NULL,NULL,NULL,NULL,'+9647703333333',NULL,NULL,NULL,NULL,'2021-12-26 20:24:22',NULL),(101,'Adam Lee','adam221','lee',NULL,NULL,NULL,NULL,NULL,NULL,'+9647704566221',NULL,NULL,NULL,NULL,'2021-12-26 20:27:25',NULL),(102,'Hjuzati admin','hjuzati564','moe',NULL,NULL,NULL,NULL,NULL,NULL,'+9647704564564',NULL,NULL,NULL,NULL,'2021-12-26 20:31:53',NULL),(103,'hjuzati hotels','hjuzati000','hjuzati',NULL,NULL,NULL,NULL,NULL,NULL,'+964077081200000',NULL,NULL,NULL,NULL,'2021-12-27 12:36:10',NULL),(104,'',NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,'','',NULL,NULL,NULL,'2021-12-27 18:49:16',NULL),(105,'',NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,'','',NULL,NULL,NULL,'2021-12-27 19:41:02',NULL),(106,'',NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,'','',NULL,NULL,NULL,'2021-12-27 19:53:26',NULL),(107,'',NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,'','',NULL,NULL,NULL,'2021-12-27 19:53:54',NULL),(108,'',NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,'','',NULL,NULL,NULL,'2021-12-27 19:55:39',NULL),(109,'',NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,'','',NULL,NULL,NULL,'2021-12-27 20:19:52',NULL),(110,'',NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,'','',NULL,NULL,NULL,'2021-12-27 20:20:16',NULL),(111,'',NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,'','',NULL,NULL,NULL,'2021-12-27 20:20:46',NULL);
 /*!40000 ALTER TABLE `guests` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `guestToUpper` BEFORE INSERT ON `guests` FOR EACH ROW SET NEW.gUserName =lower(new.gUserName) */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `guests_favorites`
@@ -482,7 +452,7 @@ CREATE TABLE `guests_favorites` (
   KEY `fk_guests_favorites_guests1_idx` (`guests_gGuestID`),
   CONSTRAINT `fk_guests_favorites_guests1` FOREIGN KEY (`guests_gGuestID`) REFERENCES `guests` (`gGuestID`) ON DELETE SET NULL ON UPDATE SET NULL,
   CONSTRAINT `fk_guests_favorites_hotels1` FOREIGN KEY (`hotels_hHotelID`) REFERENCES `hotels` (`hHotelID`) ON DELETE SET NULL ON UPDATE SET NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -527,7 +497,7 @@ CREATE TABLE `hotels` (
   PRIMARY KEY (`hHotelID`),
   KEY `fk_hotels_users1_idx` (`hUserID`),
   CONSTRAINT `fk_hotels_users1` FOREIGN KEY (`hUserID`) REFERENCES `users` (`uUserID`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -536,7 +506,7 @@ CREATE TABLE `hotels` (
 
 LOCK TABLES `hotels` WRITE;
 /*!40000 ALTER TABLE `hotels` DISABLE KEYS */;
-INSERT INTO `hotels` VALUES (11,39,'i love mohammad','5 ✯✯✯✯✯',NULL,'Kirkuk',NULL,'36001','07708138928','07708138928','mohamadsalah11998822@gmail.com',NULL,NULL,NULL,'baghdad/nomatter','https://www.google.com/maps/@35.6142426,45.3491912,16z',NULL,'44444444444',NULL,NULL,NULL,NULL),(16,40,'First','3 ✯✯✯',NULL,'Sulaymaniyah',NULL,'46001','','','',NULL,NULL,NULL,'','',NULL,'',NULL,NULL,NULL,'218'),(17,40,'HIma Hotels ser','N/A',NULL,'Sulaymaniyah','1','4003','07708138928','07708138928','mohamadsalah1995@yahoo.com',NULL,NULL,NULL,'whatEver','',NULL,'Mohammed Hazim',NULL,NULL,NULL,'213'),(18,39,'mo','3 ✯✯✯',NULL,'Sulaymaniyah',NULL,'46001','07708138928','','mohamadsalah1995@yahoo.com',NULL,NULL,NULL,'whatEver','https://www.google.com/maps/@35.614242,45.349227299999995,16z',NULL,'Mohammed Hazim',NULL,NULL,NULL,NULL),(19,40,'New Hotel Name','N/A',NULL,'Sulaymaniyah',NULL,'46001','','','',NULL,NULL,NULL,'','',NULL,'',NULL,NULL,NULL,NULL),(20,40,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `hotels` VALUES (11,39,'i love mohammad','5 ✯✯✯✯✯',NULL,'Kirkuk',NULL,'36001','07708138928','07708138928','mohamadsalah11998822@gmail.com',NULL,NULL,NULL,'baghdad/nomatter','https://www.google.com/maps/@35.6142426,45.3491912,16z',NULL,'44444444444',NULL,NULL,NULL,NULL),(16,40,'First','3 ✯✯✯',NULL,'Sulaymaniyah',NULL,'46001','','','',NULL,NULL,NULL,'','',NULL,'',NULL,NULL,NULL,'218'),(17,40,'HIma Hotels ser','N/A',NULL,'Sulaymaniyah','1','4003','07708138928','07708138928','mohamadsalah1995@yahoo.com',NULL,NULL,NULL,'whatEver','',NULL,'Mohammed Hazim',NULL,NULL,NULL,'213'),(18,39,'mo','3 ✯✯✯',NULL,'Sulaymaniyah',NULL,'46001','07708138928','','mohamadsalah1995@yahoo.com',NULL,NULL,NULL,'whatEver','https://www.google.com/maps/@35.614242,45.349227299999995,16z',NULL,'Mohammed Hazim',NULL,NULL,NULL,NULL),(19,40,'New Hotel Name','N/A',NULL,'Sulaymaniyah',NULL,'46001','','','',NULL,NULL,NULL,'','',NULL,'',NULL,NULL,NULL,NULL),(20,40,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(21,40,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(22,40,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `hotels` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -556,7 +526,7 @@ CREATE TABLE `hotels_has_amenitiesvalues` (
   KEY `fk_hotels_has_amenitiesvalues_hotels1_idx` (`hotels_hHotelID`),
   CONSTRAINT `fk_hotels_has_amenitiesvalues_amenitiesvalues1` FOREIGN KEY (`amenitiesvalues_avID`) REFERENCES `amenitiesvalues` (`avID`),
   CONSTRAINT `fk_hotels_has_amenitiesvalues_hotels1` FOREIGN KEY (`hotels_hHotelID`) REFERENCES `hotels` (`hHotelID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -584,7 +554,7 @@ CREATE TABLE `hotels_has_facilitesvalues` (
   KEY `fk_hotels_has_facilitesvalues_hotels1_idx` (`hotels_hHotelID`),
   CONSTRAINT `fk_hotels_has_facilitesvalues_facilitesvalues1` FOREIGN KEY (`facilitesvalues_fID`) REFERENCES `facilitesvalues` (`fID`),
   CONSTRAINT `fk_hotels_has_facilitesvalues_hotels1` FOREIGN KEY (`hotels_hHotelID`) REFERENCES `hotels` (`hHotelID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -611,7 +581,7 @@ CREATE TABLE `hotels_has_payments` (
   KEY `fk_hotels_has_payments_hotels1_idx` (`hotels_hHotelID`),
   CONSTRAINT `fk_hotels_has_payments_hotels1` FOREIGN KEY (`hotels_hHotelID`) REFERENCES `hotels` (`hHotelID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_hotels_has_payments_payments1` FOREIGN KEY (`payments_pID`) REFERENCES `payments` (`pID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -642,7 +612,7 @@ CREATE TABLE `hotels_has_policies` (
   CONSTRAINT `link_to_hotels` FOREIGN KEY (`hotels_hHotelID`) REFERENCES `hotels` (`hHotelID`),
   CONSTRAINT `link_to_policies` FOREIGN KEY (`policiesoptions`) REFERENCES `policiesoptions` (`pPoliceID`),
   CONSTRAINT `link_to_policies_values` FOREIGN KEY (`policiesvalues_pID`) REFERENCES `policiesvalues` (`pID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -671,7 +641,7 @@ CREATE TABLE `hotels_rates` (
   KEY `fk_hotels_rates_hotels1_idx` (`hotels_hHotelID`),
   CONSTRAINT `fk_hotels_rates_hotels1` FOREIGN KEY (`hotels_hHotelID`) REFERENCES `hotels` (`hHotelID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_hotels_rates_ratetypes1` FOREIGN KEY (`rtID`) REFERENCES `ratetypes` (`rtRateTypeID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -711,7 +681,7 @@ CREATE TABLE `hotelsphotos` (
   PRIMARY KEY (`hpID`,`hotels_hHotelID`),
   KEY `fk_hotelsphotos_hotels1_idx` (`hotels_hHotelID`),
   CONSTRAINT `fk_hotelsphotos_hotels1` FOREIGN KEY (`hotels_hHotelID`) REFERENCES `hotels` (`hHotelID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=220 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=220 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -720,7 +690,7 @@ CREATE TABLE `hotelsphotos` (
 
 LOCK TABLES `hotelsphotos` WRITE;
 /*!40000 ALTER TABLE `hotelsphotos` DISABLE KEYS */;
-INSERT INTO `hotelsphotos` VALUES (217,'../users/40/hotels/16/photos/1628187327cape-town-tandem-paragliding-homepage-banner-4.jpg',NULL,16),(218,'../users/40/hotels/16/photos/1628192784slemani.jpg',NULL,16),(219,'../users/40/hotels/16/photos/1628192809116676144_604828216840571_8458440659662808928_n.jpg',NULL,16);
+INSERT INTO `hotelsphotos` VALUES (217,'../users/40/hotels/16/photos/1628187327cape-town-tandem-paragliding-homepage-banner-4.jpg',NULL,16);
 /*!40000 ALTER TABLE `hotelsphotos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -750,7 +720,7 @@ CREATE TABLE `payments` (
   `pType` varchar(45) DEFAULT NULL,
   `pPath` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`pID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -759,7 +729,7 @@ CREATE TABLE `payments` (
 
 LOCK TABLES `payments` WRITE;
 /*!40000 ALTER TABLE `payments` DISABLE KEYS */;
-INSERT INTO `payments` VALUES (1,'Asia Hawala','Online','img/credit_cards/asia-hawala-en.png'),(2,'Fast Pay','Online','img/credit_cards/fast-pay.png'),(3,'Zain Cash','Online','img/credit_cards/zain-cash.png');
+INSERT INTO `payments` VALUES (1,'Asia Hawala','Online','img/credit_cards/asia-hawala-en.png'),(2,'Fast Pay','Online','img/credit_cards/fast-pay.png'),(3,'Zain Cash','Online','img/credit_cards/zain-cash.png'),(4,'cash on arrival','Onsite','img/credit_cards/cash.png'),(5,'Cash','Onsite','img/credit_cards/cash.png');
 /*!40000 ALTER TABLE `payments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -776,7 +746,7 @@ CREATE TABLE `paymentstatus` (
   `psDescription` varchar(255) DEFAULT NULL,
   `psActive` int DEFAULT NULL,
   PRIMARY KEY (`paymentStatusId`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -803,7 +773,7 @@ CREATE TABLE `policiesoptions` (
   `pPoliceNameKu` varchar(255) DEFAULT NULL,
   `pPoliceDescriptioin` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`pPoliceID`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -832,7 +802,7 @@ CREATE TABLE `policiesvalues` (
   PRIMARY KEY (`pID`),
   KEY `fk_policies_policiesOptions1_idx` (`pPoliciesID`),
   CONSTRAINT `fk_policies_policiesOptions1` FOREIGN KEY (`pPoliciesID`) REFERENCES `policiesoptions` (`pPoliceID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -869,7 +839,7 @@ CREATE TABLE `rates` (
   CONSTRAINT `fk_rates_hotels_rates1` FOREIGN KEY (`hotels_rates_id`) REFERENCES `hotels_rates` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_rates_rooms1` FOREIGN KEY (`rRoomsID`) REFERENCES `rooms` (`rRoomID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_ratetypes_rates` FOREIGN KEY (`rRateTypeID`) REFERENCES `ratetypes` (`rtRateTypeID`)
-) ENGINE=InnoDB AUTO_INCREMENT=243 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=379 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -878,7 +848,7 @@ CREATE TABLE `rates` (
 
 LOCK TABLES `rates` WRITE;
 /*!40000 ALTER TABLE `rates` DISABLE KEYS */;
-INSERT INTO `rates` VALUES (193,62,NULL,33,'2021-08-10',3,'2021-08-04 23:19:26',1,1),(194,62,NULL,3,'2021-08-13',33,'2021-08-11 07:27:57',1,1),(195,62,NULL,432,'2021-08-07',5,'2021-08-05 12:44:06',1,1),(196,62,NULL,NULL,'2021-08-03',12,'2021-08-05 12:56:11',1,1),(197,62,NULL,NULL,'2021-08-05',12,'2021-08-05 12:56:13',1,1),(198,62,NULL,24,'2021-08-15',43,'2021-08-11 07:27:47',0,1),(199,62,NULL,23,'2021-08-16',42,'2021-08-11 07:27:44',0,1),(200,62,NULL,NULL,'2021-08-01',12,'2021-08-05 12:54:59',1,1),(201,62,NULL,NULL,'2021-08-02',12,'2021-08-05 12:55:00',1,1),(202,62,NULL,NULL,'2021-08-04',12,'2021-08-05 12:56:12',1,1),(203,62,NULL,NULL,'2021-08-06',12,'2021-08-05 12:56:18',1,1),(204,63,NULL,4,'2021-08-09',3,'2021-08-05 12:56:37',1,1),(205,63,NULL,42,'2021-08-14',42,'2021-08-05 12:57:00',1,1),(206,63,NULL,NULL,'2021-08-10',3,'2021-08-05 12:57:34',1,1),(207,63,NULL,NULL,'2021-08-11',3,'2021-08-05 12:57:43',1,1),(208,64,NULL,33,'2021-08-11',23,'2021-08-06 07:49:10',1,1),(209,64,NULL,33,'2021-08-07',23,'2021-08-06 07:49:09',1,1),(210,62,NULL,88,'2021-08-19',55,'2021-08-06 07:46:35',1,1),(211,62,NULL,45,'2021-08-22',57,'2021-08-06 07:47:18',1,1),(212,62,NULL,98,'2021-08-12',58,'2021-08-11 07:27:54',0,1),(213,64,NULL,33,'2021-08-03',23,'2021-08-06 07:49:09',1,1),(214,64,NULL,33,'2021-08-04',23,'2021-08-06 07:49:09',1,1),(215,64,NULL,33,'2021-08-06',23,'2021-08-06 07:49:09',1,1),(216,64,NULL,33,'2021-08-08',23,'2021-08-06 07:49:09',1,1),(217,64,NULL,33,'2021-08-09',23,'2021-08-06 07:49:09',1,1),(218,64,NULL,33,'2021-08-10',23,'2021-08-06 07:49:10',1,1),(219,64,NULL,33,'2021-08-13',23,'2021-08-06 07:49:10',1,1),(220,64,NULL,33,'2021-08-14',23,'2021-08-06 07:49:10',1,1),(221,64,NULL,33,'2021-08-15',23,'2021-08-06 07:49:10',1,1),(222,64,NULL,33,'2021-08-16',23,'2021-08-06 07:49:10',1,1),(223,64,NULL,33,'2021-08-17',23,'2021-08-06 07:49:10',1,1),(224,64,NULL,33,'2021-08-18',23,'2021-08-06 07:49:10',1,1),(225,64,NULL,33,'2021-08-20',23,'2021-08-06 07:49:10',1,1),(226,64,NULL,33,'2021-08-21',23,'2021-08-06 07:49:10',1,1),(227,64,NULL,33,'2021-08-22',23,'2021-08-06 07:49:10',1,1),(228,64,NULL,33,'2021-08-23',23,'2021-08-06 07:49:10',1,1),(229,64,NULL,33,'2021-08-24',23,'2021-08-06 07:49:10',1,1),(230,64,NULL,33,'2021-08-25',23,'2021-08-06 07:49:10',1,1),(231,62,NULL,43,'2021-08-14',23,'2021-08-11 07:27:35',0,1),(232,62,NULL,34,'2021-08-17',3,'2021-08-11 07:27:42',0,1),(233,62,NULL,23,'2021-08-18',33,'2021-08-11 07:27:40',0,1),(234,62,NULL,NULL,'2021-08-20',NULL,'2021-08-11 07:21:43',1,1),(235,62,NULL,NULL,'2021-08-21',NULL,'2021-08-11 07:28:39',1,1),(236,62,NULL,NULL,'2021-08-11',NULL,'2021-08-11 07:23:33',1,1),(237,62,NULL,NULL,'2021-08-28',NULL,'2021-08-11 07:28:09',1,1),(238,62,NULL,NULL,'2021-08-27',2,'2021-08-11 07:28:17',1,1),(239,62,NULL,NULL,'2021-08-26',NULL,'2021-08-11 07:28:48',0,1),(240,62,NULL,NULL,'2021-08-25',NULL,'2021-08-11 07:28:49',0,1),(241,62,NULL,NULL,'2021-08-24',NULL,'2021-08-11 07:28:49',0,1),(242,62,NULL,NULL,'2021-08-23',NULL,'2021-08-11 07:28:50',0,1);
+INSERT INTO `rates` VALUES (246,69,NULL,30,'2021-11-20',100,'2021-11-22 13:39:54',1,1),(247,69,NULL,30,'2021-11-01',100,'2021-11-22 13:39:54',1,1),(248,69,NULL,30,'2021-11-06',100,'2021-11-22 13:39:54',1,1),(249,69,NULL,30,'2021-11-05',100,'2021-11-22 13:39:54',1,1),(250,69,NULL,30,'2021-11-04',100,'2021-11-22 13:39:54',1,1),(251,69,NULL,30,'2021-11-03',100,'2021-11-22 13:39:54',1,1),(252,69,NULL,30,'2021-11-02',100,'2021-11-22 13:39:54',1,1),(253,69,NULL,30,'2021-11-07',100,'2021-11-22 13:39:54',1,1),(254,69,NULL,30,'2021-11-08',100,'2021-11-22 13:39:54',1,1),(255,69,NULL,30,'2021-11-09',100,'2021-11-22 13:39:54',1,1),(256,69,NULL,30,'2021-11-10',100,'2021-11-22 13:39:54',1,1),(257,69,NULL,30,'2021-11-11',100,'2021-11-22 13:39:54',1,1),(258,69,NULL,30,'2021-11-12',100,'2021-11-22 13:39:54',1,1),(259,69,NULL,30,'2021-11-13',100,'2021-11-22 13:39:54',1,1),(260,69,NULL,30,'2021-11-14',100,'2021-11-22 13:39:54',1,1),(261,69,NULL,30,'2021-11-15',100,'2021-11-22 13:39:54',1,1),(262,69,NULL,30,'2021-11-16',100,'2021-11-22 13:39:54',1,1),(263,69,NULL,30,'2021-11-17',100,'2021-11-22 13:39:54',1,1),(264,69,NULL,30,'2021-11-18',100,'2021-11-22 13:39:54',1,1),(265,69,NULL,30,'2021-11-19',100,'2021-11-22 13:52:14',0,1),(266,69,NULL,30,'2021-11-21',100,'2021-11-22 13:39:54',1,1),(267,69,NULL,30,'2021-11-22',100,'2021-11-22 13:39:54',1,1),(268,69,NULL,30,'2021-11-23',100,'2021-11-22 13:39:54',1,1),(269,69,NULL,30,'2021-11-24',100,'2021-11-22 13:39:54',1,1),(270,69,NULL,30,'2021-11-25',100,'2021-11-22 13:39:54',1,1),(271,69,NULL,30,'2021-11-26',100,'2021-11-22 13:39:54',1,1),(272,69,NULL,30,'2021-11-27',100,'2021-11-22 13:39:55',1,1),(273,69,NULL,30,'2021-11-28',100,'2021-11-22 13:39:55',1,1),(274,69,NULL,30,'2021-11-29',100,'2021-11-22 13:51:58',0,1),(275,69,NULL,30,'2021-11-30',100,'2021-11-22 13:39:55',1,1),(276,70,NULL,33,'2021-11-22',10,'2021-11-26 13:14:26',1,1),(277,70,NULL,44,'2021-11-23',15,'2021-11-26 13:14:30',1,1),(278,70,NULL,43,'2021-11-24',20,'2021-11-26 13:14:31',1,1),(279,70,NULL,34,'2021-11-25',22,'2021-11-26 13:14:32',1,1),(280,70,NULL,34,'2021-11-26',30,'2021-11-26 13:14:34',1,1),(281,70,NULL,43,'2021-11-27',103,'2021-11-26 13:14:34',1,1),(282,70,NULL,43,'2021-11-28',32,'2021-11-26 13:14:35',1,1),(283,70,NULL,34,'2021-11-29',32,'2021-11-26 13:14:38',1,1),(284,70,NULL,54,'2021-12-02',29,'2021-11-26 15:00:23',1,1),(285,70,NULL,45,'2021-12-03',23,'2021-11-26 15:00:25',1,1),(286,70,NULL,44,'2021-12-04',45,'2021-11-26 15:00:28',1,1),(287,71,NULL,34,'2021-11-02',15,'2021-12-05 18:54:07',1,1),(288,71,NULL,34,'2021-11-05',15,'2021-12-05 18:54:07',1,1),(289,71,NULL,34,'2021-11-01',15,'2021-12-05 18:54:07',1,1),(290,71,NULL,34,'2021-11-03',15,'2021-12-05 18:54:07',1,1),(291,71,NULL,34,'2021-11-06',15,'2021-12-05 18:54:07',1,1),(292,71,NULL,34,'2021-11-04',15,'2021-12-05 18:54:07',1,1),(293,71,NULL,34,'2021-11-07',15,'2021-12-05 18:54:07',1,1),(294,71,NULL,34,'2021-11-08',15,'2021-12-05 18:54:07',1,1),(295,71,NULL,34,'2021-11-09',15,'2021-12-05 18:54:07',1,1),(296,71,NULL,34,'2021-11-10',15,'2021-12-05 18:54:07',1,1),(297,71,NULL,34,'2021-11-11',15,'2021-12-05 18:54:07',1,1),(298,71,NULL,34,'2021-11-12',15,'2021-12-05 18:54:07',1,1),(299,71,NULL,34,'2021-11-13',15,'2021-12-05 18:54:07',1,1),(300,71,NULL,34,'2021-11-14',15,'2021-12-05 18:54:07',1,1),(301,71,NULL,34,'2021-11-15',15,'2021-12-05 18:54:07',1,1),(302,71,NULL,34,'2021-11-16',15,'2021-12-05 18:54:07',1,1),(303,71,NULL,34,'2021-11-17',15,'2021-12-05 18:54:07',1,1),(304,71,NULL,34,'2021-11-18',15,'2021-12-05 18:54:07',1,1),(305,71,NULL,34,'2021-11-19',15,'2021-12-05 18:54:07',1,1),(306,71,NULL,34,'2021-11-20',15,'2021-12-05 18:54:07',1,1),(307,71,NULL,34,'2021-11-21',15,'2021-12-05 18:54:07',1,1),(308,71,NULL,34,'2021-11-22',15,'2021-12-05 18:54:07',1,1),(309,71,NULL,34,'2021-11-23',15,'2021-12-05 18:54:07',1,1),(310,71,NULL,34,'2021-11-24',15,'2021-12-05 18:54:07',1,1),(311,71,NULL,34,'2021-11-25',15,'2021-12-05 18:54:07',1,1),(312,71,NULL,34,'2021-11-26',15,'2021-12-05 18:54:07',1,1),(313,71,NULL,34,'2021-11-27',15,'2021-12-05 18:54:07',1,1),(314,71,NULL,34,'2021-11-28',15,'2021-12-05 18:54:07',1,1),(315,71,NULL,34,'2021-11-29',15,'2021-12-05 18:54:07',1,1),(316,71,NULL,34,'2021-11-30',15,'2021-12-05 18:54:07',1,1),(317,71,NULL,34,'2021-12-01',15,'2021-12-05 18:54:07',1,1),(318,71,NULL,34,'2021-12-02',15,'2021-12-05 18:54:07',1,1),(319,71,NULL,34,'2021-12-03',15,'2021-12-05 18:54:07',1,1),(320,71,NULL,34,'2021-12-04',15,'2021-12-05 18:54:07',1,1),(321,71,NULL,34,'2021-12-05',15,'2021-12-05 18:54:07',1,1),(322,71,NULL,34,'2021-12-06',15,'2021-12-05 18:54:07',1,1),(323,71,NULL,34,'2021-12-07',15,'2021-12-05 18:54:07',1,1),(324,71,NULL,34,'2021-12-08',15,'2021-12-05 18:54:07',1,1),(325,71,NULL,34,'2021-12-09',15,'2021-12-05 18:54:07',1,1),(326,71,NULL,34,'2021-12-10',15,'2021-12-05 18:54:07',1,1),(327,71,NULL,34,'2021-12-11',15,'2021-12-05 18:54:07',1,1),(328,71,NULL,34,'2021-12-12',15,'2021-12-05 18:54:07',1,1),(329,71,NULL,34,'2021-12-13',15,'2021-12-05 18:54:08',1,1),(330,71,NULL,34,'2021-12-14',15,'2021-12-05 18:54:08',1,1),(331,71,NULL,34,'2021-12-15',15,'2021-12-05 18:54:08',1,1),(332,71,NULL,34,'2021-12-16',15,'2021-12-05 18:54:08',1,1),(333,71,NULL,34,'2021-12-17',15,'2021-12-05 18:54:08',1,1),(334,71,NULL,34,'2021-12-18',15,'2021-12-05 18:54:08',1,1),(335,71,NULL,34,'2021-12-19',15,'2021-12-05 18:54:08',1,1),(336,71,NULL,34,'2021-12-20',15,'2021-12-05 18:54:08',1,1),(337,71,NULL,34,'2021-12-21',15,'2021-12-05 18:54:08',1,1),(338,71,NULL,34,'2021-12-22',15,'2021-12-05 18:54:08',1,1),(339,71,NULL,34,'2021-12-23',15,'2021-12-05 18:54:08',1,1),(340,71,NULL,34,'2021-12-24',15,'2021-12-05 18:54:08',1,1),(341,71,NULL,34,'2021-12-25',15,'2021-12-05 18:54:08',1,1),(342,71,NULL,34,'2021-12-26',15,'2021-12-05 18:54:08',1,1),(343,71,NULL,34,'2021-12-27',15,'2021-12-05 18:54:08',1,1),(344,71,NULL,34,'2021-12-28',15,'2021-12-05 18:54:08',1,1),(345,71,NULL,34,'2021-12-29',15,'2021-12-05 18:54:08',1,1),(346,71,NULL,34,'2021-12-30',15,'2021-12-05 18:54:08',1,1),(347,71,NULL,34,'2021-12-31',15,'2021-12-05 18:54:08',1,1),(348,65,NULL,23,'2021-11-06',16,'2021-12-07 18:32:35',1,1),(349,65,NULL,23,'2021-11-07',16,'2021-12-07 18:32:35',1,1),(350,65,NULL,23,'2021-11-04',16,'2021-12-07 18:32:35',1,1),(351,65,NULL,23,'2021-11-03',16,'2021-12-07 18:32:35',1,1),(352,65,NULL,23,'2021-11-05',16,'2021-12-07 18:32:35',1,1),(353,65,NULL,23,'2021-11-08',16,'2021-12-07 18:32:35',1,1),(354,65,NULL,23,'2021-11-09',16,'2021-12-07 18:32:35',1,1),(355,65,NULL,23,'2021-11-10',16,'2021-12-07 18:32:35',1,1),(356,65,NULL,23,'2021-11-11',16,'2021-12-07 18:32:35',1,1),(357,65,NULL,23,'2021-11-12',16,'2021-12-07 18:32:35',1,1),(358,65,NULL,23,'2021-11-13',16,'2021-12-07 18:32:35',1,1),(359,65,NULL,23,'2021-11-14',16,'2021-12-07 18:32:35',1,1),(360,65,NULL,23,'2021-11-15',16,'2021-12-07 18:32:35',1,1),(361,65,NULL,23,'2021-11-16',16,'2021-12-07 18:32:35',1,1),(362,65,NULL,23,'2021-11-17',16,'2021-12-07 18:32:35',1,1),(363,65,NULL,23,'2021-11-18',16,'2021-12-07 18:32:35',1,1),(364,65,NULL,23,'2021-11-19',16,'2021-12-07 18:32:35',1,1),(365,65,NULL,23,'2021-11-20',16,'2021-12-07 18:32:35',1,1),(366,65,NULL,23,'2021-11-21',16,'2021-12-07 18:32:35',1,1),(367,65,NULL,23,'2021-11-22',16,'2021-12-07 18:32:35',1,1),(368,65,NULL,23,'2021-11-23',16,'2021-12-07 18:32:35',1,1),(369,65,NULL,23,'2021-11-24',16,'2021-12-07 18:32:35',1,1),(370,65,NULL,23,'2021-11-25',16,'2021-12-07 18:32:35',1,1),(371,65,NULL,23,'2021-11-26',16,'2021-12-07 18:32:35',1,1),(372,65,NULL,23,'2021-11-27',16,'2021-12-07 18:32:35',1,1),(373,65,NULL,23,'2021-11-28',16,'2021-12-07 18:32:35',1,1),(374,65,NULL,23,'2021-11-29',16,'2021-12-07 18:32:35',1,1),(375,65,NULL,23,'2021-11-30',16,'2021-12-07 18:32:35',1,1),(376,65,NULL,23,'2021-12-01',16,'2021-12-07 18:32:35',1,1),(377,65,NULL,23,'2021-12-02',16,'2021-12-07 18:32:35',1,1),(378,65,NULL,23,'2021-12-03',16,'2021-12-07 18:32:35',1,1);
 /*!40000 ALTER TABLE `rates` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -896,7 +866,7 @@ CREATE TABLE `ratetypes` (
   `rtSortOrder` varchar(45) DEFAULT NULL,
   `rtActive` int DEFAULT NULL,
   PRIMARY KEY (`rtRateTypeID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -944,7 +914,7 @@ CREATE TABLE `rooms` (
   CONSTRAINT `fk_rooms_hotels1` FOREIGN KEY (`rHotelID`) REFERENCES `hotels` (`hHotelID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_rooms_roomsNames1` FOREIGN KEY (`rRoomNameID`) REFERENCES `roomsnames` (`rnRoomNameID`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_rooms_roomStatus1` FOREIGN KEY (`rRoomStatusID`) REFERENCES `roomstatus` (`rsRoomStatusID`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -953,7 +923,7 @@ CREATE TABLE `rooms` (
 
 LOCK TABLES `rooms` WRITE;
 /*!40000 ALTER TABLE `rooms` DISABLE KEYS */;
-INSERT INTO `rooms` VALUES (62,16,2,112,12,NULL,9,NULL,'single best',1,9,1,0,'','2021-07-23 21:14:26','1','1','1','2',6),(63,16,2,52,2,NULL,10,NULL,'New room',1,10,20,0,'','2021-08-04 18:59:44','1','1','1','1',2),(64,16,2,108,4,NULL,2,NULL,'single room',2,333,33,0,'','2021-08-04 19:04:23','1','1','1','1',4),(65,17,2,417,4,NULL,1,NULL,'single room',2,3,22,0,'','2021-08-05 19:47:47','1','1','1','1',0);
+INSERT INTO `rooms` VALUES (65,17,2,417,4,NULL,1,NULL,'single room',2,3,22,0,'','2021-08-05 19:47:47','1','1','1','1',0),(69,16,2,4,1,NULL,12,NULL,'single room',1,12,22,0,'','2021-11-17 18:48:29','1','1','1','1',0),(70,16,2,1,2,NULL,12,NULL,'1',1,11,60,1,'','2021-11-23 14:02:25','1','1','1','3',1),(71,16,2,40,2,NULL,15,NULL,'dobleya',1,33,20,0,'','2021-12-05 18:53:09','1','1','1','1',2);
 /*!40000 ALTER TABLE `rooms` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -974,7 +944,7 @@ CREATE TABLE `roomsbooked` (
   KEY `fk_roomsBooked_bookings1_idx` (`rbBookingID`),
   CONSTRAINT `fk_roomsBooked_bookings1` FOREIGN KEY (`rbBookingID`) REFERENCES `bookings` (`bBookingID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_roomsBooked_rooms1` FOREIGN KEY (`rbRoomID`) REFERENCES `rooms` (`rRoomID`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='When a room will be removed from the rooms table the rooms booked table records will not be effected, the id will be setted to null.\nBut when the room id get''s updated then the id will be updated as well.';
+) ENGINE=InnoDB AUTO_INCREMENT=168 DEFAULT CHARSET=utf8mb3 COMMENT='When a room will be removed from the rooms table the rooms booked table records will not be effected, the id will be setted to null.\nBut when the room id get''s updated then the id will be updated as well.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -983,7 +953,7 @@ CREATE TABLE `roomsbooked` (
 
 LOCK TABLES `roomsbooked` WRITE;
 /*!40000 ALTER TABLE `roomsbooked` DISABLE KEYS */;
-INSERT INTO `roomsbooked` VALUES (5,8,62,5),(6,8,63,3);
+INSERT INTO `roomsbooked` VALUES (56,61,69,5),(57,62,71,2),(58,63,71,2),(59,64,71,2),(60,65,69,30),(61,66,71,7),(83,88,65,2),(84,89,65,2),(85,90,65,2),(86,91,65,2),(87,92,65,2),(88,93,65,2),(89,94,65,2),(90,95,65,2),(91,96,65,2),(92,97,65,2),(93,98,65,2),(94,99,65,2),(95,101,65,2),(96,102,65,2),(97,103,65,2),(98,104,65,2),(99,105,65,2),(100,106,65,2),(101,107,65,2),(102,108,65,2),(103,108,69,16),(104,109,65,2),(105,110,65,2),(106,110,69,16),(107,111,65,2),(108,112,65,2),(109,112,69,16),(110,113,65,2),(111,114,65,2),(112,114,69,16),(113,115,65,2),(114,116,65,2),(115,116,69,16),(116,117,65,2),(117,118,65,2),(118,118,69,16),(119,119,65,2),(120,120,65,2),(121,120,69,16),(122,121,65,2),(123,122,65,2),(124,122,69,16),(125,123,65,2),(126,124,65,2),(127,124,69,16),(128,125,65,2),(129,126,65,2),(130,126,69,16),(131,127,65,2),(132,128,65,2),(133,128,69,16),(134,129,65,2),(135,130,65,2),(136,131,65,2),(137,132,65,2),(138,132,69,3),(139,133,65,2),(140,134,65,2),(141,135,65,2),(142,136,69,3),(143,137,71,5),(144,138,71,5),(145,139,71,5),(146,140,71,5),(147,141,69,16),(148,142,69,5),(149,143,69,6),(150,144,69,4),(151,145,69,4),(152,146,69,4),(153,147,69,4),(154,148,69,4),(155,149,69,4),(156,150,69,3),(157,151,69,15),(158,152,69,17),(159,153,69,17),(160,153,71,11),(161,154,69,34),(162,154,71,11),(163,155,69,26),(164,155,71,12),(165,156,69,42),(166,156,71,13),(167,157,65,5);
 /*!40000 ALTER TABLE `roomsbooked` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1003,7 +973,7 @@ CREATE TABLE `roomsnames` (
   PRIMARY KEY (`rnRoomNameID`),
   KEY `fk_roomsNames_roomsTypes1_idx` (`rnRoomTypeID`),
   CONSTRAINT `fk_roomsNames_roomsTypes1` FOREIGN KEY (`rnRoomTypeID`) REFERENCES `roomstypes` (`rtRoomTypeID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1031,7 +1001,7 @@ CREATE TABLE `roomsphotos` (
   PRIMARY KEY (`rpPhotoID`),
   KEY `fk_roomsPhotos_rooms1_idx` (`rpRoomsID`),
   CONSTRAINT `fk_roomsPhotos_rooms1` FOREIGN KEY (`rpRoomsID`) REFERENCES `rooms` (`rRoomID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1040,7 +1010,7 @@ CREATE TABLE `roomsphotos` (
 
 LOCK TABLES `roomsphotos` WRITE;
 /*!40000 ALTER TABLE `roomsphotos` DISABLE KEYS */;
-INSERT INTO `roomsphotos` VALUES (55,63,'../users/40/hotels/16/rooms/63/1628187412security camera.jpg',NULL),(56,62,'../users/40/hotels/16/rooms/62/1628193871wood.jpg',NULL);
+INSERT INTO `roomsphotos` VALUES (66,69,'../users/40/hotels/16/rooms/69/1637677348uyuu.jpg',NULL),(67,70,'../users/40/hotels/16/rooms/70/1640288888IMG_20211207_184835.jpg',NULL),(68,70,'../users/40/hotels/16/rooms/70/1640288897IMG_20211031_105944.jpg',NULL);
 /*!40000 ALTER TABLE `roomsphotos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1058,7 +1028,7 @@ CREATE TABLE `roomstatus` (
   `rsSortOrder` varchar(45) DEFAULT NULL,
   `rsActive` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`rsRoomStatusID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1087,7 +1057,7 @@ CREATE TABLE `roomstypes` (
   `rtSortOrder` varchar(45) DEFAULT NULL,
   `trActive` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`rtRoomTypeID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1140,7 +1110,7 @@ CREATE TABLE `userinfohisory` (
   `tnState` varchar(45) DEFAULT NULL,
   `tnAtTime` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`tnID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1169,7 +1139,7 @@ CREATE TABLE `users` (
   `uStatus` int DEFAULT NULL,
   `uCreationDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`uUserID`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1181,336 +1151,39 @@ LOCK TABLES `users` WRITE;
 INSERT INTO `users` VALUES (39,'mohammed','moha@m.com','1234','mohammed s hazim','07708138928',NULL,'2020-11-16 19:47:55'),(40,'m','m@m.com','m','m m m ','07708138928',NULL,'2021-02-08 14:33:15');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `userToUpper` BEFORE INSERT ON `users` FOR EACH ROW SET NEW.uUserName =lower(new.uUserName) */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `userInfoHistory` AFTER UPDATE ON `users` FOR EACH ROW INSERT INTO userinfohisory(tnUserName,tnPassword,tnEmail,tnFullName,tnPhoneNumber,tnState,tnAtTime)
-VALUES(old.uUserName, old.uUserEmail, old.uUserPassword, old.uFullName, old.uUserPhoneNumber, old.uStatus, NOW()) */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
--- Dumping events for database 'hima'
+-- Table structure for table `world_cities`
 --
 
---
--- Dumping routines for database 'hima'
---
-/*!50003 DROP FUNCTION IF EXISTS `get_bookings` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` FUNCTION `get_bookings`(city VARCHAR(45), bStatus VARCHAR(45)) RETURNS int
-    DETERMINISTIC
-RETURN (SELECT COUNT(b.bHotelID) FROM bookings b
-JOIN hotels h ON b.bHotelID = h.hHotelID
-JOIN bookingStatus bs ON b.bBookingStatusID = bs.bsBookingStatusID
-WHERE h.hCity LIKE concat('%',city,'%') and bs.bsStatus LIKE concat('%',bStatus,'%')
-) ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP FUNCTION IF EXISTS `get_hotel_bookings` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` FUNCTION `get_hotel_bookings`(hotelID int) RETURNS int
-    DETERMINISTIC
-return (SELECT COUNT(b.bHotelID) FROM bookings b WHERE b.bHotelID = hotelID) ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP FUNCTION IF EXISTS `get_room_type` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` FUNCTION `get_room_type`(room_id INT) RETURNS varchar(254) CHARSET utf8
-BEGIN
-RETURN(SELECT rtRoomTypeEn FROM rooms join roomsnames rn on rRoomNameID = rnRoomNameID
-join roomstypes on rnRoomTypeID = rtRoomTypeID where rRoomID = room_id);
+DROP TABLE IF EXISTS `world_cities`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `world_cities` (
+  `id` int NOT NULL,
+  `city` varchar(45) DEFAULT NULL,
+  `city_ascii` varchar(45) DEFAULT NULL,
+  `lat` double DEFAULT NULL,
+  `lng` double DEFAULT NULL,
+  `country` varchar(45) DEFAULT NULL,
+  `iso2` varchar(45) DEFAULT NULL,
+  `iso3` varchar(45) DEFAULT NULL,
+  `admin_name` varchar(45) DEFAULT NULL,
+  `capital` varchar(45) DEFAULT NULL,
+  `population` int DEFAULT NULL,
+  `cid` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-END ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `addReservation` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `addReservation`(IN hotelID INT,IN RoomID INT, IN guestID INT, IN dateFrom DATE, IN dateTo DATE,IN numOfRooms INT, IN psNum INT, IN ChildrenNum INT, bPaymentStatusID INT)
-BEGIN
-DECLARE bookingID INT;
-INSERT INTO `hima`.`bookings` (`bHotelID`, `bGuestID`, `bDateFrom`, `bDateTo`,  `bNumOfGuests`, `bNumOfChildren`,`bPaymentStatusID`) VALUES (hotelID, guestID, dateFrom, dateTo, psNum, ChildrenNum, bPaymentStatusID);
--- to get the booking id from the bookings table to insert it to the roomsBooked table
-SET bookingID = LAST_INSERT_ID();
-INSERT INTO `hima`.`roomsbooked` (`rbBookingID`, `rbRoomID`, `rbNumOfRooms`) VALUES (bookingID, RoomID, numOfRooms);
--- to decrase the reserved rooms from the available rooms in the hotel for the specified dates
--- CALL decreserooms(dateFrom,dateTo,RoomID, numOfRooms); -- is used when order confirmed
-END ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `add_guest` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `add_guest`(IN ggFullName varchar(254),IN ggGender varchar(254),IN ggEmail varchar(254),IN ggUserName varchar(254),IN ggPassword varchar(254),IN ggPhoneNumber varchar(254), IN ggAddress varchar(254))
-BEGIN
-	DECLARE guest_id INT;
-    INSERT INTO guests(gFullName,gGender, gEmail ,gUserName,gPassword,gPhoneNumber,gAddress) VALUES (ggFullName , ggGender , ggEmail ,ggUserName ,ggPassword ,ggPhoneNumber , ggAddress);
-    SET guest_id = LAST_INSERT_ID();
-    Select guest_id as guest_id;
-END ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `add_hotel` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `add_hotel`(IN UserID varchar(254),IN HotelName varchar(254),IN HotelRating varchar(254),IN City varchar(254),IN State varchar(254),IN ZipCode varchar(254),IN MainPhoneNumber varchar(254),IN NormalNumber varchar(254),IN CompanyMailAddress varchar(254),IN Address varchar(254),IN MapsLocation varchar(254))
-BEGIN
-	DECLARE hotel_id INT;
-   INSERT INTO hotels (`hUserID`, `hHotelName`, `hHotelRating`, `hCity`, `hState`, `hZipCode`, `hMainPhoneNumber`, `hNormalNumber`, `hCompanyMailAddress`, `hActive`, `hAddress`, `hMapsLocation`) VALUES (UserID, HotelName, HotelRating,City,State, ZipCode, MainPhoneNumber, NormalNumber, CompanyMailAddress, 1, Address, MapsLocation);
-    SET hotel_id = LAST_INSERT_ID();
-    Select hotel_id as hotel_id;
-END ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `add_user` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `add_user`(IN uUserEmail varchar(254),IN uUserName varchar(254),IN uUserPassword varchar(254),IN uUserPhoneNumber varchar(254),IN uFullName varchar(254))
-BEGIN
-	DECLARE user_id INT;
-    INSERT INTO users(uUserEmail,uUserName,uUserPassword,uUserPhoneNumber,uFullName) VALUES (uUserEmail,uUserName, uUserPassword ,uUserPhoneNumber,uFullName);
-    SET user_id = LAST_INSERT_ID();
-    Select user_id as user_id;
-END ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `allAccounts` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `allAccounts`()
-BEGIN
-SELECT aFullName, 'Admin' as `User Type`  FROM admins union 
-SELECT uUserName, 'User' as `User Type`  FROM users union
-SELECT gFullName, 'Guest' as `User Type` FROM guests union
-SELECT cOwnerFullName, 'Company' as `User Type` FROM companies;
-END ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `decreserooms` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `decreserooms`(IN dateStart DATE, IN dateEnd DATE,IN roomID INT, IN numOfRooms INT)
-BEGIN
-	WHILE dateStart <= dateEnd DO
-    UPDATE `hima`.`rates` SET `rARoomsNum` = `rARoomsNum` - numOfRooms
-    WHERE (`rRoomsID` = roomID and `rDate` = dateStart);
-    SET dateStart = date_add(dateStart, INTERVAL 1 DAY);
-  END WHILE;
-END ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `get_rooms_photos` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `get_rooms_photos`(IN room_id INT)
-BEGIN
-SELECT rpPhotoPath as `path` FROM roomsphotos WHERE rpRoomsID = room_id;
-END ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `removeroom` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `removeroom`(IN hotelID INT, IN roomID INT)
-BEGIN
-	-- DELETE FROM rates WHERE (`rRoomsID` = roomID);
-    -- DELETE FROM roomsphotos WHERE (`rpRoomsID` = roomID);
-    -- since we are using cascade which automaticly removes the related records, therefore we don't need to go for removing them.
-	DELETE FROM rooms WHERE (`rHotelID` = hotelID and `rRoomID` = roomID);
-END ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `search2` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `search2`(IN psNumbers INT,IN fromDate DATE, IN toDate DATE,IN roomsNumbers INT,IN searchCity varchar(254))
-BEGIN
 --
-		-- SELECT h.hHotelID,rs.rRoomsID,rs.rRateTypeID, SUM(rRate) AS TOTAL_RATE, COUNT(rDate) AS NUMBEROFNIGHTS,rARoomsNum as roomsLeft
--- 		FROM rates rs
--- 		JOIN rooms r ON rs.rRoomsID = r.rRoomID
--- 		JOIN hotels h ON r.rHotelID = h.hHotelID
--- 		WHERE r.rMaxPas >= psNumbers AND rs.rDate BETWEEN FromDate AND toDate
--- 			 AND r.rRoomStatusID = '2' AND rs.rARoomsNum >= roomsNumbers
--- 		 GROUP BY rs.rRoomsID,rRateTypeID ;
-         
--- This code outputs only the recoreds that have the same amount of nights accouding to the user date input
--- it removes the rows that doesn't have maching number of nights that associated with the user input date
--- 	CREATE OR REPLACE VIEW search2 AS
--- 		SELECT * FROM #firstResult WHERE NUMBEROFNIGHTS = datediff('2020-06-12','2020-06-09')+1;
--- -- This view is to output the lowest price according to each hotel
--- -- The outpur is going to be list of unique values of hotelsID each one with the lowest price.
--- SELECT * FROM #SecondResult WHERE NUMBEROFNIGHTS = datediff('2020-06-12','2020-06-09')+1;
+-- Dumping data for table `world_cities`
+--
 
--- ## By concatinating the three outputs we will get the final result which is what we are looking for
-		SELECT hotelID, hotelName ,rating , city ,location, roomID,roomName,roomDetails,rateTypeID, rateType,fromDate,toDate,lower(TOTAL_RATE),
-        NUMBEROFNIGHTS,roomsLeft FROM (SELECT * FROM
-        (SELECT h.hHotelID as hotelID,h.hHotelName as hotelName ,h.hHotelRating as rating ,h.hCity as city ,h.hMapsLocation as location,
-        rs.rRoomsID as roomID,rn.rnRoomNameEn as roomName,rDescription as roomDetails ,rs.rARoomsNum as roomsLeft,rs.rRateTypeID as rateTypeID, rt.rtRateType as rateType,fromDate,ToDate,
-        SUM(rRate) AS TOTAL_RATE, COUNT(rDate) AS NUMBEROFNIGHTS
-		FROM rates rs
-		JOIN rooms r ON rs.rRoomsID = r.rRoomID
-		JOIN hotels h ON r.rHotelID = h.hHotelID
-        JOIN roomsnames rn ON r.rRoomID = rn.rnRoomNameID
-        JOIN ratetypes rt ON rs.rRateTypeID = rt.rtRateTypeID
-		WHERE r.rMaxPas >= psNumbers AND rs.rDate BETWEEN DATE_ADD(fromDate, INTERVAL 1 DAY) AND toDate
-			 AND r.rRoomStatusID = '2' AND rs.rARoomsNum >= '1'
-             AND h.hCity LIKE concat('%',searchCity,'%')
-		 GROUP BY rs.rRoomsID,rRateTypeID) as T
-         WHERE NUMBEROFNIGHTS = datediff(toDate,DATE_ADD(fromDate, INTERVAL 1 DAY))+1) as T1
-        group by hotelID;
-
-END ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
+LOCK TABLES `world_cities` WRITE;
+/*!40000 ALTER TABLE `world_cities` DISABLE KEYS */;
+/*!40000 ALTER TABLE `world_cities` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Final view structure for view `accounts_num`
@@ -1629,4 +1302,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-19 16:14:05
+-- Dump completed on 2022-01-01 23:23:50
