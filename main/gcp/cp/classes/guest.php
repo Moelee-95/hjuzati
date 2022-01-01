@@ -1,0 +1,294 @@
+<?php
+
+// require '../../../../db.php';//just when testing using terminal
+
+class createGuest extends db{
+   
+    public $created = false;
+    public $guestID;
+    public $fullName; // Used in the constructor
+    public $userName; // Used in the constructor
+    public $password; // Used in the constructor
+    public $phoneNumber;// Used in the constructor
+    
+    public function __construct($fullName , $password , $phoneNumber ){
+        $conn = new db();
+        $conn = $conn->getConnection();
+
+        $this->fullName = $fullName;
+        $this->password = $password;
+        $this->phoneNumber = $phoneNumber;
+        $nameArray = explode(" ", $fullName); // convert full name to array
+        $userName = $nameArray[0].substr($phoneNumber, -3); //combine first name with last 3 numbers of the phone number
+        $this->userName = $userName;   
+        
+        $sql = "CALL add_guest('$fullName','$userName','$password','$phoneNumber')";
+        $qu = mysqli_query($conn, $sql);
+        $fetchit = mysqli_fetch_row($qu);
+        $this->guestID = $fetchit[0];
+
+        if ($conn->query($sql) or $this->guestID > 0) {
+            mkdir("../guests/$this->guestID",0777,true); //Create guest folder
+            $this->created = true;
+        }
+        else{
+            $this->created = false;
+        }
+
+        $conn->close();
+        
+    }
+    
+}
+
+
+class Guest extends db{
+    
+    public $loggedIn = false; //
+    public $errorMessage; //
+    public $userName;//setted before login
+    public $password; //setted before login
+    public $guestID ; 
+    public $fullName; 
+    public $address;
+    public $address2;
+    public $city;
+    public $zipCode;
+    public $country;
+    public $phoneNumber;
+    public $email;
+    public $gender;
+    public $status;
+    public $avatar;
+    public $creationDate;
+    public $DOB;
+    private $bookings = array();
+
+    public function __construct($userName, $password){
+        parent::__construct(); // to run the code inside cons. to be able to access conn
+        $this->userName = $userName;
+        $this->password = $password;
+        if($this->login()){ // when logged in generate guest account information
+            $this->generateInfo();
+        }
+    }
+    // used when forgot password, accept itentity(email,username,phone) returns $data
+    public static function findGuestID($identity){
+        $conn = new db();
+        $conn = $conn->getConnection();
+        $msg = '';
+        $error;
+        $sql = "SELECT gGuestID, gPhoneNumber FROM hima.guests where (gUserName= '$identity' or gEmail='$identity' or gPhoneNumber='$identity');";
+        if ($query = mysqli_query($conn, $sql)) {
+            $fetch = mysqli_fetch_row($query);
+            $guestID =  $fetch['gGuestID'];
+            $phoneNumber = $fetch['gPhoneNumber'];
+            $msg = "User have been found!";
+            $error = 0;
+            $data = array($error,$msg,$phoneNumber,$guestID);
+            return $data;
+        }
+        else {
+            $msg = "Coudn't Find your account!";
+            $error = 1;
+            $guestID = 0;
+            $phoneNumber = 0;
+            $data = array($error,$msg,$phoneNumber,$guestID);
+            return $data;
+        }
+        
+    }
+
+    //send sms to the guest phone, accepts guest id, returns encrypted md5 verification code
+    public static function sendSms($guestID){
+        // I have to create a class for sending sms to the phone number, sendSms
+
+    }
+    public static function sendEmail($guestID){
+
+    }
+
+    //Accepts guestID and the new password, return true if passoword changed, false if coudn't change password
+    public static function changePassword($guestID, $NewPassword){
+        $conn = new db();
+        $conn = $conn->getConnection();
+        $msg = "";
+        $error;
+        $sql = "UPDATE `guests` SET `gPassword` = '$NewPassword' WHERE (`gGuestID` = '$guestID');";
+        if (mysqli_query($conn, $sql)) {
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+
+
+    private function login(){
+        $sql = "SELECT gUserName,gEmail,gPassword,gPhoneNumber FROM guests WHERE gEmail = '$this->userName'  OR gUserName='$this->userName'  OR gPhoneNumber='$this->userName' AND gPassword= '$this->password'";
+        $query = mysqli_query($this->conn, $sql);
+        $fetch = mysqli_fetch_array($query);
+        $db_user_name =  $fetch['gUserName'];
+        $db_email = $fetch['gEmail'];
+        $db_phone = $fetch['gPhoneNumber'];
+        $db_password = $fetch['gPassword'];
+        $this->userName = $fetch['gUserName'];
+
+        if ($db_user_name == $this->userName || $db_email == $this->userName || $db_phone == $this->password) {
+            if ($db_password == $this->password) {
+                $this->loggedIn = true;
+                $this->errorMessage = "0";
+                return true;
+            }
+            else{
+                $this->loggedIn = false;
+                $this->errorMessage = "You have Enterd wrong password $this->userName";
+                return false;
+            }
+        }
+        else {
+            $this->loggedIn = false;
+            $this->errorMessage = "Incorrect User Name or Email";
+            return false;
+            }
+    }
+    
+    private function generateInfo(){
+        if($this->loggedIn){
+            $sql = "SELECT * FROM guests WHERE gUserName='$this->userName' AND gPassword= '$this->password'";
+            $query = mysqli_query($this->conn, $sql);
+            $fetch = mysqli_fetch_array($query);
+            $this->guestID = $fetch['gGuestID'];
+            $this->fullName = $fetch['gFullName'];
+            $this->address = $fetch['gAddress'];
+            $this->address2 = $fetch['gAddress2'];
+            $this->city = $fetch['gCity'];
+            $this->zipCode = $fetch['gZipCode'];
+            $this->country = $fetch['gCountry'];
+            $this->phoneNumber = $fetch['gPhoneNumber'];
+            $this->email = $fetch['gEmail'];
+            $this->gender = $fetch['gGender'];
+            $this->status = $fetch['gStatus'];
+            $this->avatar = $fetch['gStatus'];
+            $this->DOB = $fetch['gDOB'];
+            $this->creationDate = $fetch['gCreatingDate'];
+
+        }
+        else{
+            return false;
+        }
+    }
+
+
+    //setters for setting basic info
+    public function setInfo($fullName, $gender, $DOB){
+        $conn = new db();
+        $conn = $conn->getConnection();
+        $q = "UPDATE `hima`.`guests` SET `gFullName` = '$fullName', `gGender` = '$gender', `gDOB` = '$DOB' WHERE `gGuestID` = '$this->guestID'";
+        $stmt = mysqli_prepare($conn, $q);
+        
+        if(mysqli_stmt_execute($stmt)){
+            $this->fullName = $fullName;
+            $this->gender = $gender;
+            $this->DOB = $DOB;
+            return true;
+        }
+        else {
+            $this->errorMessage = "Coudn't update user information";
+            return false;
+        }
+
+       
+    }
+
+    public function setEmail($email){
+
+    }
+
+    public function setPhoneNumber($phoneNumber){
+        
+    }
+
+    public function setPassword($oldPassword, $newPassword){
+        if($this->loggedIn){
+            if($oldPassword == $this->password){
+                $conn = new db();
+                $conn = $conn->getConnection();
+                $q = "UPDATE hima.guests SET `gPassword` = '$newPassword' WHERE `gGuestID` = '$this->guestID'";
+                $stmt = mysqli_prepare($conn, $q);
+                /* to bind data mysqli_stmt_bind_param($stmt, 'i', $post_id);
+                to bind result mysqli_stmt_bind_result($stmt, $content);
+                to fetch data mysqli_stmt_fetch($stmt);
+                if(mysqli_stmt_num_rows($stmt)){
+                     echo $content;
+                } */
+                if(mysqli_stmt_execute($stmt)){
+                    $this->password = $newPassword;
+                    return true;
+                }
+                else{
+                    $this->errorMessage = "Coudn't insert the data!";
+                    return false;
+                }  
+            }
+            else{
+                $this->errorMessage = "incorrect old password!";
+                return false;
+            }
+        }
+        else {
+            $this->errorMessage = "please login first to change your password";
+            return false;
+        }
+    }
+
+    public static function findAccount($identifier){
+        $conn = new db();
+        $conn = $conn->getConnection();
+        $q = "SELECT gGuestID,gPhoneNumber,gEmail,gFullName FROM hima.guests where (gUserName= '$identifier' or gEmail='$identifier' or gPhoneNumber='$identifier');";
+        $qu = mysqli_query($conn, $q);
+        $data = mysqli_fetch_array($qu);
+        if($data > 0){
+            $data['error'] = 0;
+            return $data;
+        }
+        else{
+            $data['error'] = 1;
+            return $data;
+        }
+    }
+
+    public static function setNewPassword($guestID, $newPassword){
+        $conn = new db();
+        $conn = $conn->getConnection();
+        $q = "UPDATE hima.guests SET `gPassword` = '$newPassword' WHERE `gGuestID` = '$guestID'";
+        $stmt = mysqli_prepare($conn, $q);
+        /* to bind data mysqli_stmt_bind_param($stmt, 'i', $post_id);
+        to bind result mysqli_stmt_bind_result($stmt, $content);
+        to fetch data mysqli_stmt_fetch($stmt);
+        if(mysqli_stmt_num_rows($stmt)){
+                echo $content;
+        } */
+        if(mysqli_stmt_execute($stmt)){
+            return 0;
+        }
+        else{
+            return 1;
+        }  
+    }
+}
+/* $result = Guest::findAccount("mo1");
+print_r($result);
+ */
+
+// $guest = new Guest('mo', 'mo');
+
+// print_r($guest->setAddress('Somewher'));
+
+
+
+
+
+
+?>

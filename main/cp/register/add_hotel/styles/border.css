@@ -1,0 +1,68 @@
+.table {
+ border-collapse: collapse;
+
+ 
+}
+
+.th {
+  
+  text-align: left;
+  //border-bottom: 1px solid #ddd;
+  
+}
+.th1{
+width:15%;
+padding: 8px;
+}
+.th2{
+width:25%;
+padding: 8px;
+}
+.th3{
+width:0.5%;
+padding: 0.5px;
+}
+.th4{
+width:0.5%;
+padding: 0.5px;
+}
+.edit{	
+		color:white;
+		border:0.5px solid #194073d4;
+		padding:8px 30px;
+		border-radius: 3px;
+		font-weight:bold;
+		text-decoration: none;
+		background-color:#194073d4;
+		transition:.2s ease-in;
+		
+
+}
+.edit:hover{	
+		color: #3333b5;
+		border:1px solid blue;
+		background-color:white;
+		
+		
+
+}
+.delete{	
+		color: white;
+		border:1px solid #ff1b1bc9;
+		padding:8px 25px;
+		border-radius: 3px;
+		font-weight:bold;
+		text-decoration: none;
+		background-color: #ff1b1bc9;
+		transition:.2s ease-in;
+
+}
+
+
+.delete:hover{	
+		color:#ff1a1a;
+		border:1px solid #ff0000;
+		background-color: rgb(0,0,0,0.0);
+
+}
+

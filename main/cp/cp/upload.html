@@ -1,0 +1,36 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+<script>
+$(document).ready(function() 
+{ 
+ $('form').ajaxForm(function() 
+ {
+  alert("Uploaded SuccessFully");
+ }); 
+});
+
+function preview_image() 
+{
+ var total_file=document.getElementById("upload_file").files.length;
+ // alert("You Have uploaded: " + total_file +" Pictures");
+   // $('#image_preview').append("<img style='width:200px;height:170' src='"+URL.createObjectURL(event.target.files[1])+"'><br>");
+
+ for(var i=0;i<total_file;i++)
+ {
+  $('#image_preview').append("<img style='width:200px;height:170' src='"+URL.createObjectURL(event.target.files[i])+"'><br>");
+
+ }
+}
+</script>
+</head>
+<body>
+<div id="wrapper">
+ <form action="upload_file.php" method="post" enctype="multipart/form-data">
+  <input type="file" id="upload_file" name="upload_file[]" onchange="preview_image();" multiple/>
+  <input type="submit" name='submit_image' value="Upload Image"/>
+ </form>
+ <div id="image_preview" style=""></div>
+</div>
+</body>
+</html>

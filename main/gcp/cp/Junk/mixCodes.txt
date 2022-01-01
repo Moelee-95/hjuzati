@@ -1,0 +1,29 @@
+.getAttribute('src')
+
+
+onmouseover="img_hover(this)" onmouseout="img_unhover(this)"
+
+
+
+
+function img_hover(element){
+	var thId = element.id;
+	var imge = thId +"_img";
+	document.getElementById(thId).style.display = "block";
+	document.getElementById(imge).style.opacity ="0.3";
+
+}
+function img_unhover(element){
+	var thId = element.id;
+	var imge = thId +"_img";
+	document.getElementById(thId).style.display = "none";
+	document.getElementById(imge).style.opacity ="1";
+
+}
+
+
+
+
+
+
+'<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"><a href="'+path+'" data-sub-html="Demo Description"><img class="img-fluid img-thumbnail" src="'+path+'" alt=""><div class="d-xl-none d-lg-non d-md-none d-sm-block d-xs-block" style="position: absolute;top: 40%;left: 45%;color:red;"><i class="fad fa-trash-alt fa-3x" style="opacity:1" id="remove_imgName"></i></div></a></div>'

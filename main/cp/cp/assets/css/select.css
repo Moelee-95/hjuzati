@@ -1,0 +1,52 @@
+.sel-xl{
+  padding: 8px;
+  width: 100%;
+
+}
+.sel-lg{
+  padding: 8px;
+  width: 75%;
+}
+.sel-md{
+  padding: 8px;
+  width: 50%;
+}
+.sel-sm{
+   padding: 8px;
+  width: 25%;
+}
+.sel-xs{
+   padding: 8px;
+    width: 20%;
+}
+
+.tx-xl{
+  padding: 8px;
+  border-radius: 3px;
+  width: 100%;
+}
+.tx-lg{
+  padding: 8px;
+  border-radius: 3px;
+  width: 75%;
+}
+.tx-md{
+  padding: 8px;
+  border-radius: 3px;
+  width: 50%;
+}
+.tx-sm{
+  padding: 8px;
+  border-radius: 3px;
+  width: 25%;
+}
+.tx-xs{
+  padding: 8px;
+  border-radius: 3px;
+  width: 20%;
+}
+
+.mrg-top{
+  padding: 20px;
+}
+

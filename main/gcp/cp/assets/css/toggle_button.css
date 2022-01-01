@@ -1,0 +1,107 @@
+/* Note: I have used another properties for other elements here you can find it in the end */
+.toggle_input[type=checkbox]{
+	height: 0;
+	width: 0;
+	display: none;
+	}
+
+
+	.toggle_label {
+		cursor: pointer;
+		text-indent: -9999px;
+		width: 40px;
+		height: 20px;
+		background: #a7a7a7;
+		display: block;
+		border-radius: 15px;
+		position: relative;
+	}
+
+	.toggle_label:after {
+		content: '';
+	    position: absolute;
+	    top: 2px;
+	    left: 3px;
+	    width: 15px;
+	    height: 15px;
+	    background: #fff;
+	    border-radius: 50%;
+	    transition: 0.3s;
+	}
+
+	.toggle_input:checked + .toggle_label {
+		background: #18ce0f;
+	}
+
+	.toggle_input:checked + .toggle_label:after {
+		left: calc(100% - 3px);
+		transform: translateX(-100%);
+	}
+
+	.toggle_label:active:after {
+		width: 20px;
+	}
+/* toggle buttons for main table */
+.toggle_input2[type=checkbox]{
+	height: 0;
+	width: 0;
+	display: none;
+	}
+
+
+	.toggle_label2 {
+		cursor: pointer;
+		text-indent: -9999px;
+		width: 30px;
+		height: 10px;
+		background: #dc3545;
+		display: block;
+		border-radius: 15px;
+		position: relative;
+	}
+
+	.toggle_label2:after {
+		content: '';
+	    position: absolute;
+		top: -2px;
+	    left: 1.4px;
+	    width: 15px;
+	    height: 15px;
+	    background: #ffffff;
+	    border-radius: 50%;
+	    border: 1px solid #dedede;
+	    border-radius: 50%;
+	    transition: 0.3s;
+	}
+
+	.toggle_input2:checked + .toggle_label2 {
+		background: #18ce0f;
+	}
+
+	.toggle_input2:checked + .toggle_label2:after {
+		left: calc(100% - 3px);
+		transform: translateX(-100%);
+	}
+
+	.toggle_label2:active:after {
+		width: 20px;
+	}
+
+
+/* Addirional css for other elements */
+
+
+.o_c_state{
+	padding-left: 0px;
+}
+
+.hov_red:hover {
+	color: #ff0000;
+	
+}
+
+
+#div_in_empty:hover{
+	border-bottom: 4px solid #36c6d3;
+	transition:0.2s ease-in;
+}

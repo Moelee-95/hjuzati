@@ -1,0 +1,43 @@
+div.content{
+	
+	float: left;
+	text-align: left;
+	font-size: 18px;
+	margin:8px;
+	color: black
+	
+
+}
+
+div#first {
+
+	width: 25%;
+
+	
+}
+
+div#second {
+
+	width: 40%;
+	float: left;
+
+}
+
+div#theird {
+
+	width: 50px;
+
+	float: right;
+	
+
+}
+
+
+div#fourth {
+
+	width: 50px;
+
+	float: right;
+
+
+}

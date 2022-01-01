@@ -1,0 +1,354 @@
+body{
+	margin: 0;
+	background-color: #efefef;
+}
+		.header{
+			background-color: #194073;
+			color: white;
+			position: relative;
+			top: 0%;
+			left: 0%;
+			width:100%;
+			margin: 0;
+
+
+		}
+		.footer{
+			padding: 10px 0px;
+			background-color: #194073;
+			color: white;
+			text-align: center;
+			position: relative;
+  			bottom: 0;
+  			width: 100%;
+  			height: 3rem;
+
+		}
+		.footer_text{
+			position: relative;
+			bottom:0;
+			
+		}
+		
+		.logo{
+			width: 150px;
+			height:auto;
+			padding: 3px 6px;
+		}
+		.logout{
+			transition:.2s ease-in;
+			position: absolute;
+			border-radius:3px;
+			text-decoration: none;
+			font-size: 1.2em;
+			color: black;
+			background-color: white;
+			padding: 10px 30px;
+			border: 1px solid green;
+
+		}
+		.logout:hover{
+
+			color: white;
+			background-color: green;
+		}
+		.divlogout{
+			position: absolute;
+			top: 5%;
+			right: 11%;
+	}
+
+
+	ul{
+		margin:0;
+		padding: 0;
+	}
+
+	nav{
+		
+		width:90%;
+		position: relative;
+		left: 6%;
+		margin-top:25px;
+	}
+	nav ul {
+		text-align: center;
+	}
+	nav ul li{
+		margin-top:25px;
+		border-radius:5px;
+		cursor:pointer;
+		padding: 10px 6px;
+		display:inline-block;
+		color: black;
+		font-family: Arial;
+		transition: .2s ease-in;
+
+
+
+	}
+	nav ul li a {
+		border-radius:0px;
+		font-size: 10pt;
+		text-decoration: none;
+		color: black;
+		padding: 20px 15px;
+		border-bottom: 4px solid #6b6b6b;
+
+	}
+	a.complete{
+		border-bottom: 4px solid #0071c2;
+
+	}
+	b.complete{
+		display: inline;
+	}
+
+	nav ul li a:hover{
+
+		color: #0071c2;
+		
+
+	}
+	#active{
+		background-color:rgb(214, 214, 214,0.3);
+		border-radius: 5px;
+		border-bottom: 4px solid #673ab7;
+
+	}
+	nav ul li .active{
+
+		
+	}
+
+
+
+		form{
+			position: static;
+			
+			
+		}
+
+
+		.container {
+			margin: 0%;
+			width: 100%;
+			position: relative;
+			left: 0%;
+			bottom:0;
+			padding-right: 50px;
+			padding-left: 50px;
+
+
+		}
+		.container .title{
+
+			
+			padding-left: 30px;
+			
+		}
+
+		.contents{
+			border-radius:3px;
+			padding: 10px 20px;
+			left: 10px;
+			position: relative;
+			background-color: white;
+			margin: 1%;
+			transition:.1s ease-in;
+			overflow: auto;
+			border:2px solid #0080003b;
+			
+			
+		}
+		.contents:hover{
+			border:2px solid #006ae475;
+		}
+
+		.buttons_div{
+			border-radius:5px;
+			padding: 10px 20px;
+			width: 70%;
+			position: relative;
+			margin: 1%;
+			transition:.1s ease-in;
+		}
+
+		.div_divcontents{
+			display:inline-block;
+			position: relative;
+			left: -10px;
+			padding: 5px;
+			width: 100%;
+			
+			
+		}
+		.divcontents {
+
+			position: relative;
+			left: 0%;
+			padding: 8px;
+			width: 40%;
+			padding: 20px;
+
+			
+
+		}
+
+
+		.button {
+		border-radius:3px;
+		width: 93%;
+		transition:.2s ease-in;
+  		background-color: #0071c2;
+  		border: none;
+ 		color: white;
+ 		 padding: 15px 32px;
+ 		 text-align: center;
+ 		 text-decoration: none;
+ 		 
+ 		 font-size: 16px;
+ 		 margin: 0% 0%;
+ 		 cursor: pointer;
+		}
+		.button:hover{
+			background-color: #008bef;
+			
+		}
+		.button_inline {
+			display: inline-block;
+		}
+
+		.text {
+			position: relative;
+			box-sizing: border-box;
+			border: 1px solid #ccc;
+			border-radius: 2px;
+			padding: 10px 15px;
+			margin-bottom: 30px;
+			width: 400px;
+			height: 45px;
+			font-size: 15px;
+			font-family: Arial;
+			overflow: auto;
+			
+		}
+		.text:focus {
+			border: 1px solid #194073
+		}
+			
+		}
+		.phone{
+			width: 300px;
+		}
+
+
+		legend{
+    		 line-height: 28px;
+   			 font-weight: 400;
+   			 color: #333;
+   			 margin: 1% 0%;
+    		 padding-top: 0;
+   			 position: static;
+   			 font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+
+		}
+		legend.big{
+		font-size: 22px;
+		}
+		legend.md{
+			font-size: 20px;
+		}
+		legend.note{
+			margin-top: 0;
+			margin-left: 5px;
+			padding: 3px 20px;
+			font-size: 13px;
+    		color: #6b6b6b;
+    		background-color: #e6e6e6;
+    		width:100%;
+		}
+		legend.small{
+		font-size: 17px;
+		}
+
+		.lable{
+			font-size: 20px;
+			padding: 10px 10px;
+		}
+		.add_img{
+
+			background-image:url('../img/inline_icon_yes.png');
+			background-repeat:repeat-y;
+			background-position:100%;
+			background-size: 30px;
+		}
+
+		.required_text{
+			border:1px solid red;
+
+
+		}
+		
+		.alert_messages {
+			background-color: #fff0f0;
+			padding: 20px;
+			border: 1px solid #a30000;
+			border-radius:4px;
+			
+		}
+		.alert_messages ul li{
+			color: #b80000;
+			padding: 2px;
+			font-weight: 700;
+			margin-left: 30px;
+		}
+		
+		
+		.add_room_btn:hover {
+			color: black;
+		}
+
+		.float_right{
+			float: right;
+		}
+
+		.inline_block{
+			display: inline-block;
+		}
+		.label{
+			color: #333;
+			font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+
+
+
+		}
+
+
+
+		.li_style{
+
+			;padding: 14px 16px;
+			font-size: 16px;
+			margin: 0;
+			cursor: pointer;
+			position:relative;
+			border:1px solid black;
+			border-radius:2px;
+			font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+   			font-weight: 500;
+   			margin-block-start: 0.83em;
+		    margin-block-end: 0.83em;
+		    margin-inline-start: 0px;
+		    margin-inline-end: 0px;
+		    display: table;
+		    box-sizing: border-box;
+		    clear: both;
+		}
+.vl {
+  border-left: 6px solid green;
+  height: 500px;
+}
+
+
+

@@ -1,0 +1,228 @@
+Junk file
+
+
+//php code
+
+	//print_r($save_all);
+	 /* foreach ($save_all as $key => $value) {
+
+		foreach ($value as $key_2 => $all_str) { ?>
+			
+			<div class="">
+				<div id="<?php echo $all_str ?>" class="" style=";" >
+					<?php echo $all_str; ?>
+				</div>
+			</div>
+			<?php ?>
+			
+			<?php
+		}
+	}
+	*/
+
+
+
+	//explod the services_types values string to be an array
+	#echo $save['services_types']."<br>";
+	/*
+	$arr = explode(',', $save['services_types']);
+
+	foreach ($arr as $key => $str) {?>
+		<input type="checkbox" name="" value="<?php echo $str ?>"><label><?php amenities_names($save['services_types'],$key); ?></label><br>
+	<?php
+	}
+	*/
+
+
+
+///bootstrap dropdown code
+
+			<div class="dropdown">
+				<button  class="btn btn-default dropdown-toggle" type="button" id="dropdownMenue" data-toggle="dropdown">DropDown
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelled-by="dropdownMenue">
+					<li><a href="#">Sport bar</a></li>
+					<li><a href="#">Restrurant</a></li>
+					<li><a href="#">Swiming poos</a></li>
+
+				</ul>
+			</div>
+
+
+
+
+
+//Explod the string that contains the strings and make it  array to be able to use it with foreach
+		$most_requested_array = explode(',', $save_most_requested['0'])
+		//assigning the values of the most requested services by using foreach because they were printed using it too.
+		foreach ($most_requested_array as $key_index => $most_requested_string) {
+
+			if (empty($_POST[''])) {
+				# code...
+			}
+		}
+			
+
+
+
+			foreach ($m_r_arr as $key_ind => $m_r_str) {
+
+}
+
+
+
+
+
+
+
+	//Get all other amenities
+	$get_all = "SELECT services FROM amenities_options WHERE no != '$execluded_col'";
+	$query_all = mysqli_query($conn, $get_all);
+	$save_all = mysqli_fetch_all($query_all, MYSQLI_ASSOC);
+
+
+
+
+
+		//Explod the string that contains the strings and make it  array to be able to use it with foreach
+/*
+		$facilities_array = explode(',', $save_facilities['0']);
+		//assigning the values of the most requested services by using foreach because they were printed using it too.
+		foreach ($facilities_array as $key_index => $facilities_string) {
+			if (!empty($_POST[$facilities_string])) {
+				$facilities_array[$key_index ] = $facilities_array[$key_index].":".$_POST[$facilities_string];
+			}
+		}
+
+
+		#print_r($facilities_array);
+		//converting the array that has been updated to the database
+		$facilities = implode(',', $facilities_array );
+
+*/
+
+// for refreshing the page each 5 seconds
+<meta http-equiv="refresh" content="5">
+
+
+#################################################################################################################
+				#####################    Uploading image code    ################################
+
+			
+
+			if (isset($_POST["submit"])) {
+			$target_dir = "hotels/$hotel_id/photos/";
+			//Specifiess the path oft hte file to be uploaded
+			$target_file = $target_dir.basename($_FILES["file1"]["name"]);
+			//note used yet we will use it later
+			$uploadOk = "1";
+			//to hold the file extension of the file in lower case
+			$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+			//CHECK if image file is a actural image or fake image
+				$check = getimagesize($_FILES["file1"]["tmp_name"]);
+
+				if ($check !== false) {
+					//echo "File is an image -".$check["mime"].".";
+					$uploadOk = "1";
+				}
+				else{
+					echo "File is not an image.";
+					$uploadOk = "0";
+				}
+				//check if the picture name is alerady exisited or not
+				if (file_exists($target_file)) {
+					//echo "Sorry, file is already exists.";
+					$uploadOk = "0";
+				}
+				//Limit file size
+				if ($_FILES["file1"]["size"] > 50000000000) {
+					//echo "Sorry, Your file is larger then 50000000 KB!";
+					$uploadOk ="0";
+				}
+				//Limit file type fo only JPG, JPEG,PNG and GIF files
+				if ($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png" && $imageFileType != "gif") {
+					echo "Sorry only JPG, JPEG,PNG and GIF image type files are allowed!";
+					$uploadOk = "0";
+				}
+				//if everything is okay try to upload the files
+				if ($uploadOk ="0") {
+					echo "Sorry your file was not uploaded ";
+				}
+				else if($uploadOk ="1"){
+					if (move_uploaded_file($_FILES["file1"]["tmp_name"], $target_file)) {
+						$uploaded_file =basename($_FILES["file1"]["name"]);
+						//echo "The file: ".$uploaded_file." has been uploaded";
+						insertPhotoToDb($uploaded_file,$hotel_id);
+
+					}
+					else {
+						echo "Sorry there was an error uploading your file";
+					}
+				}
+
+			}
+
+
+
+
+
+				######################    End of uploading image code     ######################
+	################################################################################################################
+
+
+
+
+	#################################################################################################################
+				#####################    Functions Section    ###########################
+
+	function insertPhotoToDb($file_name,$hotel_id){
+		$addToDb = "";
+		include ('db_connect.php');
+		if ($conn->connect_error) {
+		echo "Something is wrong with connection to the database";}
+		else {
+			$select = "SELECT photos FROM photos WHERE hotel_id = $hotel_id";
+			$select_query = mysqli_query($conn,$select);
+			$fetch = mysqli_fetch_array($select_query);
+			//echo $fetch['0']."<br>";
+			$previus_data =$fetch['0'];
+			//to check the files one by one
+			$previus_data_arr =explode('***', $previus_data);
+			//if the file name is already exsist assign no to the variable $addToDb
+			foreach ($previus_data_arr as $key => $p_data_str) {
+				if ($p_data_str == $file_name) {
+					$addToDb = "no";
+				}
+			}
+			if ($addToDb != "no") {
+				$new_data = $previus_data."***".$file_name;
+				//Remove first extra ,,, from String
+				$new_data = ltrim($new_data,'***');
+				//Remove Last extra ,,, from string
+				$new_data = rtrim($new_data,'***');
+
+				$sql = "UPDATE photos SET photos = '$new_data' WHERE hotel_id = '$hotel_id'";
+				$query = mysqli_query($conn, $sql);
+				if ($query) {
+					echo "Image has been saved to the database succesfully!";
+				}
+				else {
+					echo "Image hasn't been added to the database because it's already added!";
+				}
+			}#duplicated names in database
+			
+		}#connection else
+
+	}#function
+
+
+
+
+			
+
+				######################    End of Function Section     ######################
+	################################################################################################################
+
+

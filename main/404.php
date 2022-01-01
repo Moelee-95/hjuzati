@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+        <!-- Title -->
+        <title>Error 404 | MyTravel - Responsive Website Template</title>
+        <?php include('sections/head.html'); ?>
+    </head>
+    <body>
+       <!-- ========== HEADER ========== -->
+        <?php include('sections/header.php'); ?>
+        <!-- ========== END HEADER ========== -->
+
+        <!-- ========== MAIN CONTENT ========== -->
+        <main id="content">
+            <div class="border-bottom border-color-8 mb-8">
+                <div class="container">
+                    <div class="row mb-5 mb-md-7 mb-lg-0">
+                        <div class="col-lg-5 col-xl-3dot5">
+                            <div class="space-lg-1 space-xl-3 mt-xl-2 mb-5 mb-md-7 mb-lg-0">
+                                <div class="font-weight-bold font-size-xs-160 font-size-lg-120 font-size-200 text-gray-3 text-md-center text-lg-left">404</div>
+                                <h6 class="font-size-21 font-weight-bold text-gray-3 mb-3 mt-n3 mt-xl-n5 text-center text-lg-left">Looks like you're lost</h6>
+                                <p class="text-gray-1 mb-3 mb-lg-5 pb-lg-1 text-center text-lg-left">We can’t seem to find the page you’re looking for</p>
+                                <a href="../home/index.html" class="btn btn-primary rounded-xs transition-3d-hover font-weight-bold min-width-190 min-height-60 d-inline-flex flex-content-center">Back to Home</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-xl-8dot5">
+                            <div class="space-lg-2 space-xl-3 mt-lg-5 mt-xl-7 mb-xl-4">
+                                <img class="js-svg-injector" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/404.svg" alt="Image-Description">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- ========== END MAIN CONTENT ========== -->
+
+        <!-- ========== FOOTER ========== -->
+        <?php include('sections/footer.php'); ?>
+        <!-- ========== END FOOTER ========== -->
+
+        <!-- Go to Top -->
+        <a class="js-go-to u-go-to-modern" href="#" data-position='{"bottom": 15, "right": 15 }' data-type="fixed" data-offset-top="400" data-compensation="#header" data-show-effect="slideInUp" data-hide-effect="slideOutDown">
+            <span class="flaticon-arrow u-go-to-modern__inner"></span>
+        </a>
+        <!-- End Go to Top -->
+
+        <!-- JS Global Compulsory -->
+        <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+        <script src="assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+        <script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+        <!-- JS Implementing Plugins -->
+        <script src="assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+        <script src="documentation/assets/vendor/jquery-ui/jquery-ui.core.min.js"></script>
+        <script src="documentation/assets/vendor/jquery-ui/ui/widgets/menu.js"></script>
+        <script src="documentation/assets/vendor/jquery-ui/ui/widgets/mouse.js"></script>
+        <script src="assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
+        <script src="documentation/assets/vendor/jquery-ui/ui/widgets/autocomplete.js"></script>
+        <script src="documentation/assets/vendor/prism/prism.js"></script>
+        <script src="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+        <script src="assets/vendor/flatpickr/dist/flatpickr.min.js"></script>
+
+        <!-- JS MyTravel -->
+        <script src="assets/js/hs.core.js"></script>
+        <script src="assets/js/components/hs.header.js"></script>
+        <script src="assets/js/components/hs.unfold.js"></script>
+        <script src="assets/js/components/hs.go-to.js"></script>
+        <script src="assets/js/components/hs.validation.js"></script>
+        <script src="assets/js/components/hs.show-animation.js"></script>
+        <script src="assets/js/components/hs.selectpicker.js"></script>
+        <script src="assets/js/components/hs.range-datepicker.js"></script>
+        <script src="assets/js/components/hs.svg-injector.js"></script>
+
+        <!-- JS Plugins Init. -->
+        <script>
+            $(window).on('load', function () {
+                // initialization of HSMegaMenu component
+                $('.js-mega-menu').HSMegaMenu({
+                    event: 'hover',
+                    pageContainer: $('.container'),
+                    breakpoint: 1199.98,
+                    hideTimeOut: 0
+                });
+
+                // initialization of svg injector module
+                $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+            });
+
+            $(document).on('ready', function () {
+                // initialization of header
+                $.HSCore.components.HSHeader.init($('#header'));
+
+                // initialization of unfold component
+                $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+                  afterOpen: function () {
+                    $(this).find('input[type="search"]').focus();
+                  }
+                });
+
+                // initialization of show animations
+                $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+                // initialization of go to
+                $.HSCore.components.HSGoTo.init('.js-go-to');
+
+                $.HSCore.components.HSSelectPicker.init('.js-select');
+
+                // initialization of datepicker
+                $.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
+            });
+        </script>
+    </body>
+
+</html>
