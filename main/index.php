@@ -151,13 +151,26 @@
                                                               <i class="flaticon-calendar text-primary font-weight-semi-bold"></i>
                                                             </span>
                                                         </div>
-                                                         <input required id="hotel_date" name="hotel_date" class="js-range-datepicker font-size-16 shadow-none font-weight-medium form-control  bg-transparent  border-0" type="date"
-                                                             data-rp-wrapper="#datepickerWrapperFromOne"
-                                                             data-rp-type="range"
-                                                             data-rp-date-format="Y-m-d"
-                                                             data-rp-default-date='[""]'>
+                                                         <input required id="hotel_date" name="hotel_date" 
+                                                            class=" font-size-16 shadow-none font-weight-medium form-control  bg-transparent  border-0"
+                                                            type="text" >
                                                     </div>
                                                      <!-- End Datepicker -->
+                                                     <script>
+                                                        flatpickr('#hotel_date', {
+                                                            "minDate": "today",
+                                                            "mode": "range",
+                                                            "allowInput":true,
+                                                            "onOpen": function(selectedDates, dateStr, instance) {
+                                                                $(instance.altInput).prop('readonly', true);
+                                                            },
+                                                            "onClose": function(selectedDates, dateStr, instance) {
+                                                                $(instance.altInput).prop('readonly', false);
+                                                                $(instance.altInput).blur();
+                                                            }
+
+                                                        });
+                                                    </script>
                                                 </div>
                                                 <!-- End Input -->
                                             </div>
@@ -287,7 +300,7 @@
                                                             </span>
                                                         </div>
                                                           <input id="motel_date" name="motel_date" class="js-range-datepicker font-size-16 shadow-none font-weight-medium form-control  bg-transparent  border-0" type="date"
-                                                             data-rp-wrapper="#datepickerWrapperFromOne"
+                                                             data-rp-wrapper="#datepickerWrapperFromTwo"
                                                              data-rp-type="range"
                                                              data-rp-date-format="Y-m-d"
                                                              data-rp-default-date='["2020-01-01", "2020-02-02"]'>
@@ -422,7 +435,7 @@
                                                             </span>
                                                         </div>
                                                           <input id="appartment_date" name="appartment_date" class="js-range-datepicker font-size-16 shadow-none font-weight-medium form-control  bg-transparent  border-0" type="date"
-                                                             data-rp-wrapper="#datepickerWrapperFromOne"
+                                                             data-rp-wrapper="#datepickerWrapperFromThree"
                                                              data-rp-type="range"
                                                              data-rp-date-format="Y-m-d"
                                                              data-rp-default-date='["2020-01-01", "2020-02-02"]'>
@@ -4089,7 +4102,6 @@
         <!-- JS Implementing Plugins -->
         <script src="assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
         <script src="assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
-        <script src="assets/vendor/flatpickr/dist/flatpickr.min.js"></script>
         <script src="assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
         <script src="assets/vendor/slick-carousel/slick/slick.js"></script>
 
@@ -4132,9 +4144,6 @@
                 // initialization of show animations
                 $.HSCore.components.HSShowAnimation.init('.js-animation-link');
 
-                // initialization of datepicker
-                $.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
-
                 // initialization of select
                 $.HSCore.components.HSSelectPicker.init('.js-select');
 
@@ -4147,6 +4156,9 @@
                 // initialization of go to
                 $.HSCore.components.HSGoTo.init('.js-go-to');
             });
+        </script>
+        <script>
+           
         </script>
     </body>
 

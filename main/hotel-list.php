@@ -25,7 +25,7 @@
             //getting info from search for hotel
             $city = $_GET['city'];
             $ch_in_ch_out = $_GET['hotel_date'];//both check in and check out values
-            $ch_in_ch_out = explode(" - ", $ch_in_ch_out);
+            $ch_in_ch_out = explode(" to ", $ch_in_ch_out);
             $check_in = $ch_in_ch_out[0];
             $check_out = $ch_in_ch_out[1];
             $rooms_num =$_GET['rooms_num'];
@@ -77,14 +77,15 @@
                                     <div class="pb-4 mb-2">
                                         <div class="sidebar border border-color-1 rounded-xs">
                                             <form method="get" name="search_hotel" action="">
+                                            <input type="hidden" id="type" name="type" value="hotel">
                                             <div class="p-4 mb-1">
                                                 <!-- Input -->
-                                                <span class="d-block text-gray-1  font-weight-normal mb-0 text-left">Destination or Hotel Name</span>
+                                                <span class="d-block text-gray-1  font-weight-normal mb-0 text-left">Destination</span>
                                                 <div class="mb-4">
                                                     <div class="input-group border-bottom border-width-2 border-color-1">
                                                         <i class="flaticon-pin-1 d-flex align-items-center mr-2 text-primary font-weight-semi-bold font-size-22"></i>
-                                                      <select class="js-select selectpicker dropdown-select tab-dropdown col-12 pl-0 flaticon-pin d-flex align-items-center text-primary font-weight-semi-bold" title="Select City!"
-                                                    data-style=""
+                                                      <select name="city" class="js-select selectpicker dropdown-select tab-dropdown col-12 pl-0 flaticon-pin d-flex align-items-center text-primary font-weight-semi-bold" 
+                                                      title="Select City!"
                                                     data-live-search="true"
                                                     data-searchbox-classes="input-group-sm">
                                                         <option selected style="display: none" class="border-bottom border-color-1" value="<?php echo $city; ?>" data-content='
@@ -99,19 +100,6 @@
                                                             </span>'>
                                                             Sulaymaniyah
                                                         </option>
-                                                        <option disabled class="border-bottom border-color-1" value="project2" data-content='
-                                                            <span class="d-flex align-items-center">
-                                                                <span class="font-size-16">Erbil</span>
-                                                            </span>'>
-                                                            Erbil
-                                                        </option>
-                                                        <option disabled  class="border-bottom border-color-1" value="project3" data-content='
-                                                            <span class="d-flex align-items-center">
-                                                                <span class="font-size-16">Duhok</span>
-                                                            </span>'>
-                                                            Duhok
-                                                        </option>
-                                                        
                                                     </select>
                                                     </div>
                                                 </div>
@@ -126,13 +114,28 @@
                                                                   <i class="flaticon-calendar text-primary font-weight-semi-bold"></i>
                                                                 </span>
                                                             </div>
-                                                            <input required class="js-range-datepicker font-weight-medium font-size-15 ml-1 shadow-none form-control hero-form bg-transparent border-0 flatpickr-input p-0" type="text" placeholder="July 7/2019" aria-label="July 7/2019"
-                                                            data-rp-wrapper="#datepickerWrapperPick"
-                                                            data-rp-type="range"
-                                                            data-rp-date-format="Y-m-d"
-                                                            data-rp-default-date='["<?php echo $check_in ?>", "<?php echo $check_out; ?>"]'>
+                                                            <input required id="checkInOutDate"
+                                                            name="hotel_date"
+                                                             class="font-weight-medium font-size-15 ml-1 shadow-none form-control hero-form bg-transparent border-0 flatpickr-input p-0"
+                                                             type="text"
+                                                            value='["<?php echo $check_in ?>" to "<?php echo $check_out; ?>"]'>
                                                         </div>
                                                         <!-- End Datepicker -->
+                                                        <script>
+                                                            flatpickr('#checkInOutDate', {
+                                                                "minDate": "today",
+                                                                "mode": "range",
+                                                                "allowInput":true,
+                                                                "onOpen": function(selectedDates, dateStr, instance) {
+                                                                    $(instance.altInput).prop('readonly', true);
+                                                                },
+                                                                "onClose": function(selectedDates, dateStr, instance) {
+                                                                    $(instance.altInput).prop('readonly', false);
+                                                                    $(instance.altInput).blur();
+                                                                }
+
+                                                            });
+                                                        </script>
                                                     </div>
                                                 </div>
                                                 <!-- End Input -->
@@ -168,7 +171,7 @@
                                             <a class="js-minus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
                                                                             <small class="fad fa-minus btn-icon__inner"></small>
                                                                         </a>
-                                                                        <input name="rooms" id="rooms"
+                                                                        <input name="rooms_num" id="rooms"
                                                                         onchange="showValues();"
                                                                          class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text" value="<?php echo $rooms_num ?>">
                                                                         <a class="js-plus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
@@ -1502,9 +1505,6 @@
 
                 // initialization of show animations
                 $.HSCore.components.HSShowAnimation.init('.js-animation-link');
-
-                // initialization of datepicker
-                $.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
 
                 // initialization of forms
                 $.HSCore.components.HSRangeSlider.init('.js-range-slider');
