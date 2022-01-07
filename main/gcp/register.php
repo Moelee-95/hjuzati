@@ -378,37 +378,43 @@ if(isset($_GET['error'])){
 
                     <div class="col-md-6 col-12 fxt-bg-color">
                         <div class="fxt-content">
-                            <div class="fxt-form">
+                            <div class="">
+                                <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="text-secondary"> 
+                                    <i class="fas fa-arrow-left"></i>
+                                    &nbsp;
+                                    <span class="font-weight-normal"> Back to Previous Page</span>
+                                    </a>
+                            </div>
+                            <div class="fxt-form p-4 mb-2 bg-light">
                                 <div id="fullNameAlert" style="display: none" class="alert alert-danger"></div>
                                 <div id="passAlert" style="display: none" class="alert alert-danger"></div>
                                 <div id="confPassAlert" style="display: none" class="alert alert-danger"></div>
-                        <?php
-                            if (isset($errorMsg)){ ?>
-                                    <div id="error" style="display: block" class="alert alert-danger">
-                        <?php            echo $errorMsg;  ?>
-                                    </div>
-                        <?php } else{ ?>
-                                    <div id="error" style="display: none" class="alert alert-danger"></div>
-                        <?php
-                                    }
-                        ?>
-
+                                <?php
+                                    if (isset($errorMsg)){ ?>
+                                            <div id="error" style="display: block" class="alert alert-danger">
+                                <?php            echo $errorMsg;  ?>
+                                            </div>
+                                <?php } else{ ?>
+                                            <div id="error" style="display: none" class="alert alert-danger"></div>
+                                <?php
+                                            }
+                                ?>
                                 <form id="form1" method="POST" action="register_post.php" >
                                     <input type="hidden" id="phone_number" name="phone_number"  required="required">
                                     <h3>Create an account for create and manage your bookings</h3>
 
                                     <div class="form-group" id="fullNameDiv">  
                                         <label for="fullname" class="input-label">Full Name</label>
-                                        <input id="fullname" type="text" class="form-control" name="fullname" placeholder="eg. Rebaz Mohammed Ali" required="required">
+                                        <input id="fullname" type="text" class="form-control pl-3" name="fullname" placeholder="eg. Rebaz Mohammed Ali" required="required">
                                     </div>
                                     <div class="form-group">  
                                         <label for="pass" class="input-label">Password</label>                                               
-                                        <input id="pass" type="password" class="form-control" name="password" placeholder="********" required="required">
+                                        <input id="pass" type="password" class="form-control pl-3" name="password" placeholder="********" required="required">
                                         <i toggle="#pass" class="fa fa-fw fa-eye toggle-password field-icon"></i>
                                     </div>
                                     <div class="form-group">  
                                         <label for="conf_pass" class="input-label">Confirm Password</label>                                              
-                                        <input id="conf_pass" type="password" class="form-control" name="conf_password" placeholder="********" required="required">
+                                        <input id="conf_pass" type="password" class="form-control pl-3" name="conf_password" placeholder="********" required="required">
                                         <i toggle="#conf_pass" class="fa fa-fw fa-eye toggle-password field-icon"></i>
                                     </div>
                                         

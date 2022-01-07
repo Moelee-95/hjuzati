@@ -63,6 +63,7 @@ class Guest extends db{
     public $creationDate;
     public $DOB;
     private $bookings = array();
+    public $avatarImg;
 
     public function __construct($userName, $password){
         parent::__construct(); // to run the code inside cons. to be able to access conn
@@ -173,6 +174,7 @@ class Guest extends db{
             $this->avatar = $fetch['gStatus'];
             $this->DOB = $fetch['gDOB'];
             $this->creationDate = $fetch['gCreatingDate'];
+            $this->avatarImg = $fetch['avatar'];
 
         }
         else{

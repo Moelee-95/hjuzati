@@ -143,8 +143,8 @@
                         <div class="col-xl-4 mb-4 mb-xl-0">
                             <!-- Logo -->
                             <a class="d-inline-flex align-items-center" href="index.php" aria-label="MyTravel">
-                                <img src="imgs/logo.png" style="width: 80px;height: 80px">
-                                <span class="brand brand-dark">HimaHotels</span>
+                                <!-- <img src="imgs/logo.png" style="width: 80px;height: 80px"> -->
+                                <span class="brand brand-dark">Hjuzati</span>
                             </a>
                             <!-- End Logo -->
                         </div>

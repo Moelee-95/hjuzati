@@ -122,7 +122,15 @@ if (!empty($_SESSION['login_guest'])) {
                     </div>
                 </div>
                 <div class="col-md-6 col-12 fxt-bg-color">
+                    
                     <div class="fxt-content">
+                        <div class="">
+                            <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="text-secondary"> 
+                                <i class="fas fa-arrow-left"></i>
+                                &nbsp;
+                                <span class="font-weight-normal"> Back to Previous Page</span>
+                                </a>
+                        </div>
                         <div class="fxt-form border p-4" id="div1">
                             <div class="form-group">  
                                 <label for="identifier" class="input-label">Enter Username, Phone Number, or Email Address</label>                                              

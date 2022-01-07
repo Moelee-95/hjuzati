@@ -197,6 +197,7 @@
                                                             <div class="w-100 py-2 px-3">
                                                                 <div class="js-quantity mx-3 row align-items-center justify-content-between">
                                                                     <span class="d-block font-size-16 text-secondary font-weight-medium">Child</span>
+                                                                    </br>
                                                                     <div class="d-flex">
                                                                         <a class="js-minus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
                                                                             <small class="fad fa-minus btn-icon__inner"></small>

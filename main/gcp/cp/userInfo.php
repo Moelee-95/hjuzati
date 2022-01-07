@@ -559,9 +559,9 @@
 				<div class="page-content">
 					<div class="page-bar">
 						<div class="page-title-breadcrumb">
-							<div class=" pull-left">
+							<!-- <div class=" pull-left">
 								<div class="page-title">Edit User Information</div>
-							</div>
+							</div> -->
 							<ol class="breadcrumb page-breadcrumb pull-right">
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
 										href="index.php">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
@@ -579,7 +579,7 @@
 								<div class="card-head">
 									<header>Basic Information</header>
 									<div id="formAlert" class="m-4 col-11 alert  <?php if(isset($msgc)){ echo $msgc; } ?> alert-dismissible " role="alert">
-										<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span class="text-danger" aria-hidden="true">×</span></button>
 										<?php if(isset($alertMessage)){ echo $alertMessage; } ?>
 									</div>
 									<!-- <button id="panel-button"

@@ -122,16 +122,23 @@ elseif (empty($_SESSION['login_guest'])) {
                 </div>
                 <div class="col-md-6 col-12 fxt-bg-color">
                     <div class="fxt-content">
-                        <div class="fxt-form">
+                        <div class="">
+                            <a href="../index.php" class="text-secondary"> 
+                                <i class="fas fa-arrow-left"></i>
+                                &nbsp;
+                               <span class="font-weight-normal"> Back to Previous Page</span>
+                               </a>
+                        </div>
+                        <div class="fxt-form p-4 mb-2 bg-light">
                             <div class="alert alert-danger" id="error" style="display: <?php echo $display_msg; ?>"><?php echo $msg; ?></div>
                             <form method="POST" action="">
                                 <div class="form-group">  
                                     <label for="user_n_e" class="input-label">Email Address or user name</label>                                              
-                                    <input type="text" id="user_n_e" class="form-control" name="user_n_e" placeholder="example@Hjuzati.com" required="required">
+                                    <input type="text" id="user_n_e" class="pl-3 form-control" name="user_n_e" placeholder="example@Hjuzati.com" required="required">
                                 </div>
                                 <div class="form-group">  
                                     <label for="password" class="input-label">Password</label>                                               
-                                    <input id="password" type="password" class="form-control" name="password" placeholder="********" required="required">
+                                    <input id="password" type="password" class="pl-3 form-control" name="password" placeholder="********" required="required">
                                     <i toggle="#password" class="fa fa-fw fa-eye toggle-password field-icon"></i>
                                 </div>
                                 <div class="form-group">

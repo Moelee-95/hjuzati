@@ -357,6 +357,12 @@
                                 
                             </div>
                             <div class="col" >
+                                <span class="row font-weight-bold p-1 font-size-16">Rooms</span>
+                                <a class="font-size-18 row font-weight-bold text-primary p-1" data-toggle="modal" data-target=".bd-example-modal-lg"
+                                ><?php echo $roomsNum; ?></a>
+                                
+                            </div>
+                            <div class="col" >
                                 <button class="btn btn-primary text-white" data-toggle="modal" data-target=".bd-example-modal-lg">Change Search</button>
                             </div>
                         </div>
@@ -422,7 +428,9 @@
                                                                 <a class="js-minus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
                                                                     <small class="fad fa-minus btn-icon__inner"></small>
                                                                 </a>
-                                                                <input required="required" id="roomsNum" name="roomsNum" class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text" value="1">
+                                                                <input required="required" id="roomsNum" name="roomsNum" class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center"
+                                                                 type="text" 
+                                                                value="<?php echo $roomsNum; ?>">
                                                                 <a class="js-plus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
                                                                     <small class="fad fa-plus btn-icon__inner"></small>
                                                                 </a>
@@ -436,7 +444,9 @@
                                                                 <a class="js-minus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
                                                                     <small class="fad fa-minus btn-icon__inner"></small>
                                                                 </a>
-                                                                <input required="required" id="adults" name="adults" class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text" value="1">
+                                                                <input required="required" id="adults" name="adults" 
+                                                                class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text"
+                                                                 value="<?php echo $adults; ?>">
                                                                 <a class="js-plus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
                                                                     <small class="fad fa-plus btn-icon__inner"></small>
                                                                 </a>
@@ -450,7 +460,9 @@
                                                                 <a class="js-minus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
                                                                     <small class="fad fa-minus btn-icon__inner"></small>
                                                                 </a>
-                                                                <input required="" id="child" name="child" class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text" value="1">
+                                                                <input required="" id="child" name="child" 
+                                                                class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text" 
+                                                                value="<?php echo $child; ?>">
                                                                 <a class="js-plus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
                                                                     <small class="fad fa-plus btn-icon__inner"></small>
                                                                 </a>
@@ -2070,9 +2082,7 @@
                 // initialization of show animations
                 $.HSCore.components.HSShowAnimation.init('.js-animation-link');
 
-                // initialization of datepicker
-                $.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
-
+                
                 // initialization of forms
                 $.HSCore.components.HSRangeSlider.init('.js-range-slider');
 
