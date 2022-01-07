@@ -104,7 +104,10 @@ if(isset($_SESSION['guest'])){
                     else if(isset($_SESSION['login_guest'])) { ?>
                         <div class="position-relative pl-3 language-switcher dropdown-connector-xl u-header__topbar-divider--dark">
                             <a id="languageDropdownInvoker" class="dropdown-nav-link  d-flex align-items-center ml-1 " href="javascript:;" role="button" aria-controls="languageDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#2languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
-                                <span class="d-inline-block"><?php echo $_SESSION['guestUserName']; ?><i class="glyph-icon-usd flaticon-down-arrow" ></i></span>
+                                <span class="d-inline-block">
+                                    <?php echo $_SESSION['guestUserName']; ?>
+                                    <i class="glyph-icon-usd flaticon-down-arrow" ></i>
+                                </span>
                             </a>
                             <div id="2languageDropdown" class=" dropdown-menu dropdown-unfold dropdown-menu-right mt-0 " aria-labelledby="languageDropdownInvoker">
                                 <a class="dropdown-item " href="gcp/cp/"> Dashboard</a>
@@ -116,8 +119,6 @@ if(isset($_SESSION['guest'])){
                             </div>
                         </div>
                     <?php } ?>
-
-
             <!-- ################ End of currency dropdown menue  ############### -->
 
                 </div>
@@ -127,14 +128,7 @@ if(isset($_SESSION['guest'])){
         <div id="logoAndNav" class="container-fluid py-xl-2 border-bottom-xl">
             <!-- Nav -->
             <nav class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space">
-                <!-- Logo -->
-                <a class="navbar-brand u-header__navbar-brand-default u-header__navbar-brand-center u-header__navbar-brand-text-dark-xl" href="index.php" aria-label="MyTour">
-                <!-- 
-                    <img src="imgs/logo.png" style="width: 65px;height: 65px">
-                -->
-                    <span class="u-header__navbar-brand-text">Hjuzati Hotels</span>
-                </a>
-                <!-- End Logo -->
+              
 
                 <!-- Search Form -->
 
@@ -210,23 +204,40 @@ if(isset($_SESSION['guest'])){
                 <!-- End Search Form -->
 
 
-                <!-- Responsive Toggle Button -->
-                <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white order-2 ml-3" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
-                    <span id="hamburgerTrigger" class="u-hamburger__box">
-                        <span class="u-hamburger__inner"></span>
-                    </span>
-
-                </button>
+                <div class=" order-1">
+                     <!-- Responsive Toggle Button -->
+                     <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--primary ml-3"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="navBar"
+                        data-toggle="collapse"
+                        data-target="#navBar">
+                        <span id="hamburgerTrigger" class="u-hamburger__box">
+                            <span class="u-hamburger__inner"></span>
+                        </span>
+                    </button>
+                    <!-- End Responsive Toggle Button -->
+                    <!-- Responsive Toggle Button -->
+                    <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white  ml-3"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="guestNavBar"
+                        data-toggle="collapse"
+                        data-target="#guestNavBar">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <!-- End Responsive Toggle Button -->
+                   
+                </div>
+                <div class="order-2">
+                <!-- Logo -->
+                  <a  href="index.php" aria-label="MyTour">
+                    <span class="u-header__navbar-brand-text">HJUZATI</span>
+                    </a>
+                    <!-- End Logo -->
+                </div>
                 
                 
-                <!-- End Responsive Toggle Button -->
-                <!-- Responsive Toggle Button -->
-                <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--primary order-2 ml-3" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
-                    <span id="hamburgerTrigger" class="u-hamburger__box">
-                        <span class="u-hamburger__inner"></span>
-                    </span>
-                </button>
-                <!-- End Responsive Toggle Button -->
 
                 <!-- Navigation -->
                 <div id="navBar" class="navbar-collapse u-header__navbar-collapse collapse order-2 order-xl-0 pt-4 p-xl-0 position-relative">
@@ -495,86 +506,41 @@ if(isset($_SESSION['guest'])){
                 </div>
                 <!-- End Navigation -->
 
-
-                <?php /* Cart comment
-                <!-- Shopping Cart -->
-                <div class="pl-2 pl-md-4 ml-auto shopping-cart d-none d-lg-block">
-                    <a id="shoppingCartDropdownInvoker" class="btn-text-secondary py-4 position-relative" href="javascript:;" role="button" aria-controls="shoppingCartDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#shoppingCartDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
-                        <span class="flaticon-shopping-basket font-size-25 text-primary-max-lg"></span>
-                    </a>
-
-                    <div id="shoppingCartDropdown" class="dropdown-menu dropdown-unfold dropdown-menu-right dropdown-menu-right-fix-wd-10 p-0 mt-0 w-max-sm-100 u-unfold--css-animation font-size-16" aria-labelledby="shoppingCartDropdownInvoker" style="width: 500px; animation-duration: 300ms; right: 0px;">
-                        <div class="card">
-                            <!-- Header -->
-                            <div class="card-header border-color-8 py-3 px-5">
-                                <span class="font-weight-semi-bold">Your Cart</span>
-                            </div>
-                            <!-- End Header -->
-
-                            <!-- Body -->
-                            <div class="card-body p-0">
-                                <div class="px-2 px-md-3 py-2 py-md-1 border-bottom border-color-8">
-                                    <div class="media p-2 p-md-3">
-                                        <div class="u-avatar u-lg-avatar-md mr-2 mr-md-3">
-                                            <img class="img-fluid rounded-pill" src="assets/img/80x80/img1.jpg" alt="Image Description">
-                                        </div>
-                                        <div class="media-body position-relative pl-md-1">
-                                            <div class="d-flex justify-content-between align-items-start mb-2 mb-md-3">
-                                                <span class="d-block text-dark font-weight-bold">Hyatt Centric Times  Square</span>
-                                                <button type="button" class="close close-rounded position-md-absolute right-0 ml-2" aria-label="Close">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            </div>
-                                            <span class="d-block text-gray-1">Price  £590.00 </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="px-2 px-md-3 py-2 py-md-1 border-bottom border-color-8">
-                                    <div class="media p-2 p-md-3">
-                                        <div class="u-avatar u-lg-avatar-md mr-2 mr-md-3">
-                                            <img class="img-fluid rounded-pill" src="assets/img/80x80/img2.jpg" alt="Image Description">
-                                        </div>
-                                        <div class="media-body position-relative pl-md-1">
-                                            <div class="d-flex justify-content-between align-items-start mb-2 mb-md-3">
-                                                <span class="d-block text-dark font-weight-bold">Hyatt Centric Times  Square</span>
-                                                <button type="button" class="close close-rounded position-md-absolute right-0 ml-2" aria-label="Close">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            </div>
-                                            <span class="d-block text-gray-1">Price  £590.00 </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Body -->
-
-                            <!-- Footer -->
-                            <div class="card-footer border-0 p-3 px-md-5 py-md-4">
-                                <div class="mb-4 pb-md-1">
-                                    <span class="d-block font-weight-semi-bold">Subtotal: £1180.00</span>
-                                </div>
-                                <div class="d-md-flex button-inline-group-md mb-1">
-                                    <a class="btn btn-block btn-md btn-gray-1 rounded-xs font-weight-bold transition-3d-hover" href="#">
-                                        View cart
-                                    </a>
-                                    <a class="btn btn-block btn-md btn-blue-1 rounded-xs font-weight-bold transition-3d-hover mt-md-0 ml-md-5" href="#">
-                                        Check Out
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- End Footer -->
-                        </div>
-                    </div>
-                </div>
-                                */
-                ?>
-                <!-- End Shopping Cart -->
-
-                <!-- Button -->
-                <div class="pl-4 ml-1 u-header__last-item-btn u-header__last-item-btn-xl">
-                    <a class="btn btn-wide rounded-xs btn-primary transition-3d-hover" href="../others/become-expert.php">Become Local Expert</a>
+                <!-- Guest Navigation -->
+                <div id="guestNavBar" class="pl-4 navbar-collapse u-header__navbar-collapse collapse order-2 order-xl-0 pt-4 p-xl-0 position-relative">
+                    <ul class="navbar-nav u-header__navbar-nav">
+                        <li class="nav-item u-header__nav-item p-3">
+                            <a id="homeMenu" class="nav-link u-header__nav-link u-header__nav-link-border active"
+                             href="index.php"  
+                            title="All Services">
+                            <i class="icon fad fa-home font-size-1.5"></i>
+                            &nbsp;Dashboard</a>
+                        </li>
+                        <li class="nav-item u-header__nav-item p-3">
+                            <a id="homeMenu" class="nav-link u-header__nav-link u-header__nav-link-border active"
+                             href="index.php"  
+                            title="All Services">
+                            <i class="icon far fa-suitcase font-size-1.5"></i>
+                            &nbsp;Bookings</a>
+                        </li>
+                        <li class="nav-item u-header__nav-item p-3">
+                            <a id="homeMenu" class="nav-link u-header__nav-link u-header__nav-link-border active"
+                             href="index.php"  
+                            title="All Services">
+                            <i class="icon fad fa-heart font-size-1.5"></i>
+                            &nbsp;Saved</a>
+                        </li>
+                        <li class="nav-item u-header__nav-item pl-3">
+                            <a id="homeMenu" class="nav-link u-header__nav-link u-header__nav-link-border active"
+                             href="index.php"  
+                            title="All Services">
+                            <i class="icon fad fa-sign-out-alt font-size-1.5 text-danger"></i>
+                            &nbsp;Sign out</a>
+                        </li>
+                    </ul>
                 </div>
                 <!-- End Button -->
+
             </nav>
             <!-- End Nav -->
         </div>
