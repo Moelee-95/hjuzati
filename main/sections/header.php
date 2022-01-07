@@ -17,12 +17,33 @@ if(isset($_SESSION['guest'])){
 
 ?>
 
+ <!-- Modal -->
+ <div class="modal fade" id="languageModal" tabindex="-1000" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Chose Language</h5>
+                <button type="button" onclick="$('#languageModal').modal('hide')"
+                 class="btn btn-outline-light text-dark p-2" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
 <header id="header" class="u-header u-header--dark-nav-links-xl u-header--show-hide-xl u-header--static-xl" data-header-fix-moment="500" data-header-fix-effect="slide" >
     <div class="u-header__section u-header__shadow-on-show-hide py-4 py-xl-0">
         <!-- Topbar -->
-        <div class="container-fluid u-header__hide-content u-header__topbar u-header__topbar-lg border-bottom border-color-8">
+        <div class="py-2 container-fluid u-header__hide-content u-header__topbar u-header__topbar-lg border-bottom border-color-8">
             <div class="d-flex align-items-center">
                 <ul class="list-inline list-inline-dark u-header__topbar-nav-divider--dark mb-0">
+                    <!-- Logo -->
+                    <a  href="index.php" aria-label="Hjuzati" class="u-header__navbar-brand-text">
+                        <span class="">Hjuzati</span>
+                    </a>
+                    <!-- End Logo -->
                     <span class="flaticon-call"></span>
                     <li class="list-inline-item mr-0"><a href="tel:(964) 770 - 8138928" class="u-header__navbar-link">(964) 770 - 813 -8928</a></li>
                     <!-- Email Address -->
@@ -33,7 +54,6 @@ if(isset($_SESSION['guest'])){
                                 <span class="fab fa-facebook-f btn-icon__inner"></span>
                             </a>
                         </li>
-                        
                         <li class="list-inline-item">
                             <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent transition-3d-hover" href="https://www.instagram.com/hima.hotels" target="_blank">
                                 <span class="fab fa-instagram btn-icon__inner"></span>
@@ -53,6 +73,7 @@ if(isset($_SESSION['guest'])){
                 <div class="ml-auto d-flex align-items-center">
             
 
+                
 
         <!-- #############   Start of currency dropdown menue   ############# -->
 
@@ -125,7 +146,7 @@ if(isset($_SESSION['guest'])){
             </div>
         </div>
         <!-- End Topbar -->
-        <div id="logoAndNav" class="container-fluid py-xl-2 border-bottom-xl">
+        <div id="logoAndNav" class="container-fluid py-xl-2 border-bottom-xl d-lg-none">
             <!-- Nav -->
             <nav class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space">
               
@@ -205,8 +226,8 @@ if(isset($_SESSION['guest'])){
 
 
                 <div class=" order-1">
-                     <!-- Responsive Toggle Button -->
-                     <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--primary ml-3"
+                    <!-- Responsive Toggle Button -->
+                    <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--primary ml-3"
                     aria-label="Toggle navigation"
                     aria-expanded="false"
                     aria-controls="navBar"
@@ -217,6 +238,8 @@ if(isset($_SESSION['guest'])){
                         </span>
                     </button>
                     <!-- End Responsive Toggle Button -->
+
+                    <?php if (isset($guest)) { ?>
                     <!-- Responsive Toggle Button -->
                     <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white  ml-3"
                     aria-label="Toggle navigation"
@@ -226,282 +249,39 @@ if(isset($_SESSION['guest'])){
                         data-target="#guestNavBar">
                         <i class="fas fa-user"></i>
                     </button>
+                    <?PHP } else{ ?>
+                        <a href="gcp/index.php" class="text-dark text-dark btn u-hamburger u-hamburger--white  ml-3">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    <?php } ?>
+                    
                     <!-- End Responsive Toggle Button -->
                    
                 </div>
                 <div class="order-2">
-                <!-- Logo -->
-                  <a  href="index.php" aria-label="MyTour">
-                    <span class="u-header__navbar-brand-text">HJUZATI</span>
+                    <!-- Logo -->
+                    <a  href="index.php" aria-label="Hjuzati">
+                        <span class="u-header__navbar-brand-text">HJUZATI</span>
                     </a>
                     <!-- End Logo -->
                 </div>
-                
-                
-
                 <!-- Navigation -->
                 <div id="navBar" class="navbar-collapse u-header__navbar-collapse collapse order-2 order-xl-0 pt-4 p-xl-0 position-relative">
                     <ul class="navbar-nav u-header__navbar-nav">
+                        <h4>More</h4>
                         <!-- Home -->
                         <li class="nav-item u-header__nav-item ">
-
-                            <a id="homeMenu" class="nav-link u-header__nav-link u-header__nav-link-border active" href="index.php"  title="All Services"><i class="icon fad fa-home font-size-1.5"></i>&nbsp;Home</a>
-                            <!-- #####   Temprory disabeld Home Submenu #######
-                            
-                            <ul id="homeSubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu-rounded u-header__sub-menu-bordered hs-sub-menu-right u-header__sub-menu--spacer" aria-labelledby="homeMenu" style="min-width: 230px;">
-                                <li class="active"><a class="nav-link u-header__sub-menu-nav-link" href="index.php">All Services</a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="tours.php">Tours</a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="activities.php">Activities</a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="rental.php">Rental</a></li>
-                                        </ul>
-                                        <-- End Home Submenu ->
-                                        ####  Temprory disabeld  ######## -->
-                            
+                            <a id="homeMenu" class="nav-link u-header__nav-link u-header__nav-link-border active" href="index.php"  
+                            title="All Services"><i class="icon fad fa-home font-size-1.5"></i>&nbsp;Home</a>
                         </li>
-                        <!-- End Home -->
-
-                        <!-- Hotel -->
-                        <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
-                            <a id="hotelMenu" href="index.php" class="nav-link u-header__nav-link  u-header__nav-link-border" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="hotelSubMenu">
-                                <i class="icon fad fa-bed font-size-1.5"></i>&nbsp;Hotels
-                                <!-- <i class="glyph-icon-nav flaticon-down-arrow" ></i> -->
-                            </a>
-
-                            <!-- Hotel Submenu -->
-                                    
-                            <!-- <ul id="hotelSubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu-rounded u-header__sub-menu-bordered hs-sub-menu-right u-header__sub-menu--spacer" aria-labelledby="hotelMenu" style="min-width: 230px;">
-                                <li><a class="nav-link u-header__sub-menu-nav-link" href="hotel-list.php">Sidebar</a></li>
-                                <li><a class="nav-link u-header__sub-menu-nav-link" href="hotel-single-v1.php">Hotel</a></li>
-                            </ul> -->
-
-                            <!-- End Hotel Submenu -->
+                        <li class="nav-item u-header__nav-item ">
+                            <i class="icon fad fa-globe font-size-1.5"></i>
+                            &nbsp;
+                            <span onclick="$('#languageModal').modal('show')" class="">
+                                English
+                            </span>
                         </li>
-                        <!-- End Hotel -->
-
-                        <!-- Login -->
-                        <d  iv class=" d-block d-md-none">
-                        <?php
-                            if (!isset($_SESSION['login_user']) or !isset($_SESSION['login_guest'])) { ?> 
-                            <li class="nav-item hs-has-sub-menu u-header__nav-item " data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
-                                <a id="hotelMenu" class="nav-link u-header__nav-link  u-header__nav-link-border" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="hotelSubMenu">
-                                    <i class="icon fad fa-bed font-size-1.5"></i>&nbsp;Login<i class="glyph-icon-nav flaticon-down-arrow" ></i></a>
-                                <!-- Hotel Submenu -->
-
-                                <ul id="hotelSubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu-rounded u-header__sub-menu-bordered hs-sub-menu-right u-header__sub-menu--spacer" aria-labelledby="hotelMenu" style="min-width: 230px;">
-                                    <!-- <li><a class="nav-link u-header__sub-menu-nav-link" href="hotels.php">Search</a></li> -->
-                                    <li><a class="nav-link u-header__sub-menu-nav-link" href="gcp/">Customer</a></li>
-                                    <li><a class="nav-link u-header__sub-menu-nav-link" href="cp/">hotel Owner </a></li>                                        
-                                </ul>
-                                <!-- End Hotel Login Submenu -->
-                            </li>
-                            <?php }
-                            //When guest is loged in
-                            else if(isset($_SESSION['login_guest'])){ ?> 
-                            <li class="nav-item hs-has-sub-menu u-header__nav-item " data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
-                                <a id="hotelMenu" class="nav-link u-header__nav-link  u-header__nav-link-border" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="hotelSubMenu"><i class="icon fad fa-bed font-size-1.5">
-                                </i>&nbsp;<?php echo $_SESSION['guestUserName']; ?><i class="glyph-icon-nav flaticon-down-arrow" ></i></a>
-
-                                <!-- Hotel Submenu -->
-                                        
-                                <ul id="hotelSubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu-rounded u-header__sub-menu-bordered hs-sub-menu-right u-header__sub-menu--spacer" aria-labelledby="hotelMenu" style="min-width: 230px;">
-                                    <!-- <li><a class="nav-link u-header__sub-menu-nav-link" href="hotels.php">Search</a></li> -->
-                                    <li><a class="nav-link u-header__sub-menu-nav-link" href="gcp/cp/"> Dashboard</a></li>
-                                    <hr>
-                                    <li><a class="nav-link u-header__sub-menu-nav-link" href="#"> Setting</a></li>
-                                    <li><a class="nav-link u-header__sub-menu-nav-link" href="gcp/logout.php"> Logout</a></li>                                          
-                                </ul>
-
-                                <!-- End Hotel Login Submenu -->
-                            </li>
-                            <?php  } 
-                            //When User is loged in
-                            else if (isset($_SESSION['login_user'])) { ?>
-                                <li class="nav-item hs-has-sub-menu u-header__nav-item " data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
-                                    <a id="hotelMenu" class="nav-link u-header__nav-link  u-header__nav-link-border" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="hotelSubMenu"><i class="icon fad fa-bed font-size-1.5">
-                                    </i>&nbsp;<?php echo $_SESSION['userName']; ?><i class="glyph-icon-nav flaticon-down-arrow" ></i></a>
-
-                                    <!-- Hotel Submenu -->
-                                            
-                                    <ul id="hotelSubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu-rounded u-header__sub-menu-bordered hs-sub-menu-right u-header__sub-menu--spacer" aria-labelledby="hotelMenu" style="min-width: 230px;">
-                                        <!-- <li><a class="nav-link u-header__sub-menu-nav-link" href="hotels.php">Search</a></li> -->
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="cp/register/userprofile/index.php"> Dashboard</a></li>
-                                        <hr>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="#"> Setting</a></li>
-                                        <li><a class="nav-link u-header__sub-menu-nav-link" href="cp/logout.php"> Logout</a></li>                                          
-                                    </ul>
-
-                                    <!-- End Hotel Login Submenu -->
-                                </li>
-                            <?php } ?>
-                            </div>
-
-
-
-
-
-                        
-                        <!-- End Login -->
-
-
-
-                        <?php
-                        //hide until we activate it later
-
-                            /* 
-
-                        <!-- Motel -->
-                        <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
-                            <a id="hotelMenu" class="nav-link u-header__nav-link  u-header__nav-link-border" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="hotelSubMenu"><i class="icon fad fa-hotel font-size-1.5"></i>&nbsp;Motels<i class="glyph-icon-nav flaticon-down-arrow" ></i></a>
-                            <!-- Motel Submenu -->
-                                    
-                            <ul id="hotelSubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu-rounded u-header__sub-menu-bordered hs-sub-menu-right u-header__sub-menu--spacer" aria-labelledby="hotelMenu" style="min-width: 230px;">
-                                <li><a class="nav-link u-header__sub-menu-nav-link" href="motels.php">Search</a></li>
-                                <li><a class="nav-link u-header__sub-menu-nav-link" href="hotel-list.php">Sidebar</a></li>
-                                <li><a class="nav-link u-header__sub-menu-nav-link" href="hotel-single-v1.php">Hotel Single v1</a></li>
-                                <li><a class="nav-link u-header__sub-menu-nav-link" href="hotel-booking.php">Hotel Booking</a></li>
-                                
-                                
-
-                            </ul>
-
-                            <!-- End Motel Submenu -->
-                        </li>
-                        <!-- End Motel; -->
-
-                        <!-- Appartment -->
-                        <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
-                            <a id="hotelMenu" class="nav-link u-header__nav-link  u-header__nav-link-border" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="hotelSubMenu"><i class="fad fa-building font-size-1.5"></i>&nbsp;Appartments<i class="glyph-icon-nav flaticon-down-arrow" ></i>    </a>
-                            <!-- Appartment Submenu -->
-                                    
-                            <ul id="hotelSubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu-rounded u-header__sub-menu-bordered hs-sub-menu-right u-header__sub-menu--spacer" aria-labelledby="hotelMenu" style="min-width: 230px;">
-                                    <li><a class="nav-link u-header__sub-menu-nav-link" href="appartments.php">Search</a></li>
-                                <li><a class="nav-link u-header__sub-menu-nav-link" href="hotel-list.php">Sidebar</a></li>
-                                <li><a class="nav-link u-header__sub-menu-nav-link" href="hotel-single-v1.php">Hotel Single v1</a></li>
-                                <li><a class="nav-link u-header__sub-menu-nav-link" href="hotel-booking.php">Hotel Booking</a></li>
-                                
-                                
-
-                            </ul>
-
-                            <!-- End Appartment Submenu -->
-                        </li>
-                        <!-- End Hotel -->
-                        
-                        */
-
-                        //Hide temperory 
-
-                        ?>
-
-                        <!-- Tour -->
-
-                        <!-- ###  temprory disable  
-                            ###Note I have removed ! and - from all the comming comments
-
-                        <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" data-max-width="722px" data-position="right">
-                            <a id="tourMegaMenu" class="nav-link u-header__nav-link " href="javascript:;" aria-haspopup="true" aria-expanded="false">Tour</a>
-
-                            <-- Tour - Mega Menu ->
-                            <div class="hs-mega-menu u-header__sub-menu u-header__sub-menu-rounded u-header__mega-menu-position-right-fix-10" aria-labelledby="tourMegaMenu">
-                                <div class="row">
-                                    <div class="col-12 col-xl-3dot64">
-                                        <span class="u-header__sub-menu-title">List Style</span>
-                                        <ul class="u-header__sub-menu-nav-group u-header__sub-menu-bordered mb-3">
-                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="tour-list.php">Sidebar</a></li>
-                                        </ul>
-                                        <span class="u-header__sub-menu-title">Tour Booking</span>
-                                        <ul class="u-header__sub-menu-nav-group u-header__sub-menu-bordered mb-3">
-                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="tour-booking.php">Tour Booking</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-12 col-xl-3dot64">
-                                        <span class="u-header__sub-menu-title">Single</span>
-                                        <ul class="u-header__sub-menu-nav-group u-header__sub-menu-bordered mb-3">
-                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="tour-single-v2.php">Tour Single v2</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-12 col-xl">
-                                        <-- Banner Image ->
-                                        <div class="u-header__banner u-header__banner-no-overlay rounded-xs" style="background-image: url(assets/img/240x243/img1.jpg);">
-                                            <div class="u-header__banner-content u-header__banner-content-not-centered">
-                                                <span class="u-header__banner-title">Special Offers</span>
-                                                <p class="u-header__banner-text">Find Your Perfect Hotels Get the best prices on 20,000+ properties the best  prices on</p>
-                                                <a class="btn btn-white text-blue btn-sm rounded-xs transition-3d-hover" href="#">See Deals</a>
-                                            </div>
-                                        </div>
-                                        <-- End Banner Image ->
-                                    </div>
-                                </div>
-                            </div>
-                            <-- End Tour - Mega Menu ->
-                        </li>
-                        <-- End Tour ->
-
-                        <-- Activity ->
-                        <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
-                            <a id="ActivityMenu" class="nav-link u-header__nav-link  u-header__nav-link-border" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="ActivitySubMenu">Activity</a>
-                            <-- Activity Submenu ->
-                            <ul id="ActivitySubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu-rounded u-header__sub-menu-bordered hs-sub-menu-right u-header__sub-menu--spacer" aria-labelledby="ActivityMenu" style="min-width: 230px;">
-                                <li><a class="nav-link u-header__sub-menu-nav-link" href="activities-fullwidth.php">Full Width</a></li>
-                                <li><a class="nav-link u-header__sub-menu-nav-link" href="activities-single-v2.php">Activity Single v2</a></li>
-                                <li><a class="nav-link u-header__sub-menu-nav-link" href="activities-booking.php">Activity Booking</a></li>
-                            </ul>
-                            <-- End Activity Submenu ->
-                        </li>
-                        <-- End Activity ->
-
-                        <-- Rental ->
-                        <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
-                            <a id="rentalMenu" class="nav-link u-header__nav-link  u-header__nav-link-border" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="rentalSubMenu">Rental</a>
-                            <-- Rental Submenu ->
-                            <ul id="rentalSubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu-rounded u-header__sub-menu-bordered hs-sub-menu-right u-header__sub-menu--spacer" aria-labelledby="rentalMenu" style="min-width: 230px;">
-                                <li><a class="nav-link u-header__sub-menu-nav-link" href="rental-list-02.php">List With Map</a></li>
-                                <li><a class="nav-link u-header__sub-menu-nav-link" href="rental-single-v2.php">Rental Single v2</a></li>
-                                <li><a class="nav-link u-header__sub-menu-nav-link" href="rental-booking.php">Rental Booking</a></li>
-                            </ul>
-                            <-- End Rental Submenu ->
-                        </li>
-                        <-- End Rental ->
-                        @by Hjuzati Hotels Co. 
-                        @auther Mohammed S. Hazim
-                        ## End the disable comment
-                        ## Don't forget to add ! to the begining of each above comments and - to it's end to enable them again
-                                -->
-
-                        
-
-                        <!-- Pages -->
-                        <?php /* 
-                        <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" data-max-width="722px" data-position="right">
-                            <!-- <a id="pagesMegaMenu" class="nav-link u-header__nav-link " href="javascript:;" aria-haspopup="true" aria-expanded="false">Pages<i class="glyph-icon-nav flaticon-down-arrow" ></i></a> -->
-                            <!-- Pages - Mega Menu -->
-                            <div class="hs-mega-menu u-header__sub-menu u-header__sub-menu-rounded" aria-labelledby="pagesMegaMenu">
-                                <div class="row">
-                                    <div class="col-12 col-xl-4">
-                                        <ul class="u-header__sub-menu-nav-group u-header__sub-menu-bordered mb-3">
-                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="destination.php">Destination</a></li>
-                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="about.php">About us</a></li>
-                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="contact.php">Contact</a></li>
-                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="terms-conditions.php">Terms of Use</a></li>
-                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="faq.php">FAQs</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-12 col-xl-4">
-                                        <ul class="u-header__sub-menu-nav-group u-header__sub-menu-bordered mb-3">
-                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="blog-list.php">Blog</a></li>
-                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="blog-single.php">Blog Single</a></li>
-                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="become-expert.php">Become Expert</a></li>
-                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="404.php">404</a></li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- End Pages - Mega Menu -->
-                        </li>
-                        */ ?>
-                        <!-- End Pages -->
-                        
+                        <!-- End Home -->    
                     </ul>
                 </div>
                 <!-- End Navigation -->
@@ -509,37 +289,63 @@ if(isset($_SESSION['guest'])){
                 <!-- Guest Navigation -->
                 <div id="guestNavBar" class="pl-4 navbar-collapse u-header__navbar-collapse collapse order-2 order-xl-0 pt-4 p-xl-0 position-relative">
                     <ul class="navbar-nav u-header__navbar-nav">
-                        <li class="nav-item u-header__nav-item p-3">
+                        <li class="nav-item u-header__nav-item p-2">
+                            <div class="row">
+                                <div class="col col-2">
+                                    <?php if (!empty($guest->avatarImg)) { ?>
+                                        <img src="<?php echo $guest->avatarImg; ?>"
+                                         class="rounded-circle" alt="Cinque Terre" width="40" height="40"> 
+                                    <?php } else{ ?>
+                                        <i class="icon fad fa-user font-size-4"></i>
+                                    <?php } ?>
+                                   
+                                </div>
+                                <div class="col col-10">
+                                    <div><?php echo $guest->fullName; ?></div>
+                                    <div class="w-100"></div>
+                                    <div>@<?php echo $guest->userName; ?></div>
+                                </div>
+                            </div>
+                            <hr>
+                        </li>
+                        <li class="nav-item u-header__nav-item p-2">
                             <a id="homeMenu" class="nav-link u-header__nav-link u-header__nav-link-border active"
                              href="index.php"  
                             title="All Services">
-                            <i class="icon fad fa-home font-size-1.5"></i>
-                            &nbsp;Dashboard</a>
+                                <i class="icon fad fa-user font-size-1.5"></i>
+                                <span class="pl-3"> Profile</span>
+                            </a>
                         </li>
-                        <li class="nav-item u-header__nav-item p-3">
+                        <li class="nav-item u-header__nav-item p-2">
                             <a id="homeMenu" class="nav-link u-header__nav-link u-header__nav-link-border active"
                              href="index.php"  
                             title="All Services">
                             <i class="icon far fa-suitcase font-size-1.5"></i>
-                            &nbsp;Bookings</a>
+                            <span class="pl-3"> Bookings</span>
+                            </a>
                         </li>
-                        <li class="nav-item u-header__nav-item p-3">
+                        <li class="nav-item u-header__nav-item p-2">
                             <a id="homeMenu" class="nav-link u-header__nav-link u-header__nav-link-border active"
                              href="index.php"  
                             title="All Services">
                             <i class="icon fad fa-heart font-size-1.5"></i>
-                            &nbsp;Saved</a>
+                            <span class="pl-3"> Saved</span>
+                            </a>
                         </li>
-                        <li class="nav-item u-header__nav-item pl-3">
+                        <li class="nav-item u-header__nav-item p-2">
                             <a id="homeMenu" class="nav-link u-header__nav-link u-header__nav-link-border active"
                              href="index.php"  
                             title="All Services">
                             <i class="icon fad fa-sign-out-alt font-size-1.5 text-danger"></i>
-                            &nbsp;Sign out</a>
+                            <span class="pl-3"> Sign out</span>
+
+                            </a>
                         </li>
                     </ul>
                 </div>
                 <!-- End Button -->
+
+               
 
             </nav>
             <!-- End Nav -->
