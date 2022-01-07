@@ -27,7 +27,7 @@ if(isset($_SESSION['guest'])){
                     <li class="list-inline-item mr-0"><a href="tel:(964) 770 - 8138928" class="u-header__navbar-link">(964) 770 - 813 -8928</a></li>
                     <!-- Email Address -->
                     <!-- <span class="flaticon-email"></span>
-                    <li class="list-inline-item mr-0"><a href="mailto:info@hjuzati.com" class="u-header__navbar-link">info@himaHotels.com</a></li> -->
+                    <li class="list-inline-item mr-0"><a href="mailto:info@hjuzati.com" class="u-header__navbar-link">info@hjuzati.com</a></li> -->
                         <li class="list-inline-item">
                             <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent transition-3d-hover" href="https://www.facebook.com/HIMA.hotels" target="_blank">
                                 <span class="fab fa-facebook-f btn-icon__inner"></span>
