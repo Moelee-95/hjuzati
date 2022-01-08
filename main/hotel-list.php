@@ -54,8 +54,16 @@
                 $sql = "SELECT hp.hpPath FROM hotels h JOIN hotelsphotos hp ON h.hMainPhotoID = hp.hpID WHERE h.hHotelID = '$hotel_id'";
                 $qur = mysqli_query($conn, $sql);
                 $fetchPhoto = mysqli_fetch_array($qur);
-                $acturalPath = "cp/".substr($fetchPhoto['hpPath'], 3);
-                return($acturalPath);
+                if(!empty(substr($fetchPhoto['hpPath'], 3))){
+                    $acturalPath = "cp/".substr($fetchPhoto['hpPath'], 3);
+                    return($acturalPath);
+                }
+                else{
+                    $acturalPath = "assets/img/default_img.jpg";
+                    return($acturalPath);
+                }
+                
+                
             }
             
 
@@ -836,7 +844,7 @@
                                         </div>
                                         <!-- End On Target Modal -->
                                     </div>
-
+                                                                    
                                     <div class="sidenav border border-color-8 rounded-xs">
                                         <!-- Accordiaon -->
                                         <div id="RatingAccordion" class="accordion rounded shadow-none border-bottom">
@@ -963,7 +971,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Extra Options for later -->
+                                        
 
                                         <?php 
                                         //Temp disable

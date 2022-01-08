@@ -17,13 +17,28 @@ if(isset($_SESSION['guest'])){
 
 ?>
 
- <!-- Modal -->
- <div class="modal fade" id="languageModal" tabindex="-1000" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <!-- Language Modal -->
+ <div class="modal fade" id="languageModal" tabindex="-1000" aria-labelledby="languageModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Chose Language</h5>
+                <h5 class="modal-title" id="languageModalLabel">Chose Language</h5>
                 <button type="button" onclick="$('#languageModal').modal('hide')"
+                 class="btn btn-outline-light text-dark p-2" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- Currency Modal -->
+ <div class="modal fade" id="currencyModal" tabindex="-1000" aria-labelledby="currencyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="currencyModalLabel">Select Currency</h5>
+                <button type="button" onclick="$('#currencyModal').modal('hide')"
                  class="btn btn-outline-light text-dark p-2" aria-label="Close">X</button>
             </div>
             <div class="modal-body">
@@ -270,11 +285,14 @@ if(isset($_SESSION['guest'])){
                     <ul class="navbar-nav u-header__navbar-nav">
                         <h4>More</h4>
                         <!-- Home -->
-                        <li class="nav-item u-header__nav-item ">
-                            <a id="homeMenu" class="nav-link u-header__nav-link u-header__nav-link-border active" href="index.php"  
-                            title="All Services"><i class="icon fad fa-home font-size-1.5"></i>&nbsp;Home</a>
+                        <li class="nav-item u-header__nav-item p-2">
+                            <i class="icon fad fa-dollar-sign font-size-1.5"></i>
+                            &nbsp;
+                            <span onclick="$('#currencyModal').modal('show')" class="">
+                                USD
+                            </span>
                         </li>
-                        <li class="nav-item u-header__nav-item ">
+                        <li class="nav-item u-header__nav-item p-2">
                             <i class="icon fad fa-globe font-size-1.5"></i>
                             &nbsp;
                             <span onclick="$('#languageModal').modal('show')" class="">
