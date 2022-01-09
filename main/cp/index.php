@@ -3,8 +3,15 @@
 session_start();
 $display_msg = "none";
 include('db/db_connect.php');
-if (!empty($_SESSION['login_user'])) {
-    header('location:register/userprofile/index.php');
+if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_COOKIE['userPassword'])) {
+    if (isset($_SESSION['login_user'])) {
+        header("location:cp/index.php");
+    }
+    else{
+        $_SESSION['login_user'] = $_COOKIE['login_user'];
+        $_SESSION['userName'] = $_COOKIE['userName'];
+        header("location:cp/index.php");
+    }
 }
 elseif (empty($_SESSION['login_user'])) {
   if (isset($_POST['submit'])) {
@@ -29,7 +36,21 @@ elseif (empty($_SESSION['login_user'])) {
         unset($_SESSION['guest_user']);
         $_SESSION['login_user'] = $user_id;//Represents the user ID
         $_SESSION['userName'] = $db_user_name; // Represents the user Name
-            header("location:register/userprofile/");
+
+         // Store cookies for 30 days when remember me is clicked
+         if (isset($_POST['remember'])) {
+            setcookie('login_user',$user_id, time()+60*60*30, "/");
+            setcookie('userName',$db_user_name, time()+60*60*30, "/");
+            setcookie('userPassword',$password, time()+60*60*30, "/");
+        }else{
+        //Store in cookies for 7 days
+            setcookie('login_user',$user_id, time()+60*60*7, "/");
+            setcookie('userName',$db_user_name, time()+60*60*7, "/");
+            setcookie('userPassword',$password, time()+60*60*7, "/");
+        }
+        
+        header("location:register/userprofile/");
+
         }
         else{
         $msg = "Incorrect Password for [ $user_n_e ]";
@@ -112,16 +133,23 @@ elseif (empty($_SESSION['login_user'])) {
                 </div>
                 <div class="col-md-6 col-12 fxt-bg-color">
                     <div class="fxt-content">
-                        <div class="fxt-form">
+                        <div class="">
+                            <a href="../index.php" class="text-secondary"> 
+                                <i class="fas fa-arrow-left"></i>
+                                &nbsp;
+                               <span class="font-weight-normal"> Back to Previous Page</span>
+                               </a>
+                        </div>
+                        <div class="fxt-form p-4 mb-2 bg-light">
                             <div class="alert alert-danger" id="error" style="display: <?php echo $display_msg; ?>"><?php echo $msg; ?></div>
                             <form method="POST" action="">
                                 <div class="form-group">  
                                     <label for="user_n_e" class="input-label">Email Address or user name</label>                                              
-                                    <input type="text" id="user_n_e" class="form-control" name="user_n_e" placeholder="hima@gmail.com" required="required">
+                                    <input type="text" id="user_n_e" class="pl-3 form-control" name="user_n_e" placeholder="hima@gmail.com" required="required">
                                 </div>
                                 <div class="form-group">  
                                     <label for="password" class="input-label">Password</label>                                               
-                                    <input id="password" type="password" class="form-control" name="password" placeholder="********" required="required">
+                                    <input id="password" type="password" class="pl-3 form-control" name="password" placeholder="********" required="required">
                                     <i toggle="#password" class="fa fa-fw fa-eye toggle-password field-icon"></i>
                                 </div>
                                 <div class="form-group">

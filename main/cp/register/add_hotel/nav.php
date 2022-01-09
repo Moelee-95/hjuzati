@@ -1,30 +1,44 @@
 <?php
 
-	$actual_link = basename($_SERVER['PHP_SELF']);
-	if ($actual_link == "profile.php") {
-		$active_profile = "active";
-	}
+if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_COOKIE['userPassword'])) {
+    if (isset($_SESSION['login_user'])) {
+		//pass
+    }
+    else{
+        $_SESSION['login_user'] = $_COOKIE['login_user'];
+        $_SESSION['userName'] = $_COOKIE['userName'];
+    }
+}
+elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
+	header("Location:../logout.php");
+	exit();
+  }
+
+$actual_link = basename($_SERVER['PHP_SELF']);
+if ($actual_link == "profile.php") {
+	$active_profile = "active";
+}
 /*	if ($actual_link == "layout_pricing.php") {
-		$active_layout = "active";
-	}*/
-	// if ($actual_link == "facilities.php") {
-	// 	$active_facilities = "active";
-	// }
-	// if ($actual_link == "amenities.php") {
-	// 	$active_amenities = "active";
-	// }
-	if ($actual_link == "photos.php") {
-		$active_photos = "active";
-	}
-	if ($actual_link == "policies.php") {
-		$active_policies = "active";
-	}
-	if ($actual_link == "payment.php") {
-		$active_payment = "active";
-	}
-	if ($actual_link == "agreement.php") {
-		$active_agreement = "active";
-	}
+	$active_layout = "active";
+}*/
+// if ($actual_link == "facilities.php") {
+// 	$active_facilities = "active";
+// }
+// if ($actual_link == "amenities.php") {
+// 	$active_amenities = "active";
+// }
+if ($actual_link == "photos.php") {
+	$active_photos = "active";
+}
+if ($actual_link == "policies.php") {
+	$active_policies = "active";
+}
+if ($actual_link == "payment.php") {
+	$active_payment = "active";
+}
+if ($actual_link == "agreement.php") {
+	$active_agreement = "active";
+}
  ?>
 
 

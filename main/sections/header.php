@@ -7,8 +7,15 @@ require('gcp/cp/classes/guest.php');
 require('services/booking.php');
 require('services/cities.php');
 
-if(isset($_SESSION['login_user'])){
-    $user_id =  $_SESSION['login_user'];
+if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_COOKIE['userPassword'])) {
+    if (isset($_SESSION['login_user'])) {
+      $user_id =  $_SESSION['login_user'];
+    }
+    else{
+        $_SESSION['login_user'] = $_COOKIE['login_user'];
+        $_SESSION['userName'] = $_COOKIE['userName'];
+        $user_id =  $_SESSION['login_user'];
+    }
 }
 
 if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isset($_COOKIE['guestPassword'])) {//when cookies are setted vut sessions are not setted

@@ -7,21 +7,18 @@ require ('cp/classes/guest.php');
 include('../cp/db/db_connect.php');
 
 
-
-
 if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isset($_COOKIE['guestPassword'])) {
     if (isset($_SESSION['login_guest'])) {
         header("location:cp/index.php");
     }
     else{
-        $_SESSION['login_guest'] = $_COOKIE['login_guest']; 
+        $_SESSION['login_guest'] = $_COOKIE['login_guest'];
         $_SESSION['guestUserName'] = $_COOKIE['guestUserName'];
         $_SESSION['guest'] = serialize(new Guest($_COOKIE['guestUserName'],$_COOKIE['guestPassword'])); // create guest object
         header("location:cp/index.php");
     }
-  
 }
-elseif (empty($_SESSION['login_guest'])) {
+elseif (empty($_SESSION['login_guest']) and empty($_COOKIE['login_guest'])) {
   if (isset($_POST['submit'])) {
     $user_n_e = strtolower(htmlspecialchars($_POST['user_n_e']));
     $password = strtolower(htmlspecialchars($_POST['password']));
@@ -51,13 +48,14 @@ elseif (empty($_SESSION['login_guest'])) {
         $_SESSION['login_guest'] = $guest_id;  // Represents the guest Id
         $_SESSION['guestUserName'] = $db_user_name; // Represents the user Name
         $_SESSION['guest'] = serialize(new Guest($db_user_name,$password));
-        //store in cookies for 7 days
         
+        // Store cookies for 30 days when remember me is clicked
         if (isset($_POST['remember'])) {
             setcookie('login_guest',$guest_id, time()+60*60*30, "/");
             setcookie('guestUserName',$db_user_name, time()+60*60*30, "/");
             setcookie('guestPassword',$password, time()+60*60*30, "/");
         }else{
+        //Store in cookies for 7 days
             setcookie('login_guest',$guest_id, time()+60*60*7, "/");
             setcookie('guestUserName',$db_user_name, time()+60*60*7, "/");
             setcookie('guestPassword',$password, time()+60*60*7, "/");

@@ -42,9 +42,12 @@ elseif (empty($_SESSION['login_user'])) {
             $user_id = $fetchit[0];
 
             if ($conn->query($sql) or $user_id > 0) {
-                
                 $_SESSION['login_user'] = $user_id;
                 $_SESSION['userName'] = $user_name; // Represents the user Name
+                //Store in cookies for 7 days
+                setcookie('login_user',$user_id, time()+60*60*7, "/");
+                setcookie('userName',$user_name, time()+60*60*7, "/");
+                setcookie('userPassword',$password, time()+60*60*7, "/");
 
                 //Create User folder
                 mkdir("users/$user_id",0777,true);

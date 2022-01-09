@@ -1,6 +1,20 @@
+<?php
+
+if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_COOKIE['userPassword'])) {
+    if (isset($_SESSION['login_user'])) {
+        header("location:cp/index.php");
+    }
+    else{
+        $_SESSION['login_user'] = $_COOKIE['login_user'];
+        $_SESSION['userName'] = $_COOKIE['userName'];
+        header("location:cp/index.php");
+    }
+}
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
-
 
 <head>
     <meta charset="utf-8">
