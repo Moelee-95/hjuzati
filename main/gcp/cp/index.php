@@ -49,12 +49,9 @@
 				<div class="page-content">
 					<div class="page-bar">
 						<div class="page-title-breadcrumb">
-							<div class=" pull-left">
-								<div class="page-title">Dashboard</div>
-							</div>
-							<ol class="breadcrumb page-breadcrumb pull-right">
+							<ol class="breadcrumb page-breadcrumb pull-left">
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-										href="index.php">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+										href="../../index.php">Hjuzati</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
 								<li class="active">Dashboard</li>
 							</ol>
@@ -335,14 +332,14 @@
  								</div>
  								<div class="card-body">
  									<div class="table-warp">
- 										<div class="row">
-	 										<div class="col">
-		 										<a href="view_booking.php" type="button" class="btn btn-outline-success btn-lg">
+ 										<div class="row justify-content-md-center">
+	 										<center class="col">
+		 										<a href="view_booking.php" type="button" class="btn btn-outline-success btn-lg mt-4">
 		 										 <img src = "img/calender.svg" alt="Calender" width="100" height="100" />
 		 										</br>
 		 										 <b style="font-size: 15px">My Bookings</b>
 		 										</a>
-		 									</div>
+		 									</center>
 
 		 									<!-- <div class="col">
 		 										<a href="all_bookings.php" type="button" class="btn btn-outline-success btn-lg">
@@ -351,22 +348,30 @@
 		 										 <b style="font-size: 15px">View all Bookings</b>
 		 										</a>
 		 									</div> -->
-		 									<div class="col">
-		 										<a href="../../index.php" type="button" class="btn btn-outline-success btn-lg">
+		 									<center class="col">
+		 										<a href="../../index.php" type="button" class="btn btn-outline-success btn-lg mt-4">
 		 										 <img src = "img/addroom.svg" alt="Add Room" width="100" height="100" />
 		 										</br>
 		 										 <b style="font-size: 15px"> New Booking</b>
 		 										</a>
-		 									</div>
-		 									<div class="col">
-		 										<a href="paymentMethod.php" type="button" class="btn btn-outline-success btn-lg">
+		 									</center>
+		 									<center class="col">
+		 										<a href="paymentMethod.php" type="button" class="btn btn-outline-success btn-lg pt-5 px-3 mt-4">
 		 										 <!-- <img src = "img/hotelpic.svg" alt="Add Room" width="100" height="100" /> -->
-												  <i class="material-icons">payment</i>
+												  <i class="far fa-credit-card h1 text-dark pb-5"></i>
+
 		 										</br>
 		 										 <b style="font-size: 15px">Payment Method</b>
 		 										</a>
-		 									</div>
-		 										
+		 									</center>
+		 									<center class="col">
+		 										<a href="paymentMethod.php" type="button" class="btn btn-outline-success btn-lg pt-5 px-5 mt-4">
+		 										 <!-- <img src = "img/hotelpic.svg" alt="Add Room" width="100" height="100" /> -->
+												  <i class="far fa-heart h1 text-dark pb-5"></i>
+		 										</br>
+		 										 <b style="font-size: 15px pb-0">Favirots</b>
+		 										</a>
+		 									</center>
 	 									</div>
  										<hr>
  										

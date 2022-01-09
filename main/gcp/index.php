@@ -4,11 +4,22 @@ session_start();
 $display_msg = "none";
 require ('../../db.php');
 require ('cp/classes/guest.php');
-
 include('../cp/db/db_connect.php');
 
-if (!empty($_SESSION['login_guest'])) {
-     header("location:cp/index.php");
+
+
+
+if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isset($_COOKIE['guestPassword'])) {
+    if (isset($_SESSION['login_guest'])) {
+        header("location:cp/index.php");
+    }
+    else{
+        $_SESSION['login_guest'] = $_COOKIE['login_guest']; 
+        $_SESSION['guestUserName'] = $_COOKIE['guestUserName'];
+        $_SESSION['guest'] = serialize(new Guest($_COOKIE['guestUserName'],$_COOKIE['guestPassword'])); // create guest object
+        header("location:cp/index.php");
+    }
+  
 }
 elseif (empty($_SESSION['login_guest'])) {
   if (isset($_POST['submit'])) {
@@ -39,7 +50,21 @@ elseif (empty($_SESSION['login_guest'])) {
         unset($_SESSION['login_user']);
         $_SESSION['login_guest'] = $guest_id;  // Represents the guest Id
         $_SESSION['guestUserName'] = $db_user_name; // Represents the user Name
-             header("location:cp/index.php");
+        $_SESSION['guest'] = serialize(new Guest($db_user_name,$password));
+        //store in cookies for 7 days
+        
+        if (isset($_POST['remember'])) {
+            setcookie('login_guest',$guest_id, time()+60*60*30, "/");
+            setcookie('guestUserName',$db_user_name, time()+60*60*30, "/");
+            setcookie('guestPassword',$password, time()+60*60*30, "/");
+        }else{
+            setcookie('login_guest',$guest_id, time()+60*60*7, "/");
+            setcookie('guestUserName',$db_user_name, time()+60*60*7, "/");
+            setcookie('guestPassword',$password, time()+60*60*7, "/");
+        }
+        //Redirect user to cp
+        header("location:cp/index.php");
+        
         }
         else{
         $msg = "Incorrect Password for [ $user_n_e ]";
@@ -144,7 +169,7 @@ elseif (empty($_SESSION['login_guest'])) {
                                 <div class="form-group">
                                     <div class="fxt-checkbox-area">
                                         <div class="checkbox">
-                                            <input id="checkbox1" type="checkbox">
+                                            <input id="checkbox1" name="remember" type="checkbox">
                                             <label for="checkbox1">Keep me logged in</label>
                                         </div>
                                         <a href="forgot-password.php" class="switcher-text" onclick="">Forgot Password</a>

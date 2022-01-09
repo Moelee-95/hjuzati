@@ -847,6 +847,7 @@
                                                                     
                                     <div class="sidenav border border-color-8 rounded-xs">
                                         <!-- Accordiaon -->
+                                        <?php /*
                                         <div id="RatingAccordion" class="accordion rounded shadow-none border-bottom">
                                            <div class="card-collapse" id="shopRatingHeadingOne">
                                                 <h3 class="mb-0">
@@ -928,6 +929,9 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        */ ?>
+
+                                        <?php /*
                                         <div id="shopCartAccordion" class="accordion rounded shadow-none">
                                             <div class="border-0">
                                                 <div class="card-collapse" id="shopCardHeadingOne">
@@ -971,6 +975,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        */ ?>
                                         
 
                                         <?php 

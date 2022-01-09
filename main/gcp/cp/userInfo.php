@@ -562,13 +562,13 @@
 							<!-- <div class=" pull-left">
 								<div class="page-title">Edit User Information</div>
 							</div> -->
-							<ol class="breadcrumb page-breadcrumb pull-right">
+							<ol class="breadcrumb page-breadcrumb pull-left">
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-										href="index.php">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+										href="index.php">Hjuzati</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
 								<li><a class="parent-item" href="#">User</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
-								<li class="active">Edit User Details</li>
+								<li class="active">Basic Information </li>
 							</ol>
 							
 						</div>

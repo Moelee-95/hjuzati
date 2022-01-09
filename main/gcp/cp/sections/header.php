@@ -3,22 +3,29 @@ session_start();
 
 
 
-//To prevent loging out when browsing the cp
-if (!isset($_SESSION['login_guest'])) {
-	header("Location: ../index.php");
-}
-else {
-	$guest_id = $_SESSION['login_guest']; 
-	$guest_userName = $_SESSION['guestUserName'];
+if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isset($_COOKIE['guestPassword'])) {//when cookies are setted vut sessions are not setted
 	include('../db/db_connect.php');
 	require ('../../../db.php'); // DB class
 	require('classes/guest.php'); // guest class
-	$guest = unserialize($_SESSION['guest']);
+	
+	if (isset($_SESSION['login_guest'])) { // when guest is logged in with session
+		$guest = unserialize($_SESSION['guest']);
+		$guestFName = $guest->fullName;
+	}
+	elseif (!isset($_SESSION['login_guest'])){	//When guest is logged in only by coockies, setup the php sessions
+		$_SESSION['login_guest'] = $_COOKIE['login_guest']; 
+		$_SESSION['guestUserName'] = $_COOKIE['guestUserName'];
+		$_SESSION['guest'] = serialize(new Guest($_COOKIE['guestUserName'],$_COOKIE['guestPassword'])); // create guest object
+		$guest = unserialize($_SESSION['guest']);
+		$guestFName = $guest->fullName;
+	}
+}
 
-	$guestFName = $guest->fullName;
-
-
-
+//To prevent loging out when browsing the cp, when both cookies and sessions are not setted
+elseif (!isset($_SESSION['login_guest']) && !isset($_COOKIE['login_guest'])) {
+	header("Location: ../index.php");
+	echo "not logged in";
+	exit();
 }
 
 ?>

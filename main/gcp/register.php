@@ -1,11 +1,17 @@
 <?php
-
 session_start();
+include('../cp/db/db_connect.php');
+require '../../db.php';
+require 'cp/classes/guest.php';
 
-if (!empty($_SESSION['login_guest'])) {
+if (isset($_COOKIE['login_guest'])) {
+    $_SESSION['login_guest'] = $_COOKIE['login_guest']; 
+    $_SESSION['guestUserName'] = $_COOKIE['guestUserName'];
+    $_SESSION['guest'] = serialize(new Guest($_COOKIE['guestUserName'],$_COOKIE['guestPassword'])); // create guest object
     header("location:cp/index.php");
 }
 
+//storing returned error when registration fail 
 if(isset($_GET['error'])){
     if($_GET['error'] == '1'){
         $errorMsg = $_GET['message'];

@@ -11,9 +11,18 @@ if(isset($_SESSION['login_user'])){
     $user_id =  $_SESSION['login_user'];
 }
 
-if(isset($_SESSION['guest'])){
-    $guest = unserialize($_SESSION['guest']);
+if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isset($_COOKIE['guestPassword'])) {//when cookies are setted vut sessions are not setted
+	if (isset($_SESSION['login_guest'])) { // when guest is logged in with session
+		$guest = unserialize($_SESSION['guest']);
+	}
+	elseif (!isset($_SESSION['login_guest'])){	//When guest is logged in only by coockies, setup the php sessions
+		$_SESSION['login_guest'] = $_COOKIE['login_guest']; 
+		$_SESSION['guestUserName'] = $_COOKIE['guestUserName'];
+		$_SESSION['guest'] = serialize(new Guest($_COOKIE['guestUserName'],$_COOKIE['guestPassword'])); // create guest object
+		$guest = unserialize($_SESSION['guest']);
+	}
 }
+
 
 ?>
 
@@ -328,7 +337,7 @@ if(isset($_SESSION['guest'])){
                         </li>
                         <li class="nav-item u-header__nav-item p-2">
                             <a id="homeMenu" class="nav-link u-header__nav-link u-header__nav-link-border active"
-                             href="index.php"  
+                             href="gcp/cp/index.php"  
                             title="All Services">
                                 <i class="icon fad fa-user font-size-1.5"></i>
                                 <span class="pl-3"> Profile</span>
@@ -336,7 +345,7 @@ if(isset($_SESSION['guest'])){
                         </li>
                         <li class="nav-item u-header__nav-item p-2">
                             <a id="homeMenu" class="nav-link u-header__nav-link u-header__nav-link-border active"
-                             href="index.php"  
+                             href="gcp/cp/view_booking.php"  
                             title="All Services">
                             <i class="icon far fa-suitcase font-size-1.5"></i>
                             <span class="pl-3"> Bookings</span>
@@ -344,7 +353,7 @@ if(isset($_SESSION['guest'])){
                         </li>
                         <li class="nav-item u-header__nav-item p-2">
                             <a id="homeMenu" class="nav-link u-header__nav-link u-header__nav-link-border active"
-                             href="index.php"  
+                             href="gcp/cp/favirot.php"  
                             title="All Services">
                             <i class="icon fad fa-heart font-size-1.5"></i>
                             <span class="pl-3"> Saved</span>
@@ -352,7 +361,7 @@ if(isset($_SESSION['guest'])){
                         </li>
                         <li class="nav-item u-header__nav-item p-2">
                             <a id="homeMenu" class="nav-link u-header__nav-link u-header__nav-link-border active"
-                             href="index.php"  
+                             href="gcp/logout.php"  
                             title="All Services">
                             <i class="icon fad fa-sign-out-alt font-size-1.5 text-danger"></i>
                             <span class="pl-3"> Sign out</span>

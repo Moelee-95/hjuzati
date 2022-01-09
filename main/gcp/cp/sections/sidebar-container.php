@@ -105,7 +105,29 @@ $current_page =(basename($_SERVER['PHP_SELF']));
 									
 								</ul>
 							</li>
-						
+							
+							<li class="nav-item <?php if($current_page=="new_booking.php" ||$current_page=="view_booking.php"  || $current_page=="edit_booking.php" ){
+								echo "active";
+							} ?>">
+								<a href="#" class="nav-link nav-toggle">
+									<i class="far fa-heart"></i>
+									<span class="title">Saved</span>
+									<span class="arrow <?php if($current_page=="favirotHotels.php" ||$current_page=="favirotHotels.php" ){
+										echo "open";
+										} ?>"></span>
+								</a>
+								<ul class="sub-menu ">
+									<li class="nav-item <?php if($current_page=="favirotHotels.php"){
+								echo "active";} ?>">
+										<a href="favirotHotels.php" class="nav-link ">
+											<span class="title">Favirot Hotels</span>
+											<?php if($current_page=="favirotHotels.php"){
+											?><span class="selected"></span><?php } ?>
+										</a>
+									</li>
+									
+								</ul>
+							</li>
 
 							<li class="nav-item <?php if($current_page=="new_booking.php" ||$current_page=="view_booking.php"  || $current_page=="edit_booking.php" ){
 								echo "active";

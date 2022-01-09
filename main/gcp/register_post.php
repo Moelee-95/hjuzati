@@ -5,7 +5,12 @@ include('../cp/db/db_connect.php');
 require '../../db.php';
 require 'cp/classes/guest.php';
 
-if (!empty($_SESSION['login_guest'])) {
+
+
+if (isset($_COOKIE['login_guest'])) {
+    $_SESSION['login_guest'] = $_COOKIE['login_guest']; 
+    $_SESSION['guestUserName'] = $_COOKIE['guestUserName'];
+    $_SESSION['guest'] = serialize(new Guest($_COOKIE['guestUserName'],$_COOKIE['guestPassword'])); // create guest object
     header("location:cp/index.php");
 }
 elseif (empty($_SESSION['login_guest'])) {
@@ -27,11 +32,15 @@ elseif (empty($_SESSION['login_guest'])) {
             
             else {
                 $newGuest = new createGuest($fullname, $password, $phone_number);
-                
                 if ($newGuest->created) {
                     $_SESSION['login_guest'] = $newGuest->guestID;  // Represents the guest Id
                     $_SESSION['guestUserName'] = $newGuest->userName; // Represents the guest user Name
-                    $_SESSION['guest'] = serialize(new Guest($newGuest->userName,$password));
+                    $_SESSION['guest'] = serialize(new Guest($newGuest->userName,$password)); // create guest object
+                    //store in cookies for 7 days when remember me is clicked
+                    setcookie('login_guest',$newGuest->guestID, time()+60*60*7, "/");
+                    setcookie('guestUserName',$newGuest->userName, time()+60*60*7, "/");
+                    setcookie('guestPassword',$password, time()+60*60*7, "/");
+
                     header("location:cp/index.php?guestUser=");  // send   user to the dashboard 
                 }
 

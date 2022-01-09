@@ -70,12 +70,9 @@ function execute_query($query){
 				<div class="page-content">
 					<div class="page-bar">
 						<div class="page-title-breadcrumb">
-							<div class=" pull-left">
-								<div class="page-title">My Bookings</div>
-							</div>
-							<ol class="breadcrumb page-breadcrumb pull-right">
+							<ol class="breadcrumb page-breadcrumb pull-left">
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-										href="index.php">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+										href="../../index.php">Hjuzati</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
 								<li><a class="parent-item" href="#">Booking</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
@@ -128,7 +125,7 @@ function execute_query($query){
 									</div>
 									<div class="table-scrollable">
 										<?php
-											$get_bookings = "SELECT * FROM hima.bookings join guests on bGuestID = gGuestID where bGuestID = '$guest_id'";
+											$get_bookings = "SELECT * FROM hima.bookings join guests on bGuestID = gGuestID where bGuestID = '$guest->guestID'";
 											$query_bookings = mysqli_query($conn, $get_bookings);
 											$fetch_all = mysqli_fetch_all($query_bookings, MYSQLI_ASSOC);
 											//print_r($fetch_all);
