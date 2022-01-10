@@ -7,6 +7,26 @@ require('gcp/cp/classes/guest.php');
 require('services/booking.php');
 require('services/cities.php');
 
+// Currency cookies
+if (isset($_COOKIE['currency'])) {
+    $currency = $_COOKIE['currency'];
+// Default currency
+} else {
+    setcookie('currency','USD', time()+60*60*7, "/");
+    $currency = $_COOKIE['currency'];
+    
+}
+
+// language cookies
+if (isset($_COOKIE['language'])) {
+    $language = $_COOKIE['language'];
+// Default currency
+} else {
+    setcookie('language','english', time()+60*60*7, "/");
+    $language = $_COOKIE['language'];
+}
+
+
 if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_COOKIE['userPassword'])) {
     if (isset($_SESSION['login_user'])) {
       $user_id =  $_SESSION['login_user'];
@@ -58,7 +78,38 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
                  class="btn btn-outline-light text-dark p-2" aria-label="Close">X</button>
             </div>
             <div class="modal-body">
-                
+                <div class="overflow-hidden">
+                    <div onclick="changeCurrency('USD')" class="row p-3 btn-outline-light text-dark mt-1 
+                    <?php if($currency == "USD"){echo "bg-light";} ?>">
+                        <div class="col col-1">
+                            <i class="fas fa-flag-usa"></i>
+                        </div>
+                        <div class="col col-9">
+                            <span class="text-dark">USD</span>
+                        </div>
+                        <div class="col col-1 pl-1">
+                            <?php if ($currency == "USD") { ?>
+                                <i class="fas fa-check text-success"></i>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="row p-3 btn-outline-light text-dark mt-1"
+                    onclick="changeCurrency('IQD')">
+                        <div class="col col-1">
+                            <i class="fas fa-flag-usa"></i>
+                        </div>
+                        <div class="col col-9">
+                            <span class="text-dark">IQD</span>
+                        </div>
+                        <div class="col col-1 pl-1">
+                            <?php if ($currency == "IQD") { ?>
+                                <i class="fas fa-check text-success"></i>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
+
+            
             </div>
         </div>
     </div>
@@ -110,10 +161,10 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
 
                     <div class="position-relative pl-3 language-switcher dropdown-connector-xl u-header__topbar-divider--dark">
                         <a id="languageDropdownInvoker" class="dropdown-nav-link  d-flex align-items-center ml-1 " href="javascript:;" role="button" aria-controls="1languageDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#1languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
-                            <span class="d-inline-block p-2">USD $ <i class="glyph-icon-usd flaticon-down-arrow" ></i></span>
+                            <span class="d-inline-block p-2"><?php echo $currency; ?><i class="glyph-icon- flaticon-down-arrow" ></i></span>
                         </a>
                         <div id="1languageDropdown" class=" dropdown-menu dropdown-unfold dropdown-menu-right mt-0 " aria-labelledby="languageDropdownInvoker">
-                            <a class="dropdown-item p-3 active" href="#">USD $</a>
+                            <a class="dropdown-item p-3 active" href="#">USD</a>
                             <a class="dropdown-item p-3" href="#">IQD</a>
                         </div>
                     </div> 
@@ -304,16 +355,16 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
                         <li class="nav-item u-header__nav-item p-2">
                             <i class="icon fad fa-dollar-sign font-size-1.5"></i>
                             &nbsp;
-                            <span onclick="$('#currencyModal').modal('show')" class="">
-                                USD
-                            </span>
+                            <a href="#" onclick="$('#currencyModal').modal('show')" class="text-dark">
+                                <?php echo $currency; ?>
+                            </a>
                         </li>
                         <li class="nav-item u-header__nav-item p-2">
                             <i class="icon fad fa-globe font-size-1.5"></i>
                             &nbsp;
-                            <span onclick="$('#languageModal').modal('show')" class="">
+                            <a href="#" onclick="$('#languageModal').modal('show')" class="text-dark">
                                 English
-                            </span>
+                            </a>
                         </li>
                         <!-- End Home -->    
                     </ul>

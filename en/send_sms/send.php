@@ -2,7 +2,6 @@
 
 require 'sendSms.php'; //for test porposes!
 
-
 if(isset($_POST['fNumber'])){
     $destNumber = $_POST['fNumber']; 
     $seconds = 60;// 1 min

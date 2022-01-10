@@ -214,3 +214,17 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+            //change language and currency...
+            function changeCurrency($currency){
+                document.cookie = "currency="+$currency+";expires=thu 1 Dec 2022;path=/; ";
+                document.location.reload(true);
+            }
+
+            function changeLanguage(){
+                var url = window.location.href;
+                console.log(url);
+            }
+
+        </script>

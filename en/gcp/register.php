@@ -245,27 +245,28 @@ if(isset($_GET['error'])){
                         //setting timer for the send message
                         var timeleft = 60;
                         var downloadTimer = setInterval(function(){
-                        if(timeleft <= 0){
-                            clearInterval(downloadTimer);
-                            alwaysAlert.hide();
-                            counter.hide();
-                            counter2.hide();
-                            reSendBtn.show();
-                            confirmBtn.show();
-
-                        } else {
-                            alwaysAlert.hide();
-                            counter.show();
-                            counter2.show();
-                            counter.text(timeleft);
-                            counter2.text(timeleft);
-                            reSendBtn.hide();
-                            confirmBtn.hide();
-                            
-                        }
+                            if(timeleft <= 0){
+                                clearInterval(downloadTimer);
+                                alwaysAlert.hide();
+                                counter.hide();
+                                counter2.hide();
+                                reSendBtn.show();
+                                confirmBtn.show();
+                            } else {
+                                alwaysAlert.hide();
+                                counter.show();
+                                counter2.show();
+                                counter.text(timeleft);
+                                counter2.text(timeleft);
+                                reSendBtn.hide();
+                                confirmBtn.hide(); 
+                            }
                         timeleft -= 1;
                         }, 1000);
+
                         reSendBtn.prop('disabled', true);
+
+                        
                         confirmBtn.prop('disabled', true);
                         alwaysAlert.hide();
                         setTimeout(function(){

@@ -159,6 +159,7 @@ elseif (empty($_SESSION['login_guest']) and empty($_COOKIE['login_guest'])) {
                                     <label for="user_n_e" class="input-label">Email Address or user name</label>                                              
                                     <input type="text" id="user_n_e" class="pl-3 form-control" name="user_n_e" placeholder="example@Hjuzati.com" required="required">
                                 </div>
+                                
                                 <div class="form-group">  
                                     <label for="password" class="input-label">Password</label>                                               
                                     <input id="password" type="password" class="pl-3 form-control" name="password" placeholder="********" required="required">
