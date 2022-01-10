@@ -218,13 +218,27 @@
         <script>
             //change language and currency...
             function changeCurrency($currency){
-                document.cookie = "currency="+$currency+";expires=thu 1 Dec 2022;path=/; ";
-                document.location.reload(true);
+                if ($currency == "USD" || $currency == "IQD"){
+                    document.cookie = "currency="+$currency+";expires=thu 1 Dec 2022;path=/; ";
+                    document.location.reload(true);
+                } else{
+                    console.log("Wrong input language: input USD or IQD");
+                }
+               
             }
 
-            function changeLanguage(){
-                var url = window.location.href;
-                console.log(url);
+            function changeLanguage($language){
+                if ($language == "arabic" || $language == "english") {
+                    var url = window.location.href;
+                    var arr = url.split("/");
+                    document.cookie = "language="+$language+";expires=thu 1 Dec 2022;path=/; ";
+                    arr[3] = $language.substring(0,2);
+                    var nUrl = arr.join("/");
+                    window.location.replace(nUrl);
+                }  
+                else {console.log("Wrong language, input: arabic or english");}
+                
+               
             }
 
         </script>

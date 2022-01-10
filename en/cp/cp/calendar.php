@@ -9,7 +9,7 @@
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<meta name="description" content="Responsive Admin Template" />
 	 <meta name="author" content="HimaHotels by.Mohammed S. Hazim" />
-	<title>Hima Hotels | Calendar</title>
+	<title>Hjuzati Hotels | Calendar</title>
 	<!-- icons -->
 	<link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
 
@@ -657,12 +657,9 @@
 				<div class="page-content">
 					<div class="page-bar">
 						<div class="page-title-breadcrumb">
-							<div class=" pull-left">
-								<div class="page-title">Calendar</div>
-							</div>
-							<ol class="breadcrumb page-breadcrumb pull-right">
+							<ol class="breadcrumb page-breadcrumb pull-left">
 								<li><i class="fad fa-home"></i>&nbsp;<a class="parent-item"
-										href="index.php">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+										href="../../index.php">Hjuzati</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
 								<li><a class="parent-item" href="#">Rates & Availability</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>

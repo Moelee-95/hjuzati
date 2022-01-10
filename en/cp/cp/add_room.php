@@ -139,12 +139,9 @@
 
 					<div class="page-bar">
 						<div class="page-title-breadcrumb">
-							<div class=" pull-left">
-								<div class="page-title">Add Room Details</div>
-							</div>
-							<ol class="breadcrumb page-breadcrumb pull-right">
+							<ol class="breadcrumb page-breadcrumb pull-left">
 								<li><i class="fas fa-home"></i>&nbsp;<a class="parent-item"
-										href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+										href="../../index.html">Hjuzati</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
 								<li><a class="parent-item" href="#">Rooms</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>

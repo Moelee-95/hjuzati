@@ -13,7 +13,7 @@ if (isset($_COOKIE['currency'])) {
 // Default currency
 } else {
     setcookie('currency','USD', time()+60*60*7, "/");
-    $currency = $_COOKIE['currency'];
+    $currency = 'USD';
     
 }
 
@@ -23,7 +23,7 @@ if (isset($_COOKIE['language'])) {
 // Default currency
 } else {
     setcookie('language','english', time()+60*60*7, "/");
-    $language = $_COOKIE['language'];
+    $language = 'english';
 }
 
 
@@ -63,7 +63,36 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
                  class="btn btn-outline-light text-dark p-2" aria-label="Close">X</button>
             </div>
             <div class="modal-body">
-                
+                <div class="overflow-hidden">
+                        <div onclick="changeLanguage('english')" class="row p-3 btn-outline-light text-dark mt-1 
+                        <?php if($language == "english"){echo "bg-light";} ?>">
+                            <div class="col col-1">
+                                <i class="fas fa-flag-usa"></i>
+                            </div>
+                            <div class="col col-9">
+                                <span class="text-dark">english</span>
+                            </div>
+                            <div class="col col-1 pl-1">
+                                <?php if ($language == "english") { ?>
+                                    <i class="fas fa-check text-success"></i>
+                                <?php } ?>
+                            </div>
+                        </div>
+                        <div onclick="changeLanguage('arabic')" class="row p-3 btn-outline-light text-dark mt-1 
+                        <?php if($language == "arabic"){echo "bg-light";} ?>">
+                            <div class="col col-1">
+                                <i class="fas fa-flag-usa"></i>
+                            </div>
+                            <div class="col col-9">
+                                <span class="text-dark">arabic</span>
+                            </div>
+                            <div class="col col-1 pl-1">
+                                <?php if ($language == "arabic") { ?>
+                                    <i class="fas fa-check text-success"></i>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -108,8 +137,6 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
                         </div>
                     </div>
                 </div>
-
-            
             </div>
         </div>
     </div>
@@ -164,17 +191,21 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
                             <span class="d-inline-block p-2"><?php echo $currency; ?><i class="glyph-icon- flaticon-down-arrow" ></i></span>
                         </a>
                         <div id="1languageDropdown" class=" dropdown-menu dropdown-unfold dropdown-menu-right mt-0 " aria-labelledby="languageDropdownInvoker">
-                            <a class="dropdown-item p-3 active" href="#">USD</a>
-                            <a class="dropdown-item p-3" href="#">IQD</a>
+                            <a class="dropdown-item p-3 <?php if($currency =="USD"){echo "active";} ?>"
+                             href="#" onclick="changeCurrency('USD')">USD</a>
+                            <a class="dropdown-item p-3 <?php if($currency =="IQD"){echo "active";} ?>"
+                             href="#" onclick="changeCurrency('IQD')">IQD</a>
                         </div>
                     </div> 
                     <div class="position-relative pl-3 language-switcher dropdown-connector-xl u-header__topbar-divider--dark">
                         <a id="languageDropdownInvoker" class="dropdown-nav-link  d-flex align-items-center ml-1 " href="javascript:;" role="button" aria-controls="languageDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
-                            <span class="d-inline-block p-2">English<i class="glyph-icon-usd flaticon-down-arrow" ></i></span>
+                            <span class="d-inline-block p-2"><?php echo $language; ?><i class="glyph-icon-usd flaticon-down-arrow" ></i></span>
                         </a>
                         <div id="languageDropdown" class=" dropdown-menu dropdown-unfold dropdown-menu-right mt-0 " aria-labelledby="languageDropdownInvoker">
-                            <a class="dropdown-item active p-3" href="#">العربية</a>
-                            <a class="dropdown-item p-3" href="#">کوردی</a>
+                            <a class="dropdown-item p-3 <?php if($language =="english"){echo "active";} ?>"
+                             href="#" onclick="changeLanguage('english')">English</a>
+                            <a class="dropdown-item p-3  <?php if($language =="arabic"){echo "active";} ?>"
+                             href="#" onclick="changeLanguage('arabic')">العربية</a>
                         </div>
                     </div> 
                     <?php
@@ -363,7 +394,7 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
                             <i class="icon fad fa-globe font-size-1.5"></i>
                             &nbsp;
                             <a href="#" onclick="$('#languageModal').modal('show')" class="text-dark">
-                                English
+                            <?php echo $language; ?>
                             </a>
                         </li>
                         <!-- End Home -->    

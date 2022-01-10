@@ -7,7 +7,7 @@
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<meta name="description" content="Responsive Admin Template" />
 	 <meta name="author" content="HimaHotels by.Mohammed S. Hazim" />
-	<title>HIMA Hotels</title>
+	<title>Hjuzati</title>
 	<!-- icons -->
 	<link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
 	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -47,12 +47,9 @@
 				<div class="page-content">
 					<div class="page-bar">
 						<div class="page-title-breadcrumb">
-							<div class=" pull-left">
-								<div class="page-title">Dashboard</div>
-							</div>
-							<ol class="breadcrumb page-breadcrumb pull-right">
+							<ol class="breadcrumb page-breadcrumb pull-left">
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-										href="index.php">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+										href="../../index.php">Hjuzati</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
 								<li class="active">Dashboard</li>
 							</ol>
@@ -335,42 +332,42 @@
  								<div class="card-body">
  									<div class="table-warp">
  										<div class="row">
-	 										<div class="col">
+	 										<center class="col mt-3">
 		 										<a href="calendar.php" type="button" class="btn btn-outline-success btn-lg">
 		 										 <img src = "img/calender.svg" alt="Calender" width="100" height="100" />
 		 										</br>
 		 										 <b style="font-size: 15px">Calander</b>
 		 										</a>
-		 									</div>
+		 									</center>
 
-		 									<div class="col">
+		 									<center class="col mt-3">
 		 										<a href="all_rooms.php" type="button" class="btn btn-outline-success btn-lg">
 		 										 <img src = "img/room.svg" alt="Calender" width="100" height="100" />
 		 										</br>
 		 										 <b style="font-size: 15px">View all rooms</b>
 		 										</a>
-		 									</div>
-		 									<div class="col">
+		 									</center>
+		 									<center class="col mt-3">
 		 										<a href="add_room.php" type="button" class="btn btn-outline-success btn-lg">
 		 										 <img src = "img/addroom.svg" alt="Add Room" width="100" height="100" />
 		 										</br>
 		 										 <b style="font-size: 15px">Add New Room</b>
 		 										</a>
-		 									</div>
-		 									<div class="col">
+		 									</center>
+		 									<center class="col mt-3">
 		 										<a href="hotel_photos.php" type="button" class="btn btn-outline-success btn-lg">
 		 										 <img src = "img/hotelpic.svg" alt="Add Room" width="100" height="100" />
 		 										</br>
 		 										 <b style="font-size: 15px">Hotel Photos</b>
 		 										</a>
-		 									</div>
-		 										<div class="col">
+		 									</center>
+											<center class="col mt-3">
 		 										<a href="rooms_photos.php" type="button" class="btn btn-outline-success btn-lg">
 		 										 <img src = "img/roomspic.svg" alt="Add Room" width="100" height="100" />
 		 										</br>
 		 										 <b style="font-size: 15px">Rooms Photos</b>
 		 										</a>
-		 									</div>
+		 									</center>
 	 									</div>
  										<hr>
  										

@@ -81,7 +81,7 @@ elseif (empty($_SESSION['login_user'])) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Hima Hotels | Login and Register Form Hima Hotels</title>
+    <title>Hjuzati | Login</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -104,7 +104,7 @@ elseif (empty($_SESSION['login_user'])) {
         <div class="container-fluid">
             <div class="row">
                     
-                <div class="col-md-6 col-12 fxt-bg-wrap">
+                <div class="col-md-6 col-12 fxt-bg-wrap d-none d-md-block">
                     <div class="fxt-bg-img" data-bg-image="img/figure/bg4-l.jpg">
                         <div class="fxt-header">
                             <div class="fxt-transformY-50 fxt-transition-delay-1">
