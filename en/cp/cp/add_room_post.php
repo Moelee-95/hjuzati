@@ -2,8 +2,12 @@
 
 session_start();
 
+require "../../services/removeFiles.php";
+$backPath = RemoveFiles::backPath();
+
 $user_id = $_SESSION['login_user'];
 $hotel_id = $_SESSION['hotel_id'];
+
 
 
 //When the user enters to the link directly without going through the user cp
@@ -20,10 +24,6 @@ if (empty($hotel_id)) {
 }
 else {
 	include('../db/db_connect.php');
-	
-			
-
-
 		$result = null;
 		$room_type = $_POST['room_type'];//will not be used
 		$room_name = $_POST['room_name'];//Will use instead of both room type and room name
@@ -36,6 +36,7 @@ else {
 		$beds_kinds = $_POST['beds_kinds'];
 		$bed_num = $_POST['bed_num'];
 		$guest_num = $_POST['guest_num'];
+		$room_size = "0";// Default empty size
 		$room_size = $_POST['room_size'];
 		$price_guest_num = $_POST['price_guest_num'];
 		$offer_lower_if_fewer_guest_num = $_POST['offer_lower_if_fewer_guest_num'];
@@ -59,11 +60,9 @@ rRoomsNumbers,beds_kinds,bed_num,rMaxPas,rRoomSize,rLowestPrice,rOfferLower,rDis
 	 			$fetch = mysqli_fetch_row($last_query);
 	 			$roomID = $fetch['0'];
 	 			//create folder for this room id if it's not exsitst 
-	 			if (!file_exists("../users/$user_id/hotels/$hotel_id/rooms/$roomID")) {
-				    mkdir("../users/$user_id/hotels/$hotel_id/rooms/$roomID", 0777, true);
-			}
-
-
+	 			if (!file_exists("$backPath/users/$user_id/hotels/$hotel_id/rooms/$roomID")) {
+				    mkdir("$backPath/users/$user_id/hotels/$hotel_id/rooms/$roomID", 0777, true);
+				}
  			}
  			
  			$result = 1;
@@ -71,8 +70,7 @@ rRoomsNumbers,beds_kinds,bed_num,rMaxPas,rRoomSize,rLowestPrice,rOfferLower,rDis
  		else
  		{
  			//return an error to the ajax request
- 			
- 			$result = 0;
+ 			$result = $conn -> error;
  		}
  		echo $result;
 	}

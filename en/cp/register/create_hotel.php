@@ -4,6 +4,8 @@ session_start();
 
 //Connect to the database
 include('../db/db_connect.php'); 
+require "../../services/removeFiles.php";
+$backPath = RemoveFiles::backPath();
 
 //Check if the user loged in to the system
 if (!isset($_SESSION['login_user'])) {
@@ -27,13 +29,13 @@ if ($query) {
 	$hotel_id = $fetch[0];
 	$_SESSION['hotel_id'] = $hotel_id;
 	// Create folder for the hotel
-	mkdir("../users/$user_id/hotels/$hotel_id",0777,true);
+	mkdir("$backPath/users/$user_id/hotels/$hotel_id",0777,true);
 	// Create folder for the hotel photos
-	mkdir("../users/$user_id/hotels/$hotel_id/photos",0777,true);
+	mkdir("$backPath/users/$user_id/hotels/$hotel_id/photos",0777,true);
 	// Create folder for the rooms
-	mkdir("../users/$user_id/hotels/$hotel_id/rooms",0777,true);
+	mkdir("$backPath/users/$user_id/hotels/$hotel_id/rooms",0777,true);
 	// Create folder for temperory photos inside rooms folder
-	mkdir("../users/$user_id/hotels/$hotel_id/rooms/tmp_rooms",0777,true);
+	mkdir("$backPath/users/$user_id/hotels/$hotel_id/rooms/tmp_rooms",0777,true);
 
 	header('location:add_hotel/profile.php');
 

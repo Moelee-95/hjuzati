@@ -832,6 +832,47 @@
 				    
 				  });*/
 
+//Submit room
+function showInputs(){
+	var guest_num = _("guest_num").value;
+	var price_guest_num = _("price_guest_num").value;
+	var offer_lower_if_fewer_guest_num = $("input[name='offer_lower_if_fewer_guest_num']:checked").val();
+	var discount_1_person = $("[name=discount_1_person]").val();
+
+	//check all feilds if there is any missing inputs
+	var state = checkFeilds();
+	if (state == 1) {
+		//Remove previous rows from table
+		$('.table_row').remove();
+			// Set up room summery
+		if (offer_lower_if_fewer_guest_num == "yes") {
+			var price = parseInt(price_guest_num);
+			var gNum = parseInt(guest_num);
+			var disscount = parseInt(discount_1_person);
+			var color;
+			var nGNum = gNum;
+			var nPrice = price;
+			for (var i = 2; i <= gNum ; i++) {
+				nGNum = nGNum - 1;
+				nPrice = nPrice-disscount;
+				if (nPrice < 0 || nPrice == 0 ) {
+					nPrice = 0;
+					color = "#e23434";//Red
+				}
+				else{
+					color = "#008009";//Green
+				}
+
+				var nGNvalue = logo_maker(nGNum);
+				 $('#summery_table').append("<tr class='table_row'><td>"+nGNvalue+"</td><td style='color:"+color+";font-weight:bold' >US$ "+nPrice+"</td></tr>");
+			}
+		}
+
+		$('#summery').modal('show');
+	}
+}
+
+
 //Check feilds
 function checkFeilds(){
 //Form Inputs
@@ -900,49 +941,6 @@ function checkFeilds(){
 	return state;
 }
 
-//Submit room
-function showInputs(){
-	var guest_num = _("guest_num").value;
-	var price_guest_num = _("price_guest_num").value;
-	var offer_lower_if_fewer_guest_num = $("input[name='offer_lower_if_fewer_guest_num']:checked").val();
-	var discount_1_person = $("[name=discount_1_person]").val();
-
-	//check all feilds if there is any missing inputs
-	var state = checkFeilds();
-	if (state == 1) {
-		//Remove previous rows from table
-		$('.table_row').remove();
-			// Set up room summery
-		if (offer_lower_if_fewer_guest_num == "yes") {
-			var price = parseInt(price_guest_num);
-			var gNum = parseInt(guest_num);
-			var disscount = parseInt(discount_1_person);
-			var color;
-			var nGNum = gNum;
-			var nPrice = price;
-			for (var i = 2; i <= gNum ; i++) {
-				nGNum = nGNum - 1;
-				nPrice = nPrice-disscount;
-				if (nPrice < 0 || nPrice == 0 ) {
-					nPrice = 0;
-					color = "#e23434";//Red
-				}
-				else{
-					color = "#008009";//Green
-				}
-
-				var nGNvalue = logo_maker(nGNum);
-				 $('#summery_table').append("<tr class='table_row'><td>"+nGNvalue+"</td><td style='color:"+color+";font-weight:bold' >US$ "+nPrice+"</td></tr>");
-			}
-		}
-
-		$('#summery').modal('show');
-	}
-
-
-
-
-}
 
 function saveRoom(){
 	var room_type = _("sell").value;

@@ -10,7 +10,7 @@
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<meta name="description" content="Responsive Admin Template" />
 	 <meta name="author" content="HimaHotels by.Mohammed S. Hazim" />
-	<title>HIMA Hotels || Rooms Photos </title>
+	<title>Hjuzati || Rooms Photos </title>
 	<!-- icons -->
 	<link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
 	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -65,6 +65,8 @@
 <?php
   // Database connection
     include('../db/db_connect.php');
+	require "../../services/removeFiles.php";
+	$backPath = RemoveFiles::backPath();// back path
 
     //Setup session of the room id
     if (isset($_POST['roomID'])) {
@@ -84,7 +86,7 @@
     if (isset($_FILES['attachments'])) {
     	$roomID = $_SESSION['roomID'];
         $msg = "";
-        $targetFile = "../users/$login_user/hotels/$hotel_id/rooms/$roomID/" .time(). basename($_FILES['attachments']['name'][0]);
+        $targetFile = "$backPath/users/$login_user/hotels/$hotel_id/rooms/$roomID/" .time(). basename($_FILES['attachments']['name'][0]);
         if (file_exists($targetFile)){
             $msg = array("status" => 0, "msg" => "File already exists!");
         }

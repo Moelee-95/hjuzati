@@ -66,11 +66,14 @@
 <?php
   // Database connection
     include('../db/db_connect.php');
+	require "../../services/removeFiles.php";
+	$backPath = RemoveFiles::backPath();// back path
+	
 
 
     if (isset($_FILES['attachments'])) {
         $msg = "";
-        $targetFile = "../users/$login_user/hotels/$hotel_id/photos/" .time(). basename($_FILES['attachments']['name'][0]);
+        $targetFile = "$backPath/users/$login_user/hotels/$hotel_id/photos/" .time(). basename($_FILES['attachments']['name'][0]);
         if (file_exists($targetFile)){
             $msg = array("status" => 0, "msg" => "File already exists!");
         }

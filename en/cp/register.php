@@ -3,6 +3,9 @@
 session_start();
 
 include('db/db_connect.php');
+require "../services/removeFiles.php";
+$backPath = RemoveFiles::backPath();
+
 if (!empty($_SESSION['login_user'])) {
     header("location:register/userprofile");
 }
@@ -12,11 +15,10 @@ elseif (empty($_SESSION['login_user'])) {
             //echo "Nothing Post";
         }
     elseif (isset($_POST['email'])) {
-
         $email = htmlspecialchars($_POST['email']);
         $user_name = htmlspecialchars($_POST['user_name']);
-            // Coverting email address and username to lowcase
-        $email = strtolower($email) ;
+        // Coverting email address and username to lowcase
+        $email = strtolower($email);
         $user_name = strtolower($user_name);
         $password = htmlspecialchars($_POST['password']);//pass
         $fullname = htmlspecialchars($_POST['fullname']);//full name
@@ -34,7 +36,6 @@ elseif (empty($_SESSION['login_user'])) {
             echo "User Name is taken";
         }
         else {
-
             $sql = "CALL add_user('$email','$user_name','$password','$phone_number','$fullname')";
             $qu = mysqli_query($conn, $sql);
             $fetchit = mysqli_fetch_row($qu);
@@ -50,13 +51,13 @@ elseif (empty($_SESSION['login_user'])) {
                 setcookie('userPassword',$password, time()+60*60*7, "/");
 
                 //Create User folder
-                mkdir("users/$user_id",0777,true);
+                mkdir("$backPath/users/$user_id",0777,true);
                 //Creat Hotels folder for the user hotels
-                mkdir("users/$user_id/hotels",0777,true);
+                mkdir("$backPath/users/$user_id/hotels",0777,true);
                 //Creat motels folder for the user motels
-                mkdir("users/$user_id/motels",0777,true);
+                mkdir("$backPath/users/$user_id/motels",0777,true);
                 ///Creat appartmets folder for the user appartments
-                mkdir("users/$user_id/appartments",0777,true);
+                mkdir("$backPath/users/$user_id/appartments",0777,true);
                 // echo $user_id;
               
                 header('location:register/userprofile');        
@@ -67,10 +68,6 @@ elseif (empty($_SESSION['login_user'])) {
                 echo "filed to register";
             }
         }
-        
-
-
-        
         }
 
 
