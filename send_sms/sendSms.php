@@ -1,7 +1,5 @@
 <?php
 
-// require "../../db.php"; for test propuses
-
 class SendSMS{
     public static function send($destNumber,$message){
         require_once __DIR__.'/vendor/autoload.php'; // include requried files

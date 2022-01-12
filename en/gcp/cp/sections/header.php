@@ -5,8 +5,8 @@ session_start();
 
 if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isset($_COOKIE['guestPassword'])) {//when cookies are setted vut sessions are not setted
 	include('../db/db_connect.php');
-	require ('../../../db.php'); // DB class
-	require('classes/guest.php'); // guest class
+	require ('../../../classes/db.php'); // DB class
+	require ('../../../classes/guest.php'); // guest class
 	
 	if (isset($_SESSION['login_guest'])) { // when guest is logged in with session
 		$guest = unserialize($_SESSION['guest']);

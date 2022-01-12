@@ -3,7 +3,7 @@
 session_start();
 
 include('db/db_connect.php');
-require "../services/removeFiles.php";
+require "../../classes/removeFiles.php";
 $backPath = RemoveFiles::backPath();
 
 if (!empty($_SESSION['login_user'])) {

@@ -1,8 +1,8 @@
 <?php
 
-require '../../db.php';
-require 'cp/classes/guest.php';
-require '../send_sms/send.php';
+require '../../classes/db.php';
+require '../../classes/guest.php';
+require '../../send_sms/send.php';
 
 if (isset($_COOKIE['login_guest'])) {
     $_SESSION['login_guest'] = $_COOKIE['login_guest']; 

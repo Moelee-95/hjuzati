@@ -1,6 +1,5 @@
 <?php
 
-// require "../../db.php"; //just for test when using terminal
 class Cities{
      
     public static function getCities(){

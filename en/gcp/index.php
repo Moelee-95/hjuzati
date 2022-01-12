@@ -2,8 +2,8 @@
 
 session_start();
 $display_msg = "none";
-require ('../../db.php');
-require ('cp/classes/guest.php');
+require ('../../classes/db.php');
+require ('../../classes/guest.php');
 include('../cp/db/db_connect.php');
 
 

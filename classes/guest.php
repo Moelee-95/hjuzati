@@ -1,7 +1,5 @@
 <?php
 
-// require '../../../../db.php';//just when testing using terminal
-
 class createGuest extends db{
    
     public $created = false;

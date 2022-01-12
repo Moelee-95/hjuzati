@@ -227,7 +227,7 @@
 
 									//update phone number in the database
 									$.post( 
-									"classes/submitPhoneNumber.php",
+									"../../../classes/submitPhoneNumber.php",
 									{phoneNumber:destNumber} ,
 										function( data ) {
 											var dataArray = jQuery.parseJSON( data ); //convert to redable data

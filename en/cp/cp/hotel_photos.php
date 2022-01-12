@@ -66,7 +66,7 @@
 <?php
   // Database connection
     include('../db/db_connect.php');
-	require "../../services/removeFiles.php";
+	require "../../../classes/removeFiles.php";
 	$backPath = RemoveFiles::backPath();// back path
 	
 

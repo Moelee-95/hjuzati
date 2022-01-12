@@ -1,9 +1,5 @@
 <?php
 
-require "../../db.php";
-require "room.php";
-require "removeFiles.php";
-require "hotel.php";
 
 class User{
     public $id;
@@ -35,7 +31,7 @@ class User{
     }
 }
 
-print_r(User::removeUser("39"));
+// print_r(User::removeUser("39"));
 
 
 ?>

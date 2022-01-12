@@ -1,8 +1,8 @@
 <?php
 session_start();
 include('../cp/db/db_connect.php');
-require '../../db.php';
-require 'cp/classes/guest.php';
+require '../../classes/db.php';
+require '../../classes/guest.php';
 
 if (isset($_COOKIE['login_guest'])) {
     $_SESSION['login_guest'] = $_COOKIE['login_guest']; 

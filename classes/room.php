@@ -1,7 +1,5 @@
 <?php
 
-// require "../../db.php";
-// require "removeFiles.php";
 
 class Room {
     public $id;

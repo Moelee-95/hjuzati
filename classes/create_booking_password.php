@@ -1,8 +1,8 @@
 <?php
 
-require '../db.php';
+require 'db.php';
 require 'booking.php';
-require '../gcp/cp/classes/guest.php';
+require 'guest.php';
 
 session_start();
 
@@ -15,9 +15,9 @@ if(isset($_SESSION['bookingConf'])){
     
 }
 
-/* require '../db.php';
+/* require 'db.php';
 require 'booking.php';
-require '../gcp/cp/classes/guest.php';
+require 'guest.php';
 
 if(isset($_SESSION['bookingConf'])){
     $bookingConf = unserialize($_SESSION['bookingConf']);

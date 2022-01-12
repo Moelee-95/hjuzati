@@ -44,7 +44,7 @@
  $("#confirmPassword").onclick(function{
     var password = $("#password");
         $.post( 
-            "services/create_booking_password.php",
+            "../../../classes/create_booking_password.php",
             {password:password} ,
             function( data ) {
                 var dataArray = jQuery.parseJSON( data ); //convert to redable data

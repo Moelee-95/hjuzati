@@ -3,12 +3,9 @@
 
 session_start();
 
-require ('../../../../db.php'); // DB class
+require ('db.php'); // DB class
 require('guest.php'); // guest class
-
 $guest = unserialize($_SESSION['guest']);
-
-
 
 if(isset($_POST['phoneNumber'])){
     if(isset($_SESSION['phoneConfirmed'])){

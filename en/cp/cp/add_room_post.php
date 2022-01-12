@@ -2,7 +2,7 @@
 
 session_start();
 
-require "../../services/removeFiles.php";
+require "../../../classes/removeFiles.php";
 $backPath = RemoveFiles::backPath();
 
 $user_id = $_SESSION['login_user'];

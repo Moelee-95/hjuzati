@@ -4,7 +4,7 @@ session_start();
 
 //Connect to the database
 include('../db/db_connect.php'); 
-require "../../services/removeFiles.php";
+require "../../../classes/removeFiles.php";
 $backPath = RemoveFiles::backPath();
 
 //Check if the user loged in to the system

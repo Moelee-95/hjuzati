@@ -2,10 +2,10 @@
 session_start();
 //Storing the user id of the hotel owner
 
-require('../db.php');
-require('gcp/cp/classes/guest.php');
-require('services/booking.php');
-require('services/cities.php');
+require('../classes/db.php');
+require('../classes/guest.php');
+require('../classes/booking.php');
+require('../classes/cities.php');
 
 // Currency cookies
 if (isset($_COOKIE['currency'])) {
