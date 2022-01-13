@@ -84,7 +84,7 @@ function checkPhoneNumber(){
         }
         var full_number = phoneNumberObj.getNumber(intlTelInputUtils.numberFormat.E164);
         $.post( 
-            "send_sms/send.php",
+            "../send_sms/send.php",
             {fNumber:full_number} ,
             function( data ) {
                 code = 0;//reset the code

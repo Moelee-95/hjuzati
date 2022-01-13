@@ -1001,7 +1001,7 @@
                                                     </div>
                                                     <div class="modal-body">
 
-                                                        <form name="phone_verification" id="phone_verification" method="post" action="send_sms/send.php" >
+                                                        <form name="phone_verification" id="phone_verification" method="post" action="../send_sms/send.php" >
                                                             <div class="">
                                                                 <div class="row justify-content-center p-2">
                                                                     <input name="phone" type="text" class="form-control mb-2 inptFielsd" id="phone" placeholder="0770XXXXXXX" pattern="[0-9]" required data-msg="Please enter a valid phone number."

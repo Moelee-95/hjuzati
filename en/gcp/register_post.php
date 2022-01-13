@@ -25,6 +25,7 @@ elseif (empty($_SESSION['login_guest'])) {
         //to check if the phone number is exists
         $sql_e = "SELECT * FROM guests WHERE gPhoneNumber = '$phone_number'";
         $result_e = mysqli_query($conn, $sql_e) or die(mysqli_error($conn));
+        
         if (mysqli_num_rows($result_e) > 0) {
             header("location:register.php?error=1&message=PhoneNumberIsUsedBefore");
         }

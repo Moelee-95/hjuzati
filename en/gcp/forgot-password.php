@@ -2,9 +2,10 @@
 
 session_start();
 $display_msg = "none";
+require '../../classes/db.php';
 require ('../../classes/guest.php');
 include('../cp/db/db_connect.php');
-require '../../classes/db.php';
+
 
 if (isset($_COOKIE['login_guest'])) {
     $_SESSION['login_guest'] = $_COOKIE['login_guest']; 
@@ -274,7 +275,7 @@ if (isset($_COOKIE['login_guest'])) {
         //this function sends an sms to the phone number and store it in code variable
         function sendSms(){
             $.post( 
-                "../send_sms/send.php",
+                "../../send_sms/send.php",
                 {fNumber:destNumber} ,
                 function( data ) {
                     code = 0;//reset the code

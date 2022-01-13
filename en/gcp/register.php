@@ -63,7 +63,7 @@ if(isset($_GET['error'])){
                     </button>
                 </div>
             <div class="modal-body">
-                <form name="phone_verification" id="phone_verification" method="post" action="send_sms/send.php" >
+                <form name="phone_verification" id="phone_verification" method="post" action="../../send_sms/send.php" >
                     <div class="">
                         <div class="row justify-content-center p-2">
                             <input name="phone" type="text" class="form-control mb-2 inptFielsd" id="phone" placeholder="0770XXXXXXX" pattern="[0-9]" required data-msg="Please enter a valid phone number."
@@ -137,11 +137,14 @@ if(isset($_GET['error'])){
                     integrity="sha512-BNZ1x39RMH+UYylOW419beaGO0wqdSkO7pi1rYDYco9OL3uvXaC/GTqA5O4CVK2j4K9ZkoDNSSHVkEQKkgwdiw=="
                     crossorigin="anonymous">
                 </script>
+                
+
                 <!-- Modal Configiration -->
                 <script>
                     var code;//to store the verification code to compare it later (MD5 verification)
                     var destNumber; // to store the desitination phone number after verification to use it around
-                    var verifyState = false; //to store verification state
+                    var verifyState = false;
+                   
 
                     function phoneValidation(){
                         inputtxt = $("#phone").val();
@@ -153,15 +156,14 @@ if(isset($_GET['error'])){
                                 return false;
                             }
                     }
+
                     function veifyCode(){
                         var userCode = $("#phoneVerifyCode").val();
                         var encUserCode = CryptoJS.MD5(userCode).toString(); // encrypt user code to compare with encrypted code
-                        
                         $("#phoneVerificationModal").modal('show');
-
                         // console.log(encUserCode);
                         if (encUserCode == code){
-                            verifyState = true; //
+                            verifyState = true;
                             // console.log("confirmed");//test
                             // importing the desination number into phone_input hidden element
                             if($("#phone_number").val(destNumber) ){
@@ -189,7 +191,7 @@ if(isset($_GET['error'])){
                             else{
                                 var full_number = phoneNumberObj.getNumber(intlTelInputUtils.numberFormat.E164);
                                 $.post( 
-                                    "../send_sms/send.php",
+                                    "../../send_sms/send.php",
                                     {fNumber:full_number} ,
                                     function( data ) {
                                         code = 0;//reset the code
@@ -466,7 +468,6 @@ if(isset($_GET['error'])){
         }
 
         function submit_form(){
-
             var alrt_pw = _('passAlert');
             var alrt_cpw = _('confPassAlert');
             var fullNameAlert = _('fullNameAlert');
@@ -482,8 +483,6 @@ if(isset($_GET['error'])){
             var ph; // phone number
             var pw;//password
             var cpw; //confirm password
-
-            
 
             if(fullName != ''){
                 fn = 1;
@@ -510,7 +509,6 @@ if(isset($_GET['error'])){
                 alrt_cpw.style.display ='block';
                 alrt_cpw.innerHTML ='<strong>Confirm password field is empty!</strong>';
             }
-
             if (fn ==1 && pw ==1 && cpw ==1) {
                 if( pass == conf_pass){
                     $('#form1').submit();
@@ -531,7 +529,8 @@ if(isset($_GET['error'])){
                     $("#phone_number").val(destNumber);
                     submit_form();
                 }
-        });   
+        }); 
+
     </script>
  
     

@@ -22,61 +22,36 @@ elseif (empty($_SESSION['login_guest']) and empty($_COOKIE['login_guest'])) {
   if (isset($_POST['submit'])) {
     $user_n_e = strtolower(htmlspecialchars($_POST['user_n_e']));
     $password = strtolower(htmlspecialchars($_POST['password']));
-    
     $guest = new Guest($user_n_e, $password);
-    $_SESSION['guest'] = serialize($guest);
-    
-    //echo "User Name or Email: $user_n_e <br>";
-    //echo "Password: $password<br/>";
 
-    $sql = "SELECT gGuestID,gUserName,gEmail,gPassword FROM guests WHERE gEmail = '$user_n_e'  OR gUserName='$user_n_e' AND gPassword= '$password'";
-    $query = mysqli_query($conn, $sql);
-    $fetch = mysqli_fetch_array($query);
-    $db_user_name =  $fetch['gUserName'];
-    $db_email = $fetch['gEmail'];
-    $db_password = $fetch['gPassword'];
-    $guest_id = $fetch['gGuestID'];
-    
-      //echo "DB User Name: "."$db_user_name".'<br/>';
-      //echo "DB Email Address: "."$db_email".'<br/>';
-      //echo "DB Password: "."$db_password".'<br/>';
-
-    if ($db_user_name == $user_n_e || $db_email == $user_n_e) {
-        if ($db_password == $password) {
+    if ($guest->loggedIn) {
         //Making sure to remove previous sessions
         unset($_SESSION['login_user']);
-        $_SESSION['login_guest'] = $guest_id;  // Represents the guest Id
-        $_SESSION['guestUserName'] = $db_user_name; // Represents the user Name
-        $_SESSION['guest'] = serialize(new Guest($db_user_name,$password));
-        
+        $_SESSION['guest'] = serialize($guest);
+        $_SESSION['login_guest'] = $guest->guestID;  // Represents the guest Id
+        $_SESSION['guestUserName'] = $guest->userName; // Represents the user Name
         // Store cookies for 30 days when remember me is clicked
         if (isset($_POST['remember'])) {
-            setcookie('login_guest',$guest_id, time()+60*60*30, "/");
-            setcookie('guestUserName',$db_user_name, time()+60*60*30, "/");
-            setcookie('guestPassword',$password, time()+60*60*30, "/");
+            setcookie('login_guest',$guest->guestID, time()+60*60*30, "/");
+            setcookie('guestUserName',$guest->userName, time()+60*60*30, "/");
+            setcookie('guestPassword',$guest->password, time()+60*60*30, "/");
         }else{
         //Store in cookies for 7 days
-            setcookie('login_guest',$guest_id, time()+60*60*7, "/");
-            setcookie('guestUserName',$db_user_name, time()+60*60*7, "/");
-            setcookie('guestPassword',$password, time()+60*60*7, "/");
+            setcookie('login_guest',$guest->guestID, time()+60*60*7, "/");
+            setcookie('guestUserName',$guest->userName, time()+60*60*7, "/");
+            setcookie('guestPassword',$guest->password, time()+60*60*7, "/");
         }
         //Redirect user to cp
+        echo $guest->guestID."</br>".$guest->userName."</br>".$guest->password;
         header("location:cp/index.php");
-        
+        exit();
         }
         else{
-        $msg = "Incorrect Password for [ $user_n_e ]";
-        $display_msg = "block";
-        echo "You have Enterd wrong password for $user_n_e";
+            $msg = $guest->errorMessage;
+            $display_msg = "block";
         }
-        // elseif (empty($_SESSION['login_user'])) {
-        // header('location:login.php'); 
+
     }
-    else {
-    $msg = "Incorrect User Name or Email";
-    $display_msg = "block";
-    }
-  }  
 }
    
 

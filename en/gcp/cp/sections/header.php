@@ -24,7 +24,7 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
 //To prevent loging out when browsing the cp, when both cookies and sessions are not setted
 elseif (!isset($_SESSION['login_guest']) && !isset($_COOKIE['login_guest'])) {
 	header("Location: ../index.php");
-	echo "not logged in";
+	// echo "not logged in";
 	exit();
 }
 

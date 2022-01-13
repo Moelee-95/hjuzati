@@ -1,6 +1,8 @@
 <?php
 
-class createGuest extends db{
+// require "db.php";
+
+class createGuest extends db {
    
     public $created = false;
     public $guestID;
@@ -40,7 +42,7 @@ class createGuest extends db{
 }
 
 
-class Guest extends db{
+class Guest extends db {
     
     public $loggedIn = false; //
     public $errorMessage; //
@@ -63,11 +65,13 @@ class Guest extends db{
     private $bookings = array();
     public $avatarImg;
 
-    public function __construct($userName, $password){
+    public function __construct($identifier, $password){
         parent::__construct(); // to run the code inside cons. to be able to access conn
-        $this->userName = $userName;
-        $this->password = $password;
-        if($this->login()){ // when logged in generate guest account information
+        //Add country code to the phone number, Works only in Iraq
+        if(substr($identifier, 0,2) == "07"){ $identifier = "+964".substr($identifier, 1);}
+        elseif(substr($identifier, 0,1) == "7"){$identifier = "+964".$identifier;}
+
+        if($this->login($identifier , $password)){ // when logged in generate guest account information
             $this->generateInfo();
         }
     }
@@ -123,34 +127,24 @@ class Guest extends db{
 
     }
 
-
-    private function login(){
-        $sql = "SELECT gUserName,gEmail,gPassword,gPhoneNumber FROM guests WHERE gEmail = '$this->userName'  OR gUserName='$this->userName'  OR gPhoneNumber='$this->userName' AND gPassword= '$this->password'";
-        $query = mysqli_query($this->conn, $sql);
+    private function login($identifier, $password){
+        $conn = new db();
+        $conn = $conn->getConnection();        
+        $sql = "SELECT gUserName,gEmail,gPassword,gPhoneNumber FROM guests WHERE gEmail = '$identifier' OR gUserName='$identifier'  OR gPhoneNumber='$identifier' AND gPassword= '$password'";
+        $query = mysqli_query($conn, $sql);
         $fetch = mysqli_fetch_array($query);
-        $db_user_name =  $fetch['gUserName'];
-        $db_email = $fetch['gEmail'];
-        $db_phone = $fetch['gPhoneNumber'];
-        $db_password = $fetch['gPassword'];
-        $this->userName = $fetch['gUserName'];
+        if ($fetch > 0) {
+            $this->userName = $fetch['gUserName'];
+            $this->password = $fetch['gPassword'];
+            $this->loggedIn = true;
+            $this->errorMessage = "0";
+            return true;
 
-        if ($db_user_name == $this->userName || $db_email == $this->userName || $db_phone == $this->password) {
-            if ($db_password == $this->password) {
-                $this->loggedIn = true;
-                $this->errorMessage = "0";
-                return true;
-            }
-            else{
-                $this->loggedIn = false;
-                $this->errorMessage = "You have Enterd wrong password $this->userName";
-                return false;
-            }
-        }
-        else {
+        }else {
             $this->loggedIn = false;
-            $this->errorMessage = "Incorrect User Name or Email";
-            return false;
-            }
+            $this->errorMessage = "Incorrect User Name or Email or phone number";
+            return false;}
+        
     }
     
     private function generateInfo(){
@@ -173,13 +167,11 @@ class Guest extends db{
             $this->DOB = $fetch['gDOB'];
             $this->creationDate = $fetch['gCreatingDate'];
             $this->avatarImg = $fetch['avatar'];
-
         }
         else{
             return false;
         }
     }
-
 
     //setters for setting basic info
     public function setInfo($fullName, $gender, $DOB){
@@ -246,6 +238,10 @@ class Guest extends db{
     public static function findAccount($identifier){
         $conn = new db();
         $conn = $conn->getConnection();
+        // Add country code to phone numbers works only for Iraq
+        if(substr($identifier, 0,2) == "07"){ $identifier = "+964".substr($identifier, 1);}
+        elseif(substr($identifier, 0,1) == "7"){$identifier = "+964".$identifier;};
+
         $q = "SELECT gGuestID,gPhoneNumber,gEmail,gFullName FROM hima.guests where (gUserName= '$identifier' or gEmail='$identifier' or gPhoneNumber='$identifier');";
         $qu = mysqli_query($conn, $q);
         $data = mysqli_fetch_array($qu);
@@ -282,7 +278,9 @@ class Guest extends db{
 print_r($result);
  */
 
-// $guest = new Guest('mo', 'mo');
+// $guest = new Guest('+9647701111111', 'alii');
+
+// echo $guest->errorMessage;
 
 // print_r($guest->setAddress('Somewher'));
 
