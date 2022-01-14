@@ -17,7 +17,7 @@
 <head>
 
         <!-- Title -->
-        <title>HIMA Hotels | </title>
+        <title>Hjuzati | Reserve</title>
 
     <?php include('sections/head.html'); ?>
    
@@ -159,9 +159,11 @@
                 $b = new Booking("16",'2021-11-05','2021-11-11','6','1','0', $reservedRooms,'2',$totalPrice, null ,$fullName,$city,$phone,$email);
                 if($b->bookingCreated){
                     $_SESSION['bookingConf'] = serialize($b);
+                    $set = setcookie('some_cookies','here is the content', time()+60*60*30, "/");
                     //using javascript to redirect because an error occures when using php header
+                    
                     ?>
-                    <script>window.location.replace("confirmation.php?createBookingPassword=true");</script>
+                    <!-- <script>window.location.replace("confirmation.php?createBookingPassword=true");</script> -->
                     <?php
                     exit();
                 }

@@ -14,7 +14,6 @@ if (isset($_COOKIE['currency'])) {
 } else {
     setcookie('currency','USD', time()+60*60*7, "/");
     $currency = 'USD';
-    
 }
 
 // language cookies
@@ -49,7 +48,6 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
 		$guest = unserialize($_SESSION['guest']);
 	}
 }
-
 
 ?>
 
@@ -367,7 +365,14 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
                             <i class="fas fa-user"></i>
                         </a>
                     <?php } ?>
-                    
+                    <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white  ml-3"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="cartNavBar"
+                        data-toggle="collapse"
+                        data-target="#cartNavBar">
+                        <i class="far fa-shopping-cart"></i>
+                    </button>
                     <!-- End Responsive Toggle Button -->
                    
                 </div>
@@ -378,7 +383,7 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
                     </a>
                     <!-- End Logo -->
                 </div>
-                <!-- Navigation -->
+                <!-- Main Navigation -->
                 <div id="navBar" class="navbar-collapse u-header__navbar-collapse collapse order-2 order-xl-0 pt-4 p-xl-0 position-relative">
                     <ul class="navbar-nav u-header__navbar-nav">
                         <h4>More</h4>
@@ -400,7 +405,35 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
                         <!-- End Home -->    
                     </ul>
                 </div>
-                <!-- End Navigation -->
+                <!-- End main Navigation -->
+
+                <!-- Cart Navigation -->
+                <div id="cartNavBar" class="navbar-collapse u-header__navbar-collapse collapse order-2 order-xl-0 pt-4 p-xl-0 position-relative">
+                    <ul class="navbar-nav u-header__navbar-nav">
+                        <h4>My Orders</h4>
+                        <?php  ?>
+                        <li class="nav-item u-header__nav-item p-2 row border border-light">
+                            <div class="col-6 pt-2 order-1">
+                                <div class="row"><span>Hjuzati Hotel Test</span></div>
+                                <div class="row"><b class="col-6 p-0">Tue 17 Feb <span class="text-primary">|</span></b><b class="col-6 p-0">Thu 20 Feb</b></div>
+                            </div>
+                            <div class="col-2 pt-2 order-3">
+                                <button class="btn btn-outline-primary py-2 mt-1">
+                                    <i class="far fa-pencil-alt"></i>
+                                    
+                                </button>
+                            </div>
+                            <div class="col-4 pt-2 pb-0 order-2">
+                                <div class="alert alert-success px-2 text-center" role="alert">
+                                    Confirmed
+                                </div>
+                           </div>
+                        </li>
+                            
+                    </ul>
+                </div>
+                <!-- End Cart Navigation -->
+
 
                 <!-- Guest Navigation -->
                 <div id="guestNavBar" class="pl-4 navbar-collapse u-header__navbar-collapse collapse order-2 order-xl-0 pt-4 p-xl-0 position-relative">

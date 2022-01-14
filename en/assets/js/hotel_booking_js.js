@@ -213,48 +213,48 @@ $("#nextPage").click(function(){
 });
 
 
-
-
-
 function InfoValidation(){
-    var status = true; // 
+    var err1;var err2;var err3; // 
     var fullName =$("#fullName").val();
-    var email = $("#email");
+    var email = $("#email");//to use focus we just select element
     var city = $('#city').find(":selected").val();
     
     //name validation
     if(fullName.length == 0){
         $("#fullNameAlert").text("Name Field is empty");  
-        status = false; 
+        err1 = true; 
     } else if(fullName.length < 5){
         $("#fullNameAlert").text("Please Enter valid name");
         console.log("less than 5");
-        status = false;
+        err1 = true;
     }   else {
         $("#fullNameAlert").text("");
-        status = true;
+        err1 = false;
     }
-
-        //email validation
+    //email validation
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if(email.val().match(mailformat)) {
         $("#emailAlert").text("");
-        status = true;
+        err2 = false;
     }else{
         $("#emailAlert").text("Please Enter valid Email Address");
         email.focus();
-        status = false;
+        err2 = true;
     }
 
-    if(city == 0){
+    if(city == "Select City"){
         $("#cityAlert").text("Please Select a city");
-        status = false;
+        err3 = true;
     } else{
         $("#cityAlert").text("");
-        status = true;
+        err3 = false;
     }
 
-    return status;
+    if (err1 == false && err2 == false && err3 == false) {
+        return true;
+    }else{
+        return false;
+    }
 }
 
 // load prices each time the page loaded
