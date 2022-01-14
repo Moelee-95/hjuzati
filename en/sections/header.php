@@ -1,56 +1,3 @@
-<?php
-session_start();
-//Storing the user id of the hotel owner
-
-require('../classes/db.php');
-require('../classes/guest.php');
-require('../classes/booking.php');
-require('../classes/cities.php');
-
-// Currency cookies
-if (isset($_COOKIE['currency'])) {
-    $currency = $_COOKIE['currency'];
-// Default currency
-} else {
-    setcookie('currency','USD', time()+60*60*7, "/");
-    $currency = 'USD';
-}
-
-// language cookies
-if (isset($_COOKIE['language'])) {
-    $language = $_COOKIE['language'];
-// Default currency
-} else {
-    setcookie('language','english', time()+60*60*7, "/");
-    $language = 'english';
-}
-
-
-if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_COOKIE['userPassword'])) {
-    if (isset($_SESSION['login_user'])) {
-      $user_id =  $_SESSION['login_user'];
-    }
-    else{
-        $_SESSION['login_user'] = $_COOKIE['login_user'];
-        $_SESSION['userName'] = $_COOKIE['userName'];
-        $user_id =  $_SESSION['login_user'];
-    }
-}
-
-if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isset($_COOKIE['guestPassword'])) {//when cookies are setted vut sessions are not setted
-	if (isset($_SESSION['login_guest'])) { // when guest is logged in with session
-		$guest = unserialize($_SESSION['guest']);
-	}
-	elseif (!isset($_SESSION['login_guest'])){	//When guest is logged in only by coockies, setup the php sessions
-		$_SESSION['login_guest'] = $_COOKIE['login_guest']; 
-		$_SESSION['guestUserName'] = $_COOKIE['guestUserName'];
-		$_SESSION['guest'] = serialize(new Guest($_COOKIE['guestUserName'],$_COOKIE['guestPassword'])); // create guest object
-		$guest = unserialize($_SESSION['guest']);
-	}
-}
-
-?>
-
  <!-- Language Modal -->
  <div class="modal fade" id="languageModal" tabindex="-1000" aria-labelledby="languageModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -178,12 +125,6 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
                         </li>   
                 </ul>
                 <div class="ml-auto d-flex align-items-center">
-            
-
-                
-
-        <!-- #############   Start of currency dropdown menue   ############# -->
-
                     <div class="position-relative pl-3 language-switcher dropdown-connector-xl u-header__topbar-divider--dark">
                         <a id="languageDropdownInvoker" class="dropdown-nav-link  d-flex align-items-center ml-1 " href="javascript:;" role="button" aria-controls="1languageDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#1languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
                             <span class="d-inline-block p-2"><?php echo $currency; ?><i class="glyph-icon- flaticon-down-arrow" ></i></span>
@@ -207,7 +148,6 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
                         </div>
                     </div> 
                     <?php
-                    
                     if (!isset($_SESSION['login_user']) && !isset ($_SESSION['login_guest'])) { ?> 
                     <div class="position-relative pl-3 language-switcher dropdown-connector-xl u-header__topbar-divider--dark">
                         <a id="languageDropdownInvoker" class="p-3 dropdown-nav-link d-flex align-items-center ml-1 " href="javascript:;" role="button" aria-controls="languageDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#2languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
@@ -218,7 +158,6 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
                             <a class="dropdown-item p-3" href="cp/"> hotel owner </a>
                         </div>
                     </div>
-                    
                         <?php }
                         else if(isset($_SESSION['login_user'])) { ?>
                             <div class="position-relative pl-3 language-switcher dropdown-connector-xl u-header__topbar-divider--dark">
@@ -251,8 +190,6 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
                             </div>
                         </div>
                     <?php } ?>
-            <!-- ################ End of currency dropdown menue  ############### -->
-
                 </div>
             </div>
         </div>

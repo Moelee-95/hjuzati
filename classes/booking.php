@@ -1,7 +1,5 @@
 <?php
 
-
-
 class Booking {
     public $hotelID;
     public $bookingID; // inisilized later

@@ -1,4 +1,6 @@
 <!-- ==========  PHP  ===========-->
+<?php  include('../db_connect.php');?>
+<?php require 'sections/main.php';?>
 
 <!DOCTYPE html>
 <html lang="en">

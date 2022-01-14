@@ -1,7 +1,4 @@
 <?php
-
-
-
 if (isset($_GET['room_id'])) {
 	$room_id = $_GET['room_id'];
 require('cp/db/db_connect.php');

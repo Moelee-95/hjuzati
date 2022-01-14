@@ -1,12 +1,159 @@
  <!-- ==========  PHP  ===========-->
+<?php require('../db_connect.php');?>
+<?php require 'sections/main.php';?>
+
 <?php 
-    include('../db_connect.php');
+    // First Visit from hotel_list.php
+    if (isset($_GET['hotel_id'])) {
+        $hotel_id = $_GET['hotel_id'];
         
+        if (isset( $_GET['hotel_date'])){
+            $dates = $_GET['hotel_date'];
+            $arr = explode( ' to ', $dates );
+            // echo  $arr[0];
 
-    
-    
+            $check_in = $arr[0];
+            $check_out = $arr[1];
+        } else {
+            $check_in = $_GET['check_in'];
+            $check_out = $_GET['check_out'];
+        }
+        $adults = $_GET['adults'];
+        $child = $_GET['child'];
+        $nights = $_GET['nights'];
+        $roomsNum = $_GET['roomsNum'];
 
-?>
+        // hotel photos
+        $sql = "SELECT * FROM hotelsphotos WHERE hotels_hHotelID = '$hotel_id'";
+        $query = mysqli_query($conn, $sql);
+        $fetchHPhotos = mysqli_fetch_all($query, MYSQLI_ASSOC);
+        //rooms info
+        $rooms_info = "call rooms_info('$hotel_id')";
+        $query2 = mysqli_query($conn, $rooms_info);
+        $fetch_rooms = mysqli_fetch_all($query2, MYSQLI_ASSOC);
+
+        // Using function to access the first photo of the hotel room
+        function getRoomPic ($roomID){
+            include('cp/db/db_connect.php');
+            $roomPhoto = "SELECT * FROM roomsphotos WHERE rpRoomsID = '$roomID' LIMIT 0, 1";
+            $query4 = mysqli_query($conn, $roomPhoto);
+            $fRPhotos = mysqli_fetch_array($query4);
+            $path = $fRPhotos['rpPhotoPath'];
+            if (empty($path)) {
+                $return = "../img/defaults/empty_img.jpg";
+            }
+            else {
+                $return = $path;
+            }
+
+            return($return);
+
+        }
+
+        //function to get the minimum number of available rooms
+        function available_rooms($room_ID, $check_in, $check_out){
+            include('cp/db/db_connect.php');
+            $statement = "call hima.available_rooms('$room_ID', '$check_in', '$check_out')";
+            $query =  mysqli_query($conn, $statement);
+            $fetch = mysqli_fetch_array($query);
+            $result = $fetch['min_rooms'];
+            return $result;                                            
+        }
+
+        // Main function to execute statements and return one single value
+        function exe($stmt){
+            include('cp/db/db_connect.php');
+            $query =  mysqli_query($conn, $stmt);
+            $fetch = mysqli_fetch_array($query);
+            $result = $fetch[0];
+            return $result;  
+        }
+        
+        $main_pic = "cp/cp/".exe("SELECT hpPath FROM hotels h join hotelsphotos hp on h.hHotelID = hp.hotels_hHotelID where h.hMainPhotoID = hp.hpID and h.hHotelID = '$hotel_id'");
+        
+        //set hotel info
+        include('cp/db/db_connect.php');
+        $hotel_info ="SELECT * FROM hima.hotels WHERE hHotelID = '$hotel_id'";
+        $query3 = mysqli_query($conn, $hotel_info);
+        $fetch2 = mysqli_fetch_array($query3);
+        // echo $hotel_id."<hr><hr><hr><hr><hr>";
+
+
+        //auto fill user info if user were logged in
+        $iFullName = '';$iPhoneNumber = '';$iEmail = '';$iAddress='Select City';
+        if (isset($guest)) {
+            $iFullName = $guest->fullName;
+            $iPhoneNumber = $guest->phoneNumber;
+            $iEmail = $guest->email;
+            $iAddress = $guest->address;
+        }
+
+    }
+    elseif (isset($_POST['phone_input'])) {  // reserve room request
+        $hotel_id =  $_POST['hotel_id'];
+        $check_in =  $_POST['check-in'];
+        $check_out =  $_POST['check-out'];
+        $nights =  $_POST['nights'];
+        $psNumber =  $_POST['psNumber'];
+        $chNumber =  $_POST['chNumber'];
+        $totalPrice =  $_POST['totalPriceinput'];
+        $fullName =  $_POST['fullName'];
+        $phone =  $_POST['phone_input'];
+        $email =  $_POST['email'];
+        $city =  $_POST['city'];
+        $paymentMethod =  $_POST['paymentMethod'];
+        // insert all reserved rooms to an array $reservedRooms
+        foreach ($_POST as $name => $value){
+            // echo $name.":". $value."<br>";
+            $rooms = explode("_", $name);
+            if($rooms[0] == "roomsNum"){
+                if ($value > 0){
+                    $room_id = $rooms[1];
+                    $totalRooms = $value;
+                    $reservedRooms["$room_id"]= $value;
+                } 
+            }
+        }
+        
+        if (!empty($_SESSION['login_guest'])) {
+            $guestID = $_SESSION['login_guest'];
+            $guest = unserialize($_SESSION['guest']);//guest object
+            $b = new Booking("16",'2021-11-05','2021-11-11','6','1','0', $reservedRooms,'2',$totalPrice, $guestID,'','','','');//create booking
+            if($b->bookingCreated){
+                $guest->bookings[] = $b;
+                $_SESSION['guest'] = serialize($guest); // store the guest with it's booking back to the session
+                $_SESSION['bookingConf'] = serialize($b);
+                //using javascript to redirect because an error occures when using php header
+                ?>
+                <script>window.location.replace("confirmation.php?createBookingPassword=false");</script>
+                <?php
+                exit();
+            }
+        
+        }
+        else{
+            $b = new Booking("16",'2021-11-05','2021-11-11','6','1','0', $reservedRooms,'2',$totalPrice, null ,$fullName,$city,$phone,$email);
+            if($b->bookingCreated){
+                if (!isset($_COOKIE['bookingConf'])) { // when creating first booking
+                    $bookings = array(); // array to hold bookings objects
+                    $bookings[] = $b;        //  adding booking to the array
+                    $incode = json_encode($bookings); //  incode array of bookings
+                    $serialized = serialize($incode); //  serialize it
+                    $_SESSION['bookingConf'] = serialize($b);
+                    $set = setcookie('bookingConf',$serialized, time()+60*60*30, "/");
+                    header("Location: https://www.google.com");
+                    die();
+                }
+            }
+        
+        }
+    } // END if ($_POST['phone_input'])
+    else {
+        echo "You can't access this page directly";
+        ?><script>window.location.replace("index.php");</script><?php
+        exit();
+    }
+    ?>
 
 <!-- ========== END PHP  ===========-->
 
@@ -27,158 +174,7 @@
        <!-- ========== HEADER ========== -->
         <?php include('sections/header.php'); ?>
         <!-- ========== END HEADER ========== -->
-        <?php 
 
-        // First Visit from hotel_list.php
-        if (isset($_GET['hotel_id'])) {
-            $hotel_id = $_GET['hotel_id'];
-            if (isset( $_GET['hotel_date'])){
-                $dates = $_GET['hotel_date'];
-                $arr = explode( ' to ', $dates );
-                // echo  $arr[0];
-        
-                $check_in = $arr[0];
-                $check_out = $arr[1];
-            } else {
-                $check_in = $_GET['check_in'];
-                $check_out = $_GET['check_out'];
-            }
-            $adults = $_GET['adults'];
-            $child = $_GET['child'];
-            $nights = $_GET['nights'];
-            $roomsNum = $_GET['roomsNum'];
-
-            // hotel photos
-            $sql = "SELECT * FROM hotelsphotos WHERE hotels_hHotelID = '$hotel_id'";
-            $query = mysqli_query($conn, $sql);
-            $fetchHPhotos = mysqli_fetch_all($query, MYSQLI_ASSOC);
-            //rooms info
-            $rooms_info = "call rooms_info('$hotel_id')";
-            $query2 = mysqli_query($conn, $rooms_info);
-            $fetch_rooms = mysqli_fetch_all($query2, MYSQLI_ASSOC);
-
-            // Using function to access the first photo of the hotel room
-            function getRoomPic ($roomID){
-                include('cp/db/db_connect.php');
-                $roomPhoto = "SELECT * FROM roomsphotos WHERE rpRoomsID = '$roomID' LIMIT 0, 1";
-                $query4 = mysqli_query($conn, $roomPhoto);
-                $fRPhotos = mysqli_fetch_array($query4);
-                $path = $fRPhotos['rpPhotoPath'];
-                if (empty($path)) {
-                    $return = "../img/defaults/empty_img.jpg";
-                }
-                else {
-                    $return = $path;
-                }
-
-                return($return);
-
-            }
-
-            //function to get the minimum number of available rooms
-            function available_rooms($room_ID, $check_in, $check_out){
-                include('cp/db/db_connect.php');
-                $statement = "call hima.available_rooms('$room_ID', '$check_in', '$check_out')";
-                $query =  mysqli_query($conn, $statement);
-                $fetch = mysqli_fetch_array($query);
-                $result = $fetch['min_rooms'];
-                return $result;                                            
-            }
-
-            // Main function to execute statements and return one single value
-            function exe($stmt){
-                include('cp/db/db_connect.php');
-                $query =  mysqli_query($conn, $stmt);
-                $fetch = mysqli_fetch_array($query);
-                $result = $fetch[0];
-                return $result;  
-            }
-            
-            $main_pic = "cp/cp/".exe("SELECT hpPath FROM hotels h join hotelsphotos hp on h.hHotelID = hp.hotels_hHotelID where h.hMainPhotoID = hp.hpID and h.hHotelID = '$hotel_id'");
-            
-            //set hotel info
-            include('cp/db/db_connect.php');
-            $hotel_info ="SELECT * FROM hima.hotels WHERE hHotelID = '$hotel_id'";
-            $query3 = mysqli_query($conn, $hotel_info);
-            $fetch2 = mysqli_fetch_array($query3);
-
-
-            //auto fill user info if user were logged in
-            $iFullName = '';$iPhoneNumber = '';$iEmail = '';$iAddress='Select City';
-            if (isset($guest)) {
-                $iFullName = $guest->fullName;
-                $iPhoneNumber = $guest->phoneNumber;
-                $iEmail = $guest->email;
-                $iAddress = $guest->address;
-            }
-
-        }
-        elseif (isset($_POST['phone_input'])) {  // reserve room request
-            $hotel_id =  $_POST['hotel_id'];
-            $check_in =  $_POST['check-in'];
-            $check_out =  $_POST['check-out'];
-            $nights =  $_POST['nights'];
-            $psNumber =  $_POST['psNumber'];
-            $chNumber =  $_POST['chNumber'];
-            $totalPrice =  $_POST['totalPriceinput'];
-            $fullName =  $_POST['fullName'];
-            $phone =  $_POST['phone_input'];
-            $email =  $_POST['email'];
-            $city =  $_POST['city'];
-            $paymentMethod =  $_POST['paymentMethod'];
-            // insert all reserved rooms to an array $reservedRooms
-            foreach ($_POST as $name => $value){
-                // echo $name.":". $value."<br>";
-                $rooms = explode("_", $name);
-                if($rooms[0] == "roomsNum"){
-                    if ($value > 0){
-                        $room_id = $rooms[1];
-                        $totalRooms = $value;
-                        $reservedRooms["$room_id"]= $value;
-                    } 
-                }
-            }
-            
-            if (!empty($_SESSION['login_guest'])) {
-                $guestID = $_SESSION['login_guest'];
-                $guest = unserialize($_SESSION['guest']);//guest object
-                $b = new Booking("16",'2021-11-05','2021-11-11','6','1','0', $reservedRooms,'2',$totalPrice, $guestID,'','','','');//create booking
-                if($b->bookingCreated){
-                    $guest->bookings[] = $b;
-                    $_SESSION['guest'] = serialize($guest); // store the guest with it's booking back to the session
-                    $_SESSION['bookingConf'] = serialize($b);
-                    //using javascript to redirect because an error occures when using php header
-                    ?>
-                    <script>window.location.replace("confirmation.php?createBookingPassword=false");</script>
-                    <?php
-                    exit();
-                }
-            
-            }
-            else{
-                $b = new Booking("16",'2021-11-05','2021-11-11','6','1','0', $reservedRooms,'2',$totalPrice, null ,$fullName,$city,$phone,$email);
-                if($b->bookingCreated){
-                    $_SESSION['bookingConf'] = serialize($b);
-                    $set = setcookie('some_cookies','here is the content', time()+60*60*30, "/");
-                    //using javascript to redirect because an error occures when using php header
-                    
-                    ?>
-                    <!-- <script>window.location.replace("confirmation.php?createBookingPassword=true");</script> -->
-                    <?php
-                    exit();
-                }
-            
-            }
-        } // END if ($_POST['phone_input'])
-        else {
-            echo "You can't access this page directly";
-            ?><script>window.location.replace("index.php");</script><?php
-            exit();
-        }
-
-        
-
-    ?>
 
         <!-- ========== MAIN CONTENT ========== -->
         <div class="modal fade" id="createBookingPasswordModal" tabindex="-1" role="dialog" aria-labelledby="createBookingPasswordLabel" aria-hidden="true">
@@ -489,7 +485,7 @@
                         </div>
                         <!-- End Edit Data modal -->
                             <!-- action="post.php" method="post" -->
-                            <form  name="reserve_room" class="js-validate" id="reserve_room" method="post" action="hotel.php" >
+                            <form  name="reserve_room" class="js-validate" id="reserve_room" method="post" action="booking_post.php" >
                                 <input type="hidden" name="hotel_id" id="hotel_id" value="<?php echo $hotel_id; ?>" >
                                 <input type="hidden" name="phone_input" id="phone_input" value="0" />
                                 <!-- <input type="hidden" name="guest_id" id="guest_id" value="" > -->
