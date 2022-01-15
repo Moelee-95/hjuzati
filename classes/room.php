@@ -2,13 +2,15 @@
 
 
 class Room {
-    public $bookingID;// booking id in reserved rooms table
-    public $id;      //  id
-    public $number;  //number of rooms in reserved rooms table
-    public $created = false; //by default false
-    public $type;   //from rooms table
-    public $name;   //from rooms table
-    public $quantity; //from rooms table
+    public $id;      //  id initilize from the child class
+    public $type;   
+    public $name;   
+    public $numbers;
+    public $numBedRooms;
+    public $numLivingRooms;
+    public $numBathrooms;
+    public $bedNum;
+    public $maxPassengers;
     public $photos = array(); //from rooms photos table
 
 
@@ -16,34 +18,22 @@ class Room {
         
     }
 
-    //insert room reservation details to rooms booked table
-    public function addToDB($bookingID, $id, $number){
-        $conn = new db();
-        $conn = $conn->getConnection();
-        $insertRoomSql = "INSERT INTO roomsbooked (`rbBookingID`, `rbRoomID`, `rbNumOfRooms`) VALUES ('$bookingID', '$id', '$number')";
-        // print_r($insertRoomSql);
-        if ($conn->query($insertRoomSql) === TRUE) {
-            //inserted
-            $this->id = $id;
-            $this->number = $number;
-            $this->created = true;
-            return true;
-        } else {
-            // echo "Error insert room: $room_id: " . $conn->error;
-            $this->created = true;
-            return false;
-        }
-        
-        $conn->close();
-    }
-
-    //get room reservation details from rooms booked table
-    public function getFromDB($bookingID){
-        $sql = "SELECT * FROM hima.roomsbooked where rbBookingID = '$bookingID'";
-    }
-
     public function generateInfo(){
-
+        $conn = new db();$conn = $conn->getConnection();
+        if (!empty($this->id)) {
+            $sql = "SELECT rtRoomTypeEn, rnRoomNameEn,rRoomsNumbers,num_bed_rooms,num_living_rooms,num_bathrooms,bed_num,rMaxPas FROM rooms r 
+            join roomsnames rn on r.rRoomNameID = rn.rnRoomNameID 
+            join roomstypes rt on rt.rtRoomTypeID = rn.rnRoomTypeID where r.rRoomID = '$this->id';";
+            $query = mysqli_query($conn, $sql);
+            if ($query->num_rows > 0) {
+                $fetch = mysqli_fetch_array($query);
+                $this->type = $fetch['rtRoomTypeEn'];
+                $this->name = $fetch[''];
+                $this->
+                print_r($fetch);
+            }
+        }else{ echo "Initilize guest id first: if there would be $this->id";}
+      
     }
 
     public function getPrice($date){
