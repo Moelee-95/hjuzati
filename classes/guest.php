@@ -62,7 +62,7 @@ class Guest extends db {
     public $avatar;
     public $creationDate;
     public $DOB;
-    private $bookings = array();
+    public $bookings = array();
     public $avatarImg;
 
     public function __construct($identifier, $password){
@@ -147,6 +147,7 @@ class Guest extends db {
         
     }
     
+    // generate guest information
     private function generateInfo(){
         if($this->loggedIn){
             $sql = "SELECT * FROM guests WHERE gUserName='$this->userName' AND gPassword= '$this->password'";
@@ -173,6 +174,21 @@ class Guest extends db {
         }
     }
 
+    // generate guest bookings
+    public function addBooking($booking){
+        $bID = $booking->bookingID;// bookingID
+        $conn = new db();
+        $conn = $conn->getConnection();
+        $sql = "UPDATE bookings SET bGuestID = '$this->guestID' WHERE bBookingID = '$bID';";//set guest name in bookings table
+        if ($conn->query($sql) === TRUE) {
+            $this->bookings[] = $booking;
+            return true;
+        } else {
+            // echo "Error modify booking guestID: " . $conn->error;
+            return false;
+        }
+    }
+
     //setters for setting basic info
     public function setInfo($fullName, $gender, $DOB){
         $conn = new db();
@@ -193,11 +209,11 @@ class Guest extends db {
 
        
     }
-
+    //change guest email
     public function setEmail($email){
-
     }
 
+    //change guest phone number
     public function setPhoneNumber($phoneNumber){
         
     }
@@ -273,6 +289,8 @@ class Guest extends db {
             return 1;
         }  
     }
+
+
 }
 /* $result = Guest::findAccount("mo1");
 print_r($result);

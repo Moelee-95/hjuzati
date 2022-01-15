@@ -37,13 +37,18 @@ if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_CO
 if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isset($_COOKIE['guestPassword'])) {//when cookies are setted vut sessions are not setted
 	if (isset($_SESSION['login_guest'])) { // when guest is logged in with session
 		$guest = unserialize($_SESSION['guest']);
+        $bookings = $guest->bookings;
 	}
 	elseif (!isset($_SESSION['login_guest'])){	//When guest is logged in only by coockies, setup the php sessions
 		$_SESSION['login_guest'] = $_COOKIE['login_guest']; 
 		$_SESSION['guestUserName'] = $_COOKIE['guestUserName'];
 		$_SESSION['guest'] = serialize(new Guest($_COOKIE['guestUserName'],$_COOKIE['guestPassword'])); // create guest object
 		$guest = unserialize($_SESSION['guest']);
+        $bookings = $guest->bookings;
 	}
+}
+if (isset($_COOKIE['bookingConf'])) {
+    $bookings = json_decode(unserialize($_COOKIE['bookingConf']));
 }
 
 ?>

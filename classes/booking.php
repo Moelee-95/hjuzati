@@ -2,6 +2,7 @@
 
 class Booking {
     public $hotelID;
+    public $hotelName;
     public $bookingID; // inisilized later
     public $checkIn;
     public $checkOut;
@@ -23,13 +24,13 @@ class Booking {
     public $address;
     
 
-    public function __construct($hotelID, $checkIn,$checkOut,$nights,$adultNumber,$childNumber, $reservedRooms,$paymentMethod,$totalAmount,$guestID = null, $fullName='',$address='',$phone='',$email=''){
+    public function __construct($hotelID, $hotelName, $checkIn,$checkOut,$nights,$adultNumber,$childNumber, $reservedRooms,$paymentMethod,$totalAmount,$guestID = null, $fullName='',$address='',$phone='',$email=''){
         if (!($this->checkPaymentId($paymentMethod))) {
             $this->bookingCreated = false;
             $this->errorMsg = "Payment method is not exists in the database";
             return false;//stop executing the code
         }
-        $this->hotelID = $hotelID;$this->checkIn = $checkIn;$this->checkOut = $checkOut;$this->nights = $nights;
+        $this->hotelID = $hotelID;$this->hotelName = $hotelName;$this->checkIn = $checkIn;$this->checkOut = $checkOut;$this->nights = $nights;
         $this->adultNumber = $adultNumber;$this->childNumber = $childNumber;$this->reservedRooms=$reservedRooms;
         $this->paymentMethod = $paymentMethod;$this->totalAmount = $totalAmount;
         $this->fullName = $fullName; $this->phoneNumber = $phone; $this->email = $email; $this->address = $address;
@@ -57,7 +58,7 @@ class Booking {
         $conn = new db();
         $conn = $conn->getConnection();
         // echo $hotel_id." - ".$guest_id." - ".$check_in." - ".$check_out." - ".$psNumber." - ".$chNumber." - ". '1'."<br>";
-        $sql = "call hima.addReservation('$this->hotelID', '$this->guestID', '$this->checkIn', '$this->checkOut', '$this->adultNumber', '$this->childNumber', '1','$this->paymentMethod','$this->totalAmount','$this->fullName', '$this->phoneNumber', '$this->email','$this->address');";
+        $sql = "call addReservation('$this->hotelID', '$this->guestID', '$this->checkIn', '$this->checkOut', '$this->adultNumber', '$this->childNumber', '1','$this->paymentMethod','$this->totalAmount','$this->fullName', '$this->phoneNumber', '$this->email','$this->address');";
         $query = mysqli_query($conn, $sql);
         $fetch = mysqli_fetch_array($query);
         $this->bookingID = $fetch[0];
@@ -153,8 +154,13 @@ class Booking {
         }
     }
 
-
+    //Convert Date from 2021-11-05 to Thu 20 Feb Format
+    public static function dateConvert($date){
+        $dt = DateTime::createFromFormat('Y-m-d', $date);
+        return strtoupper($dt->format('D j M')); # 24 DEC
+    }
 }
+
 
 /* $reservedRooms["65"]= "2";
 

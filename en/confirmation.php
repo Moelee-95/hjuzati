@@ -65,14 +65,13 @@
                 <div class="col col-lg-6 col-sm-12 p-4 shadow-soft bg-white rounded-sm -none " style="" id="guestInfo">
                     <div class="py-6 px-5 border-bottom">
                         <div class="flex-horizontal-center">
-                            <div class="height-50 width-50 flex-shrink-0 flex-content-center bg-primary rounded-circle">
-                                <i class="flaticon-tick text-white font-size-24"></i>
-                            </div>
+                            
                             <div class="ml-3">
                                 <h3 class="font-size-18 font-weight-bold text-dark mb-0 text-lh-sm">
                                     Thank You. Your Booking Order is submitted Now.
                                 </h3>
                                 <p class="mb-0">A confirmation email has been sent to your provided email address.</p>
+                                <span id="bookingPasswordAlert" class= "row <?php echo $msgClass ?>"><?php echo $msg ?></span>
                             </div>
                         </div>
                     </div>
@@ -93,11 +92,6 @@
                         
                         <ul class="list-unstyled font-size-1 mb-0 font-size-16">
                             <li class="d-flex justify-content-between py-2">
-                                <span class="font-weight-medium">Booking number</span>
-                                <span class="text-secondary text-right" id="alertBookingID" ><?php echo $bookingConf->bookingID; ?></span>
-                            </li>
-
-                            <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Full Name</span>
                                 <span class="text-secondary text-right" id="alertFullName"><?php echo $bookingConf->fullName; ?></span>
                             </li>
@@ -114,15 +108,6 @@
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Town / City</span>
                                 <span class="text-secondary text-right" id="alertCity"><?php echo $bookingConf->address; ?></span>
-                            </li>
-                            <li class="d-flex justify-content-between py-2 pt-4">
-                                <span class="font-weight-medium">Edit/Show Booking Password</span>
-                                <span class="text-secondary text-right" id="">
-                                    <button id="EditBookingPassword" onclick="$('#createPassModal').modal('show')" href="#" class = "btn btn-primary p-0 pl-4 pr-4 m-0"> Edit </button>
-                                </span>
-                            </li>
-                            <li class="d-flex justify-content-between py-2">
-                                <span id="bookingPasswordAlert" class= "w-100 p-1 <?php echo $msgClass ?>"><?php echo $msg ?></span>
                             </li>
 
                         </ul>
@@ -142,6 +127,21 @@
                         </div>  
                         
                         <ul class="list-unstyled font-size-1 mb-0 font-size-16">
+                            <li class="d-flex justify-content-between py-2">
+                                <span class="font-weight-medium">Booking number</span>
+                                <span class="text-secondary text-right" id="alertBookingID" ><?php echo $bookingConf->bookingID; ?></span>
+                            </li>
+                            <li class="d-flex justify-content-between py-2 pt-4">
+                                <span class="font-weight-medium">Booking Code</span>
+                                <span class=" row text-secondary align-content-right" id="">
+                                    <?php if (isset($bookingConf) && !empty($bookingConf->bPassword)) { echo $bookingConf->bPassword; } else{ echo "";}; ?>
+                                    <a class=" btn-outline-primary px-1 mx-1" id="EditBookingPassword"
+                                     onclick="$('#createPassModal').modal('show')"
+                                      href="#"> 
+                                      <i class="fas fa-pencil-alt"></i>
+                                      </a>
+                                </span>
+                            </li>
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Check In</span>
                                 <span class="text-secondary text-right" id="alertBookingID" ><?php echo $bookingConf->checkIn; ?></span>

@@ -118,30 +118,36 @@
         if (!empty($_SESSION['login_guest'])) {
             $guestID = $_SESSION['login_guest'];
             $guest = unserialize($_SESSION['guest']);//guest object
-            $b = new Booking("16",'2021-11-05','2021-11-11','6','1','0', $reservedRooms,'2',$totalPrice, $guestID,'','','','');//create booking
+            $b = new Booking($hotel_id,$hotel_name,$check_in,$check_out,$nights,$psNumber,$chNumber, $reservedRooms,'2',$totalPrice, $guestID,$fullName,$city,$phone,$email);//create booking
             if($b->bookingCreated){
-                $guest->bookings[] = $b;
+                $guest->addBooking($b);
                 $_SESSION['guest'] = serialize($guest); // store the guest with it's booking back to the session
-                $_SESSION['bookingConf'] = serialize($b);
-                //using javascript to redirect because an error occures when using php header
-                ?>
-                <script>window.location.replace("confirmation.php?createBookingPassword=false");</script>
-                <?php
-                exit();
+                $_SESSION['bookingConf'] = serialize($b);//only used in confirmation.php
+                
+                header("Location: confirmation.php?createBookingPassword=false");
+                die();
             }
         
         }
         else{
-            $b = new Booking("16",'2021-11-05','2021-11-11','6','1','0', $reservedRooms,'2',$totalPrice, null ,$fullName,$city,$phone,$email);
+            $b = new Booking($hotel_id,$hotel_name,$check_in,$check_out,$nights,$psNumber,$chNumber, $reservedRooms,'2',$totalPrice, $guestID,$fullName,$city,$phone,$email);//create booking
             if($b->bookingCreated){
                 if (!isset($_COOKIE['bookingConf'])) { // when creating first booking
                     $bookings = array(); // array to hold bookings objects
                     $bookings[] = $b;        //  adding booking to the array
-                    $incode = json_encode($bookings); //  incode array of bookings
-                    $serialized = serialize($incode); //  serialize it
+                    $serialized = serialize(json_encode($bookings)); // incode then serialize
+                    $_SESSION['bookingConf'] = serialize($b);//only used in confirmation.php
+                    setcookie('bookingConf',$serialized, time()+60*60*30, "/");
+                    header("Location: confirmation.php?createBookingPassword=true");
+                    die();
+                }
+                elseif (isset($_COOKIE['bookingConf'])) { // when creating first booking
+                    $bookings = json_decode(unserialize($_COOKIE['bookingConf'])); // unserialize->decode bokkings array
+                    $bookings[] = $b;        //  adding booking to the array
+                    $serialized = serialize(json_encode($bookings)); // incode then serialize
                     $_SESSION['bookingConf'] = serialize($b);
-                    $set = setcookie('bookingConf',$serialized, time()+60*60*30, "/");
-                    header("Location: https://www.google.com");
+                    setcookie('bookingConf',$serialized, time()+60*60*30, "/"); // 30 days
+                    header("Location: confirmation.php?createBookingPassword=true");
                     die();
                 }
             }
@@ -150,7 +156,7 @@
     } // END if ($_POST['phone_input'])
     else {
         echo "You can't access this page directly";
-        ?><script>window.location.replace("index.php");</script><?php
+        header("Location: index.php");
         exit();
     }
     ?>
@@ -487,6 +493,7 @@
                             <!-- action="post.php" method="post" -->
                             <form  name="reserve_room" class="js-validate" id="reserve_room" method="post" action="booking_post.php" >
                                 <input type="hidden" name="hotel_id" id="hotel_id" value="<?php echo $hotel_id; ?>" >
+                                <input type="hidden" name="hotel_name" id="hotel_name" value="<?php echo $fetch2['hHotelName']; ?>" >
                                 <input type="hidden" name="phone_input" id="phone_input" value="0" />
                                 <!-- <input type="hidden" name="guest_id" id="guest_id" value="" > -->
                                 <input type="hidden" name="check-in" id="check-in" value="<?php echo $check_in ?>" >                                <input type="hidden" name="check-in" value="<?php echo $check_in  ?>" >

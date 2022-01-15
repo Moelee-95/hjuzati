@@ -10,6 +10,7 @@ require('../classes/cities.php');
 
 if (isset($_POST['phone_input'])) {  // reserve room request
     $hotel_id =  $_POST['hotel_id'];
+    $hotel_name =  $_POST['hotel_name'];
     $check_in =  $_POST['check-in'];
     $check_out =  $_POST['check-out'];
     $nights =  $_POST['nights'];
@@ -37,7 +38,7 @@ if (isset($_POST['phone_input'])) {  // reserve room request
     if (!empty($_SESSION['login_guest'])) {
         $guestID = $_SESSION['login_guest'];
         $guest = unserialize($_SESSION['guest']);//guest object
-        $b = new Booking("16",'2021-11-05','2021-11-11','6','1','0', $reservedRooms,'2',$totalPrice, $guestID,'','','','');//create booking
+        $b = new Booking($hotel_id,$hotel_name,$check_in,$check_out,$nights,$psNumber,$chNumber, $reservedRooms,'2',$totalPrice, $guestID,$fullName,$city,$phone,$email);//create booking
         if($b->bookingCreated){
             $guest->bookings[] = $b;
             $_SESSION['guest'] = serialize($guest); // store the guest with it's booking back to the session
@@ -49,7 +50,7 @@ if (isset($_POST['phone_input'])) {  // reserve room request
     }
     else{
         
-        $b = new Booking("16",'2021-11-05','2021-11-11','6','1','0', $reservedRooms,'2',$totalPrice, null ,$fullName,$city,$phone,$email);
+        $b = new Booking($hotel_id,$hotel_name,$check_in,$check_out,$nights,$psNumber,$chNumber, $reservedRooms,'2',$totalPrice, $guestID,$fullName,$city,$phone,$email);
         if($b->bookingCreated){
             if (!isset($_COOKIE['bookingConf'])) { // when creating first 
                 $bookings = array(); // array to hold bookings objects

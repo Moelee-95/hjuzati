@@ -347,26 +347,39 @@
                 <!-- Cart Navigation -->
                 <div id="cartNavBar" class="navbar-collapse u-header__navbar-collapse collapse order-2 order-xl-0 pt-4 p-xl-0 position-relative">
                     <ul class="navbar-nav u-header__navbar-nav">
-                        <h4>My Orders</h4>
-                        <?php  ?>
-                        <li class="nav-item u-header__nav-item p-2 row border border-light">
-                            <div class="col-6 pt-2 order-1">
-                                <div class="row"><span>Hjuzati Hotel Test</span></div>
-                                <div class="row"><b class="col-6 p-0">Tue 17 Feb <span class="text-primary">|</span></b><b class="col-6 p-0">Thu 20 Feb</b></div>
-                            </div>
-                            <div class="col-2 pt-2 order-3">
-                                <button class="btn btn-outline-primary py-2 mt-1">
-                                    <i class="far fa-pencil-alt"></i>
-                                    
-                                </button>
-                            </div>
-                            <div class="col-4 pt-2 pb-0 order-2">
-                                <div class="alert alert-success px-2 text-center" role="alert">
-                                    Confirmed
+                        <h4>My Bookings</h4>
+                        <?php
+                            if (isset($bookings)) {
+                                foreach ($bookings as $key => $booking) { ?>
+                                    <li class="nav-item u-header__nav-item p-2 row border border-light">
+                                        <div class="col-6 pt-2 order-1">
+                                            <div class="row"><span class="h5"><?php echo $booking->hotelName; ?></span></div>
+                                            <div class="row"><span class="col-6 p-0"><?php echo Booking::dateConvert($booking->checkIn); ?>
+                                             <span class="text-primary">|</span></span><span class="col-6 p-0"><?php echo Booking::dateConvert($booking->checkOut) ?></span></div>
+                                        </div>
+                                        <div class="col-2 pt-2 order-3">
+                                            <button class="btn btn-outline-primary py-2 mt-1">
+                                                <i class="far fa-pencil-alt"></i>
+                                                
+                                            </button>
+                                        </div>
+                                        <div class="col-4 pt-2 pb-0 order-2">
+                                            <div class="alert alert-success px-2 text-center" role="alert">
+                                                Confirmed
+                                            </div>
+                                        </div>
+                                    </li>
+                            <?php } 
+                            }
+                            else{
+                            ?>
+                                <div class="text-center p-4 border">
+                                    <span class=""> You Don't have any Bookings for now</span>
+                                    <div class="w-100 p-1"></div>
+                                    <a class="text-primary" href="index.php"><i class="far fa-calendar-plus pr-1"></i>  New reservation</a>
+
                                 </div>
-                           </div>
-                        </li>
-                            
+                           <?php } ?>
                     </ul>
                 </div>
                 <!-- End Cart Navigation -->
