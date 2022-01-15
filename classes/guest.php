@@ -1,6 +1,9 @@
 <?php
 
-// require "db.php";
+// require 'db.php';
+// require 'room.php';
+// require 'reserveRoom.php';
+// require 'booking.php';
 
 class createGuest extends db {
    
@@ -43,7 +46,6 @@ class createGuest extends db {
 
 
 class Guest extends db {
-    
     public $loggedIn = false; //
     public $errorMessage; //
     public $userName;//setted before login
@@ -146,6 +148,18 @@ class Guest extends db {
             return false;}
         
     }
+
+    // generate bookings and insert them to bookings array
+    public function getBookingsFromDB(){
+        // $conn = new db();
+        // $conn = $conn->getConnection();
+        $sql = "SELECT bBookingID FROM bookings where bGuestID = '$this->guestID'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $info = $result->fetch_all(MYSQLI_ASSOC);
+            print_r($info);
+        }
+    }
     
     // generate guest information
     private function generateInfo(){
@@ -168,6 +182,8 @@ class Guest extends db {
             $this->DOB = $fetch['gDOB'];
             $this->creationDate = $fetch['gCreatingDate'];
             $this->avatarImg = $fetch['avatar'];
+
+
         }
         else{
             return false;
@@ -296,7 +312,8 @@ class Guest extends db {
 print_r($result);
  */
 
-// $guest = new Guest('+9647701111111', 'alii');
+$guest = new Guest('ali111', 'ali');
+
 
 // echo $guest->errorMessage;
 

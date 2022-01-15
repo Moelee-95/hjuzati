@@ -1,8 +1,9 @@
 <?php
 
-require 'db.php';
-require 'room.php';
-require 'reserveRoom.php';
+// require 'db.php';
+// require 'room.php';
+// require 'reserveRoom.php';
+
 
 class Booking {
     public $hotelID;
