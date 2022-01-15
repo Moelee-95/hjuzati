@@ -1,5 +1,9 @@
 <?php
 
+require 'db.php';
+require 'room.php';
+require 'reserveRoom.php';
+
 class Booking {
     public $hotelID;
     public $hotelName;
@@ -10,7 +14,6 @@ class Booking {
     public $nights;
     public $adultNumber;
     public $childNumber;
-    public $reservedRooms = array(); // array, indexes are the rooms id, values are numbers of rooms
     public $rooms = array();// stores objects of room
     public $numberOfRooms = 0;
     public $paymentMethod;
@@ -24,9 +27,12 @@ class Booking {
     public $email;
     public $address;
     
-    
+    public function __construct(){
+        
+    }
 
-    public function __construct($hotelID, $hotelName, $checkIn,$checkOut,$nights,$adultNumber,$childNumber, $reservedRooms,$paymentMethod,$totalAmount,$guestID = null, $fullName='',$address='',$phone='',$email=''){
+    // Add booking to the database
+    public function addToDB($hotelID, $hotelName, $checkIn,$checkOut,$nights,$adultNumber,$childNumber, $reservedRooms,$paymentMethod,$totalAmount,$guestID = null, $fullName='',$address='',$phone='',$email=''){
         if (!($this->checkPaymentId($paymentMethod))) {
             $this->bookingCreated = false;
             $this->errorMsg = "Payment method is not exists in the database";
@@ -39,8 +45,10 @@ class Booking {
         
         if ($guestID == null) {
             if($this->createBookingGuestNotExisted()){
-                foreach ($reservedRooms as $name => $value){ // insert all rooms to the booking
-                    $this->addRoom($this->bookingID, $name, $value);
+                foreach ($reservedRooms as $id => $number){ // insert all rooms to the booking
+                    $room = new ReserveRoom();
+                    $room->addToDB($this->bookingID, $id, $number); // booking id, room id, reserved numbers
+                    $this->rooms[] = $room;
                     $this->setNumberOfRooms();//setup rooms Numbers
                 }
             }
@@ -48,11 +56,63 @@ class Booking {
         else{
             $this->guestID = $guestID;
             if($this->createBookingGuestExisted()){
-                foreach ($reservedRooms as $name => $value){
-                    $this->addRoom($this->bookingID, $name, $value);
+                foreach ($reservedRooms as $id => $number){ // insert all rooms to the booking
+                    $room = new ReserveRoom();
+                    $room->addToDB($this->bookingID, $id, $number); // booking id, room id, reserved numbers
+                    $this->rooms[] = $room;
                     $this->setNumberOfRooms();//setup rooms Numbers
                 }
             }
+        }
+    }
+
+
+    //getFromDB helper to setup rooms
+    public function getRoomsFromDB(){
+        $conn = new db();
+        $conn = $conn->getConnection();
+        $sql = "SELECT rbRoomID FROM roomsbooked WHERE rbBookingID = '$this->bookingID';"; 
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $info = $result->fetch_all(MYSQLI_ASSOC);
+            foreach ($info as $key => $roomInfo) {
+                foreach ($roomInfo as $key2 => $roomID) {
+                    $room = new ReserveRoom();
+                    $room->getFromDB($this->bookingID, $roomID);
+                    $this->rooms[] = $room;
+                    $this->setNumberOfRooms();
+                }
+            }
+        }
+    }
+
+    // Get booking from database
+    public function getFromDB($bookingID){
+        $conn = new db();
+        $conn = $conn->getConnection();
+        $sql = "SELECT * FROM bookings where bBookingID = '$bookingID'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $info = $result->fetch_array();
+            $this->hotelID=$info['bHotelID'];
+            // $this->hotelName=$info[''];
+            $this->bookingID=$info['bBookingID'];
+            $this->checkIn=$info['bDateFrom'];
+            $this->checkOut=$info['bDateTo'];
+            $this->bPassword=$info['password']; // inisilized later
+            $this->nights=$info['bNumOfNights'];
+            $this->adultNumber=$info['bNumOfGuests'];
+            $this->childNumber=$info['bNumOfChildren'];
+            $this->totalAmount=$info['totalAmount'];
+            $this->guestID=$info['bGuestID']; //
+            $this->fullName=$info['fullName'];
+            $this->phoneNumber=$info['phoneNumber'];
+            $this->email=$info['email'];
+            $this->address=$info['address'];
+            $this->paymentMethod=$info['paymentMethod']; //change to values later
+            $this->paymentStatus = $info['bPaymentStatusID']; // change to values later
+            $this->getRoomsFromDB(); // setup rooms
+            $this->bookingCreated = true;
         }
     }
 
@@ -125,16 +185,12 @@ class Booking {
       
     }
     
-     //add rooms to the booking 
-    public function addRoom($booking_id, $room_id, $value){
-        
-    }
     
     public function setNumberOfRooms(){
         if($this->bookingCreated){
             $conn = new db();
             $conn = $conn->getConnection();
-            $sql = "SELECT sum(rbNumOfRooms) as numOfRooms FROM hima.roomsbooked where rbBookingID = '$this->bookingID';";
+            $sql = "SELECT sum(rbNumOfRooms) as numOfRooms FROM roomsbooked where rbBookingID = '$this->bookingID';";
             $query = mysqli_query($conn, $sql);
             if($fetch = mysqli_fetch_array($query)){
                 $this->numberOfRooms = $fetch['numOfRooms'];
@@ -144,6 +200,9 @@ class Booking {
         }
     }
 
+    //remove booking
+    
+
     //Convert Date from 2021-11-05 to Thu 20 Feb Format
     public static function dateConvert($date){
         $dt = DateTime::createFromFormat('Y-m-d', $date);
@@ -152,14 +211,23 @@ class Booking {
 }
 
 
-/* $reservedRooms["65"]= "2";
+// $reservedRooms["76"]= "12";
 
-$b = new Booking("16",'2021-11-05','2021-11-11','6','1','0', $reservedRooms,'2','200.0', null,'','','','');
+// $b = new Booking();
+// $b->addToDB("16","Hjuzati",'2021-11-05','2021-11-11','6','1','0', $reservedRooms,'2','200.0', "114",'test t t','baghdad','07700000000','e@mail.com');
 
-if ($b->bookingCreated) {
-    echo "true";
-}
- */
+// if ($b->bookingCreated) {
+//     $rooms = $b->rooms;;
+//     print_r($rooms);
+// }
+
+// $b = new Booking();
+// $b->getFromDB("220");
+
+// if ($b->bookingCreated) {
+//     $rooms = $b->rooms;;
+//     print_r($rooms[0]->type);
+// }
 
 
 
