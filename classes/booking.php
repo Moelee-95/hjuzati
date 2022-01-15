@@ -11,6 +11,7 @@ class Booking {
     public $adultNumber;
     public $childNumber;
     public $reservedRooms = array(); // array, indexes are the rooms id, values are numbers of rooms
+    public $rooms = array();// stores objects of room
     public $numberOfRooms = 0;
     public $paymentMethod;
     public $paymentStatus = "pending";
@@ -22,6 +23,7 @@ class Booking {
     public $phoneNumber;
     public $email;
     public $address;
+    
     
 
     public function __construct($hotelID, $hotelName, $checkIn,$checkOut,$nights,$adultNumber,$childNumber, $reservedRooms,$paymentMethod,$totalAmount,$guestID = null, $fullName='',$address='',$phone='',$email=''){
@@ -125,19 +127,7 @@ class Booking {
     
      //add rooms to the booking 
     public function addRoom($booking_id, $room_id, $value){
-        $conn = new db();
-        $conn = $conn->getConnection();
-        $insertRoomSql = "INSERT INTO `hima`.`roomsbooked` (`rbBookingID`, `rbRoomID`, `rbNumOfRooms`) VALUES ('$booking_id', '$room_id', '$value')";
-        // print_r($insertRoomSql);
-        if ($conn->query($insertRoomSql) === TRUE) {
-            //inserted
-            return true;
-        } else {
-            // echo "Error insert room: $room_id: " . $conn->error;
-            return false;
-        }
         
-        $conn->close();
     }
     
     public function setNumberOfRooms(){
