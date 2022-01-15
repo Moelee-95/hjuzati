@@ -2,15 +2,51 @@
 
 
 class Room {
-    public $id;
-    public $type;
-    public $name;
-    public $quantity;
-    public $photos = array();
+    public $bookingID;// booking id in reserved rooms table
+    public $id;      //  id
+    public $number;  //number of rooms in reserved rooms table
+    public $created = false; //by default false
+    public $type;   //from rooms table
+    public $name;   //from rooms table
+    public $quantity; //from rooms table
+    public $photos = array(); //from rooms photos table
+
 
     public function __construct(){
+        
+    }
+
+    //insert room reservation details to rooms booked table
+    public function addToDB($bookingID, $id, $number){
         $conn = new db();
         $conn = $conn->getConnection();
+        $insertRoomSql = "INSERT INTO roomsbooked (`rbBookingID`, `rbRoomID`, `rbNumOfRooms`) VALUES ('$bookingID', '$id', '$number')";
+        // print_r($insertRoomSql);
+        if ($conn->query($insertRoomSql) === TRUE) {
+            //inserted
+            $this->id = $id;
+            $this->number = $number;
+            $this->created = true;
+            return true;
+        } else {
+            // echo "Error insert room: $room_id: " . $conn->error;
+            $this->created = true;
+            return false;
+        }
+        
+        $conn->close();
+    }
+
+    //get room reservation details from rooms booked table
+    public function getFromDB($bookingID){
+        $sql = "SELECT * FROM hima.roomsbooked where rbBookingID = '$bookingID'";
+    }
+
+    public function generateInfo(){
+
+    }
+
+    public function getPrice($date){
         
     }
 
