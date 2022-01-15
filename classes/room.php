@@ -18,6 +18,21 @@ class Room {
         
     }
 
+    public function generatePhotos(){
+        $conn = new db();
+        $conn = $conn->getConnection();
+        $sql = "SELECT rpPhotoPath FROM roomsphotos where rpRoomsID = '$this->id';";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0){
+            $photosArr = $result->fetch_all(MYSQLI_ASSOC);
+            // print_r($photosArr);
+            foreach ($photosArr as $key => $photoArr) {
+                $this->photos[] = $photoArr["rpPhotoPath"];
+            }
+        }
+        
+
+    }
     public function generateInfo(){
         $conn = new db();$conn = $conn->getConnection();
         if (!empty($this->id)) {
@@ -28,9 +43,14 @@ class Room {
             if ($query->num_rows > 0) {
                 $fetch = mysqli_fetch_array($query);
                 $this->type = $fetch['rtRoomTypeEn'];
-                $this->name = $fetch[''];
-                $this->
-                print_r($fetch);
+                $this->name = $fetch['rnRoomNameEn'];
+                $this->numbers = $fetch['rRoomsNumbers'];
+                $this->numBedRooms = $fetch['num_bed_rooms'];
+                $this->numLivingRooms = $fetch['num_living_rooms'];
+                $this->numBathrooms = $fetch['num_bathrooms'];
+                $this->bedNum = $fetch['bed_num'];
+                $this->maxPassengers = $fetch['rMaxPas'];
+                $this->generatePhotos();
             }
         }else{ echo "Initilize guest id first: if there would be $this->id";}
       
@@ -56,6 +76,7 @@ class Room {
             return "";
         }
     }
+
     // Get Hotel userID
     public static function getHotelUserID($hotelID){
         $conn = new db();

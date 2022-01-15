@@ -1,7 +1,7 @@
 <?php
 
-require 'db.php';
-require 'room.php';
+// require 'db.php';
+// require 'room.php';
 
 class ReserveRoom extends room{
     public $bookingID;// booking id in reserved rooms table
@@ -22,6 +22,7 @@ class ReserveRoom extends room{
             $this->id = $id;
             $this->bookingID = $bookingID;
             $this->number = $number;
+            $this->generateInfo();
             $this->created = true;
             return true;
         } else {
@@ -31,7 +32,7 @@ class ReserveRoom extends room{
         }
     }
     //get room reservation details from rooms booked table
-    public function getFromDB($bookingID,$roomID ){
+    public function getFromDB($bookingID,$roomID){
         $conn = new db();
         $conn = $conn->getConnection();
         $sql = "SELECT rbNumOfRooms FROM hima.roomsbooked where rbBookingID = '$bookingID' and rbRoomID = '$roomID'";
@@ -42,6 +43,7 @@ class ReserveRoom extends room{
             $this->number = $fetch["0"];
             $this->id = $roomID;
             $this->created = true;
+            $this->generateInfo();
             return true;
         }else{
             $this->created = false;
@@ -50,12 +52,12 @@ class ReserveRoom extends room{
     }
 }
 
-$obj = new ReserveRoom();
-$obj->addToDB("160", "76", "4");
-echo $obj->id."-----";
-echo $obj->number."-----";
-echo $obj->bookingID."-----";
-$obj->generateInfo();
+// $obj = new ReserveRoom();
+// $obj->addToDB("160", "76", "4");
+// echo $obj->id."-----";
+// echo $obj->number."-----";
+// print_r($obj->photos);
+
 
 
 
