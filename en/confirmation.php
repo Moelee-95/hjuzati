@@ -49,7 +49,7 @@
 
                 
             } else {
-                echo 'redirect user to the previous page';
+                echo "<span class='h1'>There is no booking created</span>";
                 exit();
             }
         ?>

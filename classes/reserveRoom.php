@@ -50,13 +50,31 @@ class ReserveRoom extends room{
             return false;
         }
     }
+
+    //remove reserved room from database; should remove it's object too 
+    //return true when query is executed, false when not executed
+    public function remove(){
+        $conn = new db();
+        $conn = $conn->getConnection();
+        $sql = "DELETE FROM roomsbooked WHERE rbBookingID = '$this->bookingID' and rbRoomID = '$this->id'";
+        $result = $conn->query($sql);
+        if ($result){return true; } 
+        else { return false;}
+    }
 }
+
+// $obj = new ReserveRoom();
+// $obj->getFromDB("220", "76");
+// $bool = $obj->remove();
+// echo $bool;
+
 
 // $obj = new ReserveRoom();
 // $obj->addToDB("160", "76", "4");
 // echo $obj->id."-----";
 // echo $obj->number."-----";
 // print_r($obj->photos);
+
 
 
 

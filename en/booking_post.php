@@ -5,10 +5,12 @@ session_start();
 require('../classes/db.php');
 require('../classes/guest.php');
 require('../classes/booking.php');
+require('../classes/room.php');
+require('../classes/reserveRoom.php');
 require('../classes/cities.php');
 
 
-if (isset($_POST['phone_input'])) {  // reserve room request
+if (isset($_POST['phone_input'])) {  // reservation request
     $hotel_id =  $_POST['hotel_id'];
     $hotel_name =  $_POST['hotel_name'];
     $check_in =  $_POST['check-in'];
@@ -31,46 +33,44 @@ if (isset($_POST['phone_input'])) {  // reserve room request
                 $room_id = $rooms[1];
                 $totalRooms = $value;
                 $reservedRooms["$room_id"]= $value;
-            } 
+            }
         }
     }
     
     if (!empty($_SESSION['login_guest'])) {
         $guestID = $_SESSION['login_guest'];
         $guest = unserialize($_SESSION['guest']);//guest object
-        $b = new Booking($hotel_id,$hotel_name,$check_in,$check_out,$nights,$psNumber,$chNumber, $reservedRooms,'2',$totalPrice, $guestID,$fullName,$city,$phone,$email);//create booking
+        $b = new Booking();//create booking 
+        $b->addToDB($hotel_id,$hotel_name,$check_in,$check_out,$nights,$psNumber,$chNumber, $reservedRooms,'2',$totalPrice, $guestID,$fullName,$city,$phone,$email);
         if($b->bookingCreated){
             $guest->bookings[] = $b;
             $_SESSION['guest'] = serialize($guest); // store the guest with it's booking back to the session
-            $_SESSION['bookingConf'] = serialize($b);
+            $_SESSION['bookingConf'] = serialize($b);//only used in confirmation.php
             header("Location: confirmation.php?createBookingPassword=false");
-            exit();
+            die();
         }
-    
     }
     else{
-        
-        $b = new Booking($hotel_id,$hotel_name,$check_in,$check_out,$nights,$psNumber,$chNumber, $reservedRooms,'2',$totalPrice, $guestID,$fullName,$city,$phone,$email);
+        $b = new Booking();//create booking 
+        $b->addToDB($hotel_id,$hotel_name,$check_in,$check_out,$nights,$psNumber,$chNumber, $reservedRooms,'2',$totalPrice, null,$fullName,$city,$phone,$email);
         if($b->bookingCreated){
-            if (!isset($_COOKIE['bookingConf'])) { // when creating first 
+            if (!isset($_COOKIE['bookings'])) { // when creating first booking
                 $bookings = array(); // array to hold bookings objects
                 $bookings[] = $b;        //  adding booking to the array
-                $incode = json_encode($bookings); //  incode array of bookings
-                $serialized = serialize($incode); //  serialize it
-                $_SESSION['bookingConf'] = serialize($b);
-                $set = setcookie('bookingConf',$serialized, time()+60*60*30, "/");
+                $serialized = serialize(json_encode($bookings)); // incode then serialize
+                $_SESSION['bookingConf'] = serialize($b);//only used in confirmation.php backend side;;
+                setcookie('bookings',$serialized, time()+60*60*30, "/"); //front end side
                 header("Location: confirmation.php?createBookingPassword=true");
                 die();
             }
-            elseif(isset($_COOKIE['bookingConf'])){
-                $bookings = json_decode(unserialize($_COOKIE['bookingConf'])); // incode then unserialize
+            elseif (isset($_COOKIE['bookings'])) { // when creating first booking
+                $bookings = json_decode(unserialize($_COOKIE['bookings'])); // unserialize->decode bokkings array
                 $bookings[] = $b;        //  adding booking to the array
-                $serialized = serialize(json_encode($bookings)); // serialize and incode
-                $_SESSION['bookingConf'] = serialize($b);
-                $set = setcookie('bookingConf',$serialized, time()+60*60*30, "/");
+                $serialized = serialize(json_encode($bookings)); // incode then serialize
+                $_SESSION['bookingConf'] = serialize($b);        //Only used in confirmation.php
+                setcookie('bookings',$serialized, time()+60*60*30, "/"); // 30 days
                 header("Location: confirmation.php?createBookingPassword=true");
                 die();
-
             }
         }
     

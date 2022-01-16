@@ -200,14 +200,27 @@ class Booking {
 
         }
     }
-
-    //remove booking
     
 
     //Convert Date from 2021-11-05 to Thu 20 Feb Format
     public static function dateConvert($date){
         $dt = DateTime::createFromFormat('Y-m-d', $date);
         return strtoupper($dt->format('D j M')); # 24 DEC
+    }
+
+    //remove booking and it's related rooms from db;
+    public function remove(){
+        $conn = new db();
+        $conn = $conn->getConnection();
+        //removing all rooms in the booking
+        foreach ($this->rooms as $key => $room) { 
+            $room->remove();
+        }
+        //removing booking from the db;
+        $sql = "DELETE FROM bookings WHERE bBookingID = '$this->bookingID'";
+        $result = $conn->query($sql);
+        if($result ){ return true;}
+        else {return false;}
     }
 }
 
@@ -223,7 +236,9 @@ class Booking {
 // }
 
 // $b = new Booking();
-// $b->getFromDB("220");
+// $b->getFromDB("226");
+// $bool = $b->remove();
+// echo $bool;
 
 // if ($b->bookingCreated) {
 //     $rooms = $b->rooms;;

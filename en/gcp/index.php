@@ -2,8 +2,12 @@
 
 session_start();
 $display_msg = "none";
-require ('../../classes/db.php');
-require ('../../classes/guest.php');
+require('../../classes/db.php');
+require('../../classes/guest.php');
+require('../../classes/booking.php');
+require('../../classes/room.php');
+require('../../classes/reserveRoom.php');
+require('../../classes/cities.php');
 include('../cp/db/db_connect.php');
 
 
@@ -27,9 +31,11 @@ elseif (empty($_SESSION['login_guest']) and empty($_COOKIE['login_guest'])) {
     if ($guest->loggedIn) {
         //Making sure to remove previous sessions
         unset($_SESSION['login_user']);
-        if (isset($_COOKIE['bookingConf']) && !empty($_COOKIE['bookingConf'])) { // Merge guest with previous bookings in cookies
-            $bookings = json_decode(unserialize($_COOKIE['bookingConf']));
-            $guest->bookings = array_merge($guest->bookings, $bookings); // add previous bookings to guest bookings
+        if (isset($_COOKIE['bookings']) && !empty($_COOKIE['bookings'])) { // Merge guest with previous bookings in cookies
+            $cookiesBookings = json_decode(unserialize($_COOKIE['bookings']));
+            foreach ($cookiesBookings as $key => $cookiesBooking) {
+                $guest->addBooking($cookiesBooking); //adding previous booking to user when he logges in
+            }
         }
         $_SESSION['guest'] = serialize($guest);
         $_SESSION['login_guest'] = $guest->guestID;  // Represents the guest Id

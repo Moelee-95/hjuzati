@@ -1,9 +1,9 @@
 <?php
 
-require 'db.php';
-require 'room.php';
-require 'reserveRoom.php';
-require 'booking.php';
+// require 'db.php';
+// require 'room.php';
+// require 'reserveRoom.php';
+// require 'booking.php';
 
 class createGuest extends db {
     public $created = false;
@@ -151,7 +151,7 @@ class Guest extends db {
         
     }
 
-    // generate bookings and insert them to bookings array
+    // generate bookings and insert them to bookings array when login
     public function generateBookings(){
         $conn = new db();
         $conn = $conn->getConnection();
@@ -204,7 +204,7 @@ class Guest extends db {
         } else{ return false;}
     }
 
-    // generate guest bookings
+    // Add unadded bookings Objects & set to guest by database
     public function addBooking($booking){
         $bID = $booking->bookingID;// bookingID
         $conn = new db();
