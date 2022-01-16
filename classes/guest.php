@@ -1,12 +1,11 @@
 <?php
 
-// require 'db.php';
-// require 'room.php';
-// require 'reserveRoom.php';
-// require 'booking.php';
+require 'db.php';
+require 'room.php';
+require 'reserveRoom.php';
+require 'booking.php';
 
 class createGuest extends db {
-   
     public $created = false;
     public $guestID;
     public $fullName; // Used in the constructor
@@ -77,6 +76,7 @@ class Guest extends db {
             $this->generateInfo();
         }
     }
+
     // used when forgot password, accept itentity(email,username,phone) returns $data
     public static function findGuestID($identity){
         $conn = new db();
@@ -106,9 +106,11 @@ class Guest extends db {
 
     //send sms to the guest phone, accepts guest id, returns encrypted md5 verification code
     public static function sendSms($guestID){
-        // I have to create a class for sending sms to the phone number, sendSms
+    // I have to create a class for sending sms to the phone number, sendSms
 
     }
+
+    
     public static function sendEmail($guestID){
 
     }
@@ -150,44 +152,56 @@ class Guest extends db {
     }
 
     // generate bookings and insert them to bookings array
-    public function getBookingsFromDB(){
-        // $conn = new db();
-        // $conn = $conn->getConnection();
+    public function generateBookings(){
+        $conn = new db();
+        $conn = $conn->getConnection();
         $sql = "SELECT bBookingID FROM bookings where bGuestID = '$this->guestID'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             $info = $result->fetch_all(MYSQLI_ASSOC);
-            print_r($info);
+            foreach ($info as $index => $bookings) {
+                foreach ($bookings as $index2 => $booking) {
+                    $b = new Booking();
+                    $b->getFromDB($booking);
+                    if ($b->bookingCreated) {
+                        $this->bookings[] = $b;
+                    }
+                    else{
+                        $this->errorMessage = $this->errorMessage." - Coudn't created $b Bookings";
+                    }
+                }
+            }
         }
     }
     
     // generate guest information
     private function generateInfo(){
+        $conn = new db();
+        $conn = $conn->getConnection();
         if($this->loggedIn){
             $sql = "SELECT * FROM guests WHERE gUserName='$this->userName' AND gPassword= '$this->password'";
-            $query = mysqli_query($this->conn, $sql);
-            $fetch = mysqli_fetch_array($query);
-            $this->guestID = $fetch['gGuestID'];
-            $this->fullName = $fetch['gFullName'];
-            $this->address = $fetch['gAddress'];
-            $this->address2 = $fetch['gAddress2'];
-            $this->city = $fetch['gCity'];
-            $this->zipCode = $fetch['gZipCode'];
-            $this->country = $fetch['gCountry'];
-            $this->phoneNumber = $fetch['gPhoneNumber'];
-            $this->email = $fetch['gEmail'];
-            $this->gender = $fetch['gGender'];
-            $this->status = $fetch['gStatus'];
-            $this->avatar = $fetch['gStatus'];
-            $this->DOB = $fetch['gDOB'];
-            $this->creationDate = $fetch['gCreatingDate'];
-            $this->avatarImg = $fetch['avatar'];
-
-
-        }
-        else{
-            return false;
-        }
+            $result = $conn -> query($sql);
+            if ($result->num_rows > 0) {
+                $fetch = $result->fetch_array();
+                $this->guestID = $fetch['gGuestID'];
+                $this->fullName = $fetch['gFullName'];
+                $this->address = $fetch['gAddress'];
+                $this->address2 = $fetch['gAddress2'];
+                $this->city = $fetch['gCity'];
+                $this->zipCode = $fetch['gZipCode'];
+                $this->country = $fetch['gCountry'];
+                $this->phoneNumber = $fetch['gPhoneNumber'];
+                $this->email = $fetch['gEmail'];
+                $this->gender = $fetch['gGender'];
+                $this->status = $fetch['gStatus'];
+                $this->avatar = $fetch['gStatus'];
+                $this->DOB = $fetch['gDOB'];
+                $this->creationDate = $fetch['gCreatingDate'];
+                $this->avatarImg = $fetch['avatar'];
+                $this->generateBookings();
+            }
+            else { return false;}
+        } else{ return false;}
     }
 
     // generate guest bookings
@@ -312,7 +326,9 @@ class Guest extends db {
 print_r($result);
  */
 
-$guest = new Guest('ali111', 'ali');
+// $guest = new Guest('ali111', 'ali');
+
+// print_r($guest->fullName);
 
 
 // echo $guest->errorMessage;
