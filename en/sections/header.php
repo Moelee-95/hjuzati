@@ -125,27 +125,16 @@
                         </li>   
                 </ul>
                 <div class="ml-auto d-flex align-items-center">
-                    <div class="position-relative pl-3 language-switcher dropdown-connector-xl u-header__topbar-divider--dark">
-                        <a id="languageDropdownInvoker" class="dropdown-nav-link  d-flex align-items-center ml-1 " href="javascript:;" role="button" aria-controls="1languageDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#1languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
-                            <span class="d-inline-block p-2"><?php echo $currency; ?><i class="glyph-icon- flaticon-down-arrow" ></i></span>
+                    <div class="position-relative pl-3 u-header__topbar-divider--dark">
+                        <a id="languageDropdownInvoker" onclick="$('#currencyModal').modal('show')" class="dropdown-nav-link  d-flex align-items-center ml-1 " href="javascript:;" role="button" aria-controls="1languageDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#1languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
+                            <span class="d-inline-block p-2"><?php echo $currency; ?></span>
                         </a>
-                        <div id="1languageDropdown" class=" dropdown-menu dropdown-unfold dropdown-menu-right mt-0 " aria-labelledby="languageDropdownInvoker">
-                            <a class="dropdown-item p-3 <?php if($currency =="USD"){echo "active";} ?>"
-                             href="#" onclick="changeCurrency('USD')">USD</a>
-                            <a class="dropdown-item p-3 <?php if($currency =="IQD"){echo "active";} ?>"
-                             href="#" onclick="changeCurrency('IQD')">IQD</a>
-                        </div>
                     </div> 
-                    <div class="position-relative pl-3 language-switcher dropdown-connector-xl u-header__topbar-divider--dark">
-                        <a id="languageDropdownInvoker" class="dropdown-nav-link  d-flex align-items-center ml-1 " href="javascript:;" role="button" aria-controls="languageDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
-                            <span class="d-inline-block p-2"><?php echo $language; ?><i class="glyph-icon-usd flaticon-down-arrow" ></i></span>
+                    <div class="position-relative pl-3 u-header__topbar-divider--dark">
+                        <a onClick="$('#languageModal').modal('show')" id="languageDropdownInvoker" class="dropdown-nav-link  d-flex align-items-center ml-1 " href="javascript:;" role="button" aria-controls="languageDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
+                            <span class="d-inline-block p-2"><?php echo $language; ?></span>
                         </a>
-                        <div id="languageDropdown" class=" dropdown-menu dropdown-unfold dropdown-menu-right mt-0 " aria-labelledby="languageDropdownInvoker">
-                            <a class="dropdown-item p-3 <?php if($language =="english"){echo "active";} ?>"
-                             href="#" onclick="changeLanguage('english')">English</a>
-                            <a class="dropdown-item p-3  <?php if($language =="arabic"){echo "active";} ?>"
-                             href="#" onclick="changeLanguage('arabic')">العربية</a>
-                        </div>
+
                     </div> 
                     <?php
                     if (!isset($_SESSION['login_user']) && !isset ($_SESSION['login_guest'])) { ?> 
