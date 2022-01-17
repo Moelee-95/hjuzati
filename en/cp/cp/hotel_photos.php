@@ -260,7 +260,7 @@
 
                    if (!fileTypeAllowed.test(fileName))
                         $("#error").html('Only images are allowed!');
-                   else if (fileSize > 5000000)
+                   else if (fileSize > 50000000)
                        $("#error").html('Your file is too big! Max allowed size is: 5000000KB');
                    else {
                        $("#error").html("");

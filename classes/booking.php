@@ -19,7 +19,6 @@ class Booking {
     public $numberOfRooms = 0;
     public $paymentMethod;
     public $paymentStatus = "pending";
-    public $totalAmount;
     public $guestID; //
     public $bookingCreated = false;
     public $errorMsg;
@@ -27,7 +26,20 @@ class Booking {
     public $phoneNumber;
     public $email;
     public $address;
+    public $totalAmount;
+    public $paidAmount;
+    public $remainingAmount;
     
+    public function getHotelName(){
+        $conn = new db();
+        $conn = $conn->getConnection();
+        $sql = "SELECT hHotelName FROM hotels WHERE hHotelID = '$this->hotelID'";
+        $result = $conn -> query($sql);
+        if ($result) {
+            $fetch = $result->fetch_array();
+            $this->hotelName = $fetch['hHotelName'];
+        } else {$this->hotelName = "Error";}
+    }
     public function __construct(){
         
     }
@@ -67,7 +79,6 @@ class Booking {
         }
     }
 
-
     //getFromDB helper to setup rooms
     public function getRoomsFromDB(){
         $conn = new db();
@@ -96,7 +107,6 @@ class Booking {
         if ($result->num_rows > 0) {
             $info = $result->fetch_array();
             $this->hotelID=$info['bHotelID'];
-            // $this->hotelName=$info[''];
             $this->bookingID=$info['bBookingID'];
             $this->checkIn=$info['bDateFrom'];
             $this->checkOut=$info['bDateTo'];
@@ -112,6 +122,7 @@ class Booking {
             $this->address=$info['address'];
             $this->paymentMethod=$info['paymentMethod']; //change to values later
             $this->paymentStatus = $info['bPaymentStatusID']; // change to values later
+            $this->getHotelName(); //set hotel name
             $this->getRoomsFromDB(); // setup rooms
             $this->bookingCreated = true;
         }
@@ -236,9 +247,10 @@ class Booking {
 // }
 
 // $b = new Booking();
-// $b->getFromDB("226");
-// $bool = $b->remove();
-// echo $bool;
+// $b->getFromDB("230");
+// $b->getHotelName();
+
+
 
 // if ($b->bookingCreated) {
 //     $rooms = $b->rooms;;

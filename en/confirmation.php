@@ -60,21 +60,38 @@
              <!-- Modal Create Booking Password -->
 
         <!-- End Modal Create Booking Password  -->
+            <div class="row py-6 px-5 border-bottom shadow-soft">
+                <div class="col flex-horizontal-center">
+                    <div class="ml-3">
+                        <h3 class="font-size-18 font-weight-bold text-dark mb-0 text-lh-sm alert alert-success">
+                            Your Booking Order is submitted Now.
+                        </h3>
+                        <p class="mb-0">A confirmation email has been sent to your provided email address.</p>
+                        <span id="bookingPasswordAlert" class= "row <?php echo $msgClass ?>"><?php echo $msg ?></span>
+                    </div>
+                </div>
+                <div class="col col-lg-6 col-sm-12 bg-white rounded-sm -none p-5" style="" id="guestInfo">
+                    <div class="border-bottom">
+                        <ul class="list-unstyled font-size-1 mb-0 font-size-16">
+                            <li class="d-flex justify-content-between py-1">
+                                <span class="font-weight-medium">Paid</span>
+                                <span class="text-success text-right" id="alertPaid"><?php ; ?></span>
+                            </li>
+                            <li class="d-flex justify-content-between py-1">
+                                <span class="font-weight-medium">Remaining</span>
+                                <span class="text-warning text-right " id="alertRemaining"><?php ?></span>
+                            </li>
+                            <li class="d-flex justify-content-between py-1">
+                                <span class="font-weight-medium">Total</span>
+                                <span class="text-primary text-right" id="alertTotal"><?php echo $bookingConf->totalAmount; ?></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <!-- ========== GUEST INFORMATION ========== -->
                 <div class="col col-lg-6 col-sm-12 p-4 shadow-soft bg-white rounded-sm -none " style="" id="guestInfo">
-                    <div class="py-6 px-5 border-bottom">
-                        <div class="flex-horizontal-center">
-                            
-                            <div class="ml-3">
-                                <h3 class="font-size-18 font-weight-bold text-dark mb-0 text-lh-sm">
-                                    Thank You. Your Booking Order is submitted Now.
-                                </h3>
-                                <p class="mb-0">A confirmation email has been sent to your provided email address.</p>
-                                <span id="bookingPasswordAlert" class= "row <?php echo $msgClass ?>"><?php echo $msg ?></span>
-                            </div>
-                        </div>
-                    </div>
                     <div class="pt-4 pb-5 px-5 border-bottom">
                         <div class="row">
                             <div class="col col-8">

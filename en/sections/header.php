@@ -125,21 +125,27 @@
                         </li>   
                 </ul>
                 <div class="ml-auto d-flex align-items-center">
+                   
                     <div class="position-relative pl-3 u-header__topbar-divider--dark">
-                        <a id="languageDropdownInvoker" onclick="$('#currencyModal').modal('show')" class="dropdown-nav-link  d-flex align-items-center ml-1 " href="javascript:;" role="button" aria-controls="1languageDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#1languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
+                        <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white ml-3" aria-label="Toggle navigation" aria-expanded="true" aria-controls="cartNavBar" data-toggle="collapse" data-target="#cartNavBar">
+                            <i class="far fa-shopping-cart"></i>
+                        </button>
+                    </div> 
+                    <div class="position-relative pl-3 u-header__topbar-divider--dark">
+                        <a id="" onclick="$('#currencyModal').modal('show')" class="dropdown-nav-link  d-flex align-items-center ml-1 " href="javascript:;" role="button" aria-controls="1languageDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#1languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
                             <span class="d-inline-block p-2"><?php echo $currency; ?></span>
                         </a>
                     </div> 
                     <div class="position-relative pl-3 u-header__topbar-divider--dark">
-                        <a onClick="$('#languageModal').modal('show')" id="languageDropdownInvoker" class="dropdown-nav-link  d-flex align-items-center ml-1 " href="javascript:;" role="button" aria-controls="languageDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
+                        <a onClick="$('#languageModal').modal('show')" id="" class="dropdown-nav-link  d-flex align-items-center ml-1 " href="javascript:;" role="button" aria-controls="languageDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
                             <span class="d-inline-block p-2"><?php echo $language; ?></span>
                         </a>
-
                     </div> 
+                    
                     <?php
                     if (!isset($_SESSION['login_user']) && !isset ($_SESSION['login_guest'])) { ?> 
                     <div class="position-relative pl-3 language-switcher dropdown-connector-xl u-header__topbar-divider--dark">
-                        <a id="languageDropdownInvoker" class="p-3 dropdown-nav-link d-flex align-items-center ml-1 " href="javascript:;" role="button" aria-controls="languageDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#2languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
+                        <a id="" class="p-3 dropdown-nav-link d-flex align-items-center ml-1 " href="javascript:;" role="button" aria-controls="languageDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#2languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
                             <span class="d-inline-block p-2">Login<i class="glyph-icon-usd flaticon-down-arrow" ></i></span>
                         </a>
                         <div id="2languageDropdown" class=" dropdown-menu dropdown-unfold dropdown-menu-right mt-0 " aria-labelledby="languageDropdownInvoker">
@@ -269,7 +275,9 @@
                     aria-expanded="false"
                     aria-controls="navBar"
                         data-toggle="collapse"
-                        data-target="#navBar">
+                        data-target="#navBar"
+                        onclick="$('#cartNavBar').removeClass('show');$('#guestNavBar').removeClass('show');">
+                        
                         <span id="hamburgerTrigger" class="u-hamburger__box">
                             <span class="u-hamburger__inner"></span>
                         </span>
@@ -278,12 +286,14 @@
 
                     <?php if (isset($guest)) { ?>
                     <!-- Responsive Toggle Button -->
-                    <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white  ml-3"
+                    <button type="button"  class="navbar-toggler btn ml-3"
                     aria-label="Toggle navigation"
                     aria-expanded="false"
                     aria-controls="guestNavBar"
                         data-toggle="collapse"
-                        data-target="#guestNavBar">
+                        data-target="#guestNavBar"
+                        onclick="$('#cartNavBar').removeClass('show');$('#navBar').removeClass('show');">
+                        
                         <i class="fas fa-user"></i>
                     </button>
                     <?PHP } else{ ?>
@@ -291,12 +301,13 @@
                             <i class="fas fa-user"></i>
                         </a>
                     <?php } ?>
-                    <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white  ml-3"
+                    <button type="button" class="navbar-toggler btn ml-3"
                     aria-label="Toggle navigation"
                     aria-expanded="false"
                     aria-controls="cartNavBar"
-                        data-toggle="collapse"
-                        data-target="#cartNavBar">
+                    data-toggle="collapse"
+                    data-target="#cartNavBar"
+                    onclick="$('#guestNavBar').removeClass('show');$('#navBar').removeClass('show');">
                         <i class="far fa-shopping-cart"></i>
                     </button>
                     <!-- End Responsive Toggle Button -->
@@ -327,6 +338,31 @@
                             <a href="#" onclick="$('#languageModal').modal('show')" class="text-dark">
                             <?php echo $language; ?>
                             </a>
+                        </li>
+                        <span class="pt-1 font-weight-bold border-top">About us</span>
+                        <li class="nav-item u-header__nav-item p-2">
+                            <a href="tel:(964) 770 - 8138928" class="text-dark">
+                                <i class="fas fa-phone-volume pr-2 h4"></i>
+                                (964) 770 - 813 -8928</a>
+                        </li>
+                        <li class="nav-item u-header__nav-item p-2">
+                            <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent 
+                            transition-3d-hover px-3" href="http://m.me/HIMA.hotels" target="_blank">
+                                <span class="fab fa-facebook-messenger btn-icon__inner h5"></span>
+                            </a>
+                            <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent 
+                            transition-3d-hover px-3" href="https://wa.me/9647708138928" target="_blank">
+                                <span class="fab fa-whatsapp btn-icon__inner h5"></span>
+                            </a>
+                            <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent 
+                            transition-3d-hover px-3" href="https://www.facebook.com/HIMA.hotels" target="_blank">
+                                <span class="fab fa-facebook-f btn-icon__inner h5"></span>
+                            </a>
+                            <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent 
+                            transition-3d-hover px-3" href="https://www.instagram.com/hima.hotels" target="_blank">
+                                <span class="fab fa-instagram btn-icon__inner h5"></span>
+                            </a>
+
                         </li>
                         <!-- End Home -->    
                     </ul>

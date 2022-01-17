@@ -34,8 +34,11 @@ elseif (empty($_SESSION['login_guest']) and empty($_COOKIE['login_guest'])) {
         if (isset($_COOKIE['bookings']) && !empty($_COOKIE['bookings'])) { // Merge guest with previous bookings in cookies
             $cookiesBookings = json_decode(unserialize($_COOKIE['bookings']));
             foreach ($cookiesBookings as $key => $cookiesBooking) {
-                $guest->addBooking($cookiesBooking); //adding previous booking to user when he logges in
+                
+                $guest->addBooking($cookiesBooking); //adding previous booking to guest when he logges in
             }
+            //remove bookings from cookies to prevent conflect
+            setcookie('bookings','', time()-1,"/");
         }
         $_SESSION['guest'] = serialize($guest);
         $_SESSION['login_guest'] = $guest->guestID;  // Represents the guest Id

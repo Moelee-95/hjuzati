@@ -7,7 +7,7 @@
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<meta name="description" content="Responsive Admin Template" />
 	 <meta name="author" content="HimaHotels by.Mohammed S. Hazim" />
-	<title> | Hjuzati</title>
+	<title> Hjuzati | </title>
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" id="font-awesome.min-css" href="../../../bootstrap/fa/fontawesome-pro-5.12.0-web/css/all.min.css" type="text/css" media="all">
@@ -578,7 +578,7 @@
 							<div class="card-box">
 								<div class="card-head">
 									<header>Basic Information</header>
-									<div id="formAlert" class="m-4 col-11 alert  <?php if(isset($msgc)){ echo $msgc; } ?> alert-dismissible " role="alert">
+									<div id="formAlert" class="m-4 col-11 alert  <?php if(isset($msgc)){ echo $msgc.' show'; } else{ echo ' hide';} ?> alert-dismissible " role="alert">
 										<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span class="text-danger" aria-hidden="true">×</span></button>
 										<?php if(isset($alertMessage)){ echo $alertMessage; } ?>
 									</div>
@@ -662,13 +662,10 @@
 										<div
 											class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
 											<input class="mdl-textfield__input" type="text" name="DOBInput" id="date2"
-												value="<?php
-													/* $date = DateTime::createFromFormat('Y/m/d', $guest->DOB);
-													$newDate =  $date->format('d/m/y');
-													*/ echo $guest->DOB; 
-												 ?>">
+												value="<?php echo date("d/m/Y", strtotime($guest->DOB)); ?>">
 												
-											<label class="mdl-textfield__label">Birth Date</label>
+												
+											<label class="mdl-textfield__label">Birth Date dd/mm/yyyy</label>
 										</div>
 									</div>
 									<div class="col-lg-6 p-t-20">

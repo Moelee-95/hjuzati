@@ -229,7 +229,7 @@ class Guest extends db {
         if(mysqli_stmt_execute($stmt)){
             $this->fullName = $fullName;
             $this->gender = $gender;
-            $this->DOB = $DOB;
+            $this->DOB = date("Y-m-d", strtotime($DOB));
             return true;
         }
         else {
