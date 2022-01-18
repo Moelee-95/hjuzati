@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<meta name="description" content="Responsive Admin Template" />
-	 <meta name="author" content="HimaHotels by.Mohammed S. Hazim" />
+	 <meta name="author" content="Hjuzati by.Mohammed S. Hazim" />
 	<title>Spice Hotel | Bootstrap 4 Admin Dashboard Template + UI Kit</title>
 	<!-- icons -->
 	<link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />

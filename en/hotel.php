@@ -473,7 +473,7 @@
                                                         <td><p id="<?php echo $room1['rRoomID'] ?>" name="" class="text-primary" >
                                                             <?php
                                                                 $roomID = $room1['rRoomID'];
-                                                                $result = (exe("call hima.roomRate('$roomID', '$check_in', '$check_out');"));
+                                                                $result = (exe("call roomRate('$roomID', '$check_in', '$check_out');"));
                                                                 if ( $result != null){
                                                                     echo $result."<b id='currency'> USD</b>";
                                                                     echo "<input name='price_$roomID' id='price_$roomID' type='hidden' value='$result'>";

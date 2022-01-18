@@ -111,7 +111,7 @@ elseif (empty($_SESSION['login_user'])) {
                                 <a href="../index.php" class="fxt-logo"><img src="img/logo-2.png" alt="Logo"></a>
                             </div>
                             <div class="fxt-transformY-50 fxt-transition-delay-2">
-                                <h1>Welcome To Hima Hotels Dashboard</h1>
+                                <h1>Welcome To Hjuzati Dashboard</h1>
                             </div>
                             <div class="fxt-transformY-50 fxt-transition-delay-3">
                                 <p>Login to the control panel to manage your hotel rooms.</p>

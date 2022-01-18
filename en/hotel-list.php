@@ -8,7 +8,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
     <!-- Title -->
-    <title>Hima hotels | Hotels List</title>
+    <title> Hjuzati | Hotels List</title>
     <?php include('sections/head.html'); ?>
     <script type="text/javascript">
         function _(el){

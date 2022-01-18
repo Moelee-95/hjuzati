@@ -74,8 +74,8 @@
                                     <a href="tel:+9647708138928">
                                         <p class="mb-1 text-gray-1"><i class="fa fa-phone"></i> +9647708138928</p>
                                     </a>
-                                    <a href="mailto:info@himahotels.com">
-                                        <p class="mb-0 text-gray-1"><i class="far fa-envelope"></i> info@himahotels.com</p>
+                                    <a href="mailto:hjuzati@gmail.com">
+                                        <p class="mb-0 text-gray-1"><i class="far fa-envelope"></i> info@Hjuzati.com</p>
                                     </a>
                                 </div>
                                 <a class="d-inline-block" href="#">

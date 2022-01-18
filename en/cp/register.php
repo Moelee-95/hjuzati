@@ -81,7 +81,7 @@ elseif (empty($_SESSION['login_user'])) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Hima Hotels | Register New User</title>
+    <title>Hjuzati | Register New User</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->

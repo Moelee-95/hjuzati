@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<meta name="description" content="Responsive Admin Template" />
-	 <meta name="author" content="HimaHotels by.Mohammed S. Hazim" />
+	 <meta name="author" content="Hjuzati by.Mohammed S. Hazim" />
 	<title>Hima Hotels | User Profile</title>
 	<!-- Font Awesome -->
 	<link rel="stylesheet" id="font-awesome.min-css" href="../../../bootstrap/fa/fontawesome-pro-5.12.0-web/css/all.min.css" type="text/css" media="all">

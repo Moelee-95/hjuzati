@@ -7,7 +7,7 @@
     <!-- Title -->
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <head>
-        <title>Home | HIMA Hotels</title>
+        <title>Home | Hjuzati</title>
         <style type="text/css">
             /* Addition CSS */
             /* For making space between the arrow and language selection 8 */
@@ -71,7 +71,7 @@
                                 </a>
                             </li>
                              -->
-                            <!-- Disabeld by HIMA hotels co.
+                            <!-- Disabeld by Hjuzati hotels co.
                                 <li class="nav-item">
                                 <a class="nav-link font-weight-medium" id="pills-two-example2-tab" data-toggle="pill" href="#pills-two-example2" role="tab" aria-controls="pills-two-example2" aria-selected="true">
                                     <div class="d-flex flex-column flex-md-row  position-relative text-white align-items-center">

@@ -146,7 +146,7 @@ class Booking {
         $conn = new db();
         $conn = $conn->getConnection();
         //Creating a booking
-        $sql = "call hima.addReservationNoGuest('$this->hotelID',  '$this->checkIn', '$this->checkOut', '$this->adultNumber', '$this->childNumber', '$this->fullName', '$this->address', '$this->phoneNumber', '$this->email', '1','$this->paymentMethod','$this->totalAmount');";
+        $sql = "call addReservationNoGuest('$this->hotelID',  '$this->checkIn', '$this->checkOut', '$this->adultNumber', '$this->childNumber', '$this->fullName', '$this->address', '$this->phoneNumber', '$this->email', '1','$this->paymentMethod','$this->totalAmount');";
         $query = mysqli_query($conn, $sql);
         $fetch = mysqli_fetch_array($query);
         $this->bookingID = $fetch[0];
@@ -160,7 +160,7 @@ class Booking {
         if($this->bookingCreated){
             $conn = new db();
             $conn = $conn->getConnection(); // connection ready
-            $q = "UPDATE `hima`.`bookings` SET `password` = '$password' WHERE `bBookingID` = '$this->bookingID';";
+            $q = "UPDATE bookings SET `password` = '$password' WHERE `bBookingID` = '$this->bookingID';";
             $stmt =mysqli_prepare($conn,  $q);
             if(mysqli_stmt_execute($stmt)){//if password inserted to the db
                 $this->bPassword = $password;// insert password to the instance
@@ -182,7 +182,7 @@ class Booking {
         $return;
         $conn = new db();
         $conn = $conn->getConnection();
-        $sql = "SELECT pID FROM hima.payments;";
+        $sql = "SELECT pID FROM payments;";
         $result = $conn -> query($sql); 
         $r = $result -> fetch_all(MYSQLI_ASSOC);//insert the array result to the variable
       
