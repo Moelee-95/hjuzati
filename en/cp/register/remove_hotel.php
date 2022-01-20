@@ -21,7 +21,7 @@ if (isset($_GET['hotel_id'])) {
 	echo "User ID is $user_id <br>";
 
 	//Removing the row from hotel table
-	$sql = "DELETE FROM `hima`.`hotels` WHERE `hHotelID` = '$hotel_id'";
+	$sql = "DELETE FROM `hotels` WHERE `hHotelID` = '$hotel_id'";
 	$query = mysqli_query($conn, $sql);
 	//if the record is removed
 	if ($query) {

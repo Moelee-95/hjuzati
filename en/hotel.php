@@ -53,7 +53,7 @@
         //function to get the minimum number of available rooms
         function available_rooms($room_ID, $check_in, $check_out){
             include('cp/db/db_connect.php');
-            $statement = "call hima.available_rooms('$room_ID', '$check_in', '$check_out')";
+            $statement = "call available_rooms('$room_ID', '$check_in', '$check_out')";
             $query =  mysqli_query($conn, $statement);
             $fetch = mysqli_fetch_array($query);
             $result = $fetch['min_rooms'];
@@ -73,7 +73,7 @@
    
         //set hotel info
         include('cp/db/db_connect.php');
-        $hotel_info ="SELECT * FROM hima.hotels WHERE hHotelID = '$hotel_id'";
+        $hotel_info ="SELECT * FROM hotels WHERE hHotelID = '$hotel_id'";
         $query3 = mysqli_query($conn, $hotel_info);
         $fetch2 = mysqli_fetch_array($query3);
         // echo $hotel_id."<hr><hr><hr><hr><hr>";
@@ -1970,7 +1970,7 @@
         <script src="assets/vendor/custombox/dist/custombox.legacy.min.js"></script>
         <script src="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 
-        <!-- JS MyTravel -->
+        <!-- JS Hjuzati -->
         <script src="assets/js/hs.core.js"></script>
         <script src="assets/js/components/hs.header.js"></script>
         <script src="assets/js/components/hs.unfold.js"></script>

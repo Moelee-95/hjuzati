@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     
-<!-- Mirrored from madrasthemes.github.io/mytravel-html/html/others/become-expert.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 Mar 2020 15:11:44 GMT -->
+<!-- Mirrored from madrasthemes.github.io/Hjuzati-html/html/others/become-expert.html  Copier/3.x [XR&CO'2014], Wed, 11 Mar 2020 15:11:44 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
         <!-- Title -->
-        <title>Become Expert | MyTravel - Responsive Website Template</title>
+        <title>Become Expert | Hjuzati - Responsive Website Template</title>
         <?php include('sections/head.html'); ?>
     </head>
     <body>
@@ -86,7 +86,7 @@
                     <h6 class="text-white font-size-21 font-weight-bold mb-3 mb-lg-5 opacity-7">Your New Travelling Idea</h6>
                     <!-- Fancybox -->
                     <a class="js-fancybox d-inline-block u-media-player" href="javascript:;"
-                    data-src="//vimeo.com/167434033" data-speed="700" data-animate-in="zoomIn" data-animate-out="zoomOut" data-caption="MyTravel - Responsive Website Template">
+                    data-src="//vimeo.com/167434033" data-speed="700" data-animate-in="zoomIn" data-animate-out="zoomOut" data-caption="Hjuzati - Responsive Website Template">
                         <span class="u-media-player__icon u-media-player__icon--lg bg-transparent text-white">
                             <span class="flaticon-multimedia font-size-60 u-media-player__icon-inner"></span>
                         </span>
@@ -110,7 +110,7 @@
                             <div class="col-md-4">
                                 <i class="flaticon-price text-primary font-size-80 mb-3"></i>
                                 <h5 class="font-size-17 text-dark font-weight-bold mb-2"><a href="#">Competitive Pricing</a></h5>
-                                <p class="text-gray-1 px-xl-2 px-uw-7">With 500+ suppliers and the purchasing power of 300 million members, mytravel.com can save you more!</p>
+                                <p class="text-gray-1 px-xl-2 px-uw-7">With 500+ suppliers and the purchasing power of 300 million members, Hjuzati.com can save you more!</p>
                             </div>
                             <!-- End Icon Block -->
 
@@ -170,7 +170,7 @@
         <script src="assets/vendor/fancybox/jquery.fancybox.min.js"></script>
 
 
-        <!-- JS MyTravel -->
+        <!-- JS Hjuzati -->
         <script src="assets/js/hs.core.js"></script>
         <script src="assets/js/components/hs.header.js"></script>
         <script src="assets/js/components/hs.unfold.js"></script>
@@ -232,5 +232,5 @@
         </script>
     </body>
 
-<!-- Mirrored from madrasthemes.github.io/mytravel-html/html/others/become-expert.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 Mar 2020 15:11:44 GMT -->
+<!-- Mirrored from madrasthemes.github.io/Hjuzati-html/html/others/become-expert.html  Copier/3.x [XR&CO'2014], Wed, 11 Mar 2020 15:11:44 GMT -->
 </html>

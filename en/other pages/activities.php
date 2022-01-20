@@ -4,7 +4,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
         <!-- Title -->
-        <title>Home v6 | MyTravel - Responsive Website Template</title>
+        <title>Home v6 | Hjuzati - Responsive Website Template</title>
         <?php include('sections/head.html'); ?>
     </head>
     <body>
@@ -798,7 +798,7 @@
                                             <span class="text-blue-lighter-1 font-size-normal">client</span>
                                         </div>
                                         <figure id="quote" class="svg-preloader testimonial-quote">
-                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/quote1.svg" alt="SVG" data-parent="#quote">
+                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/quote1.svg" alt="SVG" data-parent="#quote">
                                         </figure>
                                     </div>
                                     <p class="mb-0 text-gray-1 font-italic text-lh-inherit">This is the 3rd time I’ve used Travelo website and telling you the truth their services are always realiable and it only takes few minutes to plan and finalize</p>
@@ -822,7 +822,7 @@
                                             <span class="text-blue-lighter-1 font-size-normal">client</span>
                                         </div>
                                         <figure id="quote1" class="svg-preloader testimonial-quote">
-                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/quote1.svg" alt="SVG" data-parent="#quote1">
+                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/quote1.svg" alt="SVG" data-parent="#quote1">
                                         </figure>
                                     </div>
                                     <p class="mb-0 text-gray-1 font-italic text-lh-inherit">This is the 3rd time I’ve used Travelo website and telling you the truth their services are always realiable and it only takes few minutes to plan and finalize</p>
@@ -846,7 +846,7 @@
                                             <span class="text-blue-lighter-1 font-size-normal">client</span>
                                         </div>
                                         <figure id="quote2" class="svg-preloader testimonial-quote">
-                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/quote1.svg" alt="SVG" data-parent="#quote2">
+                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/quote1.svg" alt="SVG" data-parent="#quote2">
                                         </figure>
                                     </div>
                                     <p class="mb-0 text-gray-1 font-italic text-lh-inherit">This is the 3rd time I’ve used Travelo website and telling you the truth their services are always realiable and it only takes few minutes to plan and finalize</p>
@@ -870,7 +870,7 @@
                                             <span class="text-blue-lighter-1 font-size-normal">client</span>
                                         </div>
                                         <figure id="quote4" class="svg-preloader testimonial-quote ">
-                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/quote1.svg" alt="SVG" data-parent="#quote4">
+                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/quote1.svg" alt="SVG" data-parent="#quote4">
                                         </figure>
                                     </div>
                                     <p class="mb-0 text-gray-1 font-italic text-lh-inherit">This is the 3rd time I’ve used Travelo website and telling you the truth their services are always realiable and it only takes few minutes to plan and finalize</p>
@@ -894,7 +894,7 @@
                                             <span class="text-blue-lighter-1 font-size-normal">client</span>
                                         </div>
                                         <figure id="quote5" class="svg-preloader testimonial-quote">
-                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/quote1.svg" alt="SVG" data-parent="#quote5">
+                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/quote1.svg" alt="SVG" data-parent="#quote5">
                                         </figure>
                                     </div>
                                     <p class="mb-0 text-gray-1 font-italic text-lh-inherit">This is the 3rd time I’ve used Travelo website and telling you the truth their services are always realiable and it only takes few minutes to plan and finalize</p>
@@ -918,7 +918,7 @@
                                             <span class="text-blue-lighter-1 font-size-normal">client</span>
                                         </div>
                                         <figure id="quote6" class="svg-preloader testimonial-quote">
-                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/quote1.svg" alt="SVG" data-parent="#quote6">
+                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/quote1.svg" alt="SVG" data-parent="#quote6">
                                         </figure>
                                     </div>
                                     <p class="mb-0 text-gray-1 font-italic text-lh-inherit">This is the 3rd time I’ve used Travelo website and telling you the truth their services are always realiable and it only takes few minutes to plan and finalize</p>
@@ -998,7 +998,7 @@
         <script src="assets/vendor/fancybox/jquery.fancybox.min.js"></script>
         <script src="assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
 
-        <!-- JS MyTravel -->
+        <!-- JS Hjuzati -->
         <script src="assets/js/hs.core.js"></script>
         <script src="assets/js/components/hs.header.js"></script>
         <script src="assets/js/components/hs.unfold.js"></script>
@@ -1063,5 +1063,5 @@
         </script>
     </body>
 
-<!-- Mirrored from madrasthemes.github.io/mytravel-html/html/home/home-v6.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 Mar 2020 15:11:21 GMT -->
+<!-- Mirrored from madrasthemes.github.io/Hjuzati-html/html/home/home-v6.html  Copier/3.x [XR&CO'2014], Wed, 11 Mar 2020 15:11:21 GMT -->
 </html>

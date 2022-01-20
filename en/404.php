@@ -8,7 +8,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
         <!-- Title -->
-        <title>Error 404 | MyTravel - Responsive Website Template</title>
+        <title>Error 404 | Hjuzati - Responsive Website Template</title>
         <?php include('sections/head.html'); ?>
     </head>
     <body>
@@ -31,7 +31,7 @@
                         </div>
                         <div class="col-lg-7 col-xl-8dot5">
                             <div class="space-lg-2 space-xl-3 mt-lg-5 mt-xl-7 mb-xl-4">
-                                <img class="js-svg-injector" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/404.svg" alt="Image-Description">
+                                <img class="js-svg-injector" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/404.svg" alt="Image-Description">
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
         <script src="assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
         <script src="assets/vendor/flatpickr/dist/flatpickr.min.js"></script>
 
-        <!-- JS MyTravel -->
+        <!-- JS Hjuzati -->
         <script src="assets/js/hs.core.js"></script>
         <script src="assets/js/components/hs.header.js"></script>
         <script src="assets/js/components/hs.unfold.js"></script>

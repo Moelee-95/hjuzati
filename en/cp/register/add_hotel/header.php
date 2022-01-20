@@ -73,7 +73,7 @@
 	
 	<div class="header">
 		<div style="padding: 30px">
-			<h3>HIMA Hotels ID:<?php echo $hotel_id ?></h3>
+			<h3>Hjuzati ID:<?php echo $hotel_id ?></h3>
 		</div>
 		
 		<div  id="logout" class="divlogout"><a class="logout"  href="../userprofile"><< </a></div>

@@ -114,20 +114,20 @@ elseif (empty($_SESSION['login_user'])) {
                                     <a href="index.php" class="fxt-logo"><img src="img/logo-2.png" alt="Logo"></a>
                                 </div>
                                 <div class="fxt-transformY-50 fxt-transition-delay-2">
-                                    <h1>Welcome To Hima Hotels</h1>
+                                    <h1>Welcome To Hjuzati</h1>
                                 </div>
                                 <div class="fxt-transformY-50 fxt-transition-delay-3">
                                     <p>After Regestration you will be redirected to a page where you add your hotel information.</p>
                                 </div>
                             </div>
                             <ul class="fxt-socials">
-                                <li class="fxt-facebook fxt-transformY-50 fxt-transition-delay-4"><a href="https://www.facebook.com/HIMA.hotels"
+                                <li class="fxt-facebook fxt-transformY-50 fxt-transition-delay-4"><a href="https://www.facebook.com/hotels"
                                         title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                <li class="fxt-instagram fxt-transformY-50 fxt-transition-delay-5"><a href="https://www.instagram.com/hima.hotels" title="instagram"><i
+                                <li class="fxt-instagram fxt-transformY-50 fxt-transition-delay-5"><a href="https://www.instagram.com/hotels" title="instagram"><i
                                             class="fab fa-instagram"></i></a></li>
                                 <li class="fxt-whatsapp fxt-transformY-50 fxt-transition-delay-6"><a style="background-color: #01cc66cc" href="https://wa.me/9647708138928" title="whatsapp"><i
                                             class="fab fa-whatsapp"></i></a></li>
-                                <li class="fxt-transformY-50 fxt-transition-delay-7" ><a style="" href="https://m.me/HIMA.hotels"
+                                <li class="fxt-transformY-50 fxt-transition-delay-7" ><a style="" href="https://m.me/hotels"
                                         title="messenger"><i class="fab fa-messenger"></i></a></li>
                             </ul>
                         </div>

@@ -4,7 +4,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
         <!-- Title -->
-        <title>Blog-List | MyTravel - Responsive Website Template</title>
+        <title>Blog-List | Hjuzati - Responsive Website Template</title>
         <?php include('sections/head.html'); ?>
     </head>
     <body>
@@ -23,7 +23,7 @@
                             <h1 class="font-size-40 font-size-xs-30 text-white font-weight-bold mb-0">Blog</h1>
                             <nav aria-label="breadcrumb">
                               <ol class="breadcrumb breadcrumb-no-gutter mb-0">
-                                <li class="breadcrumb-item font-size-14"><a class="text-white" href="https://madrasthemes.github.io/mytravel-html/html/home/index.html">Home</a></li>
+                                <li class="breadcrumb-item font-size-14"><a class="text-white" href="https://madrasthemes.github.io/Hjuzati-html/html/home/index.html">Home</a></li>
                                 <li class="breadcrumb-item custom-breadcrumb-item font-size-14 text-white active" aria-current="page">Blog</li>
                               </ol>
                             </nav>
@@ -465,22 +465,22 @@
                             <div class="border border-color-7 rounded p-4">
                                 <h6 class="font-size-17 font-weight-bold text-gray-3 mx-1 mb-3 pb-1">Tags</h6>
                                 <div class="d-flex flex-wrap">
-                                    <a class="btn d-flex align-items-center justify-content-center btn-gray-1 rounded-xs transition-3d-hover font-size-14 text-gray-1 height-35 width-70 mr-2 mb-2" href="https://madrasthemes.github.io/mytravel-html/html/tour/tour-list.html">
+                                    <a class="btn d-flex align-items-center justify-content-center btn-gray-1 rounded-xs transition-3d-hover font-size-14 text-gray-1 height-35 width-70 mr-2 mb-2" href="https://madrasthemes.github.io/Hjuzati-html/html/tour/tour-list.html">
                                         Tour
                                     </a>
-                                    <a class="btn d-flex align-items-center justify-content-center btn-gray-1 rounded-xs transition-3d-hover font-size-14 text-gray-1 height-35 width-90 mr-2 mb-2" href="https://madrasthemes.github.io/mytravel-html/html/rental/rental-list.html">
+                                    <a class="btn d-flex align-items-center justify-content-center btn-gray-1 rounded-xs transition-3d-hover font-size-14 text-gray-1 height-35 width-90 mr-2 mb-2" href="https://madrasthemes.github.io/Hjuzati-html/html/rental/rental-list.html">
                                         Rental
                                     </a>
-                                    <a class="btn d-flex align-items-center justify-content-center btn-gray-1 rounded-xs transition-3d-hover font-size-14 text-gray-1 height-35 width-70 mr-2 mb-2" href="https://madrasthemes.github.io/mytravel-html/html/cars/cars-list.html">
+                                    <a class="btn d-flex align-items-center justify-content-center btn-gray-1 rounded-xs transition-3d-hover font-size-14 text-gray-1 height-35 width-70 mr-2 mb-2" href="https://madrasthemes.github.io/Hjuzati-html/html/cars/cars-list.html">
                                         City
                                     </a>
-                                    <a class="btn d-flex align-items-center justify-content-center btn-gray-1 rounded-xs transition-3d-hover font-size-14 text-gray-1 height-35 width-80 mr-2 mb-2" href="https://madrasthemes.github.io/mytravel-html/html/yacht/yacht-list.html">
+                                    <a class="btn d-flex align-items-center justify-content-center btn-gray-1 rounded-xs transition-3d-hover font-size-14 text-gray-1 height-35 width-80 mr-2 mb-2" href="https://madrasthemes.github.io/Hjuzati-html/html/yacht/yacht-list.html">
                                         Yatch
                                     </a>
-                                    <a class="btn d-flex align-items-center justify-content-center btn-gray-1 rounded-xs transition-3d-hover font-size-14 text-gray-1 height-35 width-90 mr-2 mb-2" href="https://madrasthemes.github.io/mytravel-html/html/activities/activities-list.html">
+                                    <a class="btn d-flex align-items-center justify-content-center btn-gray-1 rounded-xs transition-3d-hover font-size-14 text-gray-1 height-35 width-90 mr-2 mb-2" href="https://madrasthemes.github.io/Hjuzati-html/html/activities/activities-list.html">
                                         Activity
                                     </a>
-                                    <a class="btn d-flex align-items-center justify-content-center btn-gray-1 rounded-xs transition-3d-hover font-size-14 text-gray-1 height-35 width-90 mb-2" href="https://madrasthemes.github.io/mytravel-html/html/tour/tour-list.html">
+                                    <a class="btn d-flex align-items-center justify-content-center btn-gray-1 rounded-xs transition-3d-hover font-size-14 text-gray-1 height-35 width-90 mb-2" href="https://madrasthemes.github.io/Hjuzati-html/html/tour/tour-list.html">
                                         Musuems
                                     </a>
                                 </div>
@@ -531,7 +531,7 @@
         <script src="assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
         <script src="assets/vendor/flatpickr/dist/flatpickr.min.js"></script>
 
-        <!-- JS MyTravel -->
+        <!-- JS Hjuzati -->
         <script src="assets/js/hs.core.js"></script>
         <script src="assets/js/components/hs.header.js"></script>
         <script src="assets/js/components/hs.unfold.js"></script>

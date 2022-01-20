@@ -16,7 +16,7 @@
  				//define the new path for moved picture
  				$newPicPath = "../users/$user_id/hotels/$hotel_id/rooms/$roomID/$value";
  				//Insert the path of the picture to the database
- 				$insert_pic = "INSERT INTO `hima`.`roomsphotos` (`rpRoomsID`, `rpPhotoPath`)
+ 				$insert_pic = "INSERT INTO `roomsphotos` (`rpRoomsID`, `rpPhotoPath`)
  				 VALUES ('$roomID', '$newPicPath')";
  				$insert_query = mysqli_query($conn, $insert_pic);
  				

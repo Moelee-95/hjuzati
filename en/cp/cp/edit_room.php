@@ -23,7 +23,7 @@ else{
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<meta name="description" content="Responsive Admin Template" />
 	 <meta name="author" content="Hjuzati by.Mohammed S. Hazim" />
-	<title>HIMA Hotels | Edit Room</title>
+	<title>Hjuzati | Edit Room</title>
 	
 	<!-- icons -->
 	<link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
@@ -96,7 +96,7 @@ else{
 			// Getting all room data from the database
 			$rdata = "SELECT rt.rtRoomTypeID,rt.rtRoomTypeEn,rn.rnRoomNameID,rn.rnRoomNameEn,r.rCustomName,r.rSmokingPolicy,r.num_bed_rooms,
 				r.num_living_rooms,r.num_bathrooms,r.rRoomsNumbers, r.beds_kinds, r.bed_num, r.rMaxPas, r.rRoomSize, r.rLowestPrice, r.rOfferLower,
- 				r.rDisscount FROM `hima`.rooms r JOIN roomsnames rn ON r.rRoomNameID = rn.rnRoomNameID
+ 				r.rDisscount FROM rooms r JOIN roomsnames rn ON r.rRoomNameID = rn.rnRoomNameID
 				JOIN roomstypes rt ON rn.rnRoomTypeID = rt.rtRoomTypeID  WHERE rRoomID = '$room_id'";
 			$rdataquery = mysqli_query($conn, $rdata);
 			$rdatafetch = mysqli_fetch_array($rdataquery);
@@ -209,7 +209,7 @@ else{
 													<label class="">Room type</label>
 													<br>
 													<?php 
-														$types = "SELECT rtRoomTypeEn, rtRoomTypeID FROM `hima`.roomstypes;";
+														$types = "SELECT rtRoomTypeEn, rtRoomTypeID FROM roomstypes;";
 														$queries = mysqli_query($conn,$types);
 														$fetch = mysqli_fetch_all($queries, MYSQLI_ASSOC);
 														// print_r($fetch);

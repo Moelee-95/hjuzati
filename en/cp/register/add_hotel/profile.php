@@ -45,7 +45,7 @@ else {
 		
 
 
-		$update_info = "UPDATE `hima`.hotels SET hHotelName = '$name',hHotelRating = '$star_rating',contact_name= '$contact_name', hCompanyMailAddress= '$contact_email',hMainPhoneNumber= '$contact_phone',hNormalNumber = '$contact_phone_2',hCity= '$city',hAddress= '$address',hMapsLocation = '$maps_location',hZipCode= '$zip_code'  WHERE hHotelID = '$hotel_id' and hUserID = '$user_id'";
+		$update_info = "UPDATE hotels SET hHotelName = '$name',hHotelRating = '$star_rating',contact_name= '$contact_name', hCompanyMailAddress= '$contact_email',hMainPhoneNumber= '$contact_phone',hNormalNumber = '$contact_phone_2',hCity= '$city',hAddress= '$address',hMapsLocation = '$maps_location',hZipCode= '$zip_code'  WHERE hHotelID = '$hotel_id' and hUserID = '$user_id'";
 
 		//$result = ;
 		//$fetchit = mysqli_fetch_row($result);
@@ -63,7 +63,7 @@ else {
 }
 }
 
-$get_data = "SELECT * FROM `hima`.hotels WHERE hHotelID = '$hotel_id' and hUserID = '$user_id'";
+$get_data = "SELECT * FROM hotels WHERE hHotelID = '$hotel_id' and hUserID = '$user_id'";
 $query = mysqli_query($conn, $get_data);
 $row = mysqli_fetch_array($query);
 $db_star = $row['hHotelRating'];

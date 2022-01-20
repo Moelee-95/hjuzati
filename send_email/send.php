@@ -44,7 +44,7 @@ class Email{
     
 
     public function sendEmail(){
-        $fullEmail = "your verification code for Hima hotels is: ".$this->code;
+        $fullEmail = "your verification code for Hjuzati is: ".$this->code;
         //return true for test
         return true;
 

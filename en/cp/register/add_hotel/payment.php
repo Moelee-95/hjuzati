@@ -34,7 +34,7 @@ function execute_query($query){
 function check($hotel_id, $payment_id){
 	include('../../db/db_connect.php'); 
 	$result = "";
-	$qu = "select * from hima.hotels_has_payments where hotels_hHotelID = '$hotel_id' and payments_pID ='$payment_id';";
+	$qu = "select * from hotels_has_payments where hotels_hHotelID = '$hotel_id' and payments_pID ='$payment_id';";
 	$ex = mysqli_query($conn, $qu);
 	$re = mysqli_fetch_row($ex);
 	if ($re == null) {
@@ -53,29 +53,29 @@ if (isset($_POST["submit"])) {
 
 		if (!empty($_POST["1"])) {
 			// $asia_hawala = $_POST["1"];
-			 $result .= execute_query("INSERT INTO `hima`.`hotels_has_payments` (`payments_pID`, `hotels_hHotelID`) VALUES ('1', '$hotel_id') ON DUPLICATE KEY UPDATE payments_pID='1';");
+			 $result .= execute_query("INSERT INTO `hotels_has_payments` (`payments_pID`, `hotels_hHotelID`) VALUES ('1', '$hotel_id') ON DUPLICATE KEY UPDATE payments_pID='1';");
 
 		}
 		else{
 			// $asia_hawala = 0;
-			$result .= execute_query("DELETE FROM hima.hotels_has_payments where hotels_hHotelID = '$hotel_id' and payments_pID = '1';");
+			$result .= execute_query("DELETE FROM hotels_has_payments where hotels_hHotelID = '$hotel_id' and payments_pID = '1';");
 		}
 		
 		if (!empty($_POST["2"])) {
 			// $asia_hawala = $_POST["1"];
-			 $result .= execute_query("INSERT INTO `hima`.`hotels_has_payments` (`payments_pID`, `hotels_hHotelID`) VALUES ('2', '$hotel_id') ON DUPLICATE KEY UPDATE payments_pID='2';");
+			 $result .= execute_query("INSERT INTO `hotels_has_payments` (`payments_pID`, `hotels_hHotelID`) VALUES ('2', '$hotel_id') ON DUPLICATE KEY UPDATE payments_pID='2';");
 		}
 		else{
 			// $asia_hawala = 0;
-			$result .= execute_query("DELETE FROM hima.hotels_has_payments where hotels_hHotelID = '$hotel_id' and payments_pID = '2';");
+			$result .= execute_query("DELETE FROM hotels_has_payments where hotels_hHotelID = '$hotel_id' and payments_pID = '2';");
 		}
 		if (!empty($_POST["3"])) {
 			// $asia_hawala = $_POST["1"];
-			 $result .= execute_query("INSERT INTO `hima`.`hotels_has_payments` (`payments_pID`, `hotels_hHotelID`) VALUES ('3', '$hotel_id') ON DUPLICATE KEY UPDATE payments_pID='3';");
+			 $result .= execute_query("INSERT INTO `hotels_has_payments` (`payments_pID`, `hotels_hHotelID`) VALUES ('3', '$hotel_id') ON DUPLICATE KEY UPDATE payments_pID='3';");
 		}
 		else{
 			// $asia_hawala = 0;
-			$result .= execute_query("DELETE FROM hima.hotels_has_payments where hotels_hHotelID = '$hotel_id' and payments_pID = '3';");
+			$result .= execute_query("DELETE FROM hotels_has_payments where hotels_hHotelID = '$hotel_id' and payments_pID = '3';");
 		}
 
 
@@ -90,7 +90,7 @@ if (isset($_POST["submit"])) {
 
 
 	//Gettig front end data from the database
-	$local = "SELECT *  FROM hima.payments;";
+	$local = "SELECT *  FROM payments;";
 	$localQuery = mysqli_query($conn, $local);
 	$localFetch = mysqli_fetch_all($localQuery, MYSQLI_ASSOC);
 

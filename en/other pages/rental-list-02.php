@@ -4,7 +4,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     <!-- Title -->
-    <title>Rental List v2 | MyTravel - Responsive Website Template</title>
+    <title>Rental List v2 | Hjuzati - Responsive Website Template</title>
     <?php include('sections/head.html'); ?>
     </head>
     <body>
@@ -1931,7 +1931,7 @@
         <script src="assets/vendor/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
         <script src="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 
-        <!-- JS MyTravel -->
+        <!-- JS Hjuzati -->
         <script src="assets/js/hs.core.js"></script>
         <script src="assets/js/components/hs.header.js"></script>
         <script src="assets/js/components/hs.unfold.js"></script>

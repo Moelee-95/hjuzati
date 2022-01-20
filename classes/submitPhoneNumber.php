@@ -12,7 +12,7 @@ if(isset($_POST['phoneNumber'])){
     $conn = $conn->getConnection();// new connection
 
     $phoneNumber = $_POST['phoneNumber'];//phone num variable
-    $q = "UPDATE `hima`.`guests` SET `gPassword` = '$phoneNumber' WHERE (`gGuestID` = '$guest->guestID')";
+    $q = "UPDATE `guests` SET `gPassword` = '$phoneNumber' WHERE (`gGuestID` = '$guest->guestID')";
     $stmt = mysqli_prepare($conn, $q);
     if(mysqli_stmt_execute($stmt)){
         $guest->phoneNumber = $phoneNumber;

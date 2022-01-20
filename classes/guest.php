@@ -83,7 +83,7 @@ class Guest extends db {
         $conn = $conn->getConnection();
         $msg = '';
         $error;
-        $sql = "SELECT gGuestID, gPhoneNumber FROM hima.guests where (gUserName= '$identity' or gEmail='$identity' or gPhoneNumber='$identity');";
+        $sql = "SELECT gGuestID, gPhoneNumber FROM guests where (gUserName= '$identity' or gEmail='$identity' or gPhoneNumber='$identity');";
         if ($query = mysqli_query($conn, $sql)) {
             $fetch = mysqli_fetch_row($query);
             $guestID =  $fetch['gGuestID'];
@@ -223,7 +223,7 @@ class Guest extends db {
     public function setInfo($fullName, $gender, $DOB){
         $conn = new db();
         $conn = $conn->getConnection();
-        $q = "UPDATE `hima`.`guests` SET `gFullName` = '$fullName', `gGender` = '$gender', `gDOB` = '$DOB' WHERE `gGuestID` = '$this->guestID'";
+        $q = "UPDATE `guests` SET `gFullName` = '$fullName', `gGender` = '$gender', `gDOB` = '$DOB' WHERE `gGuestID` = '$this->guestID'";
         $stmt = mysqli_prepare($conn, $q);
         
         if(mysqli_stmt_execute($stmt)){
@@ -253,7 +253,7 @@ class Guest extends db {
             if($oldPassword == $this->password){
                 $conn = new db();
                 $conn = $conn->getConnection();
-                $q = "UPDATE hima.guests SET `gPassword` = '$newPassword' WHERE `gGuestID` = '$this->guestID'";
+                $q = "UPDATE guests SET `gPassword` = '$newPassword' WHERE `gGuestID` = '$this->guestID'";
                 $stmt = mysqli_prepare($conn, $q);
                 /* to bind data mysqli_stmt_bind_param($stmt, 'i', $post_id);
                 to bind result mysqli_stmt_bind_result($stmt, $content);
@@ -288,7 +288,7 @@ class Guest extends db {
         if(substr($identifier, 0,2) == "07"){ $identifier = "+964".substr($identifier, 1);}
         elseif(substr($identifier, 0,1) == "7"){$identifier = "+964".$identifier;};
 
-        $q = "SELECT gGuestID,gPhoneNumber,gEmail,gFullName FROM hima.guests where (gUserName= '$identifier' or gEmail='$identifier' or gPhoneNumber='$identifier');";
+        $q = "SELECT gGuestID,gPhoneNumber,gEmail,gFullName FROM guests where (gUserName= '$identifier' or gEmail='$identifier' or gPhoneNumber='$identifier');";
         $qu = mysqli_query($conn, $q);
         $data = mysqli_fetch_array($qu);
         if($data > 0){
@@ -304,7 +304,7 @@ class Guest extends db {
     public static function setNewPassword($guestID, $newPassword){
         $conn = new db();
         $conn = $conn->getConnection();
-        $q = "UPDATE hima.guests SET `gPassword` = '$newPassword' WHERE `gGuestID` = '$guestID'";
+        $q = "UPDATE guests SET `gPassword` = '$newPassword' WHERE `gGuestID` = '$guestID'";
         $stmt = mysqli_prepare($conn, $q);
         /* to bind data mysqli_stmt_bind_param($stmt, 'i', $post_id);
         to bind result mysqli_stmt_bind_result($stmt, $content);

@@ -24,7 +24,7 @@ $user_id =  $_SESSION['login_user'];
         }
         else if (move_uploaded_file($_FILES['attachments']['tmp_name'][0], $targetFile)){
             $msg = array("status" => 1, "msg" => "File Has Been Uploaded", "path" => $targetFile);
-            $insert = $conn->query("INSERT INTO `hima`.`hotelsphotos` (`hpPath`, `hotels_hHotelID`) VALUES ('$targetFile', '$hotel_id')"); 
+            $insert = $conn->query("INSERT INTO `hotelsphotos` (`hpPath`, `hotels_hHotelID`) VALUES ('$targetFile', '$hotel_id')"); 
         }
 
         

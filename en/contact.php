@@ -8,7 +8,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
         <!-- Title -->
-        <title>Contact | MyTravel - Responsive Website Template</title>
+        <title>Contact | Hjuzati - Responsive Website Template</title>
         <?php include('sections/head.html'); ?>
     </head>
     <body>
@@ -158,7 +158,7 @@
         <script src="assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
         <script src="assets/vendor/flatpickr/dist/flatpickr.min.js"></script>
 
-        <!-- JS MyTravel -->
+        <!-- JS Hjuzati -->
         <script src="assets/js/hs.core.js"></script>
         <script src="assets/js/components/hs.header.js"></script>
         <script src="assets/js/components/hs.unfold.js"></script>

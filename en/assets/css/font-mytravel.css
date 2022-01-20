@@ -5,12 +5,12 @@
 
 @font-face {
   font-family: "Flaticon";
-  src: url("https://madrasthemes.github.io/mytravel-html/assets/fonts/mytravel.eot");
-  src: url("https://madrasthemes.github.io/mytravel-html/assets/fonts/mytravel.eot?#iefix") format("embedded-opentype"),
-       url("https://madrasthemes.github.io/mytravel-html/assets/fonts/mytravel.woff2") format("woff2"),
-       url("https://madrasthemes.github.io/mytravel-html/assets/fonts/mytravel.woff") format("woff"),
-       url("https://madrasthemes.github.io/mytravel-html/assets/fonts/mytravel.ttf") format("truetype"),
-       url("https://madrasthemes.github.io/mytravel-html/assets/fonts/mytravel.svg#mytravel") format("svg");
+  src: url("https://madrasthemes.github.io/Hjuzati-html/assets/fonts/Hjuzati.eot");
+  src: url("https://madrasthemes.github.io/Hjuzati-html/assets/fonts/Hjuzati.eot?#iefix") format("embedded-opentype"),
+       url("https://madrasthemes.github.io/Hjuzati-html/assets/fonts/Hjuzati.woff2") format("woff2"),
+       url("https://madrasthemes.github.io/Hjuzati-html/assets/fonts/Hjuzati.woff") format("woff"),
+       url("https://madrasthemes.github.io/Hjuzati-html/assets/fonts/Hjuzati.ttf") format("truetype"),
+       url("https://madrasthemes.github.io/Hjuzati-html/assets/fonts/Hjuzati.svg#Hjuzati") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -18,7 +18,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "Flaticon";
-    src: url("https://madrasthemes.github.io/mytravel-html/assets/fonts/mytravel.svg#mytravel") format("svg");
+    src: url("https://madrasthemes.github.io/Hjuzati-html/assets/fonts/Hjuzati.svg#Hjuzati") format("svg");
   }
 }
 

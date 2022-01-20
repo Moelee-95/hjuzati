@@ -8,7 +8,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
         <!-- Title -->
-        <title>Terms & Conditions | MyTravel - Responsive Website Template</title>
+        <title>Terms & Conditions | Hjuzati - Responsive Website Template</title>
         <?php include('sections/head.html'); ?>
     </head>
     <body>
@@ -239,7 +239,7 @@
         <script src="assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
         <script src="assets/vendor/flatpickr/dist/flatpickr.min.js"></script>
 
-        <!-- JS MyTravel -->
+        <!-- JS Hjuzati -->
         <script src="assets/js/hs.core.js"></script>
         <script src="assets/js/components/hs.header.js"></script>
         <script src="assets/js/components/hs.unfold.js"></script>

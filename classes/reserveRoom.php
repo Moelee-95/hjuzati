@@ -35,7 +35,7 @@ class ReserveRoom extends room{
     public function getFromDB($bookingID,$roomID){
         $conn = new db();
         $conn = $conn->getConnection();
-        $sql = "SELECT rbNumOfRooms FROM hima.roomsbooked where rbBookingID = '$bookingID' and rbRoomID = '$roomID'";
+        $sql = "SELECT rbNumOfRooms FROM roomsbooked where rbBookingID = '$bookingID' and rbRoomID = '$roomID'";
         $query = mysqli_query($conn, $sql);
         if ($query->num_rows > 0) {
             $fetch = mysqli_fetch_row($query);

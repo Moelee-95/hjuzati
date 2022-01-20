@@ -4,7 +4,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
     <!-- Title -->
-    <title>Tour List | MyTravel - Responsive Website Template</title>
+    <title>Tour List | Hjuzati - Responsive Website Template</title>
     <?php include('sections/head.html'); ?>
     </head>
     <body>
@@ -1292,7 +1292,7 @@
         <script src="assets/vendor/gmaps/gmaps.min.js"></script>
         <script src="assets/vendor/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
 
-        <!-- JS MyTravel -->
+        <!-- JS Hjuzati -->
         <script src="assets/js/hs.core.js"></script>
         <script src="assets/js/components/hs.header.js"></script>
         <script src="assets/js/components/hs.unfold.js"></script>

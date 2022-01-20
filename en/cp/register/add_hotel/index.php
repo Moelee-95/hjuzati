@@ -122,9 +122,9 @@ elseif (empty($_SESSION['login_user'])) {
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="google-site-verification" content="XzvsW-NJhc4s2wmujUjF8LGA4LOXMLeihLRJKQseI7E" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Hima Hotels complete booking and reservation system provides complete solution for travel agency">
-<meta name="keywords" content="Hima Hotels  hotels booking script, ">
-<meta name="author" content="Hima Hotels">
+<meta name="description" content="Hjuzati complete booking and reservation system provides complete solution for travel agency">
+<meta name="keywords" content="Hjuzati  hotels booking script, ">
+<meta name="author" content="Hjuzati">
 <title>supplier Registration</title>
 
 
@@ -132,9 +132,9 @@ elseif (empty($_SESSION['login_user'])) {
 <link href="../../themes/new/assets/css/bootstrap.css" rel="stylesheet" media="screen">
 <link href="../../themes/new/style.css" rel="stylesheet">
 <link href="../../themes/new/assets/css/navigation.css" rel="stylesheet">
-<!--<link href="https://www.Hima Hotels.com/themes/new/eder.css" rel="stylesheet"> -->
+<!--<link href="https://www.Hjuzati.com/themes/new/eder.css" rel="stylesheet"> -->
 <link href="../../themes/new/assets/css/mobile.css" rel="stylesheet" media="screen">
-<!-- facebook --> <meta property="og:title" content="supplier Registration"/> <meta property="og:site_name" content="Hima Hotels"/> <meta property="og:description" content="Hima Hotels complete booking and reservation system provides complete solution for travel agency"/> <meta property="og:image" content="https://www.Hima Hotels.com/uploads/global/favicon.png"/>  <meta property="og:url" content="https://www.Hima Hotels.com/"/> <meta property="og:publisher" content="https://www.facebook.com/Hima Hotels"/>
+<!-- facebook --> <meta property="og:title" content="supplier Registration"/> <meta property="og:site_name" content="Hjuzati"/> <meta property="og:description" content="Hjuzati complete booking and reservation system provides complete solution for travel agency"/> <meta property="og:image" content="https://www.Hjuzati.com/uploads/global/favicon.png"/>  <meta property="og:url" content="https://www.Hjuzati.com/"/> <meta property="og:publisher" content="https://www.facebook.com/Hjuzati"/>
 
 
 
@@ -144,7 +144,7 @@ elseif (empty($_SESSION['login_user'])) {
 <!-- Child Theme --> <style> @import "../../themes/new/assets/css/childstyle.css"; </style>
 <!-- Google Maps --> <!-- jQuery --> <script src="../../themes/new/assets/js/jquery-2.2.4.min.js"></script>
 <!-- RTL CSS --> <!-- Mobile Redirect -->  <script>if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)){ // window.location ="";
-}</script> <!--[if lt IE 7] > <link rel="stylesheet" type="text/css" href="https://www.Hima Hotels.com/themes/new/assets/css/font-awesome-ie7.css" media="screen" /> <![endif]-->
+}</script> <!--[if lt IE 7] > <link rel="stylesheet" type="text/css" href="https://www.Hjuzati.com/themes/new/assets/css/font-awesome-ie7.css" media="screen" /> <![endif]-->
 <!-- Autocomplete files-->
 <link href="../../themes/new/assets/js/autocomplete/easy-autocomplete.min.css" rel="stylesheet" type="text/css">
 <script src="../../themes/new/assets/js/autocomplete/jquery.easy-autocomplete.min.js" type="text/javascript" ></script>
@@ -235,7 +235,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav go-right">
-              <!--<li class="text-center go-right"><a href="https://www.Hima Hotels.com/">Home</a></li>-->
+              <!--<li class="text-center go-right"><a href="https://www.Hjuzati.com/">Home</a></li>-->
                                           <li class="text-center go-right"><a href="../../blog.php">Blog      </a></li>
               <li class="text-center go-right"><a href="../../offers.php">Offers    </a></li>
                <li class="text-center go-right"><a href="../../contact-us-2.php">Contact Us</a></li>
@@ -509,7 +509,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </div>
 <div class="container">
-        <h2 class="text-center h1-title">Hima Hotels helps grow your business</h2>
+        <h2 class="text-center h1-title">Hjuzati helps grow your business</h2>
     <hr class="hrs">
     <br><br>
     <div class="col-md-6 wow fadeInRight animated">
@@ -856,7 +856,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
     <div class="row">
     <div class="col-12 col-sm-12 col-md-2 text-right">
-    <a href="https://www.Hima Hotels.com/"><img src="https://www.Hima Hotels.com/uploads/global/logo.png" class="pull-right img-responsive"/></a>
+    <a href="https://www.Hjuzati.com/"><img src="https://www.Hjuzati.com/uploads/global/logo.png" class="pull-right img-responsive"/></a>
     </div>
     </div>
     </div>
@@ -866,7 +866,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- ********************   Removing powered by linkback will result to cancellation of your support service.    ********************  
     <div class="hidden-xs hidden-sm" style="padding:10px;background:#8c1f02;">
       <div class="container">
-       <div class="text-center"><strong>Powered by </strong><a href="https://www.Hima Hotels.com" target="_blank"> <img src="https://www.Hima Hotels.com/uploads/global/logo.png" style="height:22px" height="22" alt="Hima Hotels" /> <strong>Hima Hotels</strong></a></div>
+       <div class="text-center"><strong>Powered by </strong><a href="https://www.Hjuzati.com" target="_blank"> <img src="https://www.Hjuzati.com/uploads/global/logo.png" style="height:22px" height="22" alt="Hjuzati" /> <strong>Hjuzati</strong></a></div>
       </div>
     </div>
     ********************   Removing powered by linkback will result to cancellation of your support service.    ********************  -->
@@ -875,7 +875,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 hidden-xs">
-                   <!-- <a class="btn btn-success go-text-right" style="background-color:#999900;" target="_blank" href="https://drive.google.com/drive/folders/1YHBet_qRjoq73fmnFHZhmMV7XS3Zrjur">Attach Contract<img src="https://www.Hima Hotels.com/uploads/images/hotels/amenities/linkfile.png" style="height:23px; padding: 5px;" height="23"/></a> -->
+                   <!-- <a class="btn btn-success go-text-right" style="background-color:#999900;" target="_blank" href="https://drive.google.com/drive/folders/1YHBet_qRjoq73fmnFHZhmMV7XS3Zrjur">Attach Contract<img src="https://www.Hjuzati.com/uploads/images/hotels/amenities/linkfile.png" style="height:23px; padding: 5px;" height="23"/></a> -->
                                         <a class="btn btn-warning" target="_blank" href="index.php">Supplier Sign Up</a>
                                         <a class="btn btn-success" target="_blank" href="../../supplier/index.php">Supplier Login</a>
                 </div>
@@ -886,12 +886,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </li>
                                                             <li class="go-right">
                     <i class="fa fa-envelope-o go-right align-M mrg5-R f-grey66 fs13"></i>
-                    <span class="tp-mail"><a title="Mail" href="mailto:support@Hima Hotels.com">support@Hima Hotels.com</a></span>
+                    <span class="tp-mail"><a title="Mail" href="mailto:support@Hjuzati.com">support@Hjuzati.com</a></span>
                     </li>
                                         </ul>-->
                 <div class="col-md-6">
                     <div class="copyright text-right pull-right m_tc">
-                        <h5 style="padding-right:25px">All Rights Reserved by Hima Hotels</h5>
+                        <h5 style="padding-right:25px">All Rights Reserved by Hjuzati</h5>
                     </div>
                 </div>
             </div>
@@ -941,7 +941,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </style>
 
 <!-- <div id="cookyGotItBtnBox" style="display: none" data-wow-duration="0.5s" data-wow-delay="5s" role="dialog" class="wow fadeIn cc-window cc-banner cc-type-info cc-theme-block cc-color-override--1961008818 ">
-<span id="cookieconsent:desc" class="cc-message">This website uses cookies to ensure you get the best experience on our website. <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="https://www.Hima Hotels.com/cookies-policy" rel="noopener noreferrer nofollow" target="_blank">Learn more</a></span>
+<span id="cookieconsent:desc" class="cc-message">This website uses cookies to ensure you get the best experience on our website. <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="https://www.Hjuzati.com/cookies-policy" rel="noopener noreferrer nofollow" target="_blank">Learn more</a></span>
 <div class="cc-compliance">
 <button aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss" id="cookyGotItBtn">Got it!</button></div></div> -->
 
@@ -1020,7 +1020,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
              width: '100%',
              maximumSelectionSize: 1,
              ajax:{
-               url: 'https://www.Hima Hotels.com/Suggestions/airports/tport',
+               url: 'https://www.Hjuzati.com/Suggestions/airports/tport',
                dataType: 'json',
                data: function(term, page) {
                  return {
@@ -1250,7 +1250,7 @@ function get_path(req, payload)
             callback(data);
           },
           ajax: {
-            url: "https://www.Hima Hotels.com/admin/ajaxcalls/flightAjex",
+            url: "https://www.Hjuzati.com/admin/ajaxcalls/flightAjex",
             dataType: 'json',
             data: function (term, page) {
               return {
@@ -1284,7 +1284,7 @@ function get_path(req, payload)
             callback(data);
           },
           ajax: {
-            url: "https://www.Hima Hotels.com/admin/ajaxcalls/flightAjex",
+            url: "https://www.Hjuzati.com/admin/ajaxcalls/flightAjex",
             dataType: 'json',
             data: function (term, page) {
               return {
@@ -1371,7 +1371,7 @@ $(".car-startlocation").select2({
   width: '100%',
   maximumSelectionSize: 1,
   ajax: {
-    url: 'https://www.Hima Hotels.com/cartrawler/getLocations',
+    url: 'https://www.Hjuzati.com/cartrawler/getLocations',
     dataType: 'json',
     type: "GET",
     quietMillis: 50,
@@ -1399,7 +1399,7 @@ $(".car-endlocation").select2({
   width: '100%',
   maximumSelectionSize: 1,
   ajax: {
-    url: 'https://www.Hima Hotels.com/cartrawler/getLocations',
+    url: 'https://www.Hjuzati.com/cartrawler/getLocations',
     dataType: 'json',
     type: "GET",
     quietMillis: 50,

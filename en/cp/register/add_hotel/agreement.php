@@ -15,7 +15,7 @@ $hotel_id = $_SESSION['hotel_id'];
 // echo "$hotel_id  <br>";
 include('../../db/db_connect.php'); 
 
-$user_info = "SELECT hHotelName,contact_name,hMainPhoneNumber FROM hima.hotels where hHotelID = '$hotel_id';";
+$user_info = "SELECT hHotelName,contact_name,hMainPhoneNumber FROM hotels where hHotelID = '$hotel_id';";
 $query = mysqli_query($conn, $user_info);
 $result = mysqli_fetch_array($query);
 
@@ -51,7 +51,7 @@ $result = mysqli_fetch_array($query);
 			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="display: inline-block;">
 				<p>Between:</p>
 				<p>
-				Hima Hotels Co.</br>
+				Hjuzati Co.</br>
 				Iraq, Sulaymaniyah.</br>
 				Office Number:</br>
 				Address:</br>

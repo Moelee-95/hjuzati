@@ -19,7 +19,7 @@ function execute_query($query){
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<meta name="description" content="Responsive Admin Template" />
 	 <meta name="author" content="Hjuzati by.Mohammed S. Hazim" />
-	<title>HIMA Hotels</title>
+	<title>Hjuzati</title>
 	<!-- icons -->
 	<link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
 	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -125,7 +125,7 @@ function execute_query($query){
 									</div>
 									<div class="table-scrollable">
 										<?php
-											$get_bookings = "SELECT * FROM hima.bookings join guests on bGuestID = gGuestID where bGuestID = '$guest->guestID'";
+											$get_bookings = "SELECT * FROM bookings join guests on bGuestID = gGuestID where bGuestID = '$guest->guestID'";
 											$query_bookings = mysqli_query($conn, $get_bookings);
 											$fetch_all = mysqli_fetch_all($query_bookings, MYSQLI_ASSOC);
 											//print_r($fetch_all);
@@ -148,7 +148,7 @@ function execute_query($query){
 												 foreach ($fetch_all as $row) {
 												# Get the list of rooms
 												$bookingID = $row["bBookingID"];
-												$roomsQuery = "SELECT * FROM hima.roomsbooked where rbBookingID = '$bookingID'";
+												$roomsQuery = "SELECT * FROM roomsbooked where rbBookingID = '$bookingID'";
 												$queryRooms = mysqli_query($conn, $roomsQuery);
 												$fetchRooms = mysqli_fetch_all($queryRooms, MYSQLI_ASSOC);
 												// print_r($fetchRooms);

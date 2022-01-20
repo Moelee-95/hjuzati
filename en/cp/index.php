@@ -118,9 +118,9 @@ elseif (empty($_SESSION['login_user'])) {
                             </div>
                         </div>
                         <ul class="fxt-socials">
-                            <li class="fxt-facebook fxt-transformY-50 fxt-transition-delay-4"><a href="https://fb.com/HIMA.hotels"
+                            <li class="fxt-facebook fxt-transformY-50 fxt-transition-delay-4"><a href="https://fb.com/hotels"
                                     title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                            <li class="fxt-instagram fxt-transformY-50 fxt-transition-delay-5"><a href="https://www.instagram.com/hima.hotels/" title="instragram"><i
+                            <li class="fxt-instagram fxt-transformY-50 fxt-transition-delay-5"><a href="https://www.instagram.com/hotels/" title="instragram"><i
                                         class="fab fa-instagram"></i></a></li>
 
                            <!--  <li class="fxt-google fxt-transformY-50 fxt-transition-delay-6"><a href="#" title="google"><i
@@ -158,7 +158,7 @@ elseif (empty($_SESSION['login_user'])) {
                                             <input id="checkbox1" type="checkbox">
                                             <label for="checkbox1">Keep me logged in</label>
                                         </div>
-                                        <a href="#forgot-password.php" class="switcher-text" onclick="alert('Please Call Hima Hotels On:07708138928')">Forgot Password</a>
+                                        <a href="#forgot-password.php" class="switcher-text" onclick="alert('Please Call Hjuzati On:07708138928')">Forgot Password</a>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -167,7 +167,7 @@ elseif (empty($_SESSION['login_user'])) {
                             </form>                            
                         </div> 
                         <div class="fxt-footer">
-                            <p>Don't have an account?<a href="#" class="switcher-text" onclick="alert('Please call Hima Hotels on:07708138928')">Register</a></p>
+                            <p>Don't have an account?<a href="#" class="switcher-text" onclick="alert('Please call Hjuzati on:07708138928')">Register</a></p>
                         </div>                            
                     </div>
                 </div>

@@ -8,7 +8,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="description" content="Responsive Admin Template" />
      <meta name="author" content="Hjuzati by.Mohammed S. Hazim" />
-    <title>Spice Hotel | Bootstrap 4 Admin Dashboard Template + UI Kit</title>
+    <title>Hjuzati | </title>
     <!-- icons -->
     <link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -3237,5 +3237,5 @@
 </body>
 
 
-<!-- Mirrored from radixtouch.in/templates/admin/hotel/source/advanced_table.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Mar 2020 16:54:39 GMT -->
+<!-- /advanced_table.html  Copier/3.x [XR&CO'2014], Mon, 02 Mar 2020 16:54:39 GMT -->
 </html>

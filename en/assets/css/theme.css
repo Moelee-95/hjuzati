@@ -38,7 +38,7 @@
     1.33. Utilities
     1.34. Print
 
-2. MyTravel CSS
+2. Hjuzati CSS
     2.1. Sizing
     2.2. Spaces
     2.3. Reboot
@@ -22419,12 +22419,12 @@ a.text-purple-1:hover, a.text-purple-1:focus {
 }
 
 /*----------------------------------------------------------------------
-  * Mytravel - Responsive Website Template version v1.0
+  * Hjuzati - Responsive Website Template version v1.0
   * Copyright 2020 Madrasthemes
   * Licensed under Bootstrap Themes (https://themes.getbootstrap.com/licenses/)
 ------------------------------------------------------------------------*/
 /*-------------------------------------------*\
-    2. MyTravel CSS
+    2. Hjuzati CSS
 \*-------------------------------------------*/
 /*-------------------------------------------*\
     2.1. Sizing
@@ -42666,7 +42666,7 @@ Letter Spacing
 }
 
 .u-slick {
-  background: url(https://madrasthemes.github.io/mytravel-html/assets/svg/preloaders/circle-preloader.svg) no-repeat 50% 50%;
+  background: url(https://madrasthemes.github.io/Hjuzati-html/assets/svg/preloaders/circle-preloader.svg) no-repeat 50% 50%;
 }
 
 .u-slick .js-next,

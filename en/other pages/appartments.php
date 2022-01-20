@@ -4,7 +4,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
         <!-- Title -->
-        <title>Hotels | Hima Hotels</title>
+        <title>Hotels | Hjuzati</title>
 
         <?php include('sections/head.html'); ?>
     </head>
@@ -707,7 +707,7 @@
                     <div class="pt-xl-2 pb-xl-5 mb-xl-1">
                         <h6 class="text-gray-4 font-size-30 font-weight-bold mb-1 opacity-6">Enjoy Summer Deals</h6>
                         <h5 class="text-white font-size-40 font-weight-bold mb-5 pb-xl-1">Up to 40% Discount!</h5>
-                        <a class="btn btn-outline-white border-width-2 min-width-200 font-weight-normal transition-3d-hover" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-list.html">Learn more</a>
+                        <a class="btn btn-outline-white border-width-2 min-width-200 font-weight-normal transition-3d-hover" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-list.html">Learn more</a>
                     </div>
                 </div>
             </div>
@@ -2110,7 +2110,7 @@
                             <div class="col-md-4">
                                 <i class="flaticon-price text-primary font-size-80 mb-3"></i>
                                 <h5 class="font-size-17 text-dark font-weight-bold mb-2"><a href="#">Competitive Pricing</a></h5>
-                                <p class="text-gray-1 px-xl-2 px-uw-7">With 500+ suppliers and the purchasing power of 300 million members, mytravel.com can save you more!</p>
+                                <p class="text-gray-1 px-xl-2 px-uw-7">With 500+ suppliers and the purchasing power of 300 million members, Hjuzati.com can save you more!</p>
                             </div>
                             <!-- End Icon Block -->
 
@@ -2173,7 +2173,7 @@
         <script src="assets/vendor/slick-carousel/slick/slick.js"></script>
         <script src="assets/vendor/dzsparallaxer/dzsparallaxer.js"></script>
 
-        <!-- JS MyTravel -->
+        <!-- JS Hjuzati -->
         <script src="assets/js/hs.core.js"></script>
         <script src="assets/js/components/hs.header.js"></script>
         <script src="assets/js/components/hs.unfold.js"></script>
@@ -2230,6 +2230,6 @@
         </script>
     </body>
 
-<!-- Mirrored from madrasthemes.github.io/mytravel-html/html/home/home-v4.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 Mar 2020 15:11:17 GMT -->
+<!-- Mirrored from madrasthemes.github.io/Hjuzati-html/html/home/home-v4.html  Copier/3.x [XR&CO'2014], Wed, 11 Mar 2020 15:11:17 GMT -->
 </html>
     

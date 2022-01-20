@@ -4,7 +4,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
         <!-- Title -->
-        <title>Rental Single v2 | MyTravel - Responsive Website Template</title>
+        <title>Rental Single v2 | Hjuzati - Responsive Website Template</title>
         <?php include('sections/head.html'); ?>
     </head>
     <body>
@@ -117,7 +117,7 @@
                                         <a class="js-fancybox btn btn-white transition-3d-hover ml-2 py-2 px-md-5 px-3 shadow-6" href="javascript:;"
                                             data-src="assets/img/960x490/img7.jpg"
                                             data-fancybox="fancyboxGallery6"
-                                            data-caption="MyTravel in frames - image #01"
+                                            data-caption="Hjuzati in frames - image #01"
                                             data-speed="700">
                                             <i class="flaticon-gallery mr-md-2 font-size-18 text-primary"></i><span class="d-none d-md-inline">Gallery</span>
                                         </a>
@@ -125,17 +125,17 @@
                                         <img class="js-fancybox d-none" alt="Image Description"
                                         data-fancybox="fancyboxGallery6"
                                         data-src="assets/img/960x490/img6.jpg"
-                                        data-caption="MyTravel in frames - image #02"
+                                        data-caption="Hjuzati in frames - image #02"
                                         data-speed="700">
                                         <img class="js-fancybox d-none" alt="Image Description"
-                                        data-caption="MyTravel in frames - image #03"
+                                        data-caption="Hjuzati in frames - image #03"
                                         data-src="assets/img/960x490/img8.jpg"
                                         data-fancybox="fancyboxGallery6"
                                         data-speed="700">
                                         <img class="js-fancybox d-none" alt="Image Description"
                                         data-fancybox="fancyboxGallery6"
                                         data-src="assets/img/960x490/img9.jpg"
-                                        data-caption="MyTravel in frames - image #04"
+                                        data-caption="Hjuzati in frames - image #04"
                                         data-speed="700">
 
                                     </div>
@@ -1361,7 +1361,7 @@
         <script src="assets/vendor/player.js/dist/player.min.js"></script>
 
 
-        <!-- JS MyTravel -->
+        <!-- JS Hjuzati -->
         <script src="assets/js/hs.core.js"></script>
         <script src="assets/js/components/hs.header.js"></script>
         <script src="assets/js/components/hs.unfold.js"></script>

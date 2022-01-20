@@ -7,7 +7,7 @@
                             <!-- Contacts -->
                             <div class ="d-`md-flex d-lg-block">
                                 <div class="mb-5 mr-md-7 mr-lg-0">
-                                    <h4 class="h6 mb-4 font-weight-bold">Need Hima Hotels Help?</h4>
+                                    <h4 class="h6 mb-4 font-weight-bold">Need Hjuzati Help?</h4>
                                     <a href="tel:00964 770 813 8928">
                                         <div class="d-flex align-items-center">
                                             <!-- <div class="mr-4">
@@ -31,12 +31,12 @@
                                     </div>
                                     <ul class="list-inline mb-0">
                                         <li class="list-inline-item mr-2">
-                                            <a class="btn btn-icon btn-social btn-bg-transparent" href="https://www.facebook.com/HIMA.hotels">
+                                            <a class="btn btn-icon btn-social btn-bg-transparent" href="https://www.facebook.com/hotels">
                                                 <span class="fab fa-facebook-f btn-icon__inner"></span>
                                             </a>
                                         </li>
                                         <li class="list-inline-item mr-2">
-                                            <a class="btn btn-icon btn-social btn-bg-transparent" href="https://www.instagram.com/hima.hotels">
+                                            <a class="btn btn-icon btn-social btn-bg-transparent" href="https://www.instagram.com/hotels">
                                                 <span class="fab fa-instagram btn-icon__inner"></span>
                                             </a>
                                         </li>
@@ -47,7 +47,7 @@
                                         </li>
                                         
                                         <li class="list-inline-item mr-2">
-                                            <a class="btn btn-icon btn-social btn-bg-transparent" href="http://m.me/HIMA.hotels">
+                                            <a class="btn btn-icon btn-social btn-bg-transparent" href="http://m.me/hotels">
                                                 <span class="fab fa-facebook-messenger btn-icon__inner"></span>
                                             </a>
                                         </li>
@@ -142,7 +142,7 @@
                     <div class="row d-block d-xl-flex align-items-md-center">
                         <div class="col-xl-4 mb-4 mb-xl-0">
                             <!-- Logo -->
-                            <a class="d-inline-flex align-items-center" href="index.php" aria-label="MyTravel">
+                            <a class="d-inline-flex align-items-center" href="index.php" aria-label="Hjuzati">
                                 <!-- <img src="imgs/logo.png" style="width: 80px;height: 80px"> -->
                                 <span class="brand brand-dark">Hjuzati</span>
                             </a>
@@ -176,7 +176,7 @@
                 <div class="container">
                     <div class="d-lg-flex d-md-block justify-content-between align-items-center">
                         <!-- Copyright -->
-                        <p class="text-muted mb-3 mb-lg-0 text-gray-1">© 2021 Hima Hotels. All rights reserved</p>
+                        <p class="text-muted mb-3 mb-lg-0 text-gray-1">© 2021 Hjuzati. All rights reserved</p>
                         <!-- End Copyright -->
 
                         <!-- Social Networks -->

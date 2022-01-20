@@ -17,13 +17,13 @@ if (!isset($_SESSION['login_user'])) {
 $user_id = $_SESSION['login_user'];
 
 //Creating hotel row in the database
-$sql = "INSERT INTO `hima`.`hotels` (`hUserID`) VALUES ('$user_id')";
+$sql = "INSERT INTO `hotels` (`hUserID`) VALUES ('$user_id')";
 $query = mysqli_query($conn, $sql);
 
 //if new record have been added to the hotels table
 if ($query) {
 	//Get the hotel id and assign it to the global variable to use it when update the hotel info in the next page
-	$get_hotel_id = "SELECT * FROM `hima`.hotels ORDER BY hHotelID DESC LIMIT 1";
+	$get_hotel_id = "SELECT * FROM hotels ORDER BY hHotelID DESC LIMIT 1";
 	$hotel_id_query = mysqli_query($conn, $get_hotel_id);
 	$fetch = mysqli_fetch_row($hotel_id_query);
 	$hotel_id = $fetch[0];

@@ -14,12 +14,12 @@ else {
 		$room_id = $_GET['room_id'];
 	}
 	else {
-		echo "Wrong Input, Please try again with hima hotels dashboard!";
+		echo "Wrong Input, Please try again with Hjuzati dashboard!";
 		exit();
 	}
 	if ($room_id) {
 		$del_room = $room_id;
-		$del_row = "call hima.removeroom('$hotel_id', '$room_id')";
+		$del_row = "call removeroom('$hotel_id', '$room_id')";
 		$query = mysqli_query($conn, $del_row);
 
 		

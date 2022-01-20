@@ -373,13 +373,13 @@ if(isset($_GET['error'])){
                                 </div>
                             </div>
                             <ul class="fxt-socials">
-                                <li class="fxt-facebook fxt-transformY-50 fxt-transition-delay-4"><a href="https://www.facebook.com/HIMA.hotels"
+                                <li class="fxt-facebook fxt-transformY-50 fxt-transition-delay-4"><a href="https://www.facebook.com/hotels"
                                         title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                <li class="fxt-instagram fxt-transformY-50 fxt-transition-delay-5"><a href="https://www.instagram.com/hima.hotels" title="instagram"><i
+                                <li class="fxt-instagram fxt-transformY-50 fxt-transition-delay-5"><a href="https://www.instagram.com/hotels" title="instagram"><i
                                             class="fab fa-instagram"></i></a></li>
                                 <li class="fxt-whatsapp fxt-transformY-50 fxt-transition-delay-6"><a style="background-color: #01cc66cc" href="https://wa.me/9647708138928" title="whatsapp"><i
                                             class="fab fa-whatsapp"></i></a></li>
-                                <li class="fxt-transformY-50 fxt-transition-delay-7" ><a style="" href="https://m.me/HIMA.hotels"
+                                <li class="fxt-transformY-50 fxt-transition-delay-7" ><a style="" href="https://m.me/hotels"
                                         title="messenger"><i class="fab fa-messenger"></i></a></li>
                             </ul>
                         </div>

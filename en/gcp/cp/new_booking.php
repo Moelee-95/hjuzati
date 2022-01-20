@@ -8,7 +8,7 @@
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<meta name="description" content="Responsive Admin Template" />
 	 <meta name="author" content="Hjuzati by.Mohammed S. Hazim" />
-	<title>HIMA Hotels | New Booking</title>
+	<title>Hjuzati | New Booking</title>
 	<!-- icons -->
 	<link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
 	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />

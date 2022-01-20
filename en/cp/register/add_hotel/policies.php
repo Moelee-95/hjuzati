@@ -68,7 +68,7 @@ return $p_result;
 
 function get_selected_policies($hotel_id, $policy_id){
 	include('../../db/db_connect.php'); 
-	$query = "SELECT policiesvalues_pID, pOptionEn FROM hima.hotels_has_policies hp join policiesvalues pv on hp.policiesvalues_pID = pv.pID where hotels_hHotelID = '$hotel_id' and policiesoptions= '$policy_id' ";
+	$query = "SELECT policiesvalues_pID, pOptionEn FROM hotels_has_policies hp join policiesvalues pv on hp.policiesvalues_pID = pv.pID where hotels_hHotelID = '$hotel_id' and policiesoptions= '$policy_id' ";
 	$p_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
 	$p_result = mysqli_fetch_row($p_query);
 

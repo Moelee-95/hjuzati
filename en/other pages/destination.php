@@ -4,7 +4,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
         <!-- Title -->
-        <title>Destination | MyTravel - Responsive Website Template</title>
+        <title>Destination | Hjuzati - Responsive Website Template</title>
         <?php include('sections/head.html'); ?>
     </head>
     <body>
@@ -3844,14 +3844,14 @@
                         <div class="row border-lg-bottom pb-lg-6">
                             <div class="col-md-12 col-lg-6 d-md-flex pb-4 pb-lg-0">
                                 <div class="col-xl-4dot1">
-                                    <a class="d-block" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">
+                                    <a class="d-block" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">
                                         <img class="img-fluid w-100 rounded-xs mb-3 mb-md-0" src="assets/img/200x200/img7.jpg" alt="Image-Description">
                                     </a>
                                 </div>
                                 <div class="col-xl-7dot9">
                                     <div class="ml-3 pl-1">
                                         <h4 class="font-size-21 font-weight-semi-bold text-gray-6">
-                                            <a href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">What’s on in London in autumn</a>
+                                            <a href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">What’s on in London in autumn</a>
                                         </h4>
                                         <p class="text-gray-1 text-lh-lg">Autumn is a lovely time to visit London, after the stuffy heat of summer has gone and before the frantic busyness of the festive period. It’s arguably the best time for walking in t... </p>
                                     </div>
@@ -3859,14 +3859,14 @@
                             </div>
                             <div class="col-md-12 col-lg-6 d-md-flex pb-4 pb-lg-0">
                                 <div class="col-xl-4dot1">
-                                    <a class="d-block" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">
+                                    <a class="d-block" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">
                                         <img class="img-fluid w-100 rounded-xs mr-md-3 mb-3 mb-md-0" src="assets/img/200x200/img8.jpg" alt="Image-Description">
                                     </a>
                                 </div>
                                 <div class="col-xl-7dot9">
                                     <div class="ml-3 pl-1">
                                         <h4 class="font-size-21 font-weight-semi-bold text-gray-6">
-                                            <a href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">The 10 best afternoon teas in london</a>
+                                            <a href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">The 10 best afternoon teas in london</a>
                                         </h4>
                                         <p class="text-gray-1 text-lh-lg">Autumn is a lovely time to visit London, after the stuffy heat of summer has gone and before the frantic busyness of the festive period. It’s arguably the best time for walking in t... </p>
                                     </div>
@@ -3876,14 +3876,14 @@
                         <div class="row py-lg-5 mb-5">
                             <div class="col-md-12 col-lg-6 d-md-flex pb-4 pb-lg-0">
                                 <div class="col-xl-4dot1">
-                                    <a class="d-block" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">
+                                    <a class="d-block" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">
                                         <img class="img-fluid w-100 rounded-xs mr-md-3 mb-3 mb-md-0" src="assets/img/200x200/img9.jpg" alt="Image-Description">
                                     </a>
                                 </div>
                                 <div class="col-xl-7dot9">
                                     <div class="ml-3 pl-1">
                                         <h4 class="font-size-21 font-weight-semi-bold text-gray-6">
-                                            <a href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">London's best drag brunches</a>
+                                            <a href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">London's best drag brunches</a>
                                         </h4>
                                         <p class="text-gray-1 text-lh-lg">Autumn is a lovely time to visit London, after the stuffy heat of summer has gone and before the frantic busyness of the festive period. It’s arguably the best time for walking in t... </p>
                                     </div>
@@ -3891,14 +3891,14 @@
                             </div>
                             <div class="col-md-12 col-lg-6 d-md-flex pb-4 pb-lg-0">
                                 <div class="col-xl-4dot1">
-                                    <a class="d-block" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">
+                                    <a class="d-block" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">
                                         <img class="img-fluid w-100 rounded-xs mr-md-3 mb-3 mb-md-0" src="assets/img/200x200/img10.jpg" alt="Image-Description">
                                     </a>
                                 </div>
                                 <div class="col-xl-7dot9">
                                     <div class="ml-3 pl-1">
                                         <h4 class="font-size-21 font-weight-semi-bold text-gray-6">
-                                            <a href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">The best escape rooms in london</a>
+                                            <a href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">The best escape rooms in london</a>
                                         </h4>
                                         <p class="text-gray-1 text-lh-lg">Autumn is a lovely time to visit London, after the stuffy heat of summer has gone and before the frantic busyness of the festive period. It’s arguably the best time for walking in t... </p>
                                     </div>
@@ -3906,7 +3906,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <a class="text-center btn btn-md-wide border-width-2 btn-outline-navy font-weight-semi-bold px-5 transition-3d-hover" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-list.html">Read More Articles</a>
+                            <a class="text-center btn btn-md-wide border-width-2 btn-outline-navy font-weight-semi-bold px-5 transition-3d-hover" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-list.html">Read More Articles</a>
                         </div>
                     </div>
                 </div>
@@ -3948,7 +3948,7 @@
         <script src="assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
         <script src="assets/vendor/slick-carousel/slick/slick.js"></script>
 
-        <!-- JS MyTravel -->
+        <!-- JS Hjuzati -->
         <script src="assets/js/hs.core.js"></script>
         <script src="assets/js/components/hs.header.js"></script>
         <script src="assets/js/components/hs.unfold.js"></script>

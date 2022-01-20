@@ -4,7 +4,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
         <!-- Title -->
-        <title>Tour Single v2 | MyTravel - Responsive Website Template</title>
+        <title>Tour Single v2 | Hjuzati - Responsive Website Template</title>
         <?php include('sections/head.html'); ?>
     </head>
     <body>
@@ -135,7 +135,7 @@
                                         <a class="js-fancybox btn btn-white transition-3d-hover ml-2 py-2 px-md-5 px-3 shadow-6" href="javascript:;"
                                             data-src="assets/img/960x490/img7.jpg"
                                             data-fancybox="fancyboxGallery6"
-                                            data-caption="MyTravel in frames - image #01"
+                                            data-caption="Hjuzati in frames - image #01"
                                             data-speed="700">
                                             <i class="flaticon-gallery mr-md-2 font-size-18 text-primary"></i><span class="d-none d-md-inline">Gallery</span>
                                         </a>
@@ -143,17 +143,17 @@
                                         <img class="js-fancybox d-none" alt="Image Description"
                                         data-fancybox="fancyboxGallery6"
                                         data-src="assets/img/960x490/img6.jpg"
-                                        data-caption="MyTravel in frames - image #02"
+                                        data-caption="Hjuzati in frames - image #02"
                                         data-speed="700">
                                         <img class="js-fancybox d-none" alt="Image Description"
-                                        data-caption="MyTravel in frames - image #03"
+                                        data-caption="Hjuzati in frames - image #03"
                                         data-src="assets/img/960x490/img8.jpg"
                                         data-fancybox="fancyboxGallery6"
                                         data-speed="700">
                                         <img class="js-fancybox d-none" alt="Image Description"
                                         data-fancybox="fancyboxGallery6"
                                         data-src="assets/img/960x490/img9.jpg"
-                                        data-caption="MyTravel in frames - image #04"
+                                        data-caption="Hjuzati in frames - image #04"
                                         data-speed="700">
 
                                     </div>
@@ -453,14 +453,14 @@
                                             data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="true" aria-controls="basicsCollapseOne">
                                                 <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                     <figure id="rectangle" class="minus svg-preloader">
-                                                        <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle">
+                                                        <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle">
                                                     </figure>
                                                     <figure id="plus1" class="plus svg-preloader">
-                                                        <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus1">
+                                                        <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus1">
                                                     </figure>
                                                 </div>
 
-                                                <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo mytravel, is there a single supplement?</h6>
+                                                <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo Hjuzati, is there a single supplement?</h6>
                                             </button>
                                         </h5>
                                     </div>
@@ -483,10 +483,10 @@
                                             data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
                                                 <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                     <figure id="rectangle1" class="minus svg-preloader">
-                                                        <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle1">
+                                                        <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle1">
                                                     </figure>
                                                     <figure id="plus2" class="plus svg-preloader">
-                                                        <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus2">
+                                                        <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus2">
                                                     </figure>
                                                 </div>
                                                 <h6 class="font-weight-bold text-gray-3 mb-0">Which currency is most widely accepted on this tour?</h6>
@@ -512,10 +512,10 @@
                                             data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
                                                 <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                     <figure id="rectangle2" class="minus svg-preloader">
-                                                        <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle2">
+                                                        <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle2">
                                                     </figure>
                                                     <figure id="plus3" class="plus svg-preloader">
-                                                        <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus3">
+                                                        <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus3">
                                                     </figure>
                                                 </div>
                                                 <h6 class="font-weight-bold text-gray-3 mb-0">Should I book pre/post tour accommodation?</h6>
@@ -541,10 +541,10 @@
                                             data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
                                                 <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                     <figure id="plus4" class="plus svg-preloader">
-                                                        <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus4">
+                                                        <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus4">
                                                     </figure>
                                                     <figure id="rectangle3" class="minus svg-preloader">
-                                                        <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle3">
+                                                        <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle3">
                                                     </figure>
                                                 </div>
                                                 <h6 class="font-weight-bold text-gray-3 mb-0">How do I edit my calendar?</h6>
@@ -1312,7 +1312,7 @@
         <script src="assets/vendor/appear.js"></script>
         <script src="assets/vendor/fancybox/jquery.fancybox.min.js"></script>
 
-        <!-- JS MyTravel -->
+        <!-- JS Hjuzati -->
         <script src="assets/js/hs.core.js"></script>
         <script src="assets/js/components/hs.header.js"></script>
         <script src="assets/js/components/hs.unfold.js"></script>

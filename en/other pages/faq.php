@@ -4,7 +4,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
         <!-- Title -->
-        <title>FAQ's | MyTravel - Responsive Website Template</title>
+        <title>FAQ's | Hjuzati - Responsive Website Template</title>
         <?php include('sections/head.html'); ?>
     </head>
     <body>
@@ -129,14 +129,14 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="true" aria-controls="basicsCollapseOne">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="rectangle" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle">
                                                             </figure>
                                                             <figure id="plus1" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus1">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus1">
                                                             </figure>
                                                         </div>
 
-                                                        <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo mytravel, is there a single supplement?</h6>
+                                                        <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo Hjuzati, is there a single supplement?</h6>
                                                     </button>
                                                 </h5>
                                             </div>
@@ -159,10 +159,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="rectangle1" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle1">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle1">
                                                             </figure>
                                                             <figure id="plus2" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus2">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus2">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">Which currency is most widely accepted on this tour?</h6>
@@ -188,10 +188,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="rectangle2" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle2">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle2">
                                                             </figure>
                                                             <figure id="plus3" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus3">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus3">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">Should I book pre/post tour accommodation?</h6>
@@ -217,10 +217,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus4" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus4">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus4">
                                                             </figure>
                                                             <figure id="rectangle3" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle3">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle3">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">How do I edit my calendar?</h6>
@@ -246,10 +246,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseFive" aria-expanded="false" aria-controls="basicsCollapseFive">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus5" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus5">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus5">
                                                             </figure>
                                                             <figure id="rectangle4" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle4">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle4">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">Why was my listing deactivated?</h6>
@@ -275,10 +275,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseSix" aria-expanded="false" aria-controls="basicsCollapseSix">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus6" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus6">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus6">
                                                             </figure>
                                                             <figure id="rectangle5" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle5">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle5">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">How do I turn off or delete my listing?</h6>
@@ -308,10 +308,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseSeven" aria-expanded="true" aria-controls="basicsCollapseSeven">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="rectangle12" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle12">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle12">
                                                             </figure>
                                                             <figure id="plus7" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus7">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus7">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">Which currency is most widely accepted on this tour?</h6>
@@ -337,13 +337,13 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseEight" aria-expanded="false" aria-controls="basicsCollapseEight">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus8" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus8">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus8">
                                                             </figure>
                                                             <figure id="rectangle11" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle11">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle11">
                                                             </figure>
                                                         </div>
-                                                        <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo mytravel, is there a single supplement?</h6>
+                                                        <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo Hjuzati, is there a single supplement?</h6>
                                                     </button>
                                                 </h5>
                                             </div>
@@ -365,10 +365,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseNine" aria-expanded="false" aria-controls="basicsCollapseNine">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus9" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus9">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus9">
                                                             </figure>
                                                             <figure id="rectangle14" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle14">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle14">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">How do I edit my calendar?</h6>
@@ -393,10 +393,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseTen" aria-expanded="false" aria-controls="basicsCollapseTen">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus10" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus10">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus10">
                                                             </figure>
                                                             <figure id="rectangle13" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle13">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle13">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">Should I book pre/post tour accommodation?</h6>
@@ -422,10 +422,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseEleven" aria-expanded="false" aria-controls="basicsCollapseEleven">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus11" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus11">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus11">
                                                             </figure>
                                                             <figure id="rectangle15" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle15">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle15">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">Why was my listing deactivated?</h6>
@@ -451,10 +451,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseTwelve" aria-expanded="false" aria-controls="basicsCollapseTwelve">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus12" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus12">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus12">
                                                             </figure>
                                                             <figure id="rectangle16" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle16">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle16">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">How do I turn off or delete my listing?</h6>
@@ -484,13 +484,13 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="true" aria-controls="basicsCollapseOne">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus13" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus13">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus13">
                                                             </figure>
                                                             <figure id="rectangle17" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle17">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle17">
                                                             </figure>
                                                         </div>
-                                                        <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo mytravel, is there a single supplement?</h6>
+                                                        <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo Hjuzati, is there a single supplement?</h6>
                                                     </button>
                                                 </h5>
                                             </div>
@@ -513,10 +513,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus14" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus14">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus14">
                                                             </figure>
                                                             <figure id="rectangle18" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle18">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle18">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">Which currency is most widely accepted on this tour?</h6>
@@ -542,10 +542,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus15" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus15">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus15">
                                                             </figure>
                                                             <figure id="rectangle19" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle19">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle19">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">Should I book pre/post tour accommodation?</h6>
@@ -571,10 +571,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus16" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus16">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus16">
                                                             </figure>
                                                             <figure id="rectangle20" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle20">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle20">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">How do I edit my calendar?</h6>
@@ -600,10 +600,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseFive" aria-expanded="false" aria-controls="basicsCollapseFive">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus17" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus17">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus17">
                                                             </figure>
                                                             <figure id="rectangle21" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle21">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle21">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">Why was my listing deactivated?</h6>
@@ -629,10 +629,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseSix" aria-expanded="false" aria-controls="basicsCollapseSix">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus18" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus18">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus18">
                                                             </figure>
                                                             <figure id="rectangle22" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle22">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle22">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">How do I turn off or delete my listing?</h6>
@@ -662,13 +662,13 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="true" aria-controls="basicsCollapseOne">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="19" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#19">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#19">
                                                             </figure>
                                                             <figure id="rectangle23" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle23">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle23">
                                                             </figure>
                                                         </div>
-                                                        <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo mytravel, is there a single supplement?</h6>
+                                                        <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo Hjuzati, is there a single supplement?</h6>
                                                     </button>
                                                 </h5>
                                             </div>
@@ -691,10 +691,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus20" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus20">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus20">
                                                             </figure>
                                                             <figure id="rectangle24" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle24">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle24">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">Which currency is most widely accepted on this tour?</h6>
@@ -720,10 +720,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus21" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus21">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus21">
                                                             </figure>
                                                             <figure id="rectangle25" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle25">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle25">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">Should I book pre/post tour accommodation?</h6>
@@ -749,10 +749,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus22" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus22">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus22">
                                                             </figure>
                                                             <figure id="rectangle26" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle26">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle26">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">How do I edit my calendar?</h6>
@@ -778,10 +778,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseFive" aria-expanded="false" aria-controls="basicsCollapseFive">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus23" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus23">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus23">
                                                             </figure>
                                                             <figure id="rectangle27" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle27">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle27">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">Why was my listing deactivated?</h6>
@@ -807,10 +807,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseSix" aria-expanded="false" aria-controls="basicsCollapseSix">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="24" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#24">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#24">
                                                             </figure>
                                                             <figure id="rectangle28" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle28">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle28">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">How do I turn off or delete my listing?</h6>
@@ -840,13 +840,13 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="true" aria-controls="basicsCollapseOne">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus25" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus25">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus25">
                                                             </figure>
                                                             <figure id="rectangle29" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle29">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle29">
                                                             </figure>
                                                         </div>
-                                                        <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo mytravel, is there a single supplement?</h6>
+                                                        <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo Hjuzati, is there a single supplement?</h6>
                                                     </button>
                                                 </h5>
                                             </div>
@@ -869,10 +869,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus26" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus26">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus26">
                                                             </figure>
                                                             <figure id="rectangle30" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle30">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle30">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">Which currency is most widely accepted on this tour?</h6>
@@ -898,10 +898,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus27" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus27">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus27">
                                                             </figure>
                                                             <figure id="rectangle31" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle31">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle31">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">Should I book pre/post tour accommodation?</h6>
@@ -927,10 +927,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus28" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus28">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus28">
                                                             </figure>
                                                             <figure id="rectangle32" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle32">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle32">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">How do I edit my calendar?</h6>
@@ -956,10 +956,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseFive" aria-expanded="false" aria-controls="basicsCollapseFive">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus29" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus29">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus29">
                                                             </figure>
                                                             <figure id="rectangle33" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle33">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle33">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">Why was my listing deactivated?</h6>
@@ -985,10 +985,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseSix" aria-expanded="false" aria-controls="basicsCollapseSix">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus30" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus30">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus30">
                                                             </figure>
                                                             <figure id="rectangle34" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle34">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle34">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">How do I turn off or delete my listing?</h6>
@@ -1018,13 +1018,13 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="true" aria-controls="basicsCollapseOne">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus31" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus31">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus31">
                                                             </figure>
                                                             <figure id="rectangle35" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle35">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle35">
                                                             </figure>
                                                         </div>
-                                                        <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo mytravel, is there a single supplement?</h6>
+                                                        <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo Hjuzati, is there a single supplement?</h6>
                                                     </button>
                                                 </h5>
                                             </div>
@@ -1047,10 +1047,10 @@
                                                     data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
                                                         <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                             <figure id="plus32" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus32">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus32">
                                                             </figure>
                                                             <figure id="rectangle36" class="minus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle36">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle36">
                                                             </figure>
                                                         </div>
                                                         <h6 class="font-weight-bold text-gray-3 mb-0">Which currency is most widely accepted on this tour?</h6>
@@ -1076,10 +1076,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus33" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus33">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus33">
                                                             </figure>
                                                         <figure id="rectangle37" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle37">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle37">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">Should I book pre/post tour accommodation?</h6>
@@ -1105,10 +1105,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus34" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus34">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus34">
                                                             </figure>
                                                         <figure id="rectangle38" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle38">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle38">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">How do I edit my calendar?</h6>
@@ -1134,10 +1134,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseFive" aria-expanded="false" aria-controls="basicsCollapseFive">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus35" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus35">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus35">
                                                             </figure>
                                                         <figure id="rectangle39" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle39">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle39">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">Why was my listing deactivated?</h6>
@@ -1163,10 +1163,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseSix" aria-expanded="false" aria-controls="basicsCollapseSix">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus36" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus36">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus36">
                                                             </figure>
                                                         <figure id="rectangle40" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle40">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle40">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">How do I turn off or delete my listing?</h6>
@@ -1196,13 +1196,13 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="true" aria-controls="basicsCollapseOne">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus37" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus37">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus37">
                                                         </figure>
                                                         <figure id="rectangle41" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle41">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle41">
                                                         </figure>
                                                     </div>
-                                                    <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo mytravel, is there a single supplement?</h6>
+                                                    <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo Hjuzati, is there a single supplement?</h6>
                                                 </button>
                                               </h5>
                                             </div>
@@ -1225,10 +1225,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus38" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus38">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus38">
                                                         </figure>
                                                         <figure id="rectangle42" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle42">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle42">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">Which currency is most widely accepted on this tour?</h6>
@@ -1254,10 +1254,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus39" class="plus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus39">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus39">
                                                         </figure>
                                                         <figure id="rectangle43" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle43">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle43">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">Should I book pre/post tour accommodation?</h6>
@@ -1283,10 +1283,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus40" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus40">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus40">
                                                             </figure>
                                                         <figure id="rectangle44" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle44">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle44">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">How do I edit my calendar?</h6>
@@ -1312,10 +1312,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseFive" aria-expanded="false" aria-controls="basicsCollapseFive">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus41" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus41">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus41">
                                                             </figure>
                                                         <figure id="rectangle45" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle45">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle45">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">Why was my listing deactivated?</h6>
@@ -1341,10 +1341,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseSix" aria-expanded="false" aria-controls="basicsCollapseSix">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus42" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus42">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus42">
                                                             </figure>
                                                         <figure id="rectangle46" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle46">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle46">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">How do I turn off or delete my listing?</h6>
@@ -1374,13 +1374,13 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="true" aria-controls="basicsCollapseOne">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus43" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus43">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus43">
                                                             </figure>
                                                         <figure id="rectangle47" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle47">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle47">
                                                         </figure>
                                                     </div>
-                                                    <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo mytravel, is there a single supplement?</h6>
+                                                    <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo Hjuzati, is there a single supplement?</h6>
                                                 </button>
                                               </h5>
                                             </div>
@@ -1403,10 +1403,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus44" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus44">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus44">
                                                             </figure>
                                                         <figure id="rectangle48" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle48">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle48">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">Which currency is most widely accepted on this tour?</h6>
@@ -1432,10 +1432,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus45" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus45">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus45">
                                                             </figure>
                                                         <figure id="rectangle49" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle49">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle49">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">Should I book pre/post tour accommodation?</h6>
@@ -1461,10 +1461,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus46" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus46">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus46">
                                                             </figure>
                                                         <figure id="rectangle50" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle50">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle50">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">How do I edit my calendar?</h6>
@@ -1490,10 +1490,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseFive" aria-expanded="false" aria-controls="basicsCollapseFive">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus47" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus47">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus47">
                                                             </figure>
                                                         <figure id="rectangle51" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle51">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle51">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">Why was my listing deactivated?</h6>
@@ -1519,10 +1519,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseSix" aria-expanded="false" aria-controls="basicsCollapseSix">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus48" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus48">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus48">
                                                             </figure>
                                                         <figure id="rectangle52" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle52">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle52">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">How do I turn off or delete my listing?</h6>
@@ -1552,13 +1552,13 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="true" aria-controls="basicsCollapseOne">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus49" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus49">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus49">
                                                             </figure>
                                                         <figure id="rectangle53" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle53">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle53">
                                                         </figure>
                                                     </div>
-                                                    <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo mytravel, is there a single supplement?</h6>
+                                                    <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo Hjuzati, is there a single supplement?</h6>
                                                 </button>
                                               </h5>
                                             </div>
@@ -1581,10 +1581,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus50" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus50">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus50">
                                                             </figure>
                                                         <figure id="rectangle54" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle54">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle54">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">Which currency is most widely accepted on this tour?</h6>
@@ -1610,10 +1610,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus51" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus51">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus51">
                                                             </figure>
                                                         <figure id="rectangle55" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle55">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle55">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">Should I book pre/post tour accommodation?</h6>
@@ -1639,10 +1639,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus52" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus52">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus52">
                                                             </figure>
                                                         <figure id="rectangle56" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle56">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle56">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">How do I edit my calendar?</h6>
@@ -1668,10 +1668,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseFive" aria-expanded="false" aria-controls="basicsCollapseFive">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus53" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus53">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus53">
                                                             </figure>
                                                         <figure id="rectangle57" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle57">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle57">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">Why was my listing deactivated?</h6>
@@ -1697,10 +1697,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseSix" aria-expanded="false" aria-controls="basicsCollapseSix">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus54" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus54">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus54">
                                                             </figure>
                                                         <figure id="rectangle58" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle58">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle58">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">How do I turn off or delete my listing?</h6>
@@ -1730,13 +1730,13 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="true" aria-controls="basicsCollapseOne">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus55" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus55">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus55">
                                                             </figure>
                                                         <figure id="rectangle59" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle59">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle59">
                                                         </figure>
                                                     </div>
-                                                    <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo mytravel, is there a single supplement?</h6>
+                                                    <h6 class="font-weight-bold text-gray-3 mb-0">I'm a solo Hjuzati, is there a single supplement?</h6>
                                                 </button>
                                               </h5>
                                             </div>
@@ -1759,10 +1759,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus56" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus56">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus56">
                                                             </figure>
                                                         <figure id="rectangle60" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle60">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle60">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">Which currency is most widely accepted on this tour?</h6>
@@ -1788,10 +1788,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus57" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus57">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus57">
                                                             </figure>
                                                         <figure id="rectangle61" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle61">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle61">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">Should I book pre/post tour accommodation?</h6>
@@ -1817,10 +1817,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus58" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus58">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus58">
                                                             </figure>
                                                         <figure id="rectangle62" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle62">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle62">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">How do I edit my calendar?</h6>
@@ -1846,10 +1846,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseFive" aria-expanded="false" aria-controls="basicsCollapseFive">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus59" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus59">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus59">
                                                             </figure>
                                                         <figure id="rectangle63" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle63">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle63">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">Why was my listing deactivated?</h6>
@@ -1875,10 +1875,10 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseSix" aria-expanded="false" aria-controls="basicsCollapseSix">
                                                     <div class="border border-color-8 rounded-xs border-width-2 p-2 mb-3 mb-md-0 mr-4">
                                                         <figure id="plus60" class="plus svg-preloader">
-                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus60">
+                                                                <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/plus.svg" alt="SVG" data-parent="#plus60">
                                                             </figure>
                                                         <figure id="rectangle64" class="minus svg-preloader">
-                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle64">
+                                                            <img class="js-svg-injector mb-0" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/rectangle.svg" alt="SVG" data-parent="#rectangle64">
                                                         </figure>
                                                     </div>
                                                     <h6 class="font-weight-bold text-gray-3 mb-0">How do I turn off or delete my listing?</h6>
@@ -1945,7 +1945,7 @@
         <script src="assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
         <script src="assets/vendor/flatpickr/dist/flatpickr.min.js"></script>
 
-        <!-- JS MyTravel -->
+        <!-- JS Hjuzati -->
         <script src="assets/js/hs.core.js"></script>
         <script src="assets/js/components/hs.header.js"></script>
         <script src="assets/js/components/hs.unfold.js"></script>

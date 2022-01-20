@@ -3947,7 +3947,7 @@
                 <div class="max-width-650 mx-auto text-center mt-xl-5 mb-xl-2 px-3 px-md-0">
                     <h6 class="text-white font-size-40 font-weight-bold mb-1">Travel Tips</h6>
                     <p class="text-white font-size-18 font-weight-normal mb-4 pb-1 px-md-3 px-lg-0">it's important to make things ready before you arrive, you will find everything ready waiting for you instead of spending hours searching for a suitable hotel.</p>
-                    <!-- <a class="btn btn-outline-white border-width-2 rounded-xs min-width-200 font-weight-normal transition-3d-hover" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-list.html">Get Inspired</a> -->
+                    <!-- <a class="btn btn-outline-white border-width-2 rounded-xs min-width-200 font-weight-normal transition-3d-hover" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-list.html">Get Inspired</a> -->
                 </div>
             </div>
             <!-- End Banner v1-->
@@ -3968,7 +3968,7 @@
                             <div class="col-md-4">
                                 <i class="flaticon-price text-primary font-size-80 mb-3"></i>
                                 <h5 class="font-size-17 text-dark font-weight-bold mb-2"><a href="#">Competitive Pricing</a></h5>
-                                <p class="text-gray-1 px-xl-2 px-uw-7">With 500+ suppliers and the purchasing power of 300 million members, mytravel.com can save you more!</p>
+                                <p class="text-gray-1 px-xl-2 px-uw-7">With 500+ suppliers and the purchasing power of 300 million members, Hjuzati.com can save you more!</p>
                             </div>
                             <!-- End Icon Block -->
 
@@ -4002,69 +4002,69 @@
                     <div class="js-slick-carousel u-slick u-slick--gutters-3" data-slides-show="3" data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-classic--v2 u-slick__arrow-centered--y rounded-circle" data-arrow-left-classes="flaticon-back u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-xl-n8" data-arrow-right-classes="flaticon-next u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-xl-n8"
                     data-pagi-classes="d-lg-none text-center u-slick__pagination mt-4" data-responsive='[ { "breakpoint": 1025, "settings": { "slidesToShow": 3 } }, { "breakpoint": 992, "settings": { "slidesToShow": 2 } }, { "breakpoint": 768, "settings": { "slidesToShow": 1 } }, { "breakpoint": 554, "settings": { "slidesToShow": 1 } } ]'>
                         <div class="js-slide mb-4">
-                            <a class="d-block rounded-xs overflow-hidden mb-3" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">
+                            <a class="d-block rounded-xs overflow-hidden mb-3" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">
                                 <img class="img-fluid w-100" src="assets/img/410x300/img1.jpg" alt="Image-Description">
                             </a>
                             <h6 class="font-size-17 pt-xl-1 font-weight-bold font-weight-bold mb-1 text-gray-6">
-                                <a href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">Earning Asiana Club Miles Just Got Easier!</a>
+                                <a href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">Earning Asiana Club Miles Just Got Easier!</a>
                             </h6>
-                            <a class="text-gray-1" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">
+                            <a class="text-gray-1" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">
                                 <span>Book Hotels and Earn Asiana Club Miles!</span>
                             </a>
                         </div>
                         <div class="js-slide mb-4">
-                            <a class="d-block rounded-xs overflow-hidden mb-3" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">
+                            <a class="d-block rounded-xs overflow-hidden mb-3" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">
                                 <img class="img-fluid w-100" src="assets/img/410x300/img2.jpg" alt="Image-Description">
                             </a>
                             <h6 class="font-size-17 pt-xl-1 font-weight-bold font-weight-bold mb-1 text-gray-6">
-                                <a href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">Save big on hotels!</a>
+                                <a href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">Save big on hotels!</a>
                             </h6>
-                            <a class="text-gray-1" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">
+                            <a class="text-gray-1" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">
                                 <span>Book and save with Trip.com on your next stay</span>
                             </a>
                         </div>
                         <div class="js-slide mb-4">
-                            <a class="d-block rounded-xs overflow-hidden mb-3" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">
+                            <a class="d-block rounded-xs overflow-hidden mb-3" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">
                                 <img class="img-fluid w-100" src="assets/img/410x300/img3.jpg" alt="Image-Description">
                             </a>
                             <h6 class="font-size-17 pt-xl-1 font-weight-bold font-weight-bold mb-1 text-gray-6">
-                                <a href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">Experience Europe Your Way</a>
+                                <a href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">Experience Europe Your Way</a>
                             </h6>
-                            <a class="text-gray-1" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">
+                            <a class="text-gray-1" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">
                                 <span>With up to 30% Off, experience Europe your way!</span>
                             </a>
                         </div>
                         <div class="js-slide mb-4">
-                            <a class="d-block rounded-xs overflow-hidden mb-3" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">
+                            <a class="d-block rounded-xs overflow-hidden mb-3" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">
                                 <img class="img-fluid w-100" src="assets/img/410x300/img1.jpg" alt="Image-Description">
                             </a>
                             <h6 class="font-size-17 pt-xl-1 font-weight-bold font-weight-bold mb-1 text-gray-6">
-                                <a href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">Earning Asiana Club Miles Just Got Easier!</a>
+                                <a href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">Earning Asiana Club Miles Just Got Easier!</a>
                             </h6>
-                            <a class="text-gray-1" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">
+                            <a class="text-gray-1" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">
                                 <span>Book Hotels and Earn Asiana Club Miles!</span>
                             </a>
                         </div>
                         <div class="js-slide mb-4">
-                            <a class="d-block rounded-xs overflow-hidden mb-3" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">
+                            <a class="d-block rounded-xs overflow-hidden mb-3" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">
                                 <img class="img-fluid w-100" src="assets/img/410x300/img2.jpg" alt="Image-Description">
                             </a>
                             <h6 class="font-size-17 pt-xl-1 font-weight-bold font-weight-bold mb-1 text-gray-6">
-                                <a href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">Save big on hotels!</a>
+                                <a href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">Save big on hotels!</a>
                             </h6>
-                            <a class="text-gray-1" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">
+                            <a class="text-gray-1" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">
                                 <span>Book and save with Trip.com on your next stay</span>
                             </a>
                         </div>
 
                         <div class="js-slide mb-4">
-                            <a class="d-block rounded-xs overflow-hidden mb-3" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">
+                            <a class="d-block rounded-xs overflow-hidden mb-3" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">
                                 <img class="img-fluid w-100" src="assets/img/410x300/img3.jpg" alt="Image-Description">
                             </a>
                             <h6 class="font-size-17 pt-xl-1 font-weight-bold font-weight-bold mb-1 text-gray-6">
-                                <a href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">Experience Europe Your Way</a>
+                                <a href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">Experience Europe Your Way</a>
                             </h6>
-                            <a class="text-gray-1" href="https://madrasthemes.github.io/mytravel-html/html/blog/blog-single.html">
+                            <a class="text-gray-1" href="https://madrasthemes.github.io/Hjuzati-html/html/blog/blog-single.html">
                                 <span>With up to 30% Off, experience Europe your way!</span>
                             </a>
                         </div>
@@ -4109,7 +4109,7 @@
         <script src="assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
         <script src="assets/vendor/slick-carousel/slick/slick.js"></script>
 
-        <!-- JS MyTravel -->
+        <!-- JS Hjuzati -->
         <script src="assets/js/hs.core.js"></script>
         <script src="assets/js/components/hs.header.js"></script>
         <script src="assets/js/components/hs.unfold.js"></script>

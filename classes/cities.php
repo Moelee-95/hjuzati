@@ -5,7 +5,7 @@ class Cities{
     public static function getCities(){
         $conn = new db();
         $conn = $conn->getConnection();
-        $sql = "SELECT city FROM hima.cities";
+        $sql = "SELECT city FROM cities";
         $result = $conn -> query($sql);
         $citiesArray = $result -> fetch_all(MYSQLI_ASSOC);
         $cities = array();

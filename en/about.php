@@ -8,7 +8,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
         <!-- Title -->
-        <title>About us | MyTravel - Responsive Website Template</title>
+        <title>About us | Hjuzati - Responsive Website Template</title>
         <?php include('sections/head.html'); ?>
     </head>
     <body>
@@ -100,7 +100,7 @@
                         <div class="col-md-4">
                             <i class="flaticon-price text-primary font-size-80 mb-3"></i>
                             <h5 class="font-size-17 text-dark font-weight-bold mb-2"><a href="#">Competitive Pricing</a></h5>
-                            <p class="text-gray-1 px-xl-2 px-uw-7">With 500+ suppliers and the purchasing power of 300 million members, mytravel.com can save you more!</p>
+                            <p class="text-gray-1 px-xl-2 px-uw-7">With 500+ suppliers and the purchasing power of 300 million members, Hjuzati.com can save you more!</p>
                         </div>
                         <!-- End Icon Block -->
 
@@ -131,7 +131,7 @@
                     <h6 class="text-white font-size-21 font-weight-bold mb-3 mb-lg-5 opacity-7">Your New Travelling Idea</h6>
                     <!-- Fancybox -->
                     <a class="js-fancybox d-inline-block u-media-player" href="javascript:;"
-                    data-src="//vimeo.com/167434033" data-speed="700" data-animate-in="zoomIn" data-animate-out="zoomOut" data-caption="MyTravel - Responsive Website Template">
+                    data-src="//vimeo.com/167434033" data-speed="700" data-animate-in="zoomIn" data-animate-out="zoomOut" data-caption="Hjuzati - Responsive Website Template">
                         <span class="u-media-player__icon u-media-player__icon--lg bg-transparent text-white">
                             <span class="flaticon-multimedia font-size-60 u-media-player__icon-inner"></span>
                         </span>
@@ -163,7 +163,7 @@
                                     <img class="img-fluid mx-auto" src="assets/img/137x137/img1.jpg" alt="Image-Descrition">
                                     <span class="btn-position btn btn-icon btn-dark rounded-circle d-flex align-items-center justify-content-center height-60 width-60">
                                         <figure id="quote7" class="svg-preloader">
-                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/quote2.svg" alt="SVG" data-parent="#quote7">
+                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/quote2.svg" alt="SVG" data-parent="#quote7">
                                         </figure>
                                     </span>
                                 </div>
@@ -183,7 +183,7 @@
                                     <img class="img-fluid mx-auto" src="assets/img/137x137/img2.jpg" alt="Image-Descrition">
                                     <div class="btn-position btn btn-icon btn-dark rounded-circle d-flex align-items-center justify-content-center height-60 width-60">
                                         <figure id="quote8" class="svg-preloader">
-                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/quote2.svg" alt="SVG" data-parent="#quote8">
+                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/quote2.svg" alt="SVG" data-parent="#quote8">
                                         </figure>
                                     </div>
                                 </div>
@@ -203,7 +203,7 @@
                                     <img class="img-fluid mx-auto" src="assets/img/137x137/img3.jpg" alt="Image-Descrition">
                                     <div class="btn-position btn btn-icon btn-dark rounded-circle d-flex align-items-center justify-content-center height-60 width-60">
                                         <figure id="quote9" class="svg-preloader">
-                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/quote2.svg" alt="SVG" data-parent="#quote9">
+                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/quote2.svg" alt="SVG" data-parent="#quote9">
                                         </figure>
                                     </div>
                                 </div>
@@ -223,7 +223,7 @@
                                     <img class="img-fluid mx-auto" src="assets/img/137x137/img1.jpg" alt="Image-Descrition">
                                     <div class="btn-position btn btn-icon btn-dark rounded-circle d-flex align-items-center justify-content-center height-60 width-60">
                                         <figure id="quote10" class="svg-preloader">
-                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/quote2.svg" alt="SVG" data-parent="#quote10">
+                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/quote2.svg" alt="SVG" data-parent="#quote10">
                                         </figure>
                                     </div>
                                 </div>
@@ -243,7 +243,7 @@
                                     <img class="img-fluid mx-auto" src="assets/img/137x137/img3.jpg" alt="Image-Descrition">
                                     <div class="btn-position btn btn-icon btn-dark rounded-circle d-flex align-items-center justify-content-center height-60 width-60">
                                         <figure id="quote11" class="svg-preloader">
-                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/quote2.svg" alt="SVG" data-parent="#quote11">
+                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/quote2.svg" alt="SVG" data-parent="#quote11">
                                         </figure>
                                     </div>
                                 </div>
@@ -263,7 +263,7 @@
                                     <img class="img-fluid mx-auto" src="assets/img/137x137/img2.jpg" alt="Image-Descrition">
                                     <div class="btn-position btn btn-icon btn-dark rounded-circle d-flex align-items-center justify-content-center height-60 width-60">
                                         <figure id="quote12" class="svg-preloader">
-                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/mytravel-html/assets/svg/illustrations/quote2.svg" alt="SVG" data-parent="#quote12">
+                                            <img class="js-svg-injector" src="https://madrasthemes.github.io/Hjuzati-html/assets/svg/illustrations/quote2.svg" alt="SVG" data-parent="#quote12">
                                         </figure>
                                     </div>
                                 </div>
@@ -461,7 +461,7 @@
         <script src="assets/vendor/fancybox/jquery.fancybox.min.js"></script>
 
 
-        <!-- JS MyTravel -->
+        <!-- JS Hjuzati -->
         <script src="assets/js/hs.core.js"></script>
         <script src="assets/js/components/hs.header.js"></script>
         <script src="assets/js/components/hs.unfold.js"></script>

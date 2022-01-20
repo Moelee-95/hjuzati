@@ -29,14 +29,14 @@ if($conn->connect_error){
 
 
 //Get options, values from the database
-$get_data = "SELECT * FROM `hima`.facilitiesoptions";
+$get_data = "SELECT * FROM facilitiesoptions";
 $query = mysqli_query($conn, $get_data);
 $fetch = mysqli_fetch_All($query,MYSQLI_ASSOC);
 //print_r($fetch);
 // echo "</br>---------------------------------------------------------------";
 function get_options($f_option_id){
 	include('../../db/db_connect.php'); 
-	$f_sql = "SELECT * FROM `hima`.facilitesvalues WHERE fFacilitesOptionsID = '$f_option_id'";
+	$f_sql = "SELECT * FROM facilitesvalues WHERE fFacilitesOptionsID = '$f_option_id'";
 	$f_query = mysqli_query($conn, $f_sql);
 	$f_fetch = mysqli_fetch_all($f_query, MYSQLI_ASSOC);
 	return $f_fetch;
@@ -168,7 +168,7 @@ function get_options($f_option_id){
 			<div class="divcontents ">
 				<?php
 				//Bring OptinsID, Option English, Values ID, Values English
-					$sql = "SELECT fo.fFaciliteID ,fo.fFaciliteNameEn FROM hima.facilitiesoptions as fo  where fo.fFaciliteID > 4";
+					$sql = "SELECT fo.fFaciliteID ,fo.fFaciliteNameEn FROM facilitiesoptions as fo  where fo.fFaciliteID > 4";
 
 					$query = mysqli_query($conn,$sql);
 					$fetch = mysqli_fetch_all($query,MYSQLI_ASSOC);

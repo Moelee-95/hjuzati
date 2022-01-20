@@ -7,7 +7,7 @@ if ($_GET['pic_id']) {
 	$remove = $_GET['pic_id'];
 	$url = $_GET['url'];
 	# Sql code ready for execution
-	$sql = "DELETE FROM `hima`.`hotelsphotos` WHERE (`hpID` = '$remove')";
+	$sql = "DELETE FROM `hotelsphotos` WHERE (`hpID` = '$remove')";
 
 	# Execute the sql code
 	if (mysqli_query($conn, $sql) && unlink($url)) {

@@ -26,8 +26,8 @@ class Hotel{
         $conn = new db();
         $conn = $conn->getConnection();
         //get rooms and remove them
-        $q ="SELECT rRoomID FROM hima.rooms where rHotelID = '$hotelID'"; // remove hotel rooms query
-        $q2 = "call hima.removehotel('$hotelID');"; //remove other related data to hotel procedure
+        $q ="SELECT rRoomID FROM rooms where rHotelID = '$hotelID'"; // remove hotel rooms query
+        $q2 = "call removehotel('$hotelID');"; //remove other related data to hotel procedure
         if ($result = $conn -> query($q)) {
             $r = $result -> fetch_all(MYSQLI_ASSOC);
             foreach ($r as $key => $room) {// iterate through hotel rooms and remove them

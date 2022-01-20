@@ -9,7 +9,7 @@
 
   // Query to run
   $query = mysqli_query($conn,
-           "SELECT * FROM `hima`.roomsnames WHERE rnRoomTypeID = '$types'");
+           "SELECT * FROM roomsnames WHERE rnRoomTypeID = '$types'");
 
   // Create empty array to hold query results
   $someArray = [];

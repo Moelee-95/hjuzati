@@ -1363,7 +1363,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `addReservation`(IN hotelID INT,IN g
 BEGIN
 DECLARE bookingID INT;
 
-INSERT INTO `hima`.`bookings` (`bHotelID`, `bGuestID`, `bDateFrom`, `bDateTo`,  `bNumOfGuests`, `bNumOfChildren`,`bPaymentStatusID`, `paymentMethod`,`totalAmount`, `fullName`, `phoneNumber`, `email`, `address`) VALUES (hotelID, guestID, dateFrom, dateTo, psNum, ChildrenNum, bPaymentStatusID, paymentMethod,totalAmount, fullName, phoneNumber, email, address);
+INSERT INTO `bookings` (`bHotelID`, `bGuestID`, `bDateFrom`, `bDateTo`,  `bNumOfGuests`, `bNumOfChildren`,`bPaymentStatusID`, `paymentMethod`,`totalAmount`, `fullName`, `phoneNumber`, `email`, `address`) VALUES (hotelID, guestID, dateFrom, dateTo, psNum, ChildrenNum, bPaymentStatusID, paymentMethod,totalAmount, fullName, phoneNumber, email, address);
 -- to get the booking id from the bookings table to insert it to the roomsBooked table
 SET bookingID = LAST_INSERT_ID();
 SELECT bookingID as "bookingID", guestID as "guestID";
@@ -1390,7 +1390,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `addReservationNoGuest`(IN hotelID I
 BEGIN
 DECLARE bookingID INT;
 
-INSERT INTO `hima`.`bookings` (`bHotelID`, `bDateFrom`, `bDateTo`,  `bNumOfGuests`, `bNumOfChildren`,`bPaymentStatusID`, `paymentMethod`,`totalAmount`, `fullName`, `phoneNumber`, `email`, `address`) VALUES (hotelID, dateFrom, dateTo, psNum, ChildrenNum, bPaymentStatusID, paymentMethod, totalAmount, gfullName, gPhoneNumber,gEmail,gCity);
+INSERT INTO `bookings` (`bHotelID`, `bDateFrom`, `bDateTo`,  `bNumOfGuests`, `bNumOfChildren`,`bPaymentStatusID`, `paymentMethod`,`totalAmount`, `fullName`, `phoneNumber`, `email`, `address`) VALUES (hotelID, dateFrom, dateTo, psNum, ChildrenNum, bPaymentStatusID, paymentMethod, totalAmount, gfullName, gPhoneNumber,gEmail,gCity);
 -- to get the booking id from the bookings table to insert it to the roomsBooked table
 SET bookingID = LAST_INSERT_ID();
 SELECT bookingID as "bookingID";
@@ -1537,7 +1537,7 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `decreserooms`(IN dateStart DATE, IN dateEnd DATE,IN roomID INT, IN numOfRooms INT)
 BEGIN
 	WHILE dateStart <= dateEnd DO
-    UPDATE `hima`.`rates` SET `rARoomsNum` = `rARoomsNum` - numOfRooms
+    UPDATE `rates` SET `rARoomsNum` = `rARoomsNum` - numOfRooms
     WHERE (`rRoomsID` = roomID and `rDate` = dateStart);
     SET dateStart = date_add(dateStart, INTERVAL 1 DAY);
   END WHILE;

@@ -81,7 +81,7 @@ class Room {
     public static function getHotelUserID($hotelID){
         $conn = new db();
         $conn = $conn->getConnection();
-        $q = "SELECT hUserID FROM hima.hotels WHERE hHotelID = $hotelID;";
+        $q = "SELECT hUserID FROM hotels WHERE hHotelID = $hotelID;";
         $query = mysqli_query($conn, $q);
         if (!empty($query)) {
             $fetch = mysqli_fetch_row($query);
@@ -101,7 +101,7 @@ class Room {
         //remove rates and photos
         $sql = "DELETE FROM rates WHERE (`rRoomsID` = '$roomID');";
         $sql2 = "DELETE FROM roomsphotos WHERE (`rpRoomsID` = '$roomID')";
-        $sql3 = "DELETE FROM `hima`.`rooms` WHERE (`rRoomID` = '$roomID')";
+        $sql3 = "DELETE FROM `rooms` WHERE (`rRoomID` = '$roomID')";
         $hotelID = Room::getRooomHotelID($roomID); // getting hotel id
         $userID = Room::getHotelUserID($hotelID); //getting user id
         if ($result = $conn -> query($sql)) { //remove rates

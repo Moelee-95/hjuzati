@@ -139,7 +139,7 @@ else {
 
 
 #Getting List of Amenities options from the database and store them to an array
-$sql = "SELECT * FROM `hima`.amenitiesoptions";
+$sql = "SELECT * FROM amenitiesoptions";
 $query = mysqli_query($conn, $sql);
 $amenitiesArr = mysqli_fetch_All($query,MYSQLI_ASSOC);
 

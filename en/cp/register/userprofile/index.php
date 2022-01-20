@@ -25,7 +25,7 @@ elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
-    <title>HIMA Hotels | User Profile</title>
+    <title>Hjuzati | User Profile</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/offcanvas/">
 
@@ -61,7 +61,7 @@ elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
   <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Hima Hotels <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Hjuzati <span class="sr-only">(current)</span></a>
       </li>
       <!-- <li class="nav-item">
         <a class="nav-link" href="#">Notifications</a>
@@ -164,7 +164,7 @@ elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
   <tbody>
     <?php
       include('../../db/db_connect.php');
-      $accomidation = "SELECT hHotelName,hHotelID,hState FROM `hima`.hotels WHERE hUserID = '$user_id'";
+      $accomidation = "SELECT hHotelName,hHotelID,hState FROM hotels WHERE hUserID = '$user_id'";
       $query = mysqli_query($conn, $accomidation);
       $fetch = mysqli_fetch_all($query, MYSQLI_ASSOC);
 

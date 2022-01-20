@@ -181,7 +181,7 @@
 													<label class="">Room type</label>
 													<br>
 													<?php 
-														$types = "SELECT rtRoomTypeEn, rtRoomTypeID FROM `hima`.roomstypes;";
+														$types = "SELECT rtRoomTypeEn, rtRoomTypeID FROM roomstypes;";
 														$queries = mysqli_query($conn,$types);
 														$fetch = mysqli_fetch_all($queries, MYSQLI_ASSOC);
 														// print_r($fetch);
