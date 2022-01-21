@@ -1,9 +1,9 @@
 <?php
 
 class db{
-    private $sName = "localhost";
-    private $uName = "root";
-    private $pw = "root";
+    private $sName = "127.0.0.1";
+    private $uName = "ubuntu";
+    private $pw = "ubuntu";
     private $dbname = "hima";
     protected $conn;
 
