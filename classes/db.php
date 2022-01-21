@@ -1,7 +1,7 @@
 <?php
 
 class db{
-    private $sName = "127.0.0.1";
+    private $sName = "localhost";
     private $uName = "hjuzati";
     private $pw = "WorldNeeds1@me.anytime";
     private $dbname = "hima";

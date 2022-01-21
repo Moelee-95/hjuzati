@@ -34,7 +34,7 @@
 
         // Using function to access the first photo of the hotel room
         function getRoomPic ($roomID){
-            include('cp/db/db_connect.php');
+            include('../db_connect.php');
             $roomPhoto = "SELECT * FROM roomsphotos WHERE rpRoomsID = '$roomID' LIMIT 0, 1";
             $query4 = mysqli_query($conn, $roomPhoto);
             $fRPhotos = mysqli_fetch_array($query4);
@@ -52,7 +52,7 @@
 
         //function to get the minimum number of available rooms
         function available_rooms($room_ID, $check_in, $check_out){
-            include('cp/db/db_connect.php');
+            include('../db_connect.php');
             $statement = "call available_rooms('$room_ID', '$check_in', '$check_out')";
             $query =  mysqli_query($conn, $statement);
             $fetch = mysqli_fetch_array($query);
@@ -62,7 +62,7 @@
 
         // Main function to execute statements and return one single value
         function exe($stmt){
-            include('cp/db/db_connect.php');
+            include('../db_connect.php');
             $query =  mysqli_query($conn, $stmt);
             $fetch = mysqli_fetch_array($query);
             $result = $fetch[0];
@@ -72,7 +72,7 @@
         $main_pic = "cp/cp/".exe("SELECT hpPath FROM hotels h join hotelsphotos hp on h.hHotelID = hp.hotels_hHotelID where h.hMainPhotoID = hp.hpID and h.hHotelID = '$hotel_id'");
    
         //set hotel info
-        include('cp/db/db_connect.php');
+        include('../db_connect.php');
         $hotel_info ="SELECT * FROM hotels WHERE hHotelID = '$hotel_id'";
         $query3 = mysqli_query($conn, $hotel_info);
         $fetch2 = mysqli_fetch_array($query3);

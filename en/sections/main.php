@@ -9,6 +9,8 @@ require('../classes/booking.php');
 require('../classes/room.php');
 require('../classes/reserveRoom.php');
 require('../classes/cities.php');
+include('../db_connect.php');
+
 
 // Currency cookies
 if (isset($_COOKIE['currency'])) {

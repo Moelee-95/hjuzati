@@ -1,5 +1,4 @@
 <!-- ==========  PHP  ===========-->
-<?php  include('../db_connect.php');?>
 <?php require 'sections/main.php';?>
 
 <!DOCTYPE html>
@@ -25,7 +24,6 @@
         <?php include('sections/header.php'); ?>
         <!-- ========== END HEADER ========== -->
         <?php 
-            include('cp/db/db_connect.php');
             //getting info from search for hotel
             $city = $_GET['city'];
             $ch_in_ch_out = $_GET['hotel_date'];//both check in and check out values
@@ -54,7 +52,7 @@
 
             // Functin for getting main image path for hotel
             function getPath($hotel_id){
-                include('cp/db/db_connect.php');
+                include('../db_connect.php');
                 $sql = "SELECT hp.hpPath FROM hotels h JOIN hotelsphotos hp ON h.hMainPhotoID = hp.hpID WHERE h.hHotelID = '$hotel_id'";
                 $qur = mysqli_query($conn, $sql);
                 $fetchPhoto = mysqli_fetch_array($qur);
