@@ -8,7 +8,7 @@ if (empty($user_id)) {
 	echo "You are not logged in, try to login first";
 }
 else {
-	include('../db/db_connect.php');
+	include('../../../db_connect.php');
 	//check if user name is available in the users table
 	if(isset($_GET['room_id'])){
 		$room_id = $_GET['room_id'];

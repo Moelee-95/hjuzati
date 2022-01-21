@@ -14,7 +14,7 @@ $user_id =  $_SESSION['login_user'];
 $hotel_id = $_SESSION['hotel_id'];
 // echo "$user_id <br>";
 // echo "$hotel_id  <br>";
-include('../../db/db_connect.php'); 
+include('../../../../db_connect.php'); 
 
 if ($conn->connect_error) {
 	echo "Something is wrong with connection to the database";
@@ -153,7 +153,7 @@ print_r($amenitiesArr);
 
 //function 
 // function amenities_titles($service){
-// include('db_connect.php'); #connect to the database
+// include('../../db_connect.php'); 
 // $t_r_room = "SELECT t_en FROM amenities_options WHERE services ='$service' ";
 // $t_r_query = mysqli_query($conn, $t_r_room);
 // $t_r_fetch = mysqli_fetch_array($t_r_query);

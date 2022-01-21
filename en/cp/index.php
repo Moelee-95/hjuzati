@@ -2,7 +2,7 @@
 
 session_start();
 $display_msg = "none";
-include('db/db_connect.php');
+include('../../db_connect.php');
 if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_COOKIE['userPassword'])) {
     if (isset($_SESSION['login_user'])) {
         header("location:cp/index.php");

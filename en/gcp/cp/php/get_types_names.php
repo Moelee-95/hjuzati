@@ -5,7 +5,7 @@
   $types = $_POST["types"];
 
   // Connect to the database
-  include('../../db/db_connect.php');
+  include('../../../../db_connect.php');
 
   // Query to run
   $query = mysqli_query($conn,

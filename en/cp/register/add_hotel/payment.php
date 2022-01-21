@@ -14,12 +14,12 @@ $user_id =  $_SESSION['login_user'];
 $hotel_id = $_SESSION['hotel_id'];
 // echo "$user_id <br>";
 // echo "$hotel_id  <br>";
-include('../../db/db_connect.php'); 
+include('../../../../db_connect.php'); 
 
 
 //execuiting querys return 1 when successful 0 when something is wrong
 function execute_query($query){
-	include('../../db/db_connect.php'); 
+	include('../../../../db_connect.php'); 
 	$result = mysqli_query($conn, $query);
 	if ($query) {
 		$status = '1';			
@@ -32,7 +32,7 @@ function execute_query($query){
 
 //retrun checked when the hotel payment method have been selected and stored in the db
 function check($hotel_id, $payment_id){
-	include('../../db/db_connect.php'); 
+	include('../../../../db_connect.php'); 
 	$result = "";
 	$qu = "select * from hotels_has_payments where hotels_hHotelID = '$hotel_id' and payments_pID ='$payment_id';";
 	$ex = mysqli_query($conn, $qu);

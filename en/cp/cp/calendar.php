@@ -157,7 +157,7 @@
 
 	//Function for getting the number of room
 	function get_room_num($room_id){
-		include('../db/db_connect.php');
+		include('../../../db_connect.php');
 		$get_rooms = "SELECT rRoomsNumbers FROM rooms WHERE rRoomID = '$room_id'";
 		$queries = mysqli_query($conn, $get_rooms);
 		$fetchRow = mysqli_fetch_row($queries);

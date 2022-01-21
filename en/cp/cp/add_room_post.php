@@ -23,7 +23,7 @@ if (empty($hotel_id)) {
 	exit();
 }
 else {
-	include('../db/db_connect.php');
+	include('../../../db_connect.php');
 		$result = null;
 		$room_type = $_POST['room_type'];//will not be used
 		$room_name = $_POST['room_name'];//Will use instead of both room type and room name

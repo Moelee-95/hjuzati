@@ -5,7 +5,7 @@ if (empty($hotel_id)) {
 	header('location:../index.php');
 }
 else {
-	include('db_connect.php');
+	include('../../../../db_connect.php'); 
 	//check if user name is available in the users table
 		include("user_check.php");
 		

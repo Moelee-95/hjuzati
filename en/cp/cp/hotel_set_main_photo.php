@@ -7,7 +7,7 @@ if (!isset($_SESSION['hotel_id'])) {
 	exit();
 }
 
-include('../db/db_connect.php');
+include('../../../db_connect.php');
 
 $hotel_id = $_SESSION['hotel_id'];
 if (isset($_GET['photoID'])) {

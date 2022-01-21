@@ -4,7 +4,7 @@ session_start();
 $display_msg = "none";
 require '../../classes/db.php';
 require ('../../classes/guest.php');
-include('../cp/db/db_connect.php');
+include('../../db_connect.php');
 
 
 if (isset($_COOKIE['login_guest'])) {

@@ -1,6 +1,6 @@
 <?php 
 
-include('../../db/db_connect.php');
+include('../../../../db_connect.php');
 
 if ($_GET['pic_id']) {
 	#Get the picture id
