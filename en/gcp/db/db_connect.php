@@ -1,11 +1,6 @@
 <?php
 
-$server_name="localhost";
-$user_name="root";
-$password="root";
-$dbname ="hima";
-
-$conn = new mysqli($server_name,$user_name,$password,$dbname);
+include ("../../../db_connect.php");
 
 
 ?>

@@ -12,7 +12,7 @@ if (!isset($_SESSION['login_user'])) {
 $hotel_id = $_SESSION['hotel_id'];
 // echo "$user_id <br>";
 // echo "$hotel_id  <br>";
-include('../../db/db_connect.php'); 
+include('../../../../db_connect.php'); 
 
 if($conn->connect_error){
 	echo "something is wrong with connection to the database, the error is:".$conn->connect_error;

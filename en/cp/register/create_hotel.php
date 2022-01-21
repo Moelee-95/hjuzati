@@ -3,7 +3,7 @@
 session_start();
 
 //Connect to the database
-include('../db/db_connect.php'); 
+include('../../../db_connect.php');
 require "../../../classes/removeFiles.php";
 $backPath = RemoveFiles::backPath();
 

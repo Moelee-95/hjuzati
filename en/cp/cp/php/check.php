@@ -2,7 +2,7 @@
 session_start();
 
 if (!empty($_SESSION['login_user'])) {
-  include('../db/db_connect.php');
+  include('../../../../db_connect.php');
   $hotel_id = $_SESSION['login_user'];
   $sql = "SELECT form_state FROM users WHERE hotel_id = '$hotel_id'";
   $query = mysqli_query($conn, $sql);

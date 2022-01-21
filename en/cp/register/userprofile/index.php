@@ -163,7 +163,7 @@ elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
   </thead>
   <tbody>
     <?php
-      include('../../db/db_connect.php');
+      include('../../../../db_connect.php');
       $accomidation = "SELECT hHotelName,hHotelID,hState FROM hotels WHERE hUserID = '$user_id'";
       $query = mysqli_query($conn, $accomidation);
       $fetch = mysqli_fetch_all($query, MYSQLI_ASSOC);

@@ -17,7 +17,7 @@ if (!isset($_SESSION['hotel_id'])) {
 	header("Location:../register/userprofile/");
 	exit();
 }
-	include('../../db/db_connect.php');
+	include('../../../../db_connect.php');
 	$room_id = $_POST['room_id'];
 	
 	$sql = "SELECT * FROM rooms WHERE rHotelID = '$hotel_id' AND rRoomID ='$room_id' ";

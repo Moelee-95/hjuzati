@@ -13,7 +13,7 @@ $user_id =  $_SESSION['login_user'];
 $hotel_id = $_SESSION['hotel_id'];
 // echo "$user_id <br>";
 // echo "$hotel_id  <br>";
-include('../../db/db_connect.php'); 
+include('../../../../db_connect.php'); 
 
 $user_info = "SELECT hHotelName,contact_name,hMainPhoneNumber FROM hotels where hHotelID = '$hotel_id';";
 $query = mysqli_query($conn, $user_info);

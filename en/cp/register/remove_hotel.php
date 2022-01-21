@@ -3,7 +3,7 @@
 session_start();
 
 //Connect to the database
-include('../db/db_connect.php'); 
+include('../../../db_connect.php'); 
 
 //Check if the user loged in to the system
 if (!isset($_SESSION['login_user'])) {

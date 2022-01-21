@@ -6,7 +6,7 @@ if (isset($_GET['photoID'])) {
 	$delPath= $_GET['photoPath'];
 	echo "$photoID  and $delPath";
 
-    include('../db/db_connect.php');
+    include('../../../db_connect.php');
 
     if (unlink($delPath)){
         $del = "DELETE FROM roomsphotos WHERE (`rpPhotoID` = '$photoID')";

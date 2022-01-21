@@ -1,6 +1,6 @@
 <?php
 $hotel_id = $_SESSION['hotel_id'];
-include('../db/db_connect.php');
+include('../../../db_connect.php');
 $get_data = "SELECT * FROM hotels WHERE hHotelID = $hotel_id";
 $query = mysqli_query($conn, $get_data);
 $row = mysqli_fetch_array($query);

@@ -16,7 +16,7 @@ $hotel_id = $_SESSION['hotel_id'];
 
 // echo "$user_id <br>";
 // echo "$hotel_id  <br>";
-include('../../db/db_connect.php'); 
+include('../../../../db_connect.php'); 
 
 
 //if (isset($_POST['submit'])) {}
@@ -35,7 +35,7 @@ $fetch = mysqli_fetch_All($query,MYSQLI_ASSOC);
 //print_r($fetch);
 // echo "</br>---------------------------------------------------------------";
 function get_options($f_option_id){
-	include('../../db/db_connect.php'); 
+	include('../../../../db_connect.php'); 
 	$f_sql = "SELECT * FROM facilitesvalues WHERE fFacilitesOptionsID = '$f_option_id'";
 	$f_query = mysqli_query($conn, $f_sql);
 	$f_fetch = mysqli_fetch_all($f_query, MYSQLI_ASSOC);

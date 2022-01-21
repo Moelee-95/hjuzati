@@ -20,7 +20,7 @@ if (empty($hotel_id)) {
 	exit();
 }
 else {
-	include('../db/db_connect.php');
+	include('../../../db_connect.php');
 	
 			
 

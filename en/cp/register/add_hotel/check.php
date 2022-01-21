@@ -2,7 +2,7 @@
 session_start();
 
 
-include('../../db/db_connect.php');
+include('../../../../db_connect.php'); 
 
 	if($conn->connect_error){
 	echo "something is wrong with connection to the database, the error is:".$conn->connect_error;

@@ -8,7 +8,7 @@ require('../../classes/booking.php');
 require('../../classes/room.php');
 require('../../classes/reserveRoom.php');
 require('../../classes/cities.php');
-include('../cp/db/db_connect.php');
+include('../../db_connect.php');
 
 
 if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isset($_COOKIE['guestPassword'])) {

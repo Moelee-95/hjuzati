@@ -17,7 +17,7 @@ if (!isset($_SESSION['hotel_id'])) {
 	exit();
 }
 	//incomming variables hotel_id,room_id,room_name,date,iName,value from jquery script in calender.php
-	include('../../db/db_connect.php');
+	include('../../../../db_connect.php');
 
 // get values from calender.php
 

@@ -3,7 +3,7 @@
 if (isset($_GET['hpID'])) {
     $hpID = $_GET['hpID'];
     $del_path = $_GET['delPath'];
-    include('../db/db_connect.php');
+    include('../../../db_connect.php');
 
     if (!unlink($del_path)){
         $del = "DELETE FROM hotelsphotos WHERE (`hpID` = '$hpID')";

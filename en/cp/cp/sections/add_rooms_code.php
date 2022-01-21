@@ -25,7 +25,7 @@ $fetch_all = mysqli_fetch_all($queries, MYSQLI_ASSOC);
 
 #to translate the room type code into a visual name For English language
  function r_codes($code){
-	include('../db/db_connect.php'); 
+	include('../../../db_connect.php');
 	$t_room = "SELECT * FROM rooms_options WHERE rooms_types = '$code' ";
 	$t_query = mysqli_query($conn, $t_room);
 	$t_fetch = mysqli_fetch_array($t_query);
@@ -35,7 +35,7 @@ $fetch_all = mysqli_fetch_all($queries, MYSQLI_ASSOC);
 
 //show the type of each room type above it
 function r_names_title($fullstr){
-	include('../db/db_connect.php'); #connect to the database
+	include('../../../db_connect.php');
 	$t_r_room = "SELECT t_en FROM rooms_options WHERE rooms_names ='$fullstr' ";
 	$t_r_query = mysqli_query($conn, $t_r_room);
 	$t_r_fetch = mysqli_fetch_array($t_r_query);
@@ -50,8 +50,8 @@ print_r($t_r_fetch['0']);
 }
 
 function r_names_title_val($room_name_val){
-include('../db/db_connect.php'); #connect to the database
-$t_r_room_val = "SELECT rooms_types FROM rooms_options WHERE rooms_names ='$room_name_val' ";
+	include('../../../db_connect.php');
+	$t_r_room_val = "SELECT rooms_types FROM rooms_options WHERE rooms_names ='$room_name_val' ";
 $t_r_query_val = mysqli_query($conn, $t_r_room_val);
 $t_r_fetch_val = mysqli_fetch_array($t_r_query_val);
 
@@ -67,8 +67,8 @@ return $test_return;
 
 //to translate the room name code into a visual room name
 function r_names($fullstr,$key){
-include('../db/db_connect.php'); 
-//print_r($n_code);
+	include('../../../db_connect.php');
+	//print_r($n_code);
 
 $t_r_room = "SELECT en FROM rooms_options WHERE rooms_names ='$fullstr' ";
 $t_r_query = mysqli_query($conn, $t_r_room);

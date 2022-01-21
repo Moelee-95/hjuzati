@@ -1,5 +1,5 @@
 <?php
-include('../db/db_connect.php');
+include('../../../db_connect.php');
 #fetching all users content from the database
 $sql = "SELECT uUserID,uUserName,uStatus FROM users";
 $query = mysqli_query($conn, $sql);

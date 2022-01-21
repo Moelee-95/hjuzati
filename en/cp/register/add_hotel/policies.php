@@ -15,7 +15,7 @@ $user_id =  $_SESSION['login_user'];
 $hotel_id = $_SESSION['hotel_id'];
 // echo "$user_id <br>";
 // echo "$hotel_id  <br>";
-include('../../db/db_connect.php'); 
+include('../../../../db_connect.php'); 
 
 		
 if (isset($_POST["submit"])) {
@@ -59,7 +59,7 @@ if (isset($_POST["submit"])) {
 }
 
 function get_policies($policy_id){
-	include('../../db/db_connect.php'); 
+	include('../../../../db_connect.php'); 
 	$policy = "SELECT pID,pOptionEn FROM policiesvalues WHERE pPoliciesID = '$policy_id'";
 	$p_query = mysqli_query($conn, $policy);
 	$p_result = mysqli_fetch_all($p_query,MYSQLI_ASSOC);
@@ -67,7 +67,7 @@ return $p_result;
 }
 
 function get_selected_policies($hotel_id, $policy_id){
-	include('../../db/db_connect.php'); 
+	include('../../../../db_connect.php'); 
 	$query = "SELECT policiesvalues_pID, pOptionEn FROM hotels_has_policies hp join policiesvalues pv on hp.policiesvalues_pID = pv.pID where hotels_hHotelID = '$hotel_id' and policiesoptions= '$policy_id' ";
 	$p_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
 	$p_result = mysqli_fetch_row($p_query);
