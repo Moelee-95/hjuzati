@@ -337,13 +337,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Email Address</label>
                                     <div class="col-md-8">
-                                        <input id="email" data-original-title="Email" data-toggle="tooltip" data-placement="top" class="form-control form" type="email" placeholder="eg.hima@gmail.com" name="email" value="" required >
+                                        <input id="email" data-original-title="Email" data-toggle="tooltip" data-placement="top" class="form-control form" type="email" placeholder="eg.Hjuzati@gmail.com" name="email" value="" required >
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">User Name</label>
                                     <div class="col-md-8">
-                                        <input id="userName" data-original-title="User Name" data-toggle="tooltip" data-placement="top" class="form-control form" type="text" placeholder="eg. Hima_hotel" name="user_name" value="" required >
+                                        <input id="userName" data-original-title="User Name" data-toggle="tooltip" data-placement="top" class="form-control form" type="text" placeholder="eg. Hjuzati_Hotels" name="user_name" value="" required >
                                     </div>
                                 </div>
                                 <hr class="soften">

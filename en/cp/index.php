@@ -145,7 +145,7 @@ elseif (empty($_SESSION['login_user'])) {
                             <form method="POST" action="">
                                 <div class="form-group">  
                                     <label for="user_n_e" class="input-label">Email Address or user name</label>                                              
-                                    <input type="text" id="user_n_e" class="pl-3 form-control" name="user_n_e" placeholder="hima@gmail.com" required="required">
+                                    <input type="text" id="user_n_e" class="pl-3 form-control" name="user_n_e" placeholder="hjuzati@gmail.com" required="required">
                                 </div>
                                 <div class="form-group">  
                                     <label for="password" class="input-label">Password</label>                                               

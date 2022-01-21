@@ -7,5 +7,4 @@ $dbname ="hima";
 
 $conn = new mysqli($server_name,$user_name,$password,$dbname);
 
-
 ?>

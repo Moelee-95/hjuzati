@@ -8,12 +8,7 @@ $user_id =  $_SESSION['login_user'];
 //#Login Check
 
   // Database connection
-          $server_name="localhost";
-          $user_name="root";
-          $password="root";
-          $dbname ="hima";
-          $conn = new mysqli($server_name,$user_name,$password,$dbname);
-
+  include '../../../../db_connect.php';
 
           
     if (isset($_FILES['attachments'])) {
