@@ -1,6 +1,6 @@
 <?php
 
-include('../../db_connect.php');
+include('../../../db_connect.php');
 $sql = "call rm_user('58')";
 $query = mysqli_query($conn, $sql);
 
