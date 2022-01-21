@@ -12,7 +12,7 @@ if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_CO
   }
 }
 elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
-  header("Location:../logout.php");
+  header("Location:../../logout.php");
   exit();
 }
  ?>
@@ -92,7 +92,7 @@ elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
           <a class="dropdown-item" href="#">Edit Profile</a>
            -->
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="../logout.php">Logout</a>
+          <a class="dropdown-item" href="../../logout.php">Logout</a>
         </div>
       </div>
     </form>
