@@ -2,8 +2,8 @@
 
 class db{
     private $sName = "127.0.0.1";
-    private $uName = "ubuntu";
-    private $pw = "ubuntu";
+    private $uName = "hjuzati";
+    private $pw = "WorldNeeds1@me.anytime";
     private $dbname = "hima";
     protected $conn;
 
