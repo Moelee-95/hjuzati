@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0065)https://demo2.Falcon Dashboardker.net/AdminCustomer/Issues/Monitor.aspx -->
+<!-- saved from url=(0065)https://demo2.silvertracker.net/AdminCustomer/Issues/Monitor.aspx -->
 <html class="t-chrome t-chrome97"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
 
 <title>
@@ -86,7 +86,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-	<link rel="shortcut icon" href="https://demo2.Falcon Dashboardker.net/AdminCustomer/favicon.ico">
+	<link rel="shortcut icon" href="https://demo2.silvertracker.net/AdminCustomer/favicon.ico">
 	<script type="text/javascript" async="" src="./Monitor_files/j8m4vnc4"></script><script src="./Monitor_files/jquery.min.js.download"></script>
 	<script src="./Monitor_files/jquery-ui.min.js.download"></script>
 	<script src="./Monitor_files/jquery-ui-timepicker-addon.js.download"></script>
@@ -290,8 +290,8 @@
 		function OpenHelp()
 		{
 		    Common.LogIntercomEvent('HelpClicked');
-		    //window.open('http://www.Falcon Dashboardsoftware.com/support?utm_campaign=Support&utm_medium=Link%20from%20within%20Falcon Dashboard%20App&utm_source=Falcon Dashboard%20Support%20Center', '_Help');
-		    window.open('http://help.Falcon Dashboardsoftware.com', '_Help');
+		    //window.open('http://www.silvertracsoftware.com/support?utm_campaign=Support&utm_medium=Link%20from%20within%20Silvertrac%20App&utm_source=Silvertrac%20Support%20Center', '_Help');
+		    window.open('http://help.silvertracsoftware.com', '_Help');
 					
 		}
 
@@ -318,7 +318,7 @@
 		<p id="alertmsg" class="WarningLabelLarge"></p>
 	</div>
 
-	<form method="post" action="https://demo2.Falcon Dashboardker.net/AdminCustomer/Issues/Monitor.aspx" id="form1" enctype="multipart/form-data">
+	<form method="post" action="https://demo2.silvertracker.net/AdminCustomer/Issues/Monitor.aspx" id="form1" enctype="multipart/form-data">
 <div class="aspNetHidden">
 <input type="hidden" name="fuAttachmentUpload_ClientState" id="fuAttachmentUpload_ClientState" value="">
 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
@@ -392,12 +392,12 @@ Sys.WebForms.PageRequestManager._initialize('AdminCustomer$ScriptManager1', 'for
 
 			<div style="width: 975px;">
 				<div id="divMainLogo" style="float: left;">
-					<a id="hlMainLogo" href="https://demo2.Falcon Dashboardker.net/Home.aspx" style="display:inline-block;border-style:None;"><img src="./Monitor_files/ReadStaticBinaryFile.aspx" style="border-style:None;max-width:550px;max-height:70px;padding-top:7px;"></a>
+					<a id="hlMainLogo" href="https://demo2.silvertracker.net/Home.aspx" style="display:inline-block;border-style:None;"><img src="./Monitor_files/ReadStaticBinaryFile.aspx" style="border-style:None;max-width:550px;max-height:70px;padding-top:7px;"></a>
 				</div>
 				<div id="divQuickBar" class="QuickBarBackground">
                     
                     <input type="button" value="Issue Monitor" onclick="OpenMonitor();">
-					<a href="../../Falcon Dashboard.html" class="btn btn-primary">Logout</a>
+					<a href="../../Silvertrac.html" class="btn btn-primary">Logout</a>
 					<input type="button" class="HelpButton" value="Help" onclick="OpenHelp();">
 
     
@@ -529,9 +529,9 @@ Sys.WebForms.PageRequestManager._initialize('AdminCustomer$ScriptManager1', 'for
 
                                                                                                                            //  J.Didieu
                     
-                    //Case "SANDERSON", "TTT", "", "G.SULLIVAN", "D.DELEON", "CANDERSON", "Falcon Dashboard"
+                    //Case "SANDERSON", "TTT", "", "G.SULLIVAN", "D.DELEON", "CANDERSON", "SILVERTRAC"
 
-                    //if (USN.toUpperCase() == 'TTT' || USN.toUpperCase() == '' || USN.toUpperCase() == 'D.DELEON' || USN.toUpperCase() == 'G.SULLIVAN' || USN.toUpperCase() == 'Falcon Dashboard' || USN.toUpperCase() == 'CANDERSON')
+                    //if (USN.toUpperCase() == 'TTT' || USN.toUpperCase() == '' || USN.toUpperCase() == 'D.DELEON' || USN.toUpperCase() == 'G.SULLIVAN' || USN.toUpperCase() == 'SILVERTRAC' || USN.toUpperCase() == 'CANDERSON')
                     
                     if (isEmpty(SKey) == false);
                     {
@@ -2910,7 +2910,7 @@ Sys.WebForms.PageRequestManager._initialize('AdminCustomer$ScriptManager1', 'for
     <div id="divIssueDetailHeader" class="PopupTitleBar">
 
         <div style="float: left;">
-            <img id="imgBaseIssueType" src="https://demo2.Falcon Dashboardker.net/AdminCustomer/Issues/Monitor.aspx" style="display: none;">
+            <img id="imgBaseIssueType" src="https://demo2.silvertracker.net/AdminCustomer/Issues/Monitor.aspx" style="display: none;">
             <label>Issue Type</label>
             <span id="lblIssueType" onclick="ChangeIssueType();"></span>
         </div>
@@ -3265,7 +3265,7 @@ Sys.WebForms.PageRequestManager._initialize('AdminCustomer$ScriptManager1', 'for
 
 
     <div class="DivBodyLarge" style="padding: 10px;">
-        <img id="imgZoomPic" src="https://demo2.Falcon Dashboardker.net/AdminCustomer/Issues/Monitor.aspx" style="width: 640px" alt="">
+        <img id="imgZoomPic" src="https://demo2.silvertracker.net/AdminCustomer/Issues/Monitor.aspx" style="width: 640px" alt="">
     </div>
 </div>
 
@@ -3437,7 +3437,7 @@ Sys.WebForms.PageRequestManager._initialize('AdminCustomer$ScriptManager1', 'for
                 
                     <div class="right text-right" style="width: 150px;">
                         
-                        <a href="https://Falcon Dashboardsoftware.wistia.com/medias/99ig7wuzxo?popover=true" class="wistia-popover[height=450,playerColor=bf262a,width=800]">
+                        <a href="https://silvertracsoftware.wistia.com/medias/99ig7wuzxo?popover=true" class="wistia-popover[height=450,playerColor=bf262a,width=800]">
                             <input type="button" style="font-size: x-small !important;" class="HelpButton" value="Show Me How"></a>
 
                     </div>
@@ -11049,9 +11049,9 @@ function LoadResidents(PropertyIDFK, PropertyAddressIDFK, UnitIDFK, UnitNode)
 	        //    center: ClockInLocation,
 	        //    radius: 250,
 	        //    visible: true
-	        //});http://devx.Falcon Dashboardker.local/images/PushPinGreen.png
+	        //});http://devx.silvertracker.local/images/PushPinGreen.png
 
-	        //http://devx.Falcon Dashboardker.local/images/PushPinFinish.png
+	        //http://devx.silvertracker.local/images/PushPinFinish.png
 	       
 	        
 	    },
@@ -11804,7 +11804,7 @@ function LoadResidents(PropertyIDFK, PropertyAddressIDFK, UnitIDFK, UnitNode)
     <div class="PopupBody" style="padding: 10px;">
         <div style="text-align: center;">
             <img src="./Monitor_files/PreviousNormal.png" style="padding-bottom: 220px; cursor: pointer;" onclick="PhotoViewer.PreviousImage();">
-            <img id="imgPhotoViewer" height="480" width="640" src="https://demo2.Falcon Dashboardker.net/AdminCustomer/Issues/Monitor.aspx" style="border: 1px solid silver; border-radius: 2px;">
+            <img id="imgPhotoViewer" height="480" width="640" src="https://demo2.silvertracker.net/AdminCustomer/Issues/Monitor.aspx" style="border: 1px solid silver; border-radius: 2px;">
             <img src="./Monitor_files/NextNormal.png" style="padding-bottom: 220px; cursor: pointer;" onclick="PhotoViewer.NextImage();">
         </div>
     </div>
@@ -12488,7 +12488,7 @@ function LoadResidents(PropertyIDFK, PropertyAddressIDFK, UnitIDFK, UnitNode)
             <input type="image" class="StandardButton" title="Play Audio" src="./Monitor_files/Play.png" style="padding: 15px;" onclick="AudioPlayer.PlayAudio(); return false;">
             <input type="image" class="StandardButton" title="Stop Playback" src="./Monitor_files/Stop.png" style="padding: 15px;" onclick="AudioPlayer.PauseAudio(); return false;">
 
-            <a id="AudioPlayerDownload" style="text-decoration: none;" download="AudioFile" href="https://demo2.Falcon Dashboardker.net/AdminCustomer/Issues/Monitor.aspx">
+            <a id="AudioPlayerDownload" style="text-decoration: none;" download="AudioFile" href="https://demo2.silvertracker.net/AdminCustomer/Issues/Monitor.aspx">
                 <img title="Download Audio File" class="StandardButton" src="./Monitor_files/Download.png" style="padding: 15px;"></a>
 
             <input type="image" class="StandardButton" title="Next Playback" src="./Monitor_files/Next.png" style="padding: 15px;" onclick="AudioPlayer.NextAudio(); return false;">
@@ -13031,7 +13031,7 @@ function LoadResidents(PropertyIDFK, PropertyAddressIDFK, UnitIDFK, UnitNode)
 
 
 
-				<div style="text-align: center; font-size: x-small; color: gray; margin: 5px;">© Copyright <span id="spnCopyYear">2022</span> Falcon Dashboard Software, Inc.</div>
+				<div style="text-align: center; font-size: x-small; color: gray; margin: 5px;">© Copyright <span id="spnCopyYear">2022</span> Silvertrac Software, Inc.</div>
 
 
 			<div id="mpeNewIssue_backgroundElement" class="modalBackground" style="display: none; position: fixed; left: 0px; top: 0px; z-index: 10000;"></div></div>

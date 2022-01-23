@@ -723,7 +723,7 @@ var Common = {
     {
         if (typeof Intercom == 'function')
         {
-            //if (USN.toUpperCase() == 'TTT' || USN.toUpperCase() == '' || USN.toUpperCase() == 'D.DELEON' || USN.toUpperCase() == 'G.SULLIVAN' || USN.toUpperCase() == 'Falcon Dashboard' || USN.toUpperCase() == 'CANDERSON')
+            //if (USN.toUpperCase() == 'TTT' || USN.toUpperCase() == '' || USN.toUpperCase() == 'D.DELEON' || USN.toUpperCase() == 'G.SULLIVAN' || USN.toUpperCase() == 'SILVERTRAC' || USN.toUpperCase() == 'CANDERSON')
 
             if (isEmpty(SKey) == false)
             {

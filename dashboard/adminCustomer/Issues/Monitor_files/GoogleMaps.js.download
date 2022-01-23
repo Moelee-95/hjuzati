@@ -486,7 +486,7 @@ var GoogleMaps = {
                     else
                     {
                         gpsMarker.setIcon({
-                            url: 'https://devx5.Falcon Dashboardker.net/BinaryFiles/GetUserPhoto.ashx?BinaryIDFK=' + MarkerObjectData.UserPhotoID + '&Username=bamparan01&UseThumbnail=true&AddBorder=true',
+                            url: 'https://devx5.silvertracker.net/BinaryFiles/GetUserPhoto.ashx?BinaryIDFK=' + MarkerObjectData.UserPhotoID + '&Username=bamparan01&UseThumbnail=true&AddBorder=true',
                             anchor: new google.maps.Point(0, 50)
                         });
 
@@ -495,28 +495,28 @@ var GoogleMaps = {
 
                 case "Arrived":
                     gpsMarker.setIcon({
-                        url: 'https://devx5.Falcon Dashboardker.net/Images/BullseyeGreen.png',
+                        url: 'https://devx5.silvertracker.net/Images/BullseyeGreen.png',
                         anchor: new google.maps.Point(23, 23)
                     });
                     break;
 
                 case "New Unassigned Issue":
                     gpsMarker.setIcon({
-                        url: 'https://devx5.Falcon Dashboardker.net/Images/BullseyeRed.png',
+                        url: 'https://devx5.silvertracker.net/Images/BullseyeRed.png',
                         anchor: new google.maps.Point(23, 23)
                     });
                     break;
 
                 case "Acknowledged In Route":
                     gpsMarker.setIcon({
-                        url: 'https://devx5.Falcon Dashboardker.net/Images/BullseyeLightBlue.png',
+                        url: 'https://devx5.silvertracker.net/Images/BullseyeLightBlue.png',
                         anchor: new google.maps.Point(23, 23)
                     });
                     break;
 
                 case "NOT Acknowledged":
                     gpsMarker.setIcon({
-                        url: 'https://devx5.Falcon Dashboardker.net/Images/BullseyeYellow.png',
+                        url: 'https://devx5.silvertracker.net/Images/BullseyeYellow.png',
                         anchor: new google.maps.Point(23, 23)
                     });
                     break;
@@ -526,7 +526,7 @@ var GoogleMaps = {
                     {
                         // Has Photo
                         gpsMarker.setIcon({
-                            url: 'https://devx5.Falcon Dashboardker.net/BinaryFiles/GetUserPhoto.ashx?BinaryIDFK=' + MarkerObjectData.UserPhotoID + '&Username=bamparan01&UseThumbnail=true&AddBorder=true'
+                            url: 'https://devx5.silvertracker.net/BinaryFiles/GetUserPhoto.ashx?BinaryIDFK=' + MarkerObjectData.UserPhotoID + '&Username=bamparan01&UseThumbnail=true&AddBorder=true'
                         });
                     }
                     else
@@ -605,7 +605,7 @@ var GoogleMaps = {
         //GoogleMaps.gpsMap.setCenter(loc);
 
         //icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
-        //icon: 'https://devx5.Falcon Dashboardker.net/Images/BullseyeRed.png'
+        //icon: 'https://devx5.silvertracker.net/Images/BullseyeRed.png'
         //icon: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'
 
         
@@ -669,28 +669,28 @@ var GoogleMaps = {
 //{
 //    case "Arrived":
 //        iconImage = {
-//            url: 'https://devx5.Falcon Dashboardker.net/Images/BullseyeGreen.png',
+//            url: 'https://devx5.silvertracker.net/Images/BullseyeGreen.png',
 //            anchor: new google.maps.Point(23, 23)
 //        };
 //        break;
 
 //    case "New Unassigned Issue":
 //        iconImage = {
-//            url: 'https://devx5.Falcon Dashboardker.net/Images/BullseyeRed.png',
+//            url: 'https://devx5.silvertracker.net/Images/BullseyeRed.png',
 //            anchor: new google.maps.Point(23, 23)
 //        };
 //        break;
 
 //    case "Acknowledged In Route":
 //        iconImage = {
-//            url: 'https://devx5.Falcon Dashboardker.net/Images/BullseyeLightBlue.png',
+//            url: 'https://devx5.silvertracker.net/Images/BullseyeLightBlue.png',
 //            anchor: new google.maps.Point(23, 23)
 //        };
 //        break;
 
 //    case "NOT Acknowledged":
 //        gpsMarker.setIcon({
-//            url: 'https://devx5.Falcon Dashboardker.net/Images/BullseyeYellow.png',
+//            url: 'https://devx5.silvertracker.net/Images/BullseyeYellow.png',
 //            anchor: new google.maps.Point(23, 23)
 //        });
 //        break;
