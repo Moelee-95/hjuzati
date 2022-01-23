@@ -473,13 +473,14 @@
                                                         <td><p id="<?php echo $room1['rRoomID'] ?>" name="" class="text-primary" >
                                                             <?php
                                                                 $roomID = $room1['rRoomID'];
-                                                                $result = (exe("call roomRate('$roomID', '$check_in', '$check_out');"));
+                                                                $query = "call roomRate('$roomID', '$check_in', '$check_out');";
+                                                                $result = (exe($query));
                                                                 if ( $result != null){
                                                                     echo $result."<b id='currency'> USD</b>";
                                                                     echo "<input name='price_$roomID' id='price_$roomID' type='hidden' value='$result'>";
                                                                 }
                                                                 else{ ?>
-                                                                    <p class="text-muted">Not Available </p>
+                                                                    <p class="text-muted">Not Available <?php echo $query;?></p>
                                                                     <?php echo "<input name='price_$roomID' id='price_$roomID' type='hidden' value='0'>"; ?>
                                                             <?php } ?>
                                                             </td>
@@ -566,13 +567,13 @@
                                             function calculate(){ 
                                                 total = 0;
                                                 allRooms.forEach(calTotal);
-                                                _("total_price").innerHTML = total;
-                                                _("totalPriceinput").value = total;
+                                                $("#total_price").innerHTML = total;
+                                                $("#totalPriceinput").value = total;
                                             }
                                             
                                             function calTotal(item, index) {
-                                                var roomsNum = _("roomsNum_".concat(item));
-                                                var price = _("price_".concat(item));
+                                                var roomsNum = $("#roomsNum_".concat(item));
+                                                var price = $("#price_".concat(item));
                                                 total = total + parseInt(price.value)*parseInt(roomsNum.options[roomsNum.selectedIndex].value);
                                             }
 
@@ -580,25 +581,25 @@
                                             // ---> send user to enter customer info section
                                             function reserve(){
                                                 //Making sure there is at least one room selected
-                                                if (_("totalPriceinput").value > 0){
+                                                if ($("#totalPriceinput").value > 0){
                                                     //hidding and showing the sections
-                                                    _("availability").style.display = "none";
-                                                    _("info").style.display = "block";
-                                                    _("customer_info").style.display = "block";
-                                                    _("payment_info").style.display = "none";
-                                                    // _("confirmation").style.display = "none";
-                                                    _("room_alert").style.display = "none";
+                                                    $("#availability").style.display = "none";
+                                                    $("#info").style.display = "block";
+                                                    $("#customer_info").style.display = "block";
+                                                    $("#payment_info").style.display = "none";
+                                                    // $("#confirmation").style.display = "none";
+                                                    $("#room_alert").style.display = "none";
                                                     //set the dates, other info for customer view
-                                                    _("show_dates").innerHTML = _("check-in").value + " - " + _("check-in").value;
-                                                    _("stay").innerHTML = _("nights").value + " Nights";
-                                                    _("adult").innerHTML = _("psNumber").value;
-                                                    _("roomsNumber").innerHTML = sumRooms();
-                                                    _("pay_amount").innerHTML = _("totalPriceinput").value + " USD";
+                                                    $("#show_dates").innerHTML = $("#check-in").value + " - " + $("#check-in").value;
+                                                    $("#stay").innerHTML = $("#nights").value + " Nights";
+                                                    $("#adult").innerHTML = $("#psNumber").value;
+                                                    $("#roomsNumber").innerHTML = sumRooms();
+                                                    $("#pay_amount").innerHTML = $("#totalPriceinput").value + " USD";
                                                     
 
                                                 }
                                                 else {
-                                                    _("room_alert").style.display = "block";
+                                                    $("#room_alert").style.display = "block";
                                                     
                                                 }
                                                 
