@@ -2,31 +2,31 @@
 
 
 <!DOCTYPE html>
-<!-- saved from url=(0053)https://demo2.silvertracker.net/Subscriber/Login.aspx -->
+<!-- saved from url=(0053)https://demo2.Falcon Dashboardker.net/Subscriber/Login.aspx -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
 
 
 <title>
-	Silvertrac
-</title><link rel="shortcut icon" href="https://demo2.silvertracker.net/favicon.ico">
+	Falcon Dashboard
+</title><link rel="shortcut icon" href="https://demo2.Falcon Dashboardker.net/favicon.ico">
 	
 <!--[if lt IE 9]>  
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="/Scripts/json3.min.js"></script>
 <![endif]-->  
 <!--[if gte IE 9]><!-->  
-    <script src="./Silvertrac_files/jquery.min.js.download"></script>
+    <script src="./Falcon Dashboard_files/jquery.min.js.download"></script>
 <!--<![endif]--> 
 	
     
 
-	<script src="./Silvertrac_files/jquery-ui.js.download"></script>
+	<script src="./Falcon Dashboard_files/jquery-ui.js.download"></script>
 
-	<script src="./Silvertrac_files/jquery-ui-timepicker-addon.js.download"></script>
-	<script src="./Silvertrac_files/spin.min.js.download"></script><style type="text/css"></style>
-	<script src="./Silvertrac_files/Common.js.download"></script>
+	<script src="./Falcon Dashboard_files/jquery-ui-timepicker-addon.js.download"></script>
+	<script src="./Falcon Dashboard_files/spin.min.js.download"></script><style type="text/css"></style>
+	<script src="./Falcon Dashboard_files/Common.js.download"></script>
 
-	<link href="./Silvertrac_files/jquery-ui-timepicker-addon.css" rel="stylesheet"><link href="./Silvertrac_files/jquery-ui.css" rel="stylesheet"><link href="./Silvertrac_files/css" rel="stylesheet" type="text/css"><link href="./Silvertrac_files/css(1)" rel="stylesheet">
+	<link href="./Falcon Dashboard_files/jquery-ui-timepicker-addon.css" rel="stylesheet"><link href="./Falcon Dashboard_files/jquery-ui.css" rel="stylesheet"><link href="./Falcon Dashboard_files/css" rel="stylesheet" type="text/css"><link href="./Falcon Dashboard_files/css(1)" rel="stylesheet">
 
 	<script lang="javascript">
 
@@ -62,7 +62,7 @@
 		}
 
 	</script>
-<link rel="stylesheet" type="text/css" href="./Silvertrac_files/StyleSheet.css"></head>
+<link rel="stylesheet" type="text/css" href="./Falcon Dashboard_files/StyleSheet.css"></head>
 
 <body>
     <form method="post" action="login.php" id="">
@@ -89,11 +89,11 @@ function __doPostBack(eventTarget, eventArgument) {
 </script>
 
 
-<script src="./Silvertrac_files/WebResource.axd" type="text/javascript"></script>
+<script src="./Falcon Dashboard_files/WebResource.axd" type="text/javascript"></script>
 
 
-<script src="./Silvertrac_files/ScriptResource.axd" type="text/javascript"></script>
-<script src="./Silvertrac_files/ScriptResource(1).axd" type="text/javascript"></script>
+<script src="./Falcon Dashboard_files/ScriptResource.axd" type="text/javascript"></script>
+<script src="./Falcon Dashboard_files/ScriptResource(1).axd" type="text/javascript"></script>
 <div class="aspNetHidden">
 
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="3A40B262">
@@ -120,7 +120,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
                 </div>
 
                 <div class="right text-right" style="margin-top: 10px;">
-                        <img id="imgSmallLogo" src="./Silvertrac_files/ResellerSmallLogoBlank.png" style="margin-right: 10px; vertical-align: middle;">
+                        <img id="imgSmallLogo" src="./Falcon Dashboard_files/ResellerSmallLogoBlank.png" style="margin-right: 10px; vertical-align: middle;">
                         <input type="button" value="Login" style="vertical-align: middle;" onclick="Common.OpenWindow(&#39;/Subscriber/Login.aspx&#39;);">
                     
                 </div>
@@ -229,7 +229,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
     </div>
 
                 <div class="text-center">
-                    <label style="font-size: x-small;">© Copyright <span id="spnCopyYear">2022</span>Silvertrac Software, Inc.</label>
+                    <label style="font-size: x-small;">© Copyright <span id="spnCopyYear">2022</span>Falcon Dashboard Software, Inc.</label>
                 </div>
 
             </div>
