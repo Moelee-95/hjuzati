@@ -4161,9 +4161,6 @@
                 $.HSCore.components.HSGoTo.init('.js-go-to');
             });
         </script>
-        <script>
-           
-        </script>
     </body>
 
 </html>
