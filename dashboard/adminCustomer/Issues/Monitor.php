@@ -397,7 +397,7 @@ Sys.WebForms.PageRequestManager._initialize('AdminCustomer$ScriptManager1', 'for
 				<div id="divQuickBar" class="QuickBarBackground">
                     
                     <input type="button" value="Issue Monitor" onclick="OpenMonitor();">
-					<a href="../../Silvertrac.html" class="btn btn-primary">Logout</a>
+					<a href="../../index.php" class="btn btn-primary">Logout</a>
 					<input type="button" class="HelpButton" value="Help" onclick="OpenHelp();">
 
     
