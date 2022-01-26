@@ -1,13 +1,15 @@
 <?php
 
-// require 'db.php';
-// require 'room.php';
-// require 'reserveRoom.php';
+require 'db.php';
+require 'room.php';
+require 'reserveRoom.php';
+require 'hotel.php';
 
 
 class Booking {
     public $hotelID;
     public $hotelName;
+    public $hotel;
     public $bookingID; // inisilized later
     public $checkIn;
     public $checkOut;
@@ -55,7 +57,11 @@ class Booking {
         $this->adultNumber = $adultNumber;$this->childNumber = $childNumber;$this->reservedRooms=$reservedRooms;
         $this->paymentMethod = $paymentMethod;$this->totalAmount = $totalAmount;
         $this->fullName = $fullName; $this->phoneNumber = $phone; $this->email = $email; $this->address = $address;
-        
+        //generate hotel object
+        $hotel = new Hotel();
+        $hotel -> generateHotel($info['bHotelID']);
+        $this->hotel = $hotel;
+
         if ($guestID == null) {
             if($this->createBookingGuestNotExisted()){
                 foreach ($reservedRooms as $id => $number){ // insert all rooms to the booking
@@ -125,6 +131,10 @@ class Booking {
             $this->getHotelName(); //set hotel name
             $this->getRoomsFromDB(); // setup rooms
             $this->bookingCreated = true;
+            $hotel = new Hotel();
+            $hotel -> generateHotel($info['bHotelID']);
+            $this->hotel = $hotel;
+
         }
     }
 
@@ -246,9 +256,9 @@ class Booking {
 //     print_r($rooms);
 // }
 
-// $b = new Booking();
-// $b->getFromDB("230");
-// $b->getHotelName();
+$b = new Booking();
+$b->getFromDB("234");
+echo $b->hotel->name;
 
 
 

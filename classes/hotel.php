@@ -1,7 +1,7 @@
 <?php
 
 
-// require "../../db.php";
+// require "db.php";
 // require "room.php";
 // require "removeFiles.php";
 
@@ -14,12 +14,12 @@ class Hotel{
     public $rooms = array();
     public $mapLocation;
     public $address;
+    public $phoneNumber;
 
     public function __construct(){
         $conn = new db();
         $conn = $conn->getConnection();
         //iterate through hotel rooms and create objects out of them and insert the object to the array
-        
     }
 
     public static function removeHotel($hotelID){
@@ -40,14 +40,38 @@ class Hotel{
         if (RemoveFiles::removeHotel(Room::getHotelUserID($hotelID),$hotelID)) {} else{$err[]= "could not remove dirs";} //remove hotel folder
         return $err;
     }
+
+    public function generateRooms(){
+        $conn = new db();$conn = $conn->getConnection();
+        $sql = "SELECT rRoomID FROM rooms WHERE rHotelID = '$this->id';";
+        $result  = $conn -> query($sql);
+        $rooms = $result -> fetch_all(MYSQLI_ASSOC);
+        // print_r($fetch);
+        foreach ($rooms as $key => $room) {
+            $r = new Room();
+            $r->id = $room['rRoomID'];
+            $r->generateInfo();
+            $this->rooms[] = $r;
+        }
+        
+    }
+    public function generateHotel($id){
+        $conn = new db();$conn = $conn->getConnection();
+        $sql = "SELECT * FROM hima.hotels WHERE hHotelID = '$id'";
+        $result  = $conn -> query($sql);
+        $fetch = $result -> fetch_array();
+        $this->id = $id;
+        $this->name = $fetch['hHotelName'];
+        $this->rating = $fetch['hHotelRating'];
+        $this->address = $fetch['hAddress'];
+        $this->mapLocation = $fetch['hMapsLocation'];
+        $this->phoneNumber = $fetch['hMainPhoneNumber'];
+    }
 }
 
-
-
-
-
-
-
-
+// $hotel = new Hotel();
+// $hotel -> generateHotel("24");
+// $hotel -> generateRooms();
+// print_r($hotel->rooms);
 
 ?>
