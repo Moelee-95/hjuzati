@@ -38,7 +38,7 @@ if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_CO
         $user_id =  $_SESSION['login_user'];
     }
 }
-if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isset($_COOKIE['guestPassword'])) {//when cookies are setted vut sessions are not setted
+else if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isset($_COOKIE['guestPassword'])) {//when cookies are setted vut sessions are not setted
 	if (isset($_SESSION['login_guest'])) { // when guest is logged in with session
 		$guest = unserialize($_SESSION['guest']);
         $bookings = $guest->bookings; //used in header to show bookings
@@ -51,7 +51,7 @@ if (isset($_COOKIE['login_guest']) and isset($_COOKIE['guestUserName']) and isse
         $bookings = $guest->bookings; //used in header to show bookings
 	}
 }
-if (isset($_COOKIE['bookings'])) {
+else if (isset($_COOKIE['bookings'])) {
     $bookings = json_decode(unserialize($_COOKIE['bookings']));
 }
 

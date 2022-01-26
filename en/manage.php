@@ -19,23 +19,33 @@
        <!-- ========== HEADER ========== -->
         <?php include('sections/header.php'); ?>
         <?php 
-            if(isset($_GET['manageBookingID'])){
+            if(isset($_GET['manageBookingID']) && !empty($non_empty_array)){
                 $msg ='';
                 $msgClass='';//used to show error or sucess messages
-                $bookingConf = unserialize($_SESSION['manageBookingID']); //store the booking object 
-                if (isset($_POST['newBookingPassword'])) {
-                    if ($bookingConf->setBookingPassword($_POST['newBookingPassword'])) {
+                foreach($bookings as $booking){ //getting the booking that should be managed
+                    if ($booking->bookingID == $_GET['manageBookingID']) {
+                        $manageBooking = $booking;
+                    }
+                }
+                /* if (isset($_POST['newBookingPassword'])) {
+                    if ($manageBooking->setBookingPassword($_POST['newBookingPassword'])) {
                         $msg = "password have been satup successfully!";
                         $msgClass = "alert alert-success";
                         $currentPassword = $_POST['newBookingPassword'];
-                        $_SESSION['bookingConf'] = serialize($bookingConf);
-                    }
+                        // <<<<  Adding the booking back to the cookies bookings   >>>> //
+                        $bookings = json_decode(unserialize($_COOKIE['bookings'])); // getting cookies bookings
+                        $bookings[] = $manageBooking;
+                        $serialized = serialize(json_encode($bookings)); // incode then serialize
+                        setcookie('bookings',$serialized, time()+60*60*30, "/"); // 30 days
+                        // <<<<  Adding the booking back to the cookies bookings   >>>> //
+
+                    }   
                     else{
                         $msg = "Coudn't setup booking password";
                         $msgClass = "alert alert-danger";
                     }
 
-                }
+                } */
                 if (isset($_GET['createBookingPassword'])){
                     if ($_GET['createBookingPassword'] == "true"){ ?>
                         <script>var showPassword = true; </script>
@@ -52,48 +62,22 @@
                 <span class='h2 text-danger'>You have selected Wrong booking<span></br>
                 <a href='index.php' class='h5 btn btn-primary p-2' >+ Add new Booking</a>
                 </center>";
-                exit();
+                $content = "none";
             }
         ?>
         <!-- ========== END HEADER ========== -->
         <!-- ========== MAIN CONTENT ========== -->
        <!-- ========== END HEADER ========== -->
-       <div id="content">
+       <div id="content" class="d-<?php echo $content; ?>">
              <!-- Modal Create Booking Password -->
 
         <!-- End Modal Create Booking Password  -->
-            <div class="row py-6 px-5 border-bottom shadow-soft">
-                <div class="col flex-horizontal-center">
-                    <div class="ml-3">
-                        <h3 class="font-size-18 font-weight-bold text-dark mb-0 text-lh-sm alert alert-success">
-                            Your Booking Order is submitted Now.
-                        </h3>
-                        <p class="mb-0">A confirmation email has been sent to your provided email address.</p>
-                        <span id="bookingPasswordAlert" class= "row <?php echo $msgClass ?>"><?php echo $msg ?></span>
-                    </div>
-                </div>
-                <div class="col col-lg-6 col-sm-12 bg-white rounded-sm -none p-5" style="" id="guestInfo">
-                    <div class="border-bottom">
-                        <ul class="list-unstyled font-size-1 mb-0 font-size-16">
-                            <li class="d-flex justify-content-between py-1">
-                                <span class="font-weight-medium">Paid</span>
-                                <span class="text-success text-right" id="alertPaid"><?php ; ?></span>
-                            </li>
-                            <li class="d-flex justify-content-between py-1">
-                                <span class="font-weight-medium">Remaining</span>
-                                <span class="text-warning text-right " id="alertRemaining"><?php ?></span>
-                            </li>
-                            <li class="d-flex justify-content-between py-1">
-                                <span class="font-weight-medium">Total</span>
-                                <span class="text-primary text-right" id="alertTotal"><?php echo $bookingConf->totalAmount; ?></span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="d-flex justify-content-center py-3 px-3 border-bottom shadow-soft ">
+                <h2 clsass="">Manage Booking</h2> 
             </div>
             <div class="row">
                 <!-- ========== GUEST INFORMATION ========== -->
-                <div class="col col-lg-6 col-sm-12 p-4 shadow-soft bg-white rounded-sm -none " style="" id="guestInfo">
+                <div class="col col-sm-12 col-md-4  p-4 shadow-soft bg-white rounded-sm -none order-3" style="" id="guestInfo">
                     <div class="pt-4 pb-5 px-5 border-bottom">
                         <div class="row">
                             <div class="col col-8">
@@ -108,34 +92,32 @@
                             </div>
                             <?php } ?>
                         </div>  
-                        
                         <ul class="list-unstyled font-size-1 mb-0 font-size-16">
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Full Name</span>
-                                <span class="text-secondary text-right" id="alertFullName"><?php echo $bookingConf->fullName; ?></span>
+                                <span class="text-secondary text-right" id="alertFullName"><?php echo $manageBooking->fullName; ?></span>
                             </li>
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Phone Number</span>
-                                <span class="text-secondary text-right" id="alertPhoneNumber"><?php echo $bookingConf->phoneNumber; ?></span>
+                                <span class="text-secondary text-right" id="alertPhoneNumber"><?php echo $manageBooking->phoneNumber; ?></span>
                             </li>
 
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">E-mail address</span>
-                                <span class="text-secondary text-right" id="alertEmailAddress"><?php echo $bookingConf->email; ?></span>
+                                <span class="text-secondary text-right" id="alertEmailAddress"><?php echo $manageBooking->email; ?></span>
                             </li>
 
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Town / City</span>
-                                <span class="text-secondary text-right" id="alertCity"><?php echo $bookingConf->address; ?></span>
+                                <span class="text-secondary text-right" id="alertCity"><?php echo $manageBooking->address; ?></span>
                             </li>
 
                         </ul>
-                        
                     </div>
                 </div>
                 <!-- ========== END GUEST INFORMATION ========== -->
                 <!-- ========== BOOKING INFORMATION ========== -->
-                <div class="col col-lg-6 col-sm-12 p-4 shadow-soft bg-white rounded-sm -none " style="" id="bookingInfo">
+                <div class="col col-sm-12 col-md-4  p-4 shadow-soft bg-white rounded-sm -none order-2" style="" id="bookingInfo">
                     <div class="pt-4 pb-5 px-5 border-bottom">
                         <div class="row">
                             <div class="col col-8">
@@ -144,16 +126,15 @@
                                 </h5>
                             </div>
                         </div>  
-                        
                         <ul class="list-unstyled font-size-1 mb-0 font-size-16">
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Booking number</span>
-                                <span class="text-secondary text-right" id="alertBookingID" ><?php echo $bookingConf->bookingID; ?></span>
+                                <span class="text-secondary text-right" id="alertBookingID" ><?php echo $manageBooking->bookingID; ?></span>
                             </li>
                             <li class="d-flex justify-content-between py-2 pt-4">
                                 <span class="font-weight-medium">Booking Code</span>
                                 <span class=" row text-secondary align-content-right" id="">
-                                    <?php if (isset($bookingConf) && !empty($bookingConf->bPassword)) { echo $bookingConf->bPassword; } else{ echo "";}; ?>
+                                    <?php if (isset($manageBooking) && !empty($manageBooking->bPassword)) { echo $manageBooking->bPassword; } else{ echo "";}; ?>
                                     <a class=" btn-outline-primary px-1 mx-1" id="EditBookingPassword"
                                      onclick="$('#createPassModal').modal('show')"
                                       href="#"> 
@@ -163,66 +144,137 @@
                             </li>
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Check In</span>
-                                <span class="text-secondary text-right" id="alertBookingID" ><?php echo $bookingConf->checkIn; ?></span>
+                                <span class="text-secondary text-right" id="alertBookingID" ><?php echo $manageBooking->checkIn; ?>
+                                    <a class=" btn-outline-primary px-1 mx-1" id="EditBookingPassword"
+                                     onclick="$('#changeDateAndPassengers').modal('show')"
+                                      href="#"> 
+                                      <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                </span>
                             </li>
 
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Check Out</span>
-                                <span class="text-secondary text-right" id="alertFullName"><?php echo $bookingConf->checkOut; ?></span>
+                                <span class="text-secondary text-right" id="alertFullName"><?php echo $manageBooking->checkOut; ?>
+                                    <a class=" btn-outline-primary px-1 mx-1" id="EditBookingPassword"
+                                     onclick="$('#changeDateAndPassengers').modal('show')"
+                                      href="#"> 
+                                      <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                </span>
                             </li>
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Number of Nights</span>
-                                <span class="text-secondary text-right" id="alertPhoneNumber"><?php echo $bookingConf->nights; ?></span>
+                                <span class="text-secondary text-right" id="alertPhoneNumber"><?php echo $manageBooking->nights; ?></span>
                             </li>
 
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Number of Passengers</span>
-                                <span class="text-secondary text-right" id="alertEmailAddress"><?php echo $bookingConf->adultNumber; ?></span>
+                                <span class="text-secondary text-right" id="alertEmailAddress"><?php echo $manageBooking->adultNumber; ?>
+                                    <a class=" btn-outline-primary px-1 mx-1" id="EditBookingPassword"
+                                     onclick="$('#changeDateAndPassengers').modal('show')"
+                                      href="#"> 
+                                      <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                </span>
                             </li>
 
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Children Number</span>
-                                <span class="text-secondary text-right" id="alertCity"><?php echo $bookingConf->childNumber; ?></span>
+                                <span class="text-secondary text-right" id="alertCity"><?php echo $manageBooking->childNumber; ?>
+                                    <a class=" btn-outline-primary px-1 mx-1" id="EditBookingPassword"
+                                     onclick="$('#changeDateAndPassengers').modal('show')"
+                                      href="#"> 
+                                      <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                </span>
                             </li>
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Number of rooms</span>
                                 <span class="text-secondary text-right" id="alertCity"><?php
-                                    echo $bookingConf->numberOfRooms;
-                                ?></span>
-                            </li>
-                            <li class="d-flex justify-content-between py-2">
-                                <span class="font-weight-medium">Total Amount</span>
-                                <span class="text-primary text-right" id=""><?php echo $bookingConf->totalAmount; ?> $
+                                    echo $manageBooking->numberOfRooms;?>
+                                    <a class=" btn-outline-primary px-1 mx-1" id="EditBookingPassword"
+                                        onclick="$('#changeDateAndPassengers').modal('show')"
+                                        href="#"> 
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
                                 </span>
                             </li>
 
                         </ul>
-                        
                     </div>
+                </div>
+                <!-- ========== END BOOKING INFORMATION ========== -->
+                <!-- ========== BOOKING PAYMENT ========== -->
+                <div class="col col-sm-12 col-md-4  p-4 shadow-soft bg-white rounded-sm order-1" style="">
                     <div class="pt-4 pb-5 px-5 border-bottom">
                         <h5 id="scroll-description" class="font-size-21 font-weight-bold text-dark mb-3">
                             Payment
                         </h5>
                         <ul class="list-unstyled font-size-1 mb-0 font-size-16">
-                        <li class="d-flex justify-content-between py-2">
-                                <span class="font-weight-medium">Payment Status</span>
-                                <span class="text-right alert alert-warning" id="">
-                                    <?php $bookingConf->paymentStatus; ?>
-                                </span>
+                            <li class="d-flex justify-content-between py-1">
+                                <span class="font-weight-medium">Paid</span>
+                                <span class="text-success text-right" id="alertPaid"><?php echo $manageBooking->paidAmount; ?></span>
                             </li>
-                            <li class="d-flex justify-content-between py-2">
-                                <span class="font-weight-medium">Payment Method</span>
-                                <span class="text-right" id=""><?php echo $bookingConf->paymentMethod; ?> 
-                                </span>
+                            <li class="d-flex justify-content-between py-1">
+                                <span class="font-weight-medium">Remaining</span>
+                                <span class="text-warning text-right " id="alertRemaining"><?php echo $manageBooking->remaintingAmount; ?></span>
+                            </li>
+                            <li class="d-flex justify-content-between py-1">
+                                <span class="font-weight-medium">Total</span>
+                                <span class="text-primary text-right" id="alertTotal"><?php echo $manageBooking->totalAmount; ?></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 pb-5 px-5 border-bottom ">
+                        <h5 id="scroll-description" class="font-size-21 font-weight-bold text-dark mb-3">
+                            Hotel Information
+                        </h5>
+                        <ul class="list-unstyled font-size-1 mb-0 font-size-16">
+                            <li class="d-flex justify-content-between py-1">
+                                <span class="font-weight-medium">Address</span>
+                                <span class="text-success text-right" id="alertPaid"><?php ; ?></span>
+                            </li>
+                            <li class="d-flex justify-content-between py-1">
+                                <span class="font-weight-medium">Location on map</span>
+                                <span class="text-warning text-right " id="alertRemaining"><?php ?></span>
+                            </li>
+                            <li class="d-flex justify-content-between py-1">
+                                <span class="font-weight-medium">Phone Number</span>
+                                <span class="text-primary text-right" id="alertTotal"><?php echo $manageBooking->totalAmount; ?></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+                 <!-- ========== END BOOKING PAYMENT ========== -->
+            </div>
+            <!-- ========== Hotel Info ========== -->
+            <div class="row">
+                 <div class="col col-sm-12 col-md-4  p-4 bg-white rounded-sm -none order-1 d-<?Php echo $content;?>" style="" id="bookingInfo">
+                    <div class="pt-4 pb-5 px-5 border-bottom">
+                        <h5 id="scroll-description" class="font-size-21 font-weight-bold text-dark mb-3">
+                            Hotel Information
+                        </h5>
+                        <ul class="list-unstyled font-size-1 mb-0 font-size-16">
+                            <li class="d-flex justify-content-between py-1">
+                                <span class="font-weight-medium">Address</span>
+                                <span class="text-success text-right" id="alertPaid"><?php ; ?></span>
+                            </li>
+                            <li class="d-flex justify-content-between py-1">
+                                <span class="font-weight-medium">Location on map</span>
+                                <span class="text-warning text-right " id="alertRemaining"><?php ?></span>
+                            </li>
+                            <li class="d-flex justify-content-between py-1">
+                                <span class="font-weight-medium">Phone Number</span>
+                                <span class="text-primary text-right" id="alertTotal"><?php echo $manageBooking->totalAmount; ?></span>
                             </li>
                         </ul>
 
                     </div>
                 </div>
-                <!-- ========== END BOOKING INFORMATION ========== -->
             </div>
-            
-
+             <!-- ========== Hotel Information ========== --> 
              <!-- Creating booking password -->
              <div class="modal fade" id="createPassModal" tabindex="-1" role="dialog" aria-labelledby="createBookingPasswordLabel" aria-hidden="true">
                  <div class="modal-dialog" role="document">
@@ -234,9 +286,9 @@
                             </button>
                         </div>
                     <div class="modal-body">
-                        <form class="" style="display:block" id="createPasswordForm" method="post" action="confirmation.php">
+                        <form class="" style="display:block" id="createPasswordForm" method="post" action="manage.php?manageBookingID=<?php echo $manageBooking->bookingID; ?>">
                             <div class="row justify-content-center p-2">
-                                <input name="newBookingPassword" type="text" class="col-4 form-control mb-2 inptFielsd" id="newBookingPassword" placeholder="<?php if (isset($bookingConf) && !empty($bookingConf->bPassword)) { echo $bookingConf->bPassword; } else{ echo "XXXXXXXX";}; ?>" required data-msg="Please Enter valid password."
+                                <input name="newBookingPassword" type="text" class="col-4 form-control mb-2 inptFielsd" id="newBookingPassword" placeholder="<?php if (isset($manageBooking) && !empty($manageBooking->bPassword)) { echo $manageBooking->bPassword; } else{ echo "XXXXXXXX";}; ?>" required data-msg="Please Enter valid password."
                                 data-error-class="u-has-error" vlaue=""
                                 data-success-class="u-has-success"  />
                             </div>
@@ -254,72 +306,90 @@
             </div>
             <!-- End phone Number verification modal -->
         </div>
+
         <?php include 'sections/footer.php'; ?>
+
+
+        <script>
+            if (showPassword == true) {
+                $("#createPassModal").modal('show');
+            }
+            function confirmClick(){
+                var password = $("#newBookingPassword").val();
+                if (password != "" && password.length >= 5){
+                    $("#createPasswordForm").submit();
+                }
+                else{
+                    $("#passwordVerifyAlert").text("Password must be more than 5 characters");
+                }
+            }
+        </script>
+        <!-- JS Global Compulsory -->
+        <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+        <script src="assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+        <script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+        <!-- JS Implementing Plugins -->
+        <script src="assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+        <script src="assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+        <script src="assets/vendor/slick-carousel/slick/slick.js"></script>
+
+        <!-- JS Hjuzati -->
+        <script src="assets/js/hs.core.js"></script>
+        <script src="assets/js/components/hs.header.js"></script>
+        <script src="assets/js/components/hs.unfold.js"></script>
+        <script src="assets/js/components/hs.validation.js"></script>
+        <script src="assets/js/components/hs.show-animation.js"></script>
+        <script src="assets/js/components/hs.range-datepicker.js"></script>
+        <script src="assets/js/components/hs.selectpicker.js"></script>
+        <script src="assets/js/components/hs.go-to.js"></script>
+        <script src="assets/js/components/hs.slick-carousel.js"></script>
+        <script src="assets/js/components/hs.quantity-counter.js"></script>
+
+        <!-- JS Plugins Init. -->
+        <script>
+            $(window).on('load', function () {
+                // initialization of HSMegaMenu component
+                $('.js-mega-menu').HSMegaMenu({
+                    event: 'hover',
+                    pageContainer: $('.container'),
+                    breakpoint: 1199.98,
+                    hideTimeOut: 0
+                });
+
+                // Page preloader
+                setTimeout(function() {
+                  $('#jsPreloader').fadeOut(500)
+                }, 800);
+            });
+
+            $(document).on('ready', function () {
+                // initialization of header
+                $.HSCore.components.HSHeader.init($('#header'));
+
+                // initialization of unfold component
+                $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
+
+                // initialization of show animations
+                $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+                // initialization of select
+                $.HSCore.components.HSSelectPicker.init('.js-select');
+
+                // initialization of quantity counter
+                $.HSCore.components.HSQantityCounter.init('.js-quantity');
+
+                // initialization of slick carousel
+                $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+
+                // initialization of go to
+                $.HSCore.components.HSGoTo.init('.js-go-to');
+            });
+        </script>
     </body>
 </html>
 
- <!-- JS Global Compulsory -->
-<script src="assets/vendor/jquery/dist/jquery.min.js"></script>
-<script src="assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
-<script src="assets/vendor/popper.js/dist/umd/popper.min.js"></script>
-<script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
-
-<!-- JS Implementing Plugins -->
-<script src="assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
-<script src="assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-<script src="assets/vendor/slick-carousel/slick/slick.js"></script>
-
-<!-- JS Hjuzati -->
-<script src="assets/js/hs.core.js"></script>
-<script src="assets/js/components/hs.header.js"></script>
-<script src="assets/js/components/hs.unfold.js"></script>
-<script src="assets/js/components/hs.validation.js"></script>
-<script src="assets/js/components/hs.show-animation.js"></script>
-<script src="assets/js/components/hs.range-datepicker.js"></script>
-<script src="assets/js/components/hs.selectpicker.js"></script>
-<script src="assets/js/components/hs.go-to.js"></script>
-<script src="assets/js/components/hs.slick-carousel.js"></script>
-<script src="assets/js/components/hs.quantity-counter.js"></script>
-
-<!-- JS Plugins Init. -->
-<script>
-    $(window).on('load', function () {
-        // initialization of HSMegaMenu component
-        $('.js-mega-menu').HSMegaMenu({
-            event: 'hover',
-            pageContainer: $('.container'),
-            breakpoint: 1199.98,
-            hideTimeOut: 0
-        });
-
-        // Page preloader
-        setTimeout(function() {
-            $('#jsPreloader').fadeOut(500)
-        }, 800);
-    });
-
-    $(document).on('ready', function () {
-        // initialization of header
-        $.HSCore.components.HSHeader.init($('#header'));
-
-        // initialization of unfold component
-        $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
-
-        // initialization of show animations
-        $.HSCore.components.HSShowAnimation.init('.js-animation-link');
-
-        // initialization of select
-        $.HSCore.components.HSSelectPicker.init('.js-select');
-
-        // initialization of quantity counter
-        $.HSCore.components.HSQantityCounter.init('.js-quantity');
-
-        // initialization of slick carousel
-        $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
-
-        // initialization of go to
-        $.HSCore.components.HSGoTo.init('.js-go-to');
-    });
-</script>
+  
 

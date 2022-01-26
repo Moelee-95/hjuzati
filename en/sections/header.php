@@ -383,10 +383,9 @@
                                              <span class="text-primary">|</span></span><span class="col-6 p-0"><?php echo Booking::dateConvert($booking->checkOut) ?></span></div>
                                         </div>
                                         <div class="col-2 pt-2 order-3">
-                                            <button class="btn btn-outline-primary py-2 mt-1">
+                                            <a href="manage.php?manageBookingID=<?php echo $booking->bookingID; ?>" class="btn btn-outline-primary  py-2 mt-1">
                                                 <i class="far fa-pencil-alt"></i>
-                                                
-                                            </button>
+                                            </a>
                                         </div>
                                         <div class="col-4 pt-2 pb-0 order-2">
                                             <div class="alert alert-success px-2 text-center" role="alert">

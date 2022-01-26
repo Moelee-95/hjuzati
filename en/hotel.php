@@ -480,7 +480,7 @@
                                                                     echo "<input name='price_$roomID' id='price_$roomID' type='hidden' value='$result'>";
                                                                 }
                                                                 else{ ?>
-                                                                    <p class="text-muted">Not Available <?php echo $query;?></p>
+                                                                    <p class="text-muted">Not Available</p>
                                                                     <?php echo "<input name='price_$roomID' id='price_$roomID' type='hidden' value='0'>"; ?>
                                                             <?php } ?>
                                                             </td>
@@ -534,8 +534,9 @@
                                             
                                             // to make it easy to call variable by id
                                             function _(variable){
+
                                                     return document.getElementById(variable);
-                                                }
+                                            }
 
                                             // total number of selected rooms
                                             var totalRooms = 0;//original value
@@ -561,45 +562,46 @@
                                             }
 
                                             //Calculation of the total price for all rooms
-                                                var total = 0; 
-                                                const allRooms = <?php echo json_encode($allRooms); ?>;
+                                            var total = 0; 
+                                            const allRooms = <?php echo json_encode($allRooms); ?>;//just number of rooms in list
                                                 
                                             function calculate(){ 
-                                                total = 0;
-                                                allRooms.forEach(calTotal);
-                                                $("#total_price").innerHTML = total;
-                                                $("#totalPriceinput").value = total;
+                                               total = 0; //reset total
+                                               allRooms.forEach(calTotal);//set total
+                                                $("#total_price").text(total);
+                                                $("#totalPriceinput").val(total);
                                             }
                                             
                                             function calTotal(item, index) {
-                                                var roomsNum = $("#roomsNum_".concat(item));
-                                                var price = $("#price_".concat(item));
-                                                total = total + parseInt(price.value)*parseInt(roomsNum.options[roomsNum.selectedIndex].value);
+                                                var roomsNum = $("#roomsNum_"+item).val();
+                                                var price = $("#price_"+item).val();
+                                                total = total + (parseInt(price)*parseInt(roomsNum));
+                                                // console.log(total);
                                             }
 
                                             // Switching among diffent booking sections
                                             // ---> send user to enter customer info section
                                             function reserve(){
                                                 //Making sure there is at least one room selected
-                                                if ($("#totalPriceinput").value > 0){
+                                                if ($("#totalPriceinput").val() > 0){
                                                     //hidding and showing the sections
-                                                    $("#availability").style.display = "none";
-                                                    $("#info").style.display = "block";
-                                                    $("#customer_info").style.display = "block";
-                                                    $("#payment_info").style.display = "none";
-                                                    // $("#confirmation").style.display = "none";
-                                                    $("#room_alert").style.display = "none";
+                                                    $("#availability").css('display','none');
+                                                    $("#info").css('display','block');
+                                                    $("#customer_info").css('display','block');
+                                                    $("#payment_info").css('display','none');
+                                                    // $("#confirmation").css('display','none');
+                                                    $("#room_alert").css('display','none');
                                                     //set the dates, other info for customer view
-                                                    $("#show_dates").innerHTML = $("#check-in").value + " - " + $("#check-in").value;
-                                                    $("#stay").innerHTML = $("#nights").value + " Nights";
-                                                    $("#adult").innerHTML = $("#psNumber").value;
-                                                    $("#roomsNumber").innerHTML = sumRooms();
-                                                    $("#pay_amount").innerHTML = $("#totalPriceinput").value + " USD";
+                                                    $("#show_dates").html() = $("#check-in").val() + " - " + $("#check-in").val();
+                                                    $("#stay").html() = $("#nights").val() + " Nights";
+                                                    $("#adult").html() = $("#psNumber").val();
+                                                    $("#roomsNumber").html() = sumRooms();
+                                                    $("#pay_amount").html() = $("#totalPriceinput").val() + " USD";
                                                     
 
                                                 }
                                                 else {
-                                                    $("#room_alert").style.display = "block";
+                                                    $("#room_alert").css('display','block');
                                                     
                                                 }
                                                 

@@ -75,11 +75,11 @@
                         <ul class="list-unstyled font-size-1 mb-0 font-size-16">
                             <li class="d-flex justify-content-between py-1">
                                 <span class="font-weight-medium">Paid</span>
-                                <span class="text-success text-right" id="alertPaid"><?php ; ?></span>
+                                <span class="text-success text-right" id="alertPaid"><?php echo $bookingConf->paidAmount; ?></span>
                             </li>
                             <li class="d-flex justify-content-between py-1">
                                 <span class="font-weight-medium">Remaining</span>
-                                <span class="text-warning text-right " id="alertRemaining"><?php ?></span>
+                                <span class="text-warning text-right " id="alertRemaining"><?php echo $bookingConf->remainingAmount; ?></span>
                             </li>
                             <li class="d-flex justify-content-between py-1">
                                 <span class="font-weight-medium">Total</span>
@@ -129,6 +129,25 @@
 
                         </ul>
                         
+                    </div>
+                    <div class="pt-4 pb-5 px-5 border-bottom">
+                        <h5 id="scroll-description" class="font-size-21 font-weight-bold text-dark mb-3">
+                            Hotel Information
+                        </h5>
+                        <ul class="list-unstyled font-size-1 mb-0 font-size-16">
+                            <li class="d-flex justify-content-between py-1">
+                                <span class="font-weight-medium">Address</span>
+                                <span class="text-success text-right" id="alertPaid"></span>
+                            </li>
+                            <li class="d-flex justify-content-between py-1">
+                                <span class="font-weight-medium">Location on map</span>
+                                <span class="text-warning text-right " id="alertRemaining"></span>
+                            </li>
+                            <li class="d-flex justify-content-between py-1">
+                                <span class="font-weight-medium">Phone Number</span>
+                                <span class="text-primary text-right" id="alertTotal"><span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <!-- ========== END GUEST INFORMATION ========== -->
@@ -196,25 +215,6 @@
 
                         </ul>
                         
-                    </div>
-                    <div class="pt-4 pb-5 px-5 border-bottom">
-                        <h5 id="scroll-description" class="font-size-21 font-weight-bold text-dark mb-3">
-                            Payment
-                        </h5>
-                        <ul class="list-unstyled font-size-1 mb-0 font-size-16">
-                        <li class="d-flex justify-content-between py-2">
-                                <span class="font-weight-medium">Payment Status</span>
-                                <span class="text-right alert alert-warning" id="">
-                                    <?php $bookingConf->paymentStatus; ?>
-                                </span>
-                            </li>
-                            <li class="d-flex justify-content-between py-2">
-                                <span class="font-weight-medium">Payment Method</span>
-                                <span class="text-right" id=""><?php echo $bookingConf->paymentMethod; ?> 
-                                </span>
-                            </li>
-                        </ul>
-
                     </div>
                 </div>
                 <!-- ========== END BOOKING INFORMATION ========== -->
