@@ -461,11 +461,13 @@
                             title="All Services">
                             <i class="icon fad fa-sign-out-alt font-size-1.5 text-danger"></i>
                             <span class="pl-3"> Sign out</span>
+                            
 
                             </a>
                         </li>
                     </ul>
                 </div>
+                
                 <!-- End Button -->
 
                
@@ -474,4 +476,6 @@
             <!-- End Nav -->
         </div>
     </div>
+
+    <i class="fas fa-child"></i>
 </header>

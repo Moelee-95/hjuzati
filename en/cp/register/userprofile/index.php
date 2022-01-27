@@ -1,5 +1,7 @@
 <?php session_start();
 
+require '../../../../classes/room.php';
+require '../../../../classes/hotel.php';
 
 if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_COOKIE['userPassword'])) {
   if (isset($_SESSION['login_user'])) {
@@ -9,6 +11,10 @@ if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_CO
       $_SESSION['login_user'] = $_COOKIE['login_user'];
       $_SESSION['userName'] = $_COOKIE['userName'];
       $user_id =  $_SESSION['login_user'];
+  }
+
+  if (isset($_GET['message'])){
+    $message = $_GET['message'];
   }
 }
 elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
@@ -52,6 +58,40 @@ elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
     <link href="offcanvas.css" rel="stylesheet">
   </head>
   <body class="bg-light">
+    <!-- Remove Hotel Modal -->
+    <div class="modal fade" id="removeHotelModal" tabindex="-1" role="dialog" aria-labelledby="removeHotelModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="removeHotelModalLabel">Warning</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <span class="text-danger h4">This Action will do the following</span>
+            <div class="row px-3">
+              Will Remove All rooms
+            </div>
+            <div class="row px-3">
+              Will Remove All rates
+            </div>
+            <div class="row px-3">
+              Will Remove All bookings
+            </div>
+            <div class="row px-3">
+              Will Remove All photos
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            <a type="button" class="btn btn-danger" href="removeHotel.php?removeHotelID=<?php echo $hotel['hHotelID']; ?>">Remove Hotel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End Remove Hotel Modal -->
+
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
   <a class="navbar-brand mr-auto mr-lg-0" href="#"><!-- <img src="../add_hotel/assets/logo.png"> --></a>
   <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
@@ -148,7 +188,9 @@ elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
   
 
 
-
+  <div class="alert alert-success row justify-content-center d-<?php if (!isset($message)){echo 'none';} ?>">
+      <?php if(isset($message)){echo $message;} ?>
+  </div>
   <div class="my-3 p-3 bg-white rounded shadow-sm">
     <h6 class="border-bottom border-gray pb-2 mb-0">Hotels List</h6>
     <div class="table-responsive">
@@ -182,7 +224,7 @@ elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
             <!-- <a href="#Remove Hotel" onclick="removeFunction();">Remove</a>/ -->
             <a class="btn btn-primary" href="../edit_hotel.php?hotel_id=<?php echo $hotel['hHotelID']; ?>">Edit</a> , 
             <a class="btn btn-success" href="../../cp/index.php?hotel_id=<?php echo $hotel['hHotelID'];?>">Manage</a> , 
-            <a class="btn btn-outline-danger href="../../cp/index.php?hotel_id=<?php echo $hotel['hHotelID'];?>">Delete</a>
+            <button class="btn btn-outline-danger" data-toggle="modal" data-target="#removeHotelModal">Delete</button>
           </td>
           <td><?php
             if ($hotel['hState'] == "") {
@@ -249,25 +291,32 @@ elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
 
  -->
 </main>
-<!-- dialog box -->
-<script>
-function removeFunction() {
-  var r = confirm("Are you sure you want to delete <?php echo $hotel['hHotelName']; ?>!");
-  if (r == true) {
-    window.location.replace("../remove_hotel.php?hotel_id=<?php echo $hotel['hHotelID'];?>");
-  } else {
-    //Canceled
-  }
-}
-</script>
-<!-- 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
--->
-<script src="../../../assets/vendor/jquery/dist/jquery.min.js"></script>
-<script src="../../../assets/vendor/bootstrap/bootstrap.min.js"></script>
 
-  <script src="">
-  <script>window.jQuery || document.write('<script src="../add_hotel/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
-  <script src="../add_hotel/assets/dist/js/bootstrap.bundle.js"></script>
-        <script src="offcanvas.js"></script></body>
+  <!-- Jquery library -->
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <!-- dialog box -->
+  <script>
+  function removeFunction() {
+    var r = confirm("Are you sure you want to delete <?php echo $hotel['hHotelName']; ?>!");
+    if (r == true) {
+      window.location.replace("../remove_hotel.php?hotel_id=<?php echo $hotel['hHotelID'];?>");
+    } else {
+      //Canceled
+    }
+  }
+  </script>
+  <!-- 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  -->
+    <script src="../../../assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="../../../assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+    <script src="">
+    <script>window.jQuery || document.write('<script src="../add_hotel/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="../add_hotel/assets/dist/js/bootstrap.bundle.js"></script>
+    <script src="offcanvas.js"></script>
+  </body>
 </html>

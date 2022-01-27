@@ -1,9 +1,9 @@
 <?php
 
-require 'db.php';
-require 'room.php';
-require 'reserveRoom.php';
-require 'hotel.php';
+// require 'db.php';
+// require 'room.php';
+// require 'reserveRoom.php';
+// require 'hotel.php';
 
 
 class Booking {
@@ -256,9 +256,9 @@ class Booking {
 //     print_r($rooms);
 // }
 
-$b = new Booking();
-$b->getFromDB("234");
-echo $b->hotel->name;
+// $b = new Booking();
+// $b->getFromDB("234");
+// echo $b->hotel->name;
 
 
 

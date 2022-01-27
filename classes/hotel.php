@@ -22,12 +22,13 @@ class Hotel{
         //iterate through hotel rooms and create objects out of them and insert the object to the array
     }
 
-    public static function removeHotel($hotelID){
+    //remove hotel, including all of it's bookings, rooms and rates
+    public static function removeHotel($userID,$hotelID){
         $conn = new db();
         $conn = $conn->getConnection();
         //get rooms and remove them
-        $q ="SELECT rRoomID FROM rooms where rHotelID = '$hotelID'"; // remove hotel rooms query
-        $q2 = "call removehotel('$hotelID');"; //remove other related data to hotel procedure
+        $q ="SELECT rRoomID FROM rooms where rHotelID = '$hotelID' and hUserID = '$userID'"; // remove hotel rooms query
+        $q2 = "call removehotel('$hotelID');"; //remove tates, bookings related to the hotel and finall remove the hotel
         if ($result = $conn -> query($q)) {
             $r = $result -> fetch_all(MYSQLI_ASSOC);
             foreach ($r as $key => $room) {// iterate through hotel rooms and remove them
@@ -35,9 +36,9 @@ class Hotel{
                     echo "Coudn't remove room:". $room['rRoomID'];
                 }
             }
-        }else{ $err[] = "coudn't fetch hotel rooms";}
-        if($r2 = $conn -> query($q2)){ } else{ $err[] = "coudn't execute ";}//remove other related methods from db;
-        if (RemoveFiles::removeHotel(Room::getHotelUserID($hotelID),$hotelID)) {} else{$err[]= "could not remove dirs";} //remove hotel folder
+        }else{ $err = "coudn't fetch hotel rooms";}
+        if($r2 = $conn -> query($q2)){ } else{ $err = "coudn't execute ";}//remove other related methods from db;
+        if (RemoveFiles::removeHotel(Room::getHotelUserID($hotelID),$hotelID)) {} else{$err= "could not remove dirs";} //remove hotel folder
         return $err;
     }
 
@@ -55,9 +56,10 @@ class Hotel{
         }
         
     }
+
     public function generateHotel($id){
         $conn = new db();$conn = $conn->getConnection();
-        $sql = "SELECT * FROM hima.hotels WHERE hHotelID = '$id'";
+        $sql = "SELECT * FROM hotels WHERE hHotelID = '$id'";
         $result  = $conn -> query($sql);
         $fetch = $result -> fetch_array();
         $this->id = $id;
