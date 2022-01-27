@@ -3,6 +3,7 @@
 session_start();
 //Storing the user id of the hotel owner
 require('../classes/db.php');
+require('../classes/hotel.php');
 require('../classes/guest.php');
 require('../classes/booking.php');
 require('../classes/room.php');

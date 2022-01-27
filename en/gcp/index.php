@@ -4,6 +4,7 @@ session_start();
 $display_msg = "none";
 require('../../classes/db.php');
 require('../../classes/guest.php');
+require('../../classes/hotel.php');
 require('../../classes/booking.php');
 require('../../classes/room.php');
 require('../../classes/reserveRoom.php');

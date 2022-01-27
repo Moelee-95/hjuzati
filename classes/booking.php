@@ -59,7 +59,7 @@ class Booking {
         $this->fullName = $fullName; $this->phoneNumber = $phone; $this->email = $email; $this->address = $address;
         //generate hotel object
         $hotel = new Hotel();
-        $hotel -> generateHotel($info['bHotelID']);
+        $hotel -> generateHotel($hotelID);
         $this->hotel = $hotel;
 
         if ($guestID == null) {
@@ -85,7 +85,7 @@ class Booking {
         }
     }
 
-    //getFromDB helper to setup rooms
+    //getFromDB helper to setup rooms// you have to initilize booking id bofore calling this function
     public function getRoomsFromDB(){
         $conn = new db();
         $conn = $conn->getConnection();

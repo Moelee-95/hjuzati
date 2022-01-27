@@ -19,7 +19,7 @@
        <!-- ========== HEADER ========== -->
         <?php include('sections/header.php'); ?>
         <?php 
-            if(isset($_GET['manageBookingID']) && !empty($non_empty_array)){
+            if(isset($_GET['manageBookingID']) && !empty($_GET['manageBookingID'])){
                 $msg ='';
                 $msgClass='';//used to show error or sucess messages
                 foreach($bookings as $booking){ //getting the booking that should be managed
@@ -77,20 +77,17 @@
             </div>
             <div class="row">
                 <!-- ========== GUEST INFORMATION ========== -->
-                <div class="col col-sm-12 col-md-4  p-4 shadow-soft bg-white rounded-sm -none order-3" style="" id="guestInfo">
+                <div class="col col-sm-12 col-md-4  p-1 shadow-soft bg-white rounded-sm -none order-3" style="" id="guestInfo">
                     <div class="pt-4 pb-5 px-5 border-bottom">
-                        <div class="row">
-                            <div class="col col-8">
+                        <div class="row justify-content-between pb-2 mb-2 border-bottom">
+                            <div class="col ">
                                 <h5 id="scroll-description" class="font-size-21 font-weight-bold text-dark mb-2">
                                 Traveler Information
                                 </h5>
                             </div>
-                            <?Php if (isset($_SESSION['guest'])) { ?>
-                                
-                            <div class="col col-4">
-                                <a id="viewBooking" href="http://localhost/main/gcp/cp/view_booking.php"> View booking in dashboard</a>
+                            <div class="">
+                                <span class="h4"><button class="btn btn-primary py-2" id="editBookingDetails" onclick="$('#travelerInfoModal').modal('show')"><i class="fas fa-pencil-alt"></i></button></span>
                             </div>
-                            <?php } ?>
                         </div>  
                         <ul class="list-unstyled font-size-1 mb-0 font-size-16">
                             <li class="d-flex justify-content-between py-2">
@@ -117,13 +114,16 @@
                 </div>
                 <!-- ========== END GUEST INFORMATION ========== -->
                 <!-- ========== BOOKING INFORMATION ========== -->
-                <div class="col col-sm-12 col-md-4  p-4 shadow-soft bg-white rounded-sm -none order-2" style="" id="bookingInfo">
+                <div class="col col-sm-12 col-md-4  p-1 shadow-soft bg-white rounded-sm -none order-2" style="" id="bookingInfo">
                     <div class="pt-4 pb-5 px-5 border-bottom">
-                        <div class="row">
-                            <div class="col col-8">
+                        <div class="row justify-content-between pb-2 mb-2 border-bottom">
+                            <div class="">
                                 <h5 id="scroll-description" class="font-size-21 font-weight-bold text-dark mb-2">
                                     Booking Details
                                 </h5>
+                            </div>
+                            <div class="">
+                                <span class="h4"><button class="btn btn-primary py-2" id="editBookingDetails" onclick="$('#bookingInfoModal').modal('show')"><i class="fas fa-pencil-alt"></i></button></span>
                             </div>
                         </div>  
                         <ul class="list-unstyled font-size-1 mb-0 font-size-16">
@@ -131,36 +131,26 @@
                                 <span class="font-weight-medium">Booking number</span>
                                 <span class="text-secondary text-right" id="alertBookingID" ><?php echo $manageBooking->bookingID; ?></span>
                             </li>
-                            <li class="d-flex justify-content-between py-2 pt-4">
+                            <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Booking Code</span>
                                 <span class=" row text-secondary align-content-right" id="">
                                     <?php if (isset($manageBooking) && !empty($manageBooking->bPassword)) { echo $manageBooking->bPassword; } else{ echo "";}; ?>
                                     <a class=" btn-outline-primary px-1 mx-1" id="EditBookingPassword"
                                      onclick="$('#createPassModal').modal('show')"
                                       href="#"> 
-                                      <i class="fas fa-pencil-alt"></i>
+                                        <i class="fas fa-pencil-alt"></i>
                                       </a>
                                 </span>
                             </li>
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Check In</span>
                                 <span class="text-secondary text-right" id="alertBookingID" ><?php echo $manageBooking->checkIn; ?>
-                                    <a class=" btn-outline-primary px-1 mx-1" id="EditBookingPassword"
-                                     onclick="$('#changeDateAndPassengers').modal('show')"
-                                      href="#"> 
-                                      <i class="fas fa-pencil-alt"></i>
-                                    </a>
                                 </span>
                             </li>
 
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Check Out</span>
                                 <span class="text-secondary text-right" id="alertFullName"><?php echo $manageBooking->checkOut; ?>
-                                    <a class=" btn-outline-primary px-1 mx-1" id="EditBookingPassword"
-                                     onclick="$('#changeDateAndPassengers').modal('show')"
-                                      href="#"> 
-                                      <i class="fas fa-pencil-alt"></i>
-                                    </a>
                                 </span>
                             </li>
                             <li class="d-flex justify-content-between py-2">
@@ -171,33 +161,18 @@
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Number of Passengers</span>
                                 <span class="text-secondary text-right" id="alertEmailAddress"><?php echo $manageBooking->adultNumber; ?>
-                                    <a class=" btn-outline-primary px-1 mx-1" id="EditBookingPassword"
-                                     onclick="$('#changeDateAndPassengers').modal('show')"
-                                      href="#"> 
-                                      <i class="fas fa-pencil-alt"></i>
-                                    </a>
                                 </span>
                             </li>
 
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Children Number</span>
                                 <span class="text-secondary text-right" id="alertCity"><?php echo $manageBooking->childNumber; ?>
-                                    <a class=" btn-outline-primary px-1 mx-1" id="EditBookingPassword"
-                                     onclick="$('#changeDateAndPassengers').modal('show')"
-                                      href="#"> 
-                                      <i class="fas fa-pencil-alt"></i>
-                                    </a>
                                 </span>
                             </li>
                             <li class="d-flex justify-content-between py-2">
                                 <span class="font-weight-medium">Number of rooms</span>
                                 <span class="text-secondary text-right" id="alertCity"><?php
                                     echo $manageBooking->numberOfRooms;?>
-                                    <a class=" btn-outline-primary px-1 mx-1" id="EditBookingPassword"
-                                        onclick="$('#changeDateAndPassengers').modal('show')"
-                                        href="#"> 
-                                        <i class="fas fa-pencil-alt"></i>
-                                    </a>
                                 </span>
                             </li>
 
@@ -206,7 +181,7 @@
                 </div>
                 <!-- ========== END BOOKING INFORMATION ========== -->
                 <!-- ========== BOOKING PAYMENT ========== -->
-                <div class="col col-sm-12 col-md-4  p-4 shadow-soft bg-white rounded-sm order-1" style="">
+                <div class="col col-sm-12 col-md-4  p-1 shadow-soft bg-white rounded-sm order-1" style="">
                     <div class="pt-4 pb-5 px-5 border-bottom">
                         <h5 id="scroll-description" class="font-size-21 font-weight-bold text-dark mb-3">
                             Payment
@@ -218,7 +193,7 @@
                             </li>
                             <li class="d-flex justify-content-between py-1">
                                 <span class="font-weight-medium">Remaining</span>
-                                <span class="text-warning text-right " id="alertRemaining"><?php echo $manageBooking->remaintingAmount; ?></span>
+                                <span class="text-warning text-right " id="alertRemaining"><?php echo $manageBooking->remainingAmount; ?></span>
                             </li>
                             <li class="d-flex justify-content-between py-1">
                                 <span class="font-weight-medium">Total</span>
@@ -230,18 +205,19 @@
                         <h5 id="scroll-description" class="font-size-21 font-weight-bold text-dark mb-3">
                             Hotel Information
                         </h5>
-                        <ul class="list-unstyled font-size-1 mb-0 font-size-16">
-                            <li class="d-flex justify-content-between py-1">
+                        <ul class="list-unstyled font-size-1 mb-0 font-size-16 border p-3">
+                            <div class="row justify-content-center"><a href="#"><?php echo $manageBooking->hotelName; ?></a></div>
+                            <li class="d-flex justify-content-between py-1" >
                                 <span class="font-weight-medium">Address</span>
-                                <span class="text-success text-right" id="alertPaid"><?php ; ?></span>
+                                <span class="text-success text-right" id="alertPaid"><?php echo $manageBooking->hotel->address; ?></span>
                             </li>
                             <li class="d-flex justify-content-between py-1">
                                 <span class="font-weight-medium">Location on map</span>
-                                <span class="text-warning text-right " id="alertRemaining"><?php ?></span>
+                                <span class="text-warning text-right " id="alertRemaining"><a href="<?php echo $manageBooking->hotel->mapLocation; ?>"><i class="fas fa-map-marked"></i></a></span>
                             </li>
                             <li class="d-flex justify-content-between py-1">
                                 <span class="font-weight-medium">Phone Number</span>
-                                <span class="text-primary text-right" id="alertTotal"><?php echo $manageBooking->totalAmount; ?></span>
+                                <span class="text-primary text-right" id="alertTotal"><?php echo $manageBooking->hotel->phoneNumber; ?></span>
                             </li>
                         </ul>
                     </div>
@@ -249,32 +225,7 @@
                 </div>
                  <!-- ========== END BOOKING PAYMENT ========== -->
             </div>
-            <!-- ========== Hotel Info ========== -->
-            <div class="row">
-                 <div class="col col-sm-12 col-md-4  p-4 bg-white rounded-sm -none order-1 d-<?Php echo $content;?>" style="" id="bookingInfo">
-                    <div class="pt-4 pb-5 px-5 border-bottom">
-                        <h5 id="scroll-description" class="font-size-21 font-weight-bold text-dark mb-3">
-                            Hotel Information
-                        </h5>
-                        <ul class="list-unstyled font-size-1 mb-0 font-size-16">
-                            <li class="d-flex justify-content-between py-1">
-                                <span class="font-weight-medium">Address</span>
-                                <span class="text-success text-right" id="alertPaid"><?php ; ?></span>
-                            </li>
-                            <li class="d-flex justify-content-between py-1">
-                                <span class="font-weight-medium">Location on map</span>
-                                <span class="text-warning text-right " id="alertRemaining"><?php ?></span>
-                            </li>
-                            <li class="d-flex justify-content-between py-1">
-                                <span class="font-weight-medium">Phone Number</span>
-                                <span class="text-primary text-right" id="alertTotal"><?php echo $manageBooking->totalAmount; ?></span>
-                            </li>
-                        </ul>
 
-                    </div>
-                </div>
-            </div>
-             <!-- ========== Hotel Information ========== --> 
              <!-- Creating booking password -->
              <div class="modal fade" id="createPassModal" tabindex="-1" role="dialog" aria-labelledby="createBookingPasswordLabel" aria-hidden="true">
                  <div class="modal-dialog" role="document">
@@ -304,6 +255,53 @@
                     </div>
                 </div>
             </div>
+            <!-- End Creating booking password -->
+
+            <!-- Edit traveler information Modal -->
+            <div class="modal fade" id="travelerInfoModal" tabindex="-1" role="dialog" aria-labelledby="travelerInfoLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="travelerInfoLabel">Edit Traveler information</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="">Save changes</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Edit traveler information Modal -->
+
+            <!-- Edit booking information Modal -->
+            <div class="modal fade" id="bookingInfoModal" tabindex="-1" role="dialog" aria-labelledby="bookingInfoLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="bookingInfoLabel">Edit Booking information</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ..
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="">Save changes</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Edit booking information Modal -->
+
+
             <!-- End phone Number verification modal -->
         </div>
 
