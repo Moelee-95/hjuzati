@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('../cp/db/db_connect.php');
+include('../../db_connect.php');
 require '../../classes/db.php';
 require '../../classes/guest.php';
 
