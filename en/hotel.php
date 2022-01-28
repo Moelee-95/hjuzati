@@ -306,9 +306,8 @@
                                 <button class="btn btn-primary text-white" data-toggle="modal" data-target=".bd-example-modal-lg">Change Search</button>
                             </div>
                         </div>
-                        
-                        <div class="modal fa
-                        de bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <!-- Edit date modal -->
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content p-4">
                                     <form class="js-validate" action="" method="get" name="edit_dates">
