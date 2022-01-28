@@ -86,7 +86,7 @@
                                 </h5>
                             </div>
                             <div class="">
-                                <span class="h4"><button class="btn btn-primary py-2" id="editBookingDetails" onclick="$('#travelerInfoModal').modal('show')"><i class="fas fa-pencil-alt"></i></button></span>
+                                <span class="h4"><button class="btn btn-outline-primary border-0 py-2" id="editBookingDetails" onclick="$('#travelerInfoModal').modal('show')"><i class="fas fa-pencil-alt"></i></button></span>
                             </div>
                         </div>  
                         <ul class="list-unstyled font-size-1 mb-0 font-size-16">
@@ -121,9 +121,11 @@
                                 <h5 id="scroll-description" class="font-size-21 font-weight-bold text-dark mb-2">
                                     Booking Details
                                 </h5>
+                               
                             </div>
                             <div class="">
-                                <span class="h4"><button class="btn btn-primary py-2" id="editBookingDetails" onclick="$('#bookingInfoModal').modal('show')"><i class="fas fa-pencil-alt"></i></button></span>
+                                <span class="h4"><button class="btn btn-outline-primary border-0 py-2" id="editBookingDetails" onclick="$('#bookingInfoModal').modal('show')"><i class="fas fa-pencil-alt"></i></button></span>
+                                <button class="btn btn-outline-secondary border-0 py-2"><i class="fas fa-level-down-alt"></i></button>
                             </div>
                         </div>  
                         <ul class="list-unstyled font-size-1 mb-0 font-size-16">
@@ -178,6 +180,49 @@
 
                         </ul>
                     </div>
+                    <div class="pt-4 pb-5 px-5 border-bottom">
+                        <div class="row justify-content-between pb-2 mb-2 border-bottom">
+                            <div class="">
+                                <h5 id="scroll-description" class="font-size-21 font-weight-bold text-dark mb-2">
+                                    Rooms
+                                </h5>
+                            </div>
+                            <div class="">
+                                <span class="h4"><button class="btn btn-outline-primary border-0 py-2" 
+                                id="editBookingRooms" onclick="$('#editRoomsModal').modal('show')"><i class="fas fa-pencil-alt"></i></button></span>
+                            </div>
+                        </div>  
+                        <div class="px-0">
+                            <?php foreach ($manageBooking->rooms as $key => $room) { ?>
+                                <div class="row border border-primary rounded p-2 mb-1">
+                                    <div class="col col-6 border-right">
+                                        <div class="">
+                                            <span class="text-secondary" style=""><?php echo $room->type; ?></sapn>
+                                        </div>
+                                        <div class="">
+                                            <span style="font-size:15px"><?php echo $room->name; ?></span>
+                                        </div>
+                                    </div>
+                                    <div class="col col-3 border-right mt-3">
+                                        <i class="fas fa-user"></i> X <?php echo $room->maxPassengers; ?>
+                                        
+                                    </div>
+                                    <div class="col col-3">
+                                        <div class="input-group m-0">
+                                            <select class="selectpicker">
+                                                <option selected value="<?php echo $room->numbers; ?>"><?php echo $room->numbers; ?></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                            
+                           
+                        </div>
+
+                    </div>
                 </div>
                 <!-- ========== END BOOKING INFORMATION ========== -->
                 <!-- ========== BOOKING PAYMENT ========== -->
@@ -226,7 +271,7 @@
                  <!-- ========== END BOOKING PAYMENT ========== -->
             </div>
 
-             <!-- Creating booking password -->
+             <!-- Creating booking password Modal -->
              <div class="modal fade" id="createPassModal" tabindex="-1" role="dialog" aria-labelledby="createBookingPasswordLabel" aria-hidden="true">
                  <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -255,7 +300,7 @@
                     </div>
                 </div>
             </div>
-            <!-- End Creating booking password -->
+            <!-- End Creating booking password Modal -->
 
             <!-- Edit traveler information Modal -->
             <div class="modal fade" id="travelerInfoModal" tabindex="-1" role="dialog" aria-labelledby="travelerInfoLabel" aria-hidden="true">
@@ -333,6 +378,29 @@
             </div>
             <!-- End Edit traveler information Modal -->
 
+             <!-- Edit rooms  Modal -->
+             <div class="modal fade" id="editRoomsModal" tabindex="-1" role="dialog" aria-labelledby="editRoomsModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editRoomsModalLabel">Edit Booking Rooms</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                                                                                           
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="">Save changes</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End edit rooms information Modal -->
+            
+
             <!-- Edit booking information Modal -->
             <div class="modal fade" id="bookingInfoModal" tabindex="-1" role="dialog" aria-labelledby="bookingInfoLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -347,93 +415,89 @@
                         <form class="js-validate" action="services/update_booking.php" method="post" name="update_booking" id="update_booking">
                             <input type="hidden" name="hotel_id" value="<?php echo $hotel_id; ?>" />
                             <input type="hidden" name="nights" value="<?php echo $nights ?>" />
-                            
-                                <div style="" class="row d-block nav-select d-lg-flex mb-lg-3 px-2 px-lg-3 align-items-end">
-
-                                <div class="col-sm-12 col-lg-3dot7 col-xl-3gdot5 mb-4 mb-lg-0 ">
-                                    <!-- Input -->
-                                    <span class="d-block text-gray-1 text-left font-weight-normal mb-0">Check In - Out</span>
-                                    <div class="border-bottom border-width-2 border-color-1">
-                                        <div id="datepickerWrapperFromOne" class="u-datepicker input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="d-flex align-items-center mr-2">
-                                                    <i class="flaticon-calendar text-primary font-weight-semi-bold"></i>
-                                                </span>
-                                                <input required="required"
-                                                id="hotel_date" name="hotel_date"
-                                                class="font-size-16 shadow-none font-weight-medium form-control bg-transparent border-0 flatpickr-input"
-                                                type="text"
-                                                value='["<?php echo $manageBooking->checkIn ?>" to "<?php echo $manageBooking->checkOut; ?>"]'
-                                                >
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <script>
-                                            flatpickr('#hotel_date', {
-                                                "minDate": "today",
-                                                "mode": "range",
-                                                "allowInput":true,
-                                                "onOpen": function(selectedDates, dateStr, instance) {
-                                                    $(instance.altInput).prop('readonly', true);
-                                                },
-                                                "onClose": function(selectedDates, dateStr, instance) {
-                                                    $(instance.altInput).prop('readonly', false);
-                                                    $(instance.altInput).blur();
-                                                }
-
-                                            });
-                                        </script>
-                                    <!-- End Input -->
-                                </div>
-
-                                <div class="col-sm-12 col-xl-3 mb-4 mb-lg-0 dropdown-custom">
-                                    <!-- Input -->
-                                    <span class="d-block text-gray-1 text-left font-weight-normal mb-0">Rooms and Guests</span>
-                                    <a id="basicDropdownClickInvoker" class="dropdown-nav-link dropdown-toggle d-flex pt-3 pb-2" href="javascript:;" role="button" aria-controls="basicDropdownClick" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#basicDropdownClick" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
-                                        <i class="glyph-icon-custom flaticon-plus d-flex align-items-center mr-3 font-size-18 text-primary font-weight-semi-bold"></i>
-                                        <span style="margin-top: 10px" class="text-black font-size-16 font-weight-semi-bold"> <?php echo $manageBooking->adultNumber; ?> Guests</span>
-                                    </a>
-                                    <div id="basicDropdownClick" class="dropdown-menu dropdown-unfold col-11 m-0 u-unfold--css-animation u-unfold--hidden fadeOut" aria-labelledby="basicDropdownClickInvoker" style="animation-duration: 300ms;">
-
-                                        <div class="w-100 py-2 px-3 mb-3">
-                                            <div class="js-quantity mx-3 row align-items-center justify-content-between">
-                                                <span class="d-block font-size-16 text-secondary font-weight-medium">Adults</span>
-                                                <div class="d-flex">
-                                                    <a class="js-minus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
-                                                        <small class="fad fa-minus btn-icon__inner"></small>
-                                                    </a>
-                                                    <input required="required" id="adults" name="adults" 
-                                                    class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text"
-                                                        value="<?php echo $manageBooking->adultNumber; ?>">
-                                                    <a class="js-plus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
-                                                        <small class="fad fa-plus btn-icon__inner"></small>
-                                                    </a>
+                                    <div class="col ">
+                                        <!-- Input -->
+                                        <span class="d-block text-gray-1 text-left font-weight-normal mb-0">Check In - Out</span>
+                                        <div class="border-bottom border-width-2 border-color-1">
+                                            <div id="datepickerWrapperFromOne" class="u-datepicker input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="d-flex align-items-center mr-2">
+                                                        <i class="flaticon-calendar text-primary font-weight-semi-bold"></i>
+                                                    </span>
+                                                    <input required="required"
+                                                    id="hotel_date" name="hotel_date"
+                                                    class="font-size-16 shadow-none font-weight-medium form-control bg-transparent border-0 flatpickr-input"
+                                                    type="text"
+                                                    value='["<?php echo $manageBooking->checkIn ?>" to "<?php echo $manageBooking->checkOut; ?>"]'
+                                                    >
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="w-100 py-2 px-3">
-                                            <div class="js-quantity mx-3 row align-items-center justify-content-between">
-                                                <span class="d-block font-size-16 text-secondary font-weight-medium">Child</span>
-                                                <div class="d-flex">
-                                                    <a class="js-minus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
-                                                        <small class="fad fa-minus btn-icon__inner"></small>
-                                                    </a>
-                                                    <input required="" id="child" name="child" 
-                                                    class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text" 
-                                                    value="<?php echo $manageBooking->childNumber; ?>">
-                                                    <a class="js-plus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
-                                                        <small class="fad fa-plus btn-icon__inner"></small>
-                                                    </a>
+                                        <script>
+                                                flatpickr('#hotel_date', {
+                                                    "minDate": "today",
+                                                    "mode": "range",
+                                                    "allowInput":true,
+                                                    "onOpen": function(selectedDates, dateStr, instance) {
+                                                        $(instance.altInput).prop('readonly', true);
+                                                    },
+                                                    "onClose": function(selectedDates, dateStr, instance) {
+                                                        $(instance.altInput).prop('readonly', false);
+                                                        $(instance.altInput).blur();
+                                                    }
+
+                                                });
+                                            </script>
+                                        <!-- End Input -->
+                                    </div>
+
+                                    <div class="col">
+                                        <!-- Input -->
+                                        <span class="d-block text-gray-1 text-left font-weight-normal mb-0">Rooms and Guests</span>
+                                        <a id="basicDropdownClickInvoker" class="dropdown-nav-link dropdown-toggle d-flex pt-3 pb-2" href="javascript:;" role="button" aria-controls="basicDropdownClick" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#basicDropdownClick" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
+                                            <i class="glyph-icon-custom flaticon-plus d-flex align-items-center mr-3 font-size-18 text-primary font-weight-semi-bold"></i>
+                                            <span style="margin-top: 10px" class="text-black font-size-16 font-weight-semi-bold"> <?php echo $manageBooking->adultNumber; ?> Guests</span>
+                                        </a>
+                                        <div id="basicDropdownClick" class="dropdown-menu dropdown-unfold col-11 m-0 u-unfold--css-animation u-unfold--hidden fadeOut" aria-labelledby="basicDropdownClickInvoker" style="animation-duration: 300ms;">
+
+                                            <div class="w-100 py-2 px-3 mb-3">
+                                                <div class="js-quantity mx-3 row align-items-center justify-content-between">
+                                                    <span class="d-block font-size-16 text-secondary font-weight-medium">Adults</span>
+                                                    <div class="d-flex">
+                                                        <a class="js-minus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
+                                                            <small class="fad fa-minus btn-icon__inner"></small>
+                                                        </a>
+                                                        <input required="required" id="adults" name="adults" 
+                                                        class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text"
+                                                            value="<?php echo $manageBooking->adultNumber; ?>">
+                                                        <a class="js-plus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
+                                                            <small class="fad fa-plus btn-icon__inner"></small>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <div class="w-100 py-2 px-3">
+                                                <div class="js-quantity mx-3 row align-items-center justify-content-between">
+                                                    <span class="d-block font-size-16 text-secondary font-weight-medium">Child</span>
+                                                    <div class="d-flex">
+                                                        <a class="js-minus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
+                                                            <small class="fad fa-minus btn-icon__inner"></small>
+                                                        </a>
+                                                        <input required="" id="child" name="child" 
+                                                        class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text" 
+                                                        value="<?php echo $manageBooking->childNumber; ?>">
+                                                        <a class="js-plus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
+                                                            <small class="fad fa-plus btn-icon__inner"></small>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="w-100 text-right py-1 pr-5">
+                                                <a class="text-primary font-weight-semi-bold font-size-16" href="#">Done</a>
+                                            </div>
                                         </div>
-                                        <div class="w-100 text-right py-1 pr-5">
-                                            <a class="text-primary font-weight-semi-bold font-size-16" href="#">Done</a>
-                                        </div>
+                                        <!-- End Input -->
                                     </div>
-                                    <!-- End Input -->
-                                </div>
-                                </div>
                                 <!-- End Checkbox -->
                         </form>
                     </div>
@@ -451,7 +515,6 @@
         </div>
 
         <?php include 'sections/footer.php'; ?>
-
 
         <script>
             if (showPassword == true) {
