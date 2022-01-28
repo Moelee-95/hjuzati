@@ -7,10 +7,69 @@ class ReserveRoom extends room{
     public $bookingID;// booking id in reserved rooms table
     public $number;  //number of rooms in reserved rooms table
     public $created = false; //by default false
+    public $checkIn;
+    public $checkOut;
+    public $reservedDates = array();
+    private $totalPrice;
+
 
     public function __construct(){
 
     }
+
+
+
+    // Generate max passengers that this room could have
+    /* public function generateMaxPassengers(){
+        $conn = new db(); $conn = $conn->getConnection();
+        $query = "SELECT rMaxPas FROM rooms WHERE rRoomID= '$this->id'";
+        $result = $conn -> query($query);
+        if ($result) {
+            $fetch = $result->fetch_row();
+            if ($this->maxPassengers = $fetch[0]) {
+                return true;
+            } else{} 
+        }else{}
+    }
+ */
+    //increase date with 1 day //related to generateReservedDate
+    public function incraseDateOneDay($date){
+        $result = DateTime::createFromFormat('Y-m-d', $date)->add(new DateInterval('P1D'));
+        $finalResult = $result ->format('Y-m-d');
+        return $finalResult;
+    }
+
+    //get rate for each date //related to generateReservedDate
+    public function dateRate($date){
+        $conn = new db();$conn=$conn->getConnection();
+        $query = "SELECT rRate FROM rates WHERE rRoomsID = '$this->id' and rDate = '$date'";
+        $result = $conn->query($query);
+        if ($result) {
+            $fetch = $result->fetch_array();
+            return $fetch['rRate'];
+        }
+    }
+
+    //generate reserved dates and prices
+    public function generateReservedDates(){
+        $reservedDates = array();
+        for ($i=$this->checkIn; $i < $this->checkOut; $i = $this->incraseDateOneDay($i)) { 
+            $reservedDates[$i]= $this->dateRate($i);
+            echo "added";
+        }
+        
+        $this->reservedDates = $reservedDates;
+    }
+
+    //get Total price of the room based on reserved dates and number of rooms
+    public function getPrice(){
+        $totalPrice;
+        foreach ($this->reservedDates as $key => $reservedDate) {
+            $totalPrice += $reservedDate[0];
+        }
+        $this->totalPrice = $totalPrice;
+    }
+
      //insert room reservation details to rooms booked table
      public function addToDB($bookingID, $id, $number){
         $conn = new db();
@@ -23,6 +82,7 @@ class ReserveRoom extends room{
             $this->bookingID = $bookingID;
             $this->number = $number;
             $this->generateInfo();
+            $this->generateReservedDates();
             $this->created = true;
             return true;
         } else {
@@ -44,6 +104,7 @@ class ReserveRoom extends room{
             $this->id = $roomID;
             $this->created = true;
             $this->generateInfo();
+            $this->generateReservedDates();
             return true;
         }else{
             $this->created = false;
@@ -64,10 +125,12 @@ class ReserveRoom extends room{
 }
 
 // $obj = new ReserveRoom();
-// $obj->getFromDB("220", "76");
-// $bool = $obj->remove();
-// echo $bool;
+// $obj->checkIn = '2022-01-26';
+// $obj->checkOut = '2022-01-28';
+// $obj->getFromDB("238", "77");
 
+// echo "Result:";
+// print_r($obj->reservedDates);
 
 // $obj = new ReserveRoom();
 // $obj->addToDB("160", "76", "4");

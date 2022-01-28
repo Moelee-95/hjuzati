@@ -5,7 +5,6 @@
 // require 'reserveRoom.php';
 // require 'hotel.php';
 
-
 class Booking {
     public $hotelID;
     public $hotelName;
@@ -66,6 +65,8 @@ class Booking {
             if($this->createBookingGuestNotExisted()){
                 foreach ($reservedRooms as $id => $number){ // insert all rooms to the booking
                     $room = new ReserveRoom();
+                    $room->checkIn = $this->checkIn;
+                    $room->checkOut = $this->checkOut;
                     $room->addToDB($this->bookingID, $id, $number); // booking id, room id, reserved numbers
                     $this->rooms[] = $room;
                     $this->setNumberOfRooms();//setup rooms Numbers
@@ -77,6 +78,8 @@ class Booking {
             if($this->createBookingGuestExisted()){
                 foreach ($reservedRooms as $id => $number){ // insert all rooms to the booking
                     $room = new ReserveRoom();
+                    $room->checkIn = $this->checkIn;
+                    $room->checkOut = $this->checkOut;
                     $room->addToDB($this->bookingID, $id, $number); // booking id, room id, reserved numbers
                     $this->rooms[] = $room;
                     $this->setNumberOfRooms();//setup rooms Numbers
@@ -96,6 +99,8 @@ class Booking {
             foreach ($info as $key => $roomInfo) {
                 foreach ($roomInfo as $key2 => $roomID) {
                     $room = new ReserveRoom();
+                    $room->checkIn = $this->checkIn;
+                    $room->checkOut = $this->checkOut;
                     $room->getFromDB($this->bookingID, $roomID);
                     $this->rooms[] = $room;
                     $this->setNumberOfRooms();
@@ -257,8 +262,9 @@ class Booking {
 // }
 
 // $b = new Booking();
-// $b->getFromDB("234");
-// echo $b->hotel->name;
+// $b->getFromDB("238");
+// // echo $b->hotel->name;
+// print_r($b->rooms);
 
 
 

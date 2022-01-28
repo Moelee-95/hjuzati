@@ -268,7 +268,61 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        
+                            <!-- Input -->
+                            <div class="">
+                                <div class="js-form-message">
+                                    <label class="form-label">
+                                        Full Name
+                                    </label>
+                                    <input type="text" class="form-control" name="fullName" id="fullName" placeholder="Ali Mohammed" aria-label="Ali Mohammed" required
+                                    data-msg="Please enter your full name."
+                                    data-error-class="u-has-error"
+                                    data-success-class="u-has-success" value="<?php echo $manageBooking->fullName;?>">
+                                    </br>
+                                    <span id="fullNameAlert" class="text-danger" ></span>
+                                </div>
+                            </div>
+                            <!-- End Input -->
+
+                            <!-- Input -->
+                            <div class="">
+                                <div class="js-form-message">
+                                    <label class="form-label">
+                                        Email
+                                    </label>
+
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Hjuzati@gmail.com" aria-label="creativelayers088@gmail.com" 
+                                    data-msg="Please enter a valid email address."
+                                    data-error-class="u-has-error"
+                                    data-success-class="u-has-success" value="<?php echo $manageBooking->email; ?>">
+                                    </br>
+                                    <span id="emailAlert" class="text-danger" ></span>
+                                </div>
+                            </div>
+                            <!-- End Input -->
+
+                            <!-- Input -->
+                            <div class="">
+                                <div class="js-form-message">
+                                    <label class="form-label">
+                                        City
+                                    </label>
+                                    <select name="city" id="city" class="form-control js-select selectpicker dropdown-select" required="" data-msg="Please select city." data-error-class="u-has-error" data-success-class="u-has-success"
+                                        data-live-search="true"
+                                        data-style="form-control font-size-16 border-width-2 border-gray font-weight-normal">
+                                        <option value ="<?php echo $iAddress; ?>" selected><?php echo $manageBooking->address; ?></option>
+                                        <?php
+                                            foreach(Cities::getCities() as $city){ ?>
+                                                <option value="<?php echo $city ?>"><?php echo $city ?></option> 
+                                            <?php }
+
+                                        ?>
+                                    </select>
+                                    </br>
+                                    <span id="cityAlert" class="text-danger" ></span>
+                                </div>
+                            </div>
+                            <!-- End Input -->                                                               
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -290,7 +344,98 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        ..
+                        <form class="js-validate" action="services/update_booking.php" method="post" name="update_booking" id="update_booking">
+                            <input type="hidden" name="hotel_id" value="<?php echo $hotel_id; ?>" />
+                            <input type="hidden" name="nights" value="<?php echo $nights ?>" />
+                            
+                                <div style="" class="row d-block nav-select d-lg-flex mb-lg-3 px-2 px-lg-3 align-items-end">
+
+                                <div class="col-sm-12 col-lg-3dot7 col-xl-3gdot5 mb-4 mb-lg-0 ">
+                                    <!-- Input -->
+                                    <span class="d-block text-gray-1 text-left font-weight-normal mb-0">Check In - Out</span>
+                                    <div class="border-bottom border-width-2 border-color-1">
+                                        <div id="datepickerWrapperFromOne" class="u-datepicker input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="d-flex align-items-center mr-2">
+                                                    <i class="flaticon-calendar text-primary font-weight-semi-bold"></i>
+                                                </span>
+                                                <input required="required"
+                                                id="hotel_date" name="hotel_date"
+                                                class="font-size-16 shadow-none font-weight-medium form-control bg-transparent border-0 flatpickr-input"
+                                                type="text"
+                                                value='["<?php echo $manageBooking->checkIn ?>" to "<?php echo $manageBooking->checkOut; ?>"]'
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                            flatpickr('#hotel_date', {
+                                                "minDate": "today",
+                                                "mode": "range",
+                                                "allowInput":true,
+                                                "onOpen": function(selectedDates, dateStr, instance) {
+                                                    $(instance.altInput).prop('readonly', true);
+                                                },
+                                                "onClose": function(selectedDates, dateStr, instance) {
+                                                    $(instance.altInput).prop('readonly', false);
+                                                    $(instance.altInput).blur();
+                                                }
+
+                                            });
+                                        </script>
+                                    <!-- End Input -->
+                                </div>
+
+                                <div class="col-sm-12 col-xl-3 mb-4 mb-lg-0 dropdown-custom">
+                                    <!-- Input -->
+                                    <span class="d-block text-gray-1 text-left font-weight-normal mb-0">Rooms and Guests</span>
+                                    <a id="basicDropdownClickInvoker" class="dropdown-nav-link dropdown-toggle d-flex pt-3 pb-2" href="javascript:;" role="button" aria-controls="basicDropdownClick" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#basicDropdownClick" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
+                                        <i class="glyph-icon-custom flaticon-plus d-flex align-items-center mr-3 font-size-18 text-primary font-weight-semi-bold"></i>
+                                        <span style="margin-top: 10px" class="text-black font-size-16 font-weight-semi-bold"> <?php echo $manageBooking->adultNumber; ?> Guests</span>
+                                    </a>
+                                    <div id="basicDropdownClick" class="dropdown-menu dropdown-unfold col-11 m-0 u-unfold--css-animation u-unfold--hidden fadeOut" aria-labelledby="basicDropdownClickInvoker" style="animation-duration: 300ms;">
+
+                                        <div class="w-100 py-2 px-3 mb-3">
+                                            <div class="js-quantity mx-3 row align-items-center justify-content-between">
+                                                <span class="d-block font-size-16 text-secondary font-weight-medium">Adults</span>
+                                                <div class="d-flex">
+                                                    <a class="js-minus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
+                                                        <small class="fad fa-minus btn-icon__inner"></small>
+                                                    </a>
+                                                    <input required="required" id="adults" name="adults" 
+                                                    class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text"
+                                                        value="<?php echo $manageBooking->adultNumber; ?>">
+                                                    <a class="js-plus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
+                                                        <small class="fad fa-plus btn-icon__inner"></small>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-100 py-2 px-3">
+                                            <div class="js-quantity mx-3 row align-items-center justify-content-between">
+                                                <span class="d-block font-size-16 text-secondary font-weight-medium">Child</span>
+                                                <div class="d-flex">
+                                                    <a class="js-minus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
+                                                        <small class="fad fa-minus btn-icon__inner"></small>
+                                                    </a>
+                                                    <input required="" id="child" name="child" 
+                                                    class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text" 
+                                                    value="<?php echo $manageBooking->childNumber; ?>">
+                                                    <a class="js-plus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
+                                                        <small class="fad fa-plus btn-icon__inner"></small>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-100 text-right py-1 pr-5">
+                                            <a class="text-primary font-weight-semi-bold font-size-16" href="#">Done</a>
+                                        </div>
+                                    </div>
+                                    <!-- End Input -->
+                                </div>
+                                </div>
+                                <!-- End Checkbox -->
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

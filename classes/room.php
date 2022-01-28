@@ -33,6 +33,7 @@ class Room {
         
 
     }
+
     public function generateInfo(){
         $conn = new db();$conn = $conn->getConnection();
         if (!empty($this->id)) {
@@ -56,9 +57,6 @@ class Room {
       
     }
 
-    public function getPrice($date){
-        
-    }
 
     //get room hotelID
     public static function getRooomHotelID($roomID){
