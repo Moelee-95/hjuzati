@@ -312,7 +312,7 @@ CREATE TABLE `bookings` (
   CONSTRAINT `fk_bookings_guests1` FOREIGN KEY (`bGuestID`) REFERENCES `guests` (`gGuestID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_bookings_payment` FOREIGN KEY (`paymentMethod`) REFERENCES `payments` (`pID`) ON DELETE SET NULL ON UPDATE SET NULL,
   CONSTRAINT `fk_bookings_paymentstatus1` FOREIGN KEY (`bPaymentStatusID`) REFERENCES `paymentstatus` (`paymentStatusId`)
-) ENGINE=InnoDB AUTO_INCREMENT=231 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=242 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -321,7 +321,7 @@ CREATE TABLE `bookings` (
 
 LOCK TABLES `bookings` WRITE;
 /*!40000 ALTER TABLE `bookings` DISABLE KEYS */;
-INSERT INTO `bookings` VALUES (227,24,NULL,NULL,1,'2022-01-19','2022-01-22',3,1,1,'2022-01-16 13:40:04',NULL,NULL,2,'1111111',180,'Mohammed Hazim','+9647701233211','mohamadsalah1995@yahoo.com','Erbil',NULL,NULL),(228,24,114,NULL,1,'2022-01-16','2022-01-18',2,1,1,'2022-01-16 16:10:00',NULL,NULL,2,'12249',400,'للا ليلا فلتب','+964770866665','mohamadsalah11998822@gmail.com','Baghdad',NULL,NULL),(229,24,NULL,NULL,1,'2022-01-18','2022-01-19',1,1,1,'2022-01-16 16:16:02',NULL,NULL,2,NULL,60,'i love mohammad','+9647701231231','mohamadsalah11998822@gmail.com','Baghdad',NULL,NULL),(230,25,114,NULL,1,'2022-01-17','2022-01-31',14,4,2,'2022-01-17 07:16:08',NULL,NULL,2,NULL,2800,'i love mohammad','+9647701231231','mohamadsalah11998822@gmail.com','Baghdad',NULL,NULL);
+INSERT INTO `bookings` VALUES (227,24,NULL,NULL,1,'2022-01-19','2022-01-22',3,1,1,'2022-01-16 13:40:04',NULL,NULL,2,'1111111',180,'Mohammed Hazim','+9647701233211','mohamadsalah1995@yahoo.com','Erbil',NULL,NULL),(228,24,114,NULL,1,'2022-01-16','2022-01-18',2,1,1,'2022-01-16 16:10:00',NULL,NULL,2,'12249',400,'للا ليلا فلتب','+964770866665','mohamadsalah11998822@gmail.com','Baghdad',NULL,NULL),(229,24,NULL,NULL,1,'2022-01-18','2022-01-19',1,1,1,'2022-01-16 16:16:02',NULL,NULL,2,NULL,60,'i love mohammad','+9647701231231','mohamadsalah11998822@gmail.com','Baghdad',NULL,NULL),(230,25,114,NULL,1,'2022-01-17','2022-01-31',14,4,2,'2022-01-17 07:16:08',NULL,NULL,2,NULL,2800,'i love mohammad','+9647701231231','mohamadsalah11998822@gmail.com','Baghdad',NULL,NULL),(231,24,NULL,NULL,1,'2022-01-09','2022-01-11',2,1,1,'2022-01-16 13:40:04',NULL,NULL,2,NULL,NULL,'FADS KLHL LJLJ','+9647701233211','mohamadsalah1995@yahoo.com','Erbil',NULL,NULL),(232,24,NULL,NULL,1,'2022-01-09','2022-01-11',2,1,1,'2022-01-16 13:40:04',NULL,NULL,2,NULL,NULL,'FADS KLHL LJLJ','+9647701233211','mohamadsalah1995@yahoo.com','Erbil',NULL,NULL),(233,24,NULL,NULL,1,'2022-01-09','2022-01-11',2,1,1,'2022-01-16 13:40:04',NULL,NULL,2,NULL,NULL,'FADS KLHL LJLJ','+9647701233211','mohamadsalah1995@yahoo.com','Erbil',NULL,NULL),(234,25,NULL,NULL,1,'2022-01-20','2022-01-22',2,1,1,'2022-01-19 09:02:44',NULL,NULL,2,NULL,160,'oop oop oop','+9647701231231','test@oop.com','Baghdad',NULL,NULL),(235,25,NULL,NULL,1,'2022-01-20','2022-01-22',2,1,1,'2022-01-19 09:03:49',NULL,NULL,2,'22111',160,'oop oop oop','+9647701231231','test@oop.com','Baghdad',NULL,NULL),(236,25,NULL,NULL,1,'2022-01-21','2022-01-25',4,1,1,'2022-01-21 18:21:41',NULL,NULL,2,NULL,1760,'i love mohammad','+9647701231231','mohamadsalah11998822@gmail.com','Baghdad',NULL,NULL),(237,24,NULL,NULL,1,'2022-01-25','2022-01-28',3,1,1,'2022-01-25 09:04:31',NULL,NULL,2,'123456',360,'Mohammed Hazim','+9647701231231','mohamadsalah1995@yahoo.com','Al Basrah',NULL,NULL),(238,25,NULL,NULL,1,'2022-01-26','2022-01-28',2,1,1,'2022-01-26 16:45:31',NULL,NULL,2,NULL,320,'Mohammed Hazim','+9647701231231','mohamadsalah1995@yahoo.com','Al Basrah',NULL,NULL),(239,25,NULL,NULL,1,'2022-01-26','2022-01-29',3,1,1,'2022-01-26 18:07:33',NULL,NULL,2,NULL,240,'Mohammed Hazim','+9647701231231','mohamadsalah1995@yahoo.com','Kirkuk',NULL,NULL),(240,24,114,NULL,1,'2022-01-27','2022-01-29',2,1,1,'2022-01-27 19:28:46',NULL,NULL,2,NULL,240,'Mohammed Hazim','+9647706546544','mohamadsalah1995@yahoo.com','Baghdad',NULL,NULL),(241,24,NULL,NULL,1,'2022-01-28','2022-01-30',2,1,1,'2022-01-28 12:36:21',NULL,NULL,2,'1222222',540,'Mohammed Hazim','+9647704564564','mohamadsalah1995@yahoo.com','Baghdad',NULL,NULL);
 /*!40000 ALTER TABLE `bookings` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -473,7 +473,7 @@ CREATE TABLE `guests` (
   `gCreatingDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `gDOB` date DEFAULT NULL,
   PRIMARY KEY (`gGuestID`)
-) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -482,7 +482,7 @@ CREATE TABLE `guests` (
 
 LOCK TABLES `guests` WRITE;
 /*!40000 ALTER TABLE `guests` DISABLE KEYS */;
-INSERT INTO `guests` VALUES (114,'ali','ali111','ali',NULL,NULL,NULL,NULL,NULL,NULL,'+9647701111111',NULL,'',NULL,NULL,'2022-01-17 11:38:32','1999-01-01');
+INSERT INTO `guests` VALUES (114,'ali','ali111','ali',NULL,NULL,NULL,NULL,NULL,NULL,'+9647701111111',NULL,'Male',NULL,NULL,'2022-01-21 08:30:22','2000-08-05'),(115,'mohammed ali','mohammed231','ali',NULL,NULL,NULL,NULL,NULL,NULL,'+9647701231231',NULL,NULL,NULL,NULL,'2022-01-27 09:33:34',NULL);
 /*!40000 ALTER TABLE `guests` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -562,7 +562,7 @@ CREATE TABLE `hotels` (
   PRIMARY KEY (`hHotelID`),
   KEY `fk_hotels_users1_idx` (`hUserID`),
   CONSTRAINT `fk_hotels_users1` FOREIGN KEY (`hUserID`) REFERENCES `users` (`uUserID`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -571,7 +571,7 @@ CREATE TABLE `hotels` (
 
 LOCK TABLES `hotels` WRITE;
 /*!40000 ALTER TABLE `hotels` DISABLE KEYS */;
-INSERT INTO `hotels` VALUES (24,41,'Hjuzati','4 ✯✯✯✯',NULL,'Sulaymaniyah',NULL,'4003','07708138928','+9647708138928','hjuzati@mail.com',NULL,NULL,NULL,'Sarchnar, Near Nali Cafee','https://www.google.com/maps/@35.6142523,45.3491238,20z',NULL,'Mohammed',NULL,NULL,NULL,'222'),(25,41,'Hima Hotel','5 ✯✯✯✯✯',NULL,'Sulaymaniyah',NULL,'46001','07708138928','','mohammed@mohammed.com',NULL,NULL,NULL,'','',NULL,'Mohammed Salahadin Hazim',NULL,NULL,NULL,'224');
+INSERT INTO `hotels` VALUES (24,41,'Hjuzati','4 ✯✯✯✯',NULL,'Sulaymaniyah',NULL,'4003','07708138928','+9647708138928','hjuzati@mail.com',NULL,NULL,NULL,'Sarchnar, Near Nali Cafee','https://www.google.com/maps/@35.6142523,45.3491238,20z',NULL,'Mohammed',NULL,NULL,NULL,'222'),(25,41,'Hima Hotel','5 ✯✯✯✯✯',NULL,'Sulaymaniyah',NULL,'46001','07708138928','','mohammed@mohammed.com',NULL,NULL,NULL,'','',NULL,'Mohammed Salahadin Hazim',NULL,NULL,NULL,'224'),(28,41,'Mohammed Hazim','5 ✯✯✯✯✯',NULL,'Sulaymaniyah',NULL,'098770987','0979879709870987','09870987','email@m.com',NULL,NULL,NULL,'098709870987','09097',NULL,'something',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `hotels` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -746,7 +746,7 @@ CREATE TABLE `hotelsphotos` (
   PRIMARY KEY (`hpID`,`hotels_hHotelID`),
   KEY `fk_hotelsphotos_hotels1_idx` (`hotels_hHotelID`),
   CONSTRAINT `fk_hotelsphotos_hotels1` FOREIGN KEY (`hotels_hHotelID`) REFERENCES `hotels` (`hHotelID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=226 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=227 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -904,7 +904,7 @@ CREATE TABLE `rates` (
   CONSTRAINT `fk_rates_hotels_rates1` FOREIGN KEY (`hotels_rates_id`) REFERENCES `hotels_rates` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_rates_rooms1` FOREIGN KEY (`rRoomsID`) REFERENCES `rooms` (`rRoomID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_ratetypes_rates` FOREIGN KEY (`rRateTypeID`) REFERENCES `ratetypes` (`rtRateTypeID`)
-) ENGINE=InnoDB AUTO_INCREMENT=570 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=601 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -913,7 +913,7 @@ CREATE TABLE `rates` (
 
 LOCK TABLES `rates` WRITE;
 /*!40000 ALTER TABLE `rates` DISABLE KEYS */;
-INSERT INTO `rates` VALUES (503,76,NULL,20,'2022-01-05',11,'2022-01-11 21:16:32',1,1),(504,76,NULL,20,'2022-01-01',11,'2022-01-11 21:16:32',1,1),(505,76,NULL,20,'2022-01-04',11,'2022-01-11 21:16:32',1,1),(506,76,NULL,20,'2022-01-06',11,'2022-01-11 21:16:32',1,1),(507,76,NULL,20,'2022-01-02',11,'2022-01-11 21:16:32',1,1),(508,76,NULL,20,'2022-01-03',11,'2022-01-11 21:16:32',1,1),(509,76,NULL,20,'2022-01-07',11,'2022-01-11 21:16:32',1,1),(510,76,NULL,20,'2022-01-08',11,'2022-01-11 21:16:32',1,1),(511,76,NULL,20,'2022-01-09',11,'2022-01-11 21:16:32',1,1),(512,76,NULL,20,'2022-01-10',11,'2022-01-11 21:16:32',1,1),(513,76,NULL,20,'2022-01-11',11,'2022-01-11 21:16:32',1,1),(514,76,NULL,20,'2022-01-12',11,'2022-01-11 21:16:32',1,1),(515,76,NULL,20,'2022-01-13',11,'2022-01-11 21:16:32',1,1),(516,76,NULL,20,'2022-01-14',11,'2022-01-11 21:16:32',1,1),(517,76,NULL,20,'2022-01-15',11,'2022-01-11 21:16:32',1,1),(518,76,NULL,20,'2022-01-16',11,'2022-01-11 21:16:32',1,1),(519,76,NULL,20,'2022-01-17',11,'2022-01-11 21:16:32',1,1),(520,76,NULL,20,'2022-01-18',11,'2022-01-11 21:16:32',1,1),(521,76,NULL,20,'2022-01-19',11,'2022-01-11 21:16:32',1,1),(522,76,NULL,20,'2022-01-20',11,'2022-01-11 21:16:32',1,1),(523,76,NULL,20,'2022-01-21',11,'2022-01-11 21:16:32',1,1),(524,76,NULL,20,'2022-01-22',11,'2022-01-11 21:16:32',1,1),(525,76,NULL,20,'2022-01-23',11,'2022-01-11 21:16:32',1,1),(526,76,NULL,20,'2022-01-24',11,'2022-01-11 21:16:32',1,1),(527,76,NULL,20,'2022-01-25',11,'2022-01-11 21:16:32',1,1),(528,76,NULL,20,'2022-01-26',11,'2022-01-11 21:16:32',1,1),(529,76,NULL,20,'2022-01-27',11,'2022-01-11 21:16:32',1,1),(530,76,NULL,20,'2022-01-28',11,'2022-01-11 21:16:32',1,1),(531,76,NULL,20,'2022-01-29',11,'2022-01-11 21:16:32',1,1),(532,76,NULL,20,'2022-01-30',11,'2022-01-11 21:16:32',1,1),(533,76,NULL,20,'2022-01-31',11,'2022-01-11 21:16:32',1,1),(534,77,NULL,40,'2022-01-01',20,'2022-01-17 07:11:38',1,1),(535,77,NULL,40,'2022-01-02',20,'2022-01-17 07:11:38',1,1),(536,77,NULL,40,'2022-01-03',20,'2022-01-17 07:11:38',1,1),(537,77,NULL,40,'2022-01-04',20,'2022-01-17 07:11:38',1,1),(538,77,NULL,40,'2022-01-05',20,'2022-01-17 07:11:38',1,1),(539,77,NULL,40,'2022-01-06',20,'2022-01-17 07:11:38',1,1),(540,77,NULL,40,'2022-01-07',20,'2022-01-17 07:11:38',1,1),(541,77,NULL,40,'2022-01-08',20,'2022-01-17 07:11:38',1,1),(542,77,NULL,40,'2022-01-09',20,'2022-01-17 07:11:38',1,1),(543,77,NULL,40,'2022-01-10',20,'2022-01-17 07:11:38',1,1),(544,77,NULL,40,'2022-01-11',20,'2022-01-17 07:11:38',1,1),(545,77,NULL,40,'2022-01-12',20,'2022-01-17 07:11:38',1,1),(546,77,NULL,40,'2022-01-13',20,'2022-01-17 07:11:38',1,1),(547,77,NULL,40,'2022-01-14',20,'2022-01-17 07:11:38',1,1),(548,77,NULL,40,'2022-01-15',20,'2022-01-17 07:11:38',1,1),(549,77,NULL,40,'2022-01-16',20,'2022-01-17 07:11:38',1,1),(550,77,NULL,40,'2022-01-17',20,'2022-01-17 07:11:38',1,1),(551,77,NULL,40,'2022-01-18',20,'2022-01-17 07:11:39',1,1),(552,77,NULL,40,'2022-01-19',20,'2022-01-17 07:11:39',1,1),(553,77,NULL,40,'2022-01-20',20,'2022-01-17 07:11:39',1,1),(554,77,NULL,40,'2022-01-21',20,'2022-01-17 07:11:39',1,1),(555,77,NULL,40,'2022-01-22',20,'2022-01-17 07:11:39',1,1),(556,77,NULL,40,'2022-01-23',20,'2022-01-17 07:11:39',1,1),(557,77,NULL,40,'2022-01-24',20,'2022-01-17 07:11:39',1,1),(558,77,NULL,40,'2022-01-25',20,'2022-01-17 07:11:39',1,1),(559,77,NULL,40,'2022-01-26',20,'2022-01-17 07:11:39',1,1),(560,77,NULL,40,'2022-01-27',20,'2022-01-17 07:11:39',1,1),(561,77,NULL,40,'2022-01-28',20,'2022-01-17 07:11:39',1,1),(562,77,NULL,40,'2022-01-29',20,'2022-01-17 07:11:39',1,1),(563,77,NULL,40,'2022-01-30',20,'2022-01-17 07:11:39',1,1),(564,77,NULL,40,'2022-01-31',20,'2022-01-17 07:11:39',1,1),(565,77,NULL,40,'2022-02-01',20,'2022-01-17 07:11:39',1,1),(566,77,NULL,40,'2022-02-02',20,'2022-01-17 07:11:39',1,1),(567,77,NULL,40,'2022-02-03',20,'2022-01-17 07:11:39',1,1),(568,77,NULL,40,'2022-02-04',20,'2022-01-17 07:11:39',1,1),(569,77,NULL,40,'2022-02-05',20,'2022-01-17 07:11:39',1,1);
+INSERT INTO `rates` VALUES (534,77,NULL,40,'2022-01-01',20,'2022-01-17 07:11:38',1,1),(535,77,NULL,40,'2022-01-02',20,'2022-01-17 07:11:38',1,1),(536,77,NULL,40,'2022-01-03',20,'2022-01-17 07:11:38',1,1),(537,77,NULL,40,'2022-01-04',20,'2022-01-17 07:11:38',1,1),(538,77,NULL,40,'2022-01-05',20,'2022-01-17 07:11:38',1,1),(539,77,NULL,40,'2022-01-06',20,'2022-01-17 07:11:38',1,1),(540,77,NULL,40,'2022-01-07',20,'2022-01-17 07:11:38',1,1),(541,77,NULL,40,'2022-01-08',20,'2022-01-17 07:11:38',1,1),(542,77,NULL,40,'2022-01-09',20,'2022-01-17 07:11:38',1,1),(543,77,NULL,40,'2022-01-10',20,'2022-01-17 07:11:38',1,1),(544,77,NULL,40,'2022-01-11',20,'2022-01-17 07:11:38',1,1),(545,77,NULL,40,'2022-01-12',20,'2022-01-17 07:11:38',1,1),(546,77,NULL,40,'2022-01-13',20,'2022-01-17 07:11:38',1,1),(547,77,NULL,40,'2022-01-14',20,'2022-01-17 07:11:38',1,1),(548,77,NULL,40,'2022-01-15',20,'2022-01-17 07:11:38',1,1),(549,77,NULL,40,'2022-01-16',20,'2022-01-17 07:11:38',1,1),(550,77,NULL,40,'2022-01-17',20,'2022-01-17 07:11:38',1,1),(551,77,NULL,40,'2022-01-18',20,'2022-01-17 07:11:39',1,1),(552,77,NULL,40,'2022-01-19',20,'2022-01-17 07:11:39',1,1),(553,77,NULL,40,'2022-01-20',20,'2022-01-17 07:11:39',1,1),(554,77,NULL,40,'2022-01-21',20,'2022-01-17 07:11:39',1,1),(555,77,NULL,40,'2022-01-22',20,'2022-01-17 07:11:39',1,1),(556,77,NULL,40,'2022-01-23',20,'2022-01-17 07:11:39',1,1),(557,77,NULL,40,'2022-01-24',20,'2022-01-17 07:11:39',1,1),(558,77,NULL,40,'2022-01-25',20,'2022-01-17 07:11:39',1,1),(559,77,NULL,40,'2022-01-26',20,'2022-01-17 07:11:39',1,1),(560,77,NULL,40,'2022-01-27',20,'2022-01-17 07:11:39',1,1),(561,77,NULL,40,'2022-01-28',20,'2022-01-17 07:11:39',1,1),(562,77,NULL,40,'2022-01-29',20,'2022-01-17 07:11:39',1,1),(563,77,NULL,40,'2022-01-30',20,'2022-01-17 07:11:39',1,1),(564,77,NULL,40,'2022-01-31',20,'2022-01-17 07:11:39',1,1),(565,77,NULL,40,'2022-02-01',20,'2022-01-17 07:11:39',1,1),(566,77,NULL,40,'2022-02-02',20,'2022-01-17 07:11:39',1,1),(567,77,NULL,40,'2022-02-03',20,'2022-01-17 07:11:39',1,1),(568,77,NULL,40,'2022-02-04',20,'2022-01-17 07:11:39',1,1),(569,77,NULL,40,'2022-02-05',20,'2022-01-17 07:11:39',1,1),(570,79,NULL,NULL,'2022-01-01',89,'2022-01-21 17:54:38',1,1),(571,79,NULL,NULL,'2022-01-05',89,'2022-01-21 17:54:38',1,1),(572,79,NULL,NULL,'2022-01-04',89,'2022-01-21 17:54:38',1,1),(573,79,NULL,NULL,'2022-01-03',89,'2022-01-21 17:54:38',1,1),(574,79,NULL,NULL,'2022-01-02',89,'2022-01-21 17:54:38',1,1),(575,79,NULL,NULL,'2022-01-06',89,'2022-01-21 17:54:38',1,1),(576,79,NULL,NULL,'2022-01-07',89,'2022-01-21 17:54:38',1,1),(577,79,NULL,NULL,'2022-01-08',89,'2022-01-21 17:54:38',1,1),(578,79,NULL,NULL,'2022-01-09',89,'2022-01-21 17:54:38',1,1),(579,79,NULL,NULL,'2022-01-10',89,'2022-01-21 17:54:38',1,1),(580,79,NULL,NULL,'2022-01-11',89,'2022-01-21 17:54:38',1,1),(581,79,NULL,NULL,'2022-01-12',89,'2022-01-21 17:54:38',1,1),(582,79,NULL,NULL,'2022-01-13',89,'2022-01-21 17:54:38',1,1),(583,79,NULL,NULL,'2022-01-14',89,'2022-01-21 17:54:38',1,1),(584,79,NULL,NULL,'2022-01-15',89,'2022-01-21 17:54:38',1,1),(585,79,NULL,NULL,'2022-01-16',89,'2022-01-21 17:54:38',1,1),(586,79,NULL,NULL,'2022-01-17',89,'2022-01-21 17:54:38',1,1),(587,79,NULL,NULL,'2022-01-18',89,'2022-01-21 17:54:38',1,1),(588,79,NULL,10,'2022-01-19',89,'2022-01-25 07:53:47',1,1),(589,79,NULL,20,'2022-01-20',89,'2022-01-25 07:53:47',1,1),(590,79,NULL,25,'2022-01-21',89,'2022-01-25 07:53:47',1,1),(591,79,NULL,30,'2022-01-22',89,'2022-01-25 07:53:47',1,1),(592,79,NULL,30,'2022-01-23',89,'2022-01-25 07:54:49',1,1),(593,79,NULL,30,'2022-01-24',89,'2022-01-25 07:54:49',1,1),(594,79,NULL,30,'2022-01-25',89,'2022-01-25 07:54:49',1,1),(595,79,NULL,30,'2022-01-26',89,'2022-01-25 07:54:49',1,1),(596,79,NULL,30,'2022-01-27',89,'2022-01-25 07:54:49',1,1),(597,79,NULL,30,'2022-01-28',89,'2022-01-25 07:54:49',1,1),(598,79,NULL,30,'2022-01-29',89,'2022-01-25 07:54:49',1,1),(599,79,NULL,30,'2022-01-30',89,'2022-01-25 07:54:49',1,1),(600,79,NULL,30,'2022-01-31',89,'2022-01-25 07:54:49',1,1);
 /*!40000 ALTER TABLE `rates` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -979,7 +979,7 @@ CREATE TABLE `rooms` (
   CONSTRAINT `fk_rooms_hotels1` FOREIGN KEY (`rHotelID`) REFERENCES `hotels` (`hHotelID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_rooms_roomsNames1` FOREIGN KEY (`rRoomNameID`) REFERENCES `roomsnames` (`rnRoomNameID`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_rooms_roomStatus1` FOREIGN KEY (`rRoomStatusID`) REFERENCES `roomstatus` (`rsRoomStatusID`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -988,7 +988,7 @@ CREATE TABLE `rooms` (
 
 LOCK TABLES `rooms` WRITE;
 /*!40000 ALTER TABLE `rooms` DISABLE KEYS */;
-INSERT INTO `rooms` VALUES (76,24,2,38,2,NULL,17,NULL,'A double one',3,11,20,0,'','2022-01-11 21:15:22','1','1','1','1',2),(77,25,2,46,5,NULL,22,NULL,'First Double room',1,20,55,0,'','2022-01-17 07:10:31','1','1','1','1',5);
+INSERT INTO `rooms` VALUES (77,25,2,46,5,NULL,22,NULL,'First Double room',1,20,55,0,'','2022-01-17 07:10:31','1','1','1','1',5),(78,24,2,313,6,NULL,12,NULL,'sometihng',1,1,13,0,'','2022-01-21 08:24:21','1','1','1','1',0),(79,24,2,1,1,NULL,13,NULL,'single room',2,50,30,0,'','2022-01-21 17:53:45','1','1','1','1',3);
 /*!40000 ALTER TABLE `rooms` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1009,7 +1009,7 @@ CREATE TABLE `roomsbooked` (
   KEY `fk_roomsBooked_bookings1_idx` (`rbBookingID`),
   CONSTRAINT `fk_roomsBooked_bookings1` FOREIGN KEY (`rbBookingID`) REFERENCES `bookings` (`bBookingID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_roomsBooked_rooms1` FOREIGN KEY (`rbRoomID`) REFERENCES `rooms` (`rRoomID`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=271 DEFAULT CHARSET=utf8mb3 COMMENT='When a room will be removed from the rooms table the rooms booked table records will not be effected, the id will be setted to null.\nBut when the room id get''s updated then the id will be updated as well.';
+) ENGINE=InnoDB AUTO_INCREMENT=278 DEFAULT CHARSET=utf8mb3 COMMENT='When a room will be removed from the rooms table the rooms booked table records will not be effected, the id will be setted to null.\nBut when the room id get''s updated then the id will be updated as well.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1018,7 +1018,7 @@ CREATE TABLE `roomsbooked` (
 
 LOCK TABLES `roomsbooked` WRITE;
 /*!40000 ALTER TABLE `roomsbooked` DISABLE KEYS */;
-INSERT INTO `roomsbooked` VALUES (267,227,76,3),(268,228,76,10),(269,229,76,3),(270,230,77,5);
+INSERT INTO `roomsbooked` VALUES (267,227,NULL,3),(268,228,NULL,10),(269,229,NULL,3),(270,230,77,5),(271,235,77,2),(272,236,77,11),(273,237,79,4),(274,238,77,4),(275,239,77,2),(276,240,79,4),(277,241,79,9);
 /*!40000 ALTER TABLE `roomsbooked` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1066,7 +1066,7 @@ CREATE TABLE `roomsphotos` (
   PRIMARY KEY (`rpPhotoID`),
   KEY `fk_roomsPhotos_rooms1_idx` (`rpRoomsID`),
   CONSTRAINT `fk_roomsPhotos_rooms1` FOREIGN KEY (`rpRoomsID`) REFERENCES `rooms` (`rRoomID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1075,7 +1075,6 @@ CREATE TABLE `roomsphotos` (
 
 LOCK TABLES `roomsphotos` WRITE;
 /*!40000 ALTER TABLE `roomsphotos` DISABLE KEYS */;
-INSERT INTO `roomsphotos` VALUES (74,76,'../../..//users/41/hotels/24/rooms/76/1641935737photo1.jpg',NULL),(75,76,'../../..//users/41/hotels/24/rooms/76/1641935737photo2.jpg',NULL);
 /*!40000 ALTER TABLE `roomsphotos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1204,7 +1203,7 @@ CREATE TABLE `users` (
   `uStatus` int DEFAULT NULL,
   `uCreationDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`uUserID`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1213,7 +1212,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (41,'m','mo@m.com','m','Mohammed Hazim','07708138928',NULL,'2022-01-11 21:12:07');
+INSERT INTO `users` VALUES (41,'m','mo@m.com','m','Mohammed Hazim','07708138928',NULL,'2022-01-11 21:12:07'),(42,'ali','ali@ali.com','ali','ali','07708138928',NULL,'2022-01-21 19:33:46');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -1247,6 +1246,34 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Table structure for table `visets`
+--
+
+DROP TABLE IF EXISTS `visets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `visets` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `ipAddress` varchar(15) DEFAULT NULL,
+  `country` varchar(45) DEFAULT NULL,
+  `latitude` varchar(45) DEFAULT NULL,
+  `longitude` varchar(45) DEFAULT NULL,
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `visets`
+--
+
+LOCK TABLES `visets` WRITE;
+/*!40000 ALTER TABLE `visets` DISABLE KEYS */;
+INSERT INTO `visets` VALUES (1,'188.72.15.81','Iraq','33.340579986572','44.40087890625','2022-01-29 09:50:33'),(2,'::1','','</br>','</br>','2022-01-29 10:04:30');
+/*!40000 ALTER TABLE `visets` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `world_cities`
@@ -1363,7 +1390,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `addReservation`(IN hotelID INT,IN g
 BEGIN
 DECLARE bookingID INT;
 
-INSERT INTO `bookings` (`bHotelID`, `bGuestID`, `bDateFrom`, `bDateTo`,  `bNumOfGuests`, `bNumOfChildren`,`bPaymentStatusID`, `paymentMethod`,`totalAmount`, `fullName`, `phoneNumber`, `email`, `address`) VALUES (hotelID, guestID, dateFrom, dateTo, psNum, ChildrenNum, bPaymentStatusID, paymentMethod,totalAmount, fullName, phoneNumber, email, address);
+INSERT INTO `hima`.`bookings` (`bHotelID`, `bGuestID`, `bDateFrom`, `bDateTo`,  `bNumOfGuests`, `bNumOfChildren`,`bPaymentStatusID`, `paymentMethod`,`totalAmount`, `fullName`, `phoneNumber`, `email`, `address`) VALUES (hotelID, guestID, dateFrom, dateTo, psNum, ChildrenNum, bPaymentStatusID, paymentMethod,totalAmount, fullName, phoneNumber, email, address);
 -- to get the booking id from the bookings table to insert it to the roomsBooked table
 SET bookingID = LAST_INSERT_ID();
 SELECT bookingID as "bookingID", guestID as "guestID";
@@ -1390,7 +1417,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `addReservationNoGuest`(IN hotelID I
 BEGIN
 DECLARE bookingID INT;
 
-INSERT INTO `bookings` (`bHotelID`, `bDateFrom`, `bDateTo`,  `bNumOfGuests`, `bNumOfChildren`,`bPaymentStatusID`, `paymentMethod`,`totalAmount`, `fullName`, `phoneNumber`, `email`, `address`) VALUES (hotelID, dateFrom, dateTo, psNum, ChildrenNum, bPaymentStatusID, paymentMethod, totalAmount, gfullName, gPhoneNumber,gEmail,gCity);
+INSERT INTO `hima`.`bookings` (`bHotelID`, `bDateFrom`, `bDateTo`,  `bNumOfGuests`, `bNumOfChildren`,`bPaymentStatusID`, `paymentMethod`,`totalAmount`, `fullName`, `phoneNumber`, `email`, `address`) VALUES (hotelID, dateFrom, dateTo, psNum, ChildrenNum, bPaymentStatusID, paymentMethod, totalAmount, gfullName, gPhoneNumber,gEmail,gCity);
 -- to get the booking id from the bookings table to insert it to the roomsBooked table
 SET bookingID = LAST_INSERT_ID();
 SELECT bookingID as "bookingID";
@@ -1537,7 +1564,7 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `decreserooms`(IN dateStart DATE, IN dateEnd DATE,IN roomID INT, IN numOfRooms INT)
 BEGIN
 	WHILE dateStart <= dateEnd DO
-    UPDATE `rates` SET `rARoomsNum` = `rARoomsNum` - numOfRooms
+    UPDATE `hima`.`rates` SET `rARoomsNum` = `rARoomsNum` - numOfRooms
     WHERE (`rRoomsID` = roomID and `rDate` = dateStart);
     SET dateStart = date_add(dateStart, INTERVAL 1 DAY);
   END WHILE;
@@ -1834,4 +1861,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-17 17:10:25
+-- Dump completed on 2022-01-29 13:06:00
