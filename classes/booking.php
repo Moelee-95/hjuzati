@@ -248,6 +248,24 @@ class Booking {
         if($result ){ return true;}
         else {return false;}
     }
+
+    public function updateTravelerInfo($fullName, $email, $city){
+        $conn = new db();
+        $conn = $conn->getConnection();
+        $query = "UPDATE bookings SET `fullName` = '$fullName', `email` = '$email', `address` = '$city' WHERE (`bBookingID` = '$this->bookingID');
+        ";
+        $result = $conn->query($query);
+        if($result){//Date updated in the database
+            $this->fullName = $fullName;
+            $this->email = $email;
+            $this->address = $city;
+            return true;
+        }
+        else{
+            return false;
+        }
+        
+    }
 }
 
 

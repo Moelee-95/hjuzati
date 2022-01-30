@@ -27,6 +27,17 @@
                         $manageBooking = $booking;
                     }
                 }
+
+                if (isset($_POST['editTravelerInfo'])) {
+                    //UPDATE traveler inforamtion
+                   if( $manageBooking->updateTravelerInfo($_POST['fullName'],$_POST['email'],$_POST['city'])){
+                       //user info updated
+                   }
+                   else{
+                       //user info did't update, something wrong
+                   }
+
+                }
                 /* if (isset($_POST['newBookingPassword'])) {
                     if ($manageBooking->setBookingPassword($_POST['newBookingPassword'])) {
                         $msg = "password have been satup successfully!";
@@ -46,6 +57,7 @@
                     }
 
                 } */
+                
                 if (isset($_GET['createBookingPassword'])){
                     if ($_GET['createBookingPassword'] == "true"){ ?>
                         <script>var showPassword = true; </script>
@@ -313,6 +325,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                        <form id="editTravelerInfo" action="" method="post">
+                            <input type="hidden" name="editTravelerInfo" value="true">
                             <!-- Input -->
                             <div class="">
                                 <div class="js-form-message">
@@ -367,11 +381,12 @@
                                     <span id="cityAlert" class="text-danger" ></span>
                                 </div>
                             </div>
-                            <!-- End Input -->                                                               
+                            <!-- End Input -->   
+                        </from>                                                            
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary" onclick="">Save changes</button>
+                        <button type="button" class="btn btn-primary" onclick="$('#editTravelerInfo').submit()">Save changes</button>
                     </div>
                     </div>
                 </div>
