@@ -263,6 +263,7 @@ class Booking {
         }
         else{
             return false;
+            
         }
         
     }
