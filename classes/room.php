@@ -45,7 +45,7 @@ class Room {
                 $fetch = mysqli_fetch_array($query);
                 $this->type = $fetch['rtRoomTypeEn'];
                 $this->name = $fetch['rnRoomNameEn'];
-                $this->numbers = $fetch['rRoomsNumbers'];
+                $this->numbers = $fetch['rRoomsNumbers'];//max number of rooms in the hotel
                 $this->numBedRooms = $fetch['num_bed_rooms'];
                 $this->numLivingRooms = $fetch['num_living_rooms'];
                 $this->numBathrooms = $fetch['num_bathrooms'];

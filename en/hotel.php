@@ -1048,277 +1048,277 @@
                             
                             
 
-                      <!--
-                        <div class="border-bottom py-4 position-relative">
-                            <h5 id="scroll-specifications" class="font-size-21 font-weight-bold text-dark mb-4">
-                                Nearest Essentials
-                            </h5>
-                            <ul class="list-group list-group-borderless list-group-horizontal list-group-flush no-gutters row">
-                                <li class="col-md-4 mb-5 list-group-item py-0">
-                                    <div class="font-weight-bold text-dark mb-1">Airports</div>
-                                    <div class="text-gray-1">London City Airport (LCY)</div>
-                                    <div class="text-primary mb-2">14.4 km</div>
-                                    <div class="text-gray-1">Heathrow Airport (LHR)</div>
-                                    <div class="text-primary">21.2 km</div>
-                                </li>
-                                <li class="col-md-4 mb-5 list-group-item py-0">
-                                    <div class="font-weight-bold text-dark mb-1">Public transportation</div>
-                                    <div class="text-gray-1">Marble Arch Tube Station</div>
-                                    <div class="text-primary mb-2">40 m</div>
-                                    <div class="text-gray-1">Baker Street Tube Station</div>
-                                    <div class="text-primary">9 m</div>
-                                </li>
-                                <li class="col-md-4 mb-5 list-group-item py-0">
-                                    <div class="font-weight-bold text-dark mb-1">Hospital or clinic</div>
-                                    <div class="text-gray-1">The Wellington Hospital</div>
-                                    <div class="text-primary">2.1 km</div>
-                                </li>
-                                <li class="col-md-4 mb-5 list-group-item py-0">
-                                    <div class="font-weight-bold text-dark mb-1">Horsepower (hp)</div>
-                                    <div class="text-gray-1">200</div>
-                                </li>
-                                <li class="col-md-4 mb-5 list-group-item py-0">
-                                    <div class="font-weight-bold text-dark mb-1">Transmission</div>
-                                    <div class="text-gray-1">Manual</div>
-                                </li>
-                                <li class="col-md-4 mb-5 list-group-item py-0">
-                                    <div class="font-weight-bold text-dark mb-1">Condition</div>
-                                    <div class="text-gray-1">New</div>
-                                </li>
-                                <li class="col-md-4 mb-5 list-group-item py-0">
-                                    <div class="font-weight-bold text-dark mb-1">Drive</div>
-                                    <div class="text-gray-1">Rear</div>
-                                </li>
-                                <li class="col-md-4 mb-5 list-group-item py-0">
-                                    <div class="font-weight-bold text-dark mb-1">Warranty</div>
-                                    <div class="text-gray-1">Yes</div>
-                                </li>
-                                <li class="col-md-4 mb-5 list-group-item py-0">
-                                    <div class="font-weight-bold text-dark mb-1">Hospital or clinic</div>
-                                    <div class="text-gray-1">The Wellington Hospital</div>
-                                    <div class="text-primary">2.1 km</div>
-                                </li>
-                            </ul>
-                            <div class="collapse" id="collapseLinkExample2">
-                                <ul class="list-group list-group-borderless list-group-horizontal list-group-flush no-gutters row">
-                                    <li class="col-md-4 mb-5 list-group-item py-0">
-                                        <div class="font-weight-bold text-dark mb-1">Airports</div>
-                                        <div class="text-gray-1">London City Airport (LCY)</div>
-                                        <div class="text-primary mb-2">14.4 km</div>
-                                        <div class="text-gray-1">Heathrow Airport (LHR)</div>
-                                        <div class="text-primary">21.2 km</div>
-                                    </li>
-                                    <li class="col-md-4 mb-5 list-group-item py-0">
-                                        <div class="font-weight-bold text-dark mb-1">Public transportation</div>
-                                        <div class="text-gray-1">Marble Arch Tube Station</div>
-                                        <div class="text-primary mb-2">40 m</div>
-                                        <div class="text-gray-1">Baker Street Tube Station</div>
-                                        <div class="text-primary">9 m</div>
-                                    </li>
-                                    <li class="col-md-4 mb-5 list-group-item py-0">
-                                        <div class="font-weight-bold text-dark mb-1">Shopping</div>
-                                        <div class="text-gray-1">Harrods</div>
-                                        <div class="text-primary">1.5 km</div>
-                                    </li>
-                                </ul>
-                            </div>
+                                <!--
+                                    <div class="border-bottom py-4 position-relative">
+                                        <h5 id="scroll-specifications" class="font-size-21 font-weight-bold text-dark mb-4">
+                                            Nearest Essentials
+                                        </h5>
+                                        <ul class="list-group list-group-borderless list-group-horizontal list-group-flush no-gutters row">
+                                            <li class="col-md-4 mb-5 list-group-item py-0">
+                                                <div class="font-weight-bold text-dark mb-1">Airports</div>
+                                                <div class="text-gray-1">London City Airport (LCY)</div>
+                                                <div class="text-primary mb-2">14.4 km</div>
+                                                <div class="text-gray-1">Heathrow Airport (LHR)</div>
+                                                <div class="text-primary">21.2 km</div>
+                                            </li>
+                                            <li class="col-md-4 mb-5 list-group-item py-0">
+                                                <div class="font-weight-bold text-dark mb-1">Public transportation</div>
+                                                <div class="text-gray-1">Marble Arch Tube Station</div>
+                                                <div class="text-primary mb-2">40 m</div>
+                                                <div class="text-gray-1">Baker Street Tube Station</div>
+                                                <div class="text-primary">9 m</div>
+                                            </li>
+                                            <li class="col-md-4 mb-5 list-group-item py-0">
+                                                <div class="font-weight-bold text-dark mb-1">Hospital or clinic</div>
+                                                <div class="text-gray-1">The Wellington Hospital</div>
+                                                <div class="text-primary">2.1 km</div>
+                                            </li>
+                                            <li class="col-md-4 mb-5 list-group-item py-0">
+                                                <div class="font-weight-bold text-dark mb-1">Horsepower (hp)</div>
+                                                <div class="text-gray-1">200</div>
+                                            </li>
+                                            <li class="col-md-4 mb-5 list-group-item py-0">
+                                                <div class="font-weight-bold text-dark mb-1">Transmission</div>
+                                                <div class="text-gray-1">Manual</div>
+                                            </li>
+                                            <li class="col-md-4 mb-5 list-group-item py-0">
+                                                <div class="font-weight-bold text-dark mb-1">Condition</div>
+                                                <div class="text-gray-1">New</div>
+                                            </li>
+                                            <li class="col-md-4 mb-5 list-group-item py-0">
+                                                <div class="font-weight-bold text-dark mb-1">Drive</div>
+                                                <div class="text-gray-1">Rear</div>
+                                            </li>
+                                            <li class="col-md-4 mb-5 list-group-item py-0">
+                                                <div class="font-weight-bold text-dark mb-1">Warranty</div>
+                                                <div class="text-gray-1">Yes</div>
+                                            </li>
+                                            <li class="col-md-4 mb-5 list-group-item py-0">
+                                                <div class="font-weight-bold text-dark mb-1">Hospital or clinic</div>
+                                                <div class="text-gray-1">The Wellington Hospital</div>
+                                                <div class="text-primary">2.1 km</div>
+                                            </li>
+                                        </ul>
+                                        <div class="collapse" id="collapseLinkExample2">
+                                            <ul class="list-group list-group-borderless list-group-horizontal list-group-flush no-gutters row">
+                                                <li class="col-md-4 mb-5 list-group-item py-0">
+                                                    <div class="font-weight-bold text-dark mb-1">Airports</div>
+                                                    <div class="text-gray-1">London City Airport (LCY)</div>
+                                                    <div class="text-primary mb-2">14.4 km</div>
+                                                    <div class="text-gray-1">Heathrow Airport (LHR)</div>
+                                                    <div class="text-primary">21.2 km</div>
+                                                </li>
+                                                <li class="col-md-4 mb-5 list-group-item py-0">
+                                                    <div class="font-weight-bold text-dark mb-1">Public transportation</div>
+                                                    <div class="text-gray-1">Marble Arch Tube Station</div>
+                                                    <div class="text-primary mb-2">40 m</div>
+                                                    <div class="text-gray-1">Baker Street Tube Station</div>
+                                                    <div class="text-primary">9 m</div>
+                                                </li>
+                                                <li class="col-md-4 mb-5 list-group-item py-0">
+                                                    <div class="font-weight-bold text-dark mb-1">Shopping</div>
+                                                    <div class="text-gray-1">Harrods</div>
+                                                    <div class="text-primary">1.5 km</div>
+                                                </li>
+                                            </ul>
+                                        </div>
 
-                            <a class="link-collapse link-collapse-custom gradient-overlay-half mb-5 d-inline-block border-bottom border-primary" data-toggle="collapse" href="#collapseLinkExample2" role="button" aria-expanded="false" aria-controls="collapseLinkExample2">
-                                <span class="link-collapse__default font-size-14">View More <i class="flaticon-down-chevron font-size-10 ml-1"></i></span>
-                                <span class="link-collapse__active font-size-14">View Less <i class="flaticon-arrow font-size-10 ml-1"></i></span>
-                            </a>
-                        </div>
-                        <div class="border-bottom py-4 position-relative">
-                            <h5 id="scroll-specifications" class="font-size-21 font-weight-bold text-dark mb-4">
-                                What's Nearby
-                            </h5>
-                            <ul class="list-group list-group-borderless list-group-horizontal list-group-flush no-gutters row">
-                                <li class="col-md-4 list-group-item py-0">
-                                    <div class="font-weight-bold text-dark mb-2">Popular landmarks</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Buckingham Palace - 1.84 km</div>
-                                    <div class="text-gray-1 mb-2 pt-1">St. James's Park - 2.09 km</div>
-                                    <div class="text-gray-1 mb-2 pt-1">British Museum - 2.32 km</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Westminster Abbey - 2.65 km</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Houses of Parliament - 2.78 km</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Camden Market - 3.31 km</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Tower Bridge - 5.85 km</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Tower of London - 5.76 km</div>
-                                </li>
-                                <li class="col-md-4 list-group-item py-0">
-                                    <div class="font-weight-bold text-dark mb-2">Nearby landmarks</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Marble Arch Tube Station - 40 m</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Still Water Horse Head Statue - 70 m</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Marble Arch - 80 m</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Tyburn Tree - 140 m</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Speakers’ Corner - 160 m</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Homemade London - 220 m</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Salt Whisky Bar - 240 m</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Clarks - 280 m</div>
-                                </li>
-                            </ul>
-                            <div class="collapse" id="collapseLinkExample3">
-                                <ul class="list-group list-group-borderless list-group-horizontal list-group-flush no-gutters row">
-                                    <li class="col-md-4 mb-2 list-group-item py-0">
-                                        <div class="text-gray-1 mb-2 pt-1">Buckingham Palace - 1.84 km</div>
-                                        <div class="text-gray-1 mb-2 pt-1">St. James's Park - 2.09 km</div>
-                                        <div class="text-gray-1 mb-2 pt-1">British Museum - 2.32 km</div>
-                                    </li>
-                                    <li class="col-md-4 mb-2 list-group-item py-0">
-                                        <div class="text-gray-1 mb-2 pt-1">Marble Arch Tube Station - 40 m</div>
-                                        <div class="text-gray-1 mb-2 pt-1">Still Water Horse Head Statue - 70 m</div>
-                                        <div class="text-gray-1 mb-2 pt-1">Marble Arch - 80 m</div>
-                                    </li>
-                                </ul>
-                            </div>
+                                        <a class="link-collapse link-collapse-custom gradient-overlay-half mb-5 d-inline-block border-bottom border-primary" data-toggle="collapse" href="#collapseLinkExample2" role="button" aria-expanded="false" aria-controls="collapseLinkExample2">
+                                            <span class="link-collapse__default font-size-14">View More <i class="flaticon-down-chevron font-size-10 ml-1"></i></span>
+                                            <span class="link-collapse__active font-size-14">View Less <i class="flaticon-arrow font-size-10 ml-1"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="border-bottom py-4 position-relative">
+                                        <h5 id="scroll-specifications" class="font-size-21 font-weight-bold text-dark mb-4">
+                                            What's Nearby
+                                        </h5>
+                                        <ul class="list-group list-group-borderless list-group-horizontal list-group-flush no-gutters row">
+                                            <li class="col-md-4 list-group-item py-0">
+                                                <div class="font-weight-bold text-dark mb-2">Popular landmarks</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Buckingham Palace - 1.84 km</div>
+                                                <div class="text-gray-1 mb-2 pt-1">St. James's Park - 2.09 km</div>
+                                                <div class="text-gray-1 mb-2 pt-1">British Museum - 2.32 km</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Westminster Abbey - 2.65 km</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Houses of Parliament - 2.78 km</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Camden Market - 3.31 km</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Tower Bridge - 5.85 km</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Tower of London - 5.76 km</div>
+                                            </li>
+                                            <li class="col-md-4 list-group-item py-0">
+                                                <div class="font-weight-bold text-dark mb-2">Nearby landmarks</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Marble Arch Tube Station - 40 m</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Still Water Horse Head Statue - 70 m</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Marble Arch - 80 m</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Tyburn Tree - 140 m</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Speakers’ Corner - 160 m</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Homemade London - 220 m</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Salt Whisky Bar - 240 m</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Clarks - 280 m</div>
+                                            </li>
+                                        </ul>
+                                        <div class="collapse" id="collapseLinkExample3">
+                                            <ul class="list-group list-group-borderless list-group-horizontal list-group-flush no-gutters row">
+                                                <li class="col-md-4 mb-2 list-group-item py-0">
+                                                    <div class="text-gray-1 mb-2 pt-1">Buckingham Palace - 1.84 km</div>
+                                                    <div class="text-gray-1 mb-2 pt-1">St. James's Park - 2.09 km</div>
+                                                    <div class="text-gray-1 mb-2 pt-1">British Museum - 2.32 km</div>
+                                                </li>
+                                                <li class="col-md-4 mb-2 list-group-item py-0">
+                                                    <div class="text-gray-1 mb-2 pt-1">Marble Arch Tube Station - 40 m</div>
+                                                    <div class="text-gray-1 mb-2 pt-1">Still Water Horse Head Statue - 70 m</div>
+                                                    <div class="text-gray-1 mb-2 pt-1">Marble Arch - 80 m</div>
+                                                </li>
+                                            </ul>
+                                        </div>
 
-                            <a class="link-collapse link-collapse-custom gradient-overlay-half mb-5 d-inline-block border-bottom border-primary" data-toggle="collapse" href="#collapseLinkExample3" role="button" aria-expanded="false" aria-controls="collapseLinkExample3">
-                                <span class="link-collapse__default font-size-14">View More <i class="flaticon-down-chevron font-size-10 ml-1"></i></span>
-                                <span class="link-collapse__active font-size-14">View Less <i class="flaticon-arrow font-size-10 ml-1"></i></span>
-                            </a>
-                        </div>
-                        <div class="border-bottom py-4 position-relative">
-                            <h5 id="scroll-specifications" class="font-size-21 font-weight-bold text-dark mb-4">
-                                House Rules
-                            </h5>
-                            <ul class="list-group list-group-borderless list-group-horizontal list-group-flush no-gutters row">
-                                <li class="col-md-4 list-group-item py-0">
-                                    <div class="font-weight-bold text-dark mb-2">Check-in/Check-out</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Check-in from: 15:00</div>
-                                    <div class="text-gray-1 mb-4 pt-1">Check-out until: 11:00</div>
-                                    <div class="font-weight-bold text-dark mb-2">Getting around</div>
-                                    <div class="text-gray-1 mb-4 pt-1">Distance from city center: 0 km</div>
-                                    <div class="font-weight-bold text-dark mb-2">The property</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Number of floors: 8</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Number of rooms : 998</div>
-                                    <div class="text-gray-1 mb-4 pt-1">Most recent renovation: 2019</div>
-                                </li>
-                                </li>
-                                <li class="col-md-4 list-group-item py-0">
-                                    <div class="font-weight-bold text-dark mb-2">Extras</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Breakfadt charge (unless included in room price): 20 GBP</div>
-                                    <div class="text-gray-1 mb-4 pt-1">Still Water Horse Head Statue - 70 m</div>
-                                    <div class="font-weight-bold text-dark mb-2">The property</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Number of floors: 8</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Number of rooms : 998</div>
-                                    <div class="text-gray-1 mb-2 pt-1">Most recent renovation: 2019</div>
-                                </li>
-                            </ul>
-                            <div class="collapse" id="collapseLinkExample4">
-                                <ul class="list-group list-group-borderless list-group-horizontal list-group-flush no-gutters row">
-                                    <li class="col-md-4 list-group-item py-0">
-                                        <div class="font-weight-bold text-dark mb-2">Check-in/Check-out</div>
-                                        <div class="text-gray-1 mb-2 pt-1">Check-in from: 15:00</div>
-                                        <div class="text-gray-1 mb-4 pt-1">Check-out until: 11:00</div>
-                                        <div class="font-weight-bold text-dark mb-2">Getting around</div>
-                                        <div class="text-gray-1 mb-2 pt-1">Distance from city center: 0 km</div>
-                                    </li>
-                                    <li class="col-md-4 list-group-item py-0">
-                                        <div class="font-weight-bold text-dark mb-2">Extras</div>
-                                        <div class="text-gray-1 mb-2 pt-1">Breakfadt charge (unless included in room price): 20 GBP</div>
-                                        <div class="text-gray-1 mb-4 pt-1">Still Water Horse Head Statue - 70 m</div>
-                                        <div class="font-weight-bold text-dark mb-2">The property</div>
-                                        <div class="text-gray-1 mb-2 pt-1">Number of floors: 8</div>
-                                        <div class="text-gray-1 mb-2 pt-1">Number of rooms : 998</div>
-                                        <div class="text-gray-1 mb-4 pt-1">Most recent renovation: 2019</div>
-                                    </li>
-                                </ul>
-                            </div>
+                                        <a class="link-collapse link-collapse-custom gradient-overlay-half mb-5 d-inline-block border-bottom border-primary" data-toggle="collapse" href="#collapseLinkExample3" role="button" aria-expanded="false" aria-controls="collapseLinkExample3">
+                                            <span class="link-collapse__default font-size-14">View More <i class="flaticon-down-chevron font-size-10 ml-1"></i></span>
+                                            <span class="link-collapse__active font-size-14">View Less <i class="flaticon-arrow font-size-10 ml-1"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="border-bottom py-4 position-relative">
+                                        <h5 id="scroll-specifications" class="font-size-21 font-weight-bold text-dark mb-4">
+                                            House Rules
+                                        </h5>
+                                        <ul class="list-group list-group-borderless list-group-horizontal list-group-flush no-gutters row">
+                                            <li class="col-md-4 list-group-item py-0">
+                                                <div class="font-weight-bold text-dark mb-2">Check-in/Check-out</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Check-in from: 15:00</div>
+                                                <div class="text-gray-1 mb-4 pt-1">Check-out until: 11:00</div>
+                                                <div class="font-weight-bold text-dark mb-2">Getting around</div>
+                                                <div class="text-gray-1 mb-4 pt-1">Distance from city center: 0 km</div>
+                                                <div class="font-weight-bold text-dark mb-2">The property</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Number of floors: 8</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Number of rooms : 998</div>
+                                                <div class="text-gray-1 mb-4 pt-1">Most recent renovation: 2019</div>
+                                            </li>
+                                            </li>
+                                            <li class="col-md-4 list-group-item py-0">
+                                                <div class="font-weight-bold text-dark mb-2">Extras</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Breakfadt charge (unless included in room price): 20 GBP</div>
+                                                <div class="text-gray-1 mb-4 pt-1">Still Water Horse Head Statue - 70 m</div>
+                                                <div class="font-weight-bold text-dark mb-2">The property</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Number of floors: 8</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Number of rooms : 998</div>
+                                                <div class="text-gray-1 mb-2 pt-1">Most recent renovation: 2019</div>
+                                            </li>
+                                        </ul>
+                                        <div class="collapse" id="collapseLinkExample4">
+                                            <ul class="list-group list-group-borderless list-group-horizontal list-group-flush no-gutters row">
+                                                <li class="col-md-4 list-group-item py-0">
+                                                    <div class="font-weight-bold text-dark mb-2">Check-in/Check-out</div>
+                                                    <div class="text-gray-1 mb-2 pt-1">Check-in from: 15:00</div>
+                                                    <div class="text-gray-1 mb-4 pt-1">Check-out until: 11:00</div>
+                                                    <div class="font-weight-bold text-dark mb-2">Getting around</div>
+                                                    <div class="text-gray-1 mb-2 pt-1">Distance from city center: 0 km</div>
+                                                </li>
+                                                <li class="col-md-4 list-group-item py-0">
+                                                    <div class="font-weight-bold text-dark mb-2">Extras</div>
+                                                    <div class="text-gray-1 mb-2 pt-1">Breakfadt charge (unless included in room price): 20 GBP</div>
+                                                    <div class="text-gray-1 mb-4 pt-1">Still Water Horse Head Statue - 70 m</div>
+                                                    <div class="font-weight-bold text-dark mb-2">The property</div>
+                                                    <div class="text-gray-1 mb-2 pt-1">Number of floors: 8</div>
+                                                    <div class="text-gray-1 mb-2 pt-1">Number of rooms : 998</div>
+                                                    <div class="text-gray-1 mb-4 pt-1">Most recent renovation: 2019</div>
+                                                </li>
+                                            </ul>
+                                        </div>
 
-                            <a class="link-collapse link-collapse-custom gradient-overlay-half mb-5 d-inline-block border-bottom border-primary" data-toggle="collapse" href="#collapseLinkExample4" role="button" aria-expanded="false" aria-controls="collapseLinkExample4">
-                                <span class="link-collapse__default font-size-14">View More <i class="flaticon-down-chevron font-size-10 ml-1"></i></span>
-                                <span class="link-collapse__active font-size-14">View Less <i class="flaticon-arrow font-size-10 ml-1"></i></span>
-                            </a>
-                        </div>
-                          -->
-                        <!-- 
-                        <div class="border-bottom py-4">
-                            <h5 id="scroll-reviews" class="font-size-21 font-weight-bold text-dark mb-4">
-                                Average Reviews
-                            </h5>
-                            <div class="row">
-                                <div class="col-md-4 mb-4 mb-md-0">
-                                    <div class="border rounded flex-content-center py-5 border-width-2">
-                                        <div class="text-center">
-                                            <h2 class="font-size-50 font-weight-bold text-primary mb-0 text-lh-sm">
-                                                4.2<span class="font-size-20">/5</span>
-                                            </h2>
-                                            <div class="font-size-25 text-dark mb-3">Very Good</div>
-                                            <div class="text-gray-1">From 40 reviews</div>
+                                        <a class="link-collapse link-collapse-custom gradient-overlay-half mb-5 d-inline-block border-bottom border-primary" data-toggle="collapse" href="#collapseLinkExample4" role="button" aria-expanded="false" aria-controls="collapseLinkExample4">
+                                            <span class="link-collapse__default font-size-14">View More <i class="flaticon-down-chevron font-size-10 ml-1"></i></span>
+                                            <span class="link-collapse__active font-size-14">View Less <i class="flaticon-arrow font-size-10 ml-1"></i></span>
+                                        </a>
+                                    </div>
+                                    -->
+                                    <!-- 
+                                    <div class="border-bottom py-4">
+                                        <h5 id="scroll-reviews" class="font-size-21 font-weight-bold text-dark mb-4">
+                                            Average Reviews
+                                        </h5>
+                                        <div class="row">
+                                            <div class="col-md-4 mb-4 mb-md-0">
+                                                <div class="border rounded flex-content-center py-5 border-width-2">
+                                                    <div class="text-center">
+                                                        <h2 class="font-size-50 font-weight-bold text-primary mb-0 text-lh-sm">
+                                                            4.2<span class="font-size-20">/5</span>
+                                                        </h2>
+                                                        <div class="font-size-25 text-dark mb-3">Very Good</div>
+                                                        <div class="text-gray-1">From 40 reviews</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-4">
+                                                        <h6 class="font-weight-normal text-gray-1 mb-1">
+                                                            Cleanliness
+                                                        </h6>
+                                                        <div class="flex-horizontal-center mr-6">
+                                                            <div class="progress bg-gray-33 rounded-pill w-100" style="height: 7px;">
+                                                                <div class="progress-bar rounded-pill" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <div class="ml-3 text-primary font-weight-bold">
+                                                                4.8
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-4">
+                                                        <h6 class="font-weight-normal text-gray-1 mb-1">
+                                                            Facilities
+                                                        </h6>
+                                                        <div class="flex-horizontal-center mr-6">
+                                                            <div class="progress bg-gray-33 rounded-pill w-100" style="height: 7px;">
+                                                                <div class="progress-bar rounded-pill" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <div class="ml-3 text-primary font-weight-bold">
+                                                                1.4
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-4">
+                                                        <h6 class="font-weight-normal text-gray-1 mb-1">
+                                                            Value for money
+                                                        </h6>
+                                                        <div class="flex-horizontal-center mr-6">
+                                                            <div class="progress bg-gray-33 rounded-pill w-100" style="height: 7px;">
+                                                                <div class="progress-bar rounded-pill" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <div class="ml-3 text-primary font-weight-bold">
+                                                                3.2
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-4">
+                                                        <h6 class="font-weight-normal text-gray-1 mb-1">
+                                                            Service
+                                                        </h6>
+                                                        <div class="flex-horizontal-center mr-6">
+                                                            <div class="progress bg-gray-33 rounded-pill w-100" style="height: 7px;">
+                                                                <div class="progress-bar rounded-pill" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <div class="ml-3 text-primary font-weight-bold">
+                                                                5.0
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <h6 class="font-weight-normal text-gray-1 mb-1">
+                                                            Location
+                                                        </h6>
+                                                        <div class="flex-horizontal-center mr-6">
+                                                            <div class="progress bg-gray-33 rounded-pill w-100" style="height: 7px;">
+                                                                <div class="progress-bar rounded-pill" role="progressbar" style="width: 86%;" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <div class="ml-3 text-primary font-weight-bold">
+                                                                4.8
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="row">
-                                        <div class="col-md-6 mb-4">
-                                            <h6 class="font-weight-normal text-gray-1 mb-1">
-                                                Cleanliness
-                                            </h6>
-                                            <div class="flex-horizontal-center mr-6">
-                                                <div class="progress bg-gray-33 rounded-pill w-100" style="height: 7px;">
-                                                    <div class="progress-bar rounded-pill" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                                <div class="ml-3 text-primary font-weight-bold">
-                                                    4.8
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <h6 class="font-weight-normal text-gray-1 mb-1">
-                                                Facilities
-                                            </h6>
-                                            <div class="flex-horizontal-center mr-6">
-                                                <div class="progress bg-gray-33 rounded-pill w-100" style="height: 7px;">
-                                                    <div class="progress-bar rounded-pill" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                                <div class="ml-3 text-primary font-weight-bold">
-                                                    1.4
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <h6 class="font-weight-normal text-gray-1 mb-1">
-                                                Value for money
-                                            </h6>
-                                            <div class="flex-horizontal-center mr-6">
-                                                <div class="progress bg-gray-33 rounded-pill w-100" style="height: 7px;">
-                                                    <div class="progress-bar rounded-pill" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                                <div class="ml-3 text-primary font-weight-bold">
-                                                    3.2
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <h6 class="font-weight-normal text-gray-1 mb-1">
-                                                Service
-                                            </h6>
-                                            <div class="flex-horizontal-center mr-6">
-                                                <div class="progress bg-gray-33 rounded-pill w-100" style="height: 7px;">
-                                                    <div class="progress-bar rounded-pill" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                                <div class="ml-3 text-primary font-weight-bold">
-                                                    5.0
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <h6 class="font-weight-normal text-gray-1 mb-1">
-                                                Location
-                                            </h6>
-                                            <div class="flex-horizontal-center mr-6">
-                                                <div class="progress bg-gray-33 rounded-pill w-100" style="height: 7px;">
-                                                    <div class="progress-bar rounded-pill" role="progressbar" style="width: 86%;" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                                <div class="ml-3 text-primary font-weight-bold">
-                                                    4.8
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        -->
+                                    -->
 
                         <div id="stickyBlockEndPoint">
 

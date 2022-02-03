@@ -65,8 +65,7 @@ class Booking {
             if($this->createBookingGuestNotExisted()){
                 foreach ($reservedRooms as $id => $number){ // insert all rooms to the booking
                     $room = new ReserveRoom();
-                    $room->checkIn = $this->checkIn;
-                    $room->checkOut = $this->checkOut;
+                    $room->setDate($this->checkIn, $this->checkOut);
                     $room->addToDB($this->bookingID, $id, $number); // booking id, room id, reserved numbers
                     $this->rooms[] = $room;
                     $this->setNumberOfRooms();//setup rooms Numbers
@@ -78,8 +77,7 @@ class Booking {
             if($this->createBookingGuestExisted()){
                 foreach ($reservedRooms as $id => $number){ // insert all rooms to the booking
                     $room = new ReserveRoom();
-                    $room->checkIn = $this->checkIn;
-                    $room->checkOut = $this->checkOut;
+                    $room->setDate($this->checkIn, $this->checkOut);
                     $room->addToDB($this->bookingID, $id, $number); // booking id, room id, reserved numbers
                     $this->rooms[] = $room;
                     $this->setNumberOfRooms();//setup rooms Numbers
@@ -99,8 +97,7 @@ class Booking {
             foreach ($info as $key => $roomInfo) {
                 foreach ($roomInfo as $key2 => $roomID) {
                     $room = new ReserveRoom();
-                    $room->checkIn = $this->checkIn;
-                    $room->checkOut = $this->checkOut;
+                    $room->setDate($this->checkIn, $this->checkOut);
                     $room->getFromDB($this->bookingID, $roomID);
                     $this->rooms[] = $room;
                     $this->setNumberOfRooms();
@@ -249,23 +246,74 @@ class Booking {
         else {return false;}
     }
 
+    //update final price
+    public function update(){
+        $conn = new db(); $conn = $conn->getConnection();
+        //loop through all rooms and sum prices
+        $totalAmount = 0;
+        foreach ($this->rooms as $key => $room) {
+            $totalAmount += $room->getPrice();
+        }
+        $query = "UPDATE `bookings` SET `totalAmount` = '$totalAmount' WHERE (`bBookingID` = '$this->bookingID');";
+        $result = $conn->query($query);
+        if ($result) {
+            $this->totalAmount = $totalAmount;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //update booking travelr information without effecting the price of the booking
     public function updateTravelerInfo($fullName, $email, $city){
         $conn = new db();
         $conn = $conn->getConnection();
-        $query = "UPDATE bookings SET `fullName` = '$fullName', `email` = '$email', `address` = '$city' WHERE (`bBookingID` = '$this->bookingID');
-        ";
+        $query = "UPDATE bookings SET `fullName` = '$fullName', `email` = '$email', `address` = '$city'
+         WHERE (`bBookingID` = '$this->bookingID');";
+         echo "</br>full name before change:  $this->fullName";
+         echo "</br>full name update:  $fullName";
         $result = $conn->query($query);
         if($result){//Date updated in the database
             $this->fullName = $fullName;
+            echo "</br>full name after change:  $this->fullName";
             $this->email = $email;
             $this->address = $city;
             return true;
         }
         else{
+            echo "coudn't execute query: $query";
             return false;
             
         }
         
+    }
+
+    //update the booking information, it will effect final price. 
+    public function updateBookingInfo($checkIn, $checkOut, $adults, $child){
+        $conn = new db();$conn=$conn->getConnection();
+        //format date should be correct ****
+        $nights = Calculate::getNights($checkIn, $checkOut);
+        //Updating database
+        $query = "UPDATE bookings SET `bDateFrom` = '$checkIn', `bDateTo` = '$checkOut', `bNumOfNights` = '$nights',
+         `bNumOfGuests` = '$adults', `bNumOfChildren` = '$child' WHERE (`bBookingID` = '$this->bookingID');";
+        $result = $conn->query($query);
+        if($result){
+            //update current booking info
+            $this->nights = $nights;
+            $this->checkIn = $checkIn;
+            $this->checkOut = "$checkOut";
+            
+            //update all rooms the checkin, checkout dates Objects + 
+            foreach ($this->rooms as $key => $room) {
+                $this->rooms[$key]->setDate($checkIn, $checkOut);
+            }
+            
+            $this->update();//update final price in db and current obj
+            return true;
+            
+
+        }
+        else { echo "error Qeury: $query";}
     }
 }
 

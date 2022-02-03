@@ -1,5 +1,104 @@
 <?php include 'sections/main.php'; ?>
 
+<?php
+    //update booking in the cookies
+    function updateCookiesInfo($manageBooking, $bookings){
+        //return the booking into the bookings and update the cookies bookings
+        foreach($bookings as $key => $booking){ //getting the booking that should be managed
+            if ($booking->bookingID == $_GET['manageBookingID']) {
+                $bookings[$key] = $manageBooking;//Replace old booking with updated one
+            }
+        }
+        //store back into Cookies
+        $serialized = serialize(json_encode($bookings)); // incode then serialize
+        if(setcookie('bookings',$serialized, time()+60*60*30, "/")){
+            return true;
+        } 
+        
+    }
+
+    if(isset($_GET['manageBookingID']) && !empty($_GET['manageBookingID'])){
+        $msg ='';
+        $msgClass='';//used to show error or sucess messages
+        foreach($bookings as $booking){ //getting the booking that should be managed
+            if ($booking->bookingID == $_GET['manageBookingID']) {
+                $manageBooking = $booking;
+            }
+        }
+
+        //updating traveler info
+        if (isset($_POST['editTravelerInfo'])) {
+            $fullName = htmlspecialchars($_POST['fullName']);
+            $email = htmlspecialchars($_POST['email']);
+            $city = htmlspecialchars($_POST['city']);
+            //UPDATE traveler inforamtion
+            if($manageBooking->updateTravelerInfo($fullName,$email,$city) &&
+             updateCookiesInfo($manageBooking, $bookings)){
+                $updateTravelerInfo = true;
+                ;//update cookies bookings info
+            }
+            else{
+                //user info did't update, something wrong
+                $updateTravelerInfo = false;
+
+            }
+
+        }
+
+        //updating booking info, check in, check out, number of passengers
+        if (isset($_POST['updateBooking'])) {
+            $checkIn  = (explode(" to ", $_POST['hotel_date']))[0];
+            $checkOut  = (explode(" to ", $_POST['hotel_date']))[1];
+            ;//update cookies bookings info
+            if ($manageBooking->updateBookingInfo($checkIn,$checkOut,$_POST['adults'],$_POST['child']) && 
+            updateCookiesInfo($manageBooking, $bookings)) {
+                $updateBookingInfo = true;
+            } else {//error 
+                $updateBookingInfo = false; }
+
+        }
+
+
+        /* if (isset($_POST['newBookingPassword'])) {
+            if ($manageBooking->setBookingPassword($_POST['newBookingPassword'])) {
+                $msg = "password have been satup successfully!";
+                $msgClass = "alert alert-success";
+                $currentPassword = $_POST['newBookingPassword'];
+                // <<<<  Adding the booking back to the cookies bookings   >>>> //
+                $bookings = json_decode(unserialize($_COOKIE['bookings'])); // getting cookies bookings
+                $bookings[] = $manageBooking;
+                $serialized = serialize(json_encode($bookings)); // incode then serialize
+                setcookie('bookings',$serialized, time()+60*60*30, "/"); // 30 days
+                // <<<<  Adding the booking back to the cookies bookings   >>>> //
+
+            }   
+            else{
+                $msg = "Coudn't setup booking password";
+                $msgClass = "alert alert-danger";
+            }
+
+        } */
+        
+        if (isset($_GET['createBookingPassword'])){
+            if ($_GET['createBookingPassword'] == "true"){ ?>
+                <script>var showPassword = true; </script>
+            <?php  }
+            else{ ?>
+                <script>var showPassword = false; </script>
+            <?php }
+        }
+        else{
+            ?><script>var showPassword = false; </script><?php 
+        }
+    } else {
+        echo "<center class='alert alert-danger p-5'>
+        <span class='h2 text-danger'>You have selected Wrong booking<span></br>
+        <a href='index.php' class='h5 btn btn-primary p-2' >+ Add new Booking</a>
+        </center>";
+        $content = "none";
+    }
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <!-- Title -->
@@ -18,75 +117,7 @@
     <body>
        <!-- ========== HEADER ========== -->
         <?php include('sections/header.php'); ?>
-        <?php 
-            if(isset($_GET['manageBookingID']) && !empty($_GET['manageBookingID'])){
-                $msg ='';
-                $msgClass='';//used to show error or sucess messages
-                foreach($bookings as $booking){ //getting the booking that should be managed
-                    if ($booking->bookingID == $_GET['manageBookingID']) {
-                        $manageBooking = $booking;
-                    }
-                }
-
-                //updating traveler info
-                if (isset($_POST['editTravelerInfo'])) {
-                    //UPDATE traveler inforamtion
-                    $result = $manageBooking->updateTravelerInfo($_POST['fullName'],$_POST['email'],$_POST['city']);
-                   if($result){
-                       //user info updated
-                       $updateTravelerInfo = true;   
-                   }
-                   else{
-                       //user info did't update, something wrong
-                       $updateTravelerInfo = false;
-
-                   }
-
-                }
-
-                //updating booking info, check in, check out, number of passengers
-                
-
-
-                /* if (isset($_POST['newBookingPassword'])) {
-                    if ($manageBooking->setBookingPassword($_POST['newBookingPassword'])) {
-                        $msg = "password have been satup successfully!";
-                        $msgClass = "alert alert-success";
-                        $currentPassword = $_POST['newBookingPassword'];
-                        // <<<<  Adding the booking back to the cookies bookings   >>>> //
-                        $bookings = json_decode(unserialize($_COOKIE['bookings'])); // getting cookies bookings
-                        $bookings[] = $manageBooking;
-                        $serialized = serialize(json_encode($bookings)); // incode then serialize
-                        setcookie('bookings',$serialized, time()+60*60*30, "/"); // 30 days
-                        // <<<<  Adding the booking back to the cookies bookings   >>>> //
-
-                    }   
-                    else{
-                        $msg = "Coudn't setup booking password";
-                        $msgClass = "alert alert-danger";
-                    }
-
-                } */
-                
-                if (isset($_GET['createBookingPassword'])){
-                    if ($_GET['createBookingPassword'] == "true"){ ?>
-                        <script>var showPassword = true; </script>
-                  <?php  }
-                    else{ ?>
-                        <script>var showPassword = false; </script>
-                   <?php }
-                }
-                else{
-                    ?><script>var showPassword = false; </script><?php 
-                }
-            } else {
-                echo "<center class='alert alert-danger p-5'>
-                <span class='h2 text-danger'>You have selected Wrong booking<span></br>
-                <a href='index.php' class='h5 btn btn-primary p-2' >+ Add new Booking</a>
-                </center>";
-                $content = "none";
-            }
-        ?>
+        
         <!-- ========== END HEADER ========== -->
         <!-- ========== MAIN CONTENT ========== -->
        <!-- ========== END HEADER ========== -->
@@ -108,7 +139,6 @@
                                         echo AlertMSG::alert("success","Updated Succesfully") ; 
                                     }else {echo AlertMSG::alert("danger","Couldn't update it.");  }
                                 }
-                             
                              ?>
                             <div class="col ">
                                 <h5 id="scroll-description" class="font-size-21 font-weight-bold text-dark mb-2">
@@ -147,6 +177,13 @@
                 <div class="col col-sm-12 col-md-4  p-1 shadow-soft bg-white rounded-sm -none order-2" style="" id="bookingInfo">
                     <div class="pt-4 pb-5 px-5 border-bottom">
                         <div class="row justify-content-between pb-2 mb-2 border-bottom">
+                            <?php
+                                if (isset($updateBookingInfo)) {
+                                    if ($updateBookingInfo) {
+                                        echo AlertMSG::alert("success","Updated Succesfully") ; 
+                                    }else {echo AlertMSG::alert("danger","Couldn't update it.");  }
+                                }
+                             ?>
                             <div class="">
                                 <h5 id="scroll-description" class="font-size-21 font-weight-bold text-dark mb-2">
                                     Booking Details
@@ -240,9 +277,13 @@
                                     <div class="col col-3">
                                         <div class="input-group m-0">
                                             <select class="selectpicker">
-                                                <option selected value="<?php echo $room->numbers; ?>"><?php echo $room->numbers; ?></option>
+                                                <option selected hidden="hidden" value="<?php echo $room->number;//number of reserved rooms ?>"><?php echo $room->number;//number of reserved rooms ?></option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
                                             </select>
                                         </div>
                                     </div>
@@ -400,7 +441,7 @@
                                 </div>
                             </div>
                             <!-- End Input -->   
-                        </from>                                                            
+                        </from></form>                                                         
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -445,7 +486,9 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="" method="get" name="updateBooking" id="updateBooking">
+                                            
+                        <form action="" method="post" name="updateBooking" id="updateBooking">
+                            <input type="hidden" name="updateBooking" value="true">
                             <div class="col ">
                                 <!-- Input -->
                                 <span class="d-block text-gray-1 text-left font-weight-normal mb-0">Check In - Out</span>

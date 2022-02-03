@@ -23,7 +23,19 @@ class AlertMSG{
         $message</div>";
         return $result;
     }
+}
 
+
+class Calculate{
+
+    //get number of nights between two dates
+    public static function getNights($from, $to){
+        $start_ts = strtotime($from); 
+        $end_ts = strtotime($to); 
+        $diff = $end_ts - $start_ts; 
+        $nights =  round($diff / 86400);//Number of nights
+        return $nights;
+    }
 
 }
 
