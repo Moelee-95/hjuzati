@@ -672,66 +672,62 @@
 							<div class="card-box" >
 								<div class="card-head">
 									<header>Rooms Rate</header>
-
 								</div>
 								
 								<div class="" style="">
-									<div class="alert-primary col-xl-6 col-lg-8	col-md-8 col-sm-10 col-11 card-box" style="margin-right: 0px;margin-left: 5px;padding:10px;padding-top:15px;">
+									<div class="card-box" style="margin-right: 0px;margin-left: 5px;padding:10px;padding-top:15px;">
 										<div class="row">
 											<?php 
-									if (empty($fetch_all)) {
-										
-										echo "<h4 style='margin-left:10px;'>You don't have any rooms, Please Insert rooms first!</h4><br>";
-										echo "<h4 style='margin-left:10px;' >To insert rooms please click <a href='add_room.php' style='color:red'>Here</a></h4> ";
-										exit();
-									}
-									?>
-									<!-- This script is to prevent users to escape the modal -->
-									<script type="text/javascript">
-										$('#ModalIDHere').modal({backdrop: 'static', keyboard: false})
-									</script>
-											<div class="col-5"><label>From Date
-												</label></div>
-											<div class="col-4"><label>Room Type:</label></div>
-											<div class="col-2"></div>
-										</div>
-										<div class="row">
-											<div class="form-group col-5">
-												<input name="startDate" id="startDate" value="<?php echo date('m/d/Y');?>" width="220" />
-											    <script>
-											        $('#startDate').datepicker({
-											            uiLibrary: 'bootstrap4'
-											        });
-											    </script>
-													
+											if (empty($fetch_all)) {
+												echo "<h4 style='margin-left:10px;'>You don't have any rooms, Please Insert rooms first!</h4><br>";
+												echo "<h4 style='margin-left:10px;' >To insert rooms please click <a href='add_room.php' style='color:red'>Here</a></h4> ";
+												exit();
+											}
+											?>
+										<!-- This script is to prevent users to escape the modal -->
+										<script type="text/javascript">
+											$('#ModalIDHere').modal({backdrop: 'static', keyboard: false})
+										</script>
+
+										<div class="d-flex flex-row-reverse">
+											<!-- Set starting date column -->
+											<div class="col order-3">
+												<div class=""><label>From Date</label></div>
+												<div class="">
+													<input name="startDate" id="startDate" value="<?php echo date('m/d/Y');?>" width="220" />
+													<script>
+														$('#startDate').datepicker({
+															uiLibrary: 'bootstrap4'
+														});
+													</script>
+												</div>
 											</div>
-											<div class="form-group col-4">
-												<select class="form-control" name="set_room_name" id="set_room_name">
-												<?php
-													foreach($fetch_all as $fetch_one){
-													?>
-													<option value="<?php echo $fetch_one['rRoomID']; ?>">
+											<!-- Set room column -->
+											<div class="col order-2">
+												<div class="row"><label>Room Type:</label></div>
+												<div class="row">
+													<select class="form-control" name="set_room_name" id="set_room_name">
 														<?php
-															if (!empty($fetch_one['rCustomName'])) {
-															echo $fetch_one['rCustomName'];}
-															else{
-																echo $fetch_one['rRoomNameID'];
-															} ?></option>
-													</div>
-													
-													<?php
-												}
-												?>
-											</select>
+															foreach($fetch_all as $fetch_one){
+															?>
+															<option value="<?php echo $fetch_one['rRoomID']; ?>">
+																<?php
+																	if (!empty($fetch_one['rCustomName'])) {
+																	echo $fetch_one['rCustomName'];}
+																	else{
+																		echo $fetch_one['rRoomNameID'];
+																	} ?></option>
+															</div>
+														<?php } ?>
+													</select>
+												</div>
 											</div>
-											<div class="form-group col-2">
+											<!-- Set Button -->
+											<div class="col order-1 d-flex align-items-end">
 												<button class="btn btn-primary" onclick="convert_set()">Set Period</button>
 											</div>
-										</div>
-											
+										</div>	
 									</div>
-									
-									<br>
 									<input type="hidden" name="hotel_id" id="hotel_id" value="<?php echo $hotel_id ?>">
 									<input type="hidden" name="room_id" id="room_id" value="" placeholder="Room ID">
 									<input type="hidden" name="room_name" id="room_name" value="" placeholder="Room name">

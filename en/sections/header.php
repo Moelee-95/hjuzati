@@ -477,5 +477,4 @@
         </div>
     </div>
 
-    <i class="fas fa-child"></i>
 </header>

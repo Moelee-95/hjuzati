@@ -85,7 +85,7 @@ elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <a type="button" class="btn btn-danger" href="removeHotel.php?removeHotelID=<?php echo $hotel['hHotelID']; ?>">Remove Hotel</a>
+            <a type="button" id="removeHotelBtn" class="btn btn-danger" href="">Remove Hotel</a>
           </div>
         </div>
       </div>
@@ -224,7 +224,7 @@ elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
             <!-- <a href="#Remove Hotel" onclick="removeFunction();">Remove</a>/ -->
             <a class="btn btn-primary" href="../edit_hotel.php?hotel_id=<?php echo $hotel['hHotelID']; ?>">Edit</a> , 
             <a class="btn btn-success" href="../../cp/index.php?hotel_id=<?php echo $hotel['hHotelID'];?>">Manage</a> , 
-            <button class="btn btn-outline-danger" data-toggle="modal" data-target="#removeHotelModal">Delete</button>
+            <button class="btn btn-outline-danger" onclick="removeHotel(<?php echo $hotel['hHotelID']; ?>)">Delete</button>
           </td>
           <td><?php
             if ($hotel['hState'] == "") {
@@ -292,6 +292,16 @@ elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
  -->
 </main>
 
+
+<script>
+    function removeHotel(hotelID){
+      //removeHotel.php?removeHotelID=
+      $("#removeHotelBtn").attr("href", "removeHotel.php?removeHotelID="+hotelID);
+      $("#removeHotelModal").modal('show');
+
+    }
+    
+  </script>
   <!-- Jquery library -->
   <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
