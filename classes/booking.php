@@ -56,10 +56,6 @@ class Booking {
         $this->adultNumber = $adultNumber;$this->childNumber = $childNumber;$this->reservedRooms=$reservedRooms;
         $this->paymentMethod = $paymentMethod;$this->totalAmount = $totalAmount;
         $this->fullName = $fullName; $this->phoneNumber = $phone; $this->email = $email; $this->address = $address;
-        //generate hotel object
-        $hotel = new Hotel();
-        $hotel -> generateHotel($hotelID);
-        $this->hotel = $hotel;
 
         if ($guestID == null) {
             if($this->createBookingGuestNotExisted()){
@@ -108,12 +104,10 @@ class Booking {
 
     // Get booking from database
     public function getFromDB($bookingID){
-        $conn = new db();
-        $conn = $conn->getConnection();
-        $sql = "SELECT * FROM bookings where bBookingID = '$bookingID'";
-        $result = $conn->query($sql);
+        $query = "SELECT * FROM bookings where bBookingID = '$bookingID'";
+        $result = new Execute($query, "array");
         if ($result->num_rows > 0) {
-            $info = $result->fetch_array();
+            $info = $result->result;
             $this->hotelID=$info['bHotelID'];
             $this->bookingID=$info['bBookingID'];
             $this->checkIn=$info['bDateFrom'];
@@ -130,23 +124,18 @@ class Booking {
             $this->address=$info['address'];
             $this->paymentMethod=$info['paymentMethod']; //change to values later
             $this->paymentStatus = $info['bPaymentStatusID']; // change to values later
-            $this->getHotelName(); //set hotel name
-            $this->getRoomsFromDB(); // setup rooms
+            $this->getHotelName(); //Problem too many connections
+            $this->getRoomsFromDB(); // Problem too many connections
             $this->bookingCreated = true;
-            $hotel = new Hotel();
-            $hotel -> generateHotel($info['bHotelID']);
-            $this->hotel = $hotel;
+            //DO NOT MAKE HOTEL OBJECT BECAUSE THAT WILL GET YOU INTO A LOOP
 
         }
     }
 
     public function createBookingGuestExisted(){
-        $conn = new db();
-        $conn = $conn->getConnection();
         // echo $hotel_id." - ".$guest_id." - ".$check_in." - ".$check_out." - ".$psNumber." - ".$chNumber." - ". '1'."<br>";
-        $sql = "call addReservation('$this->hotelID', '$this->guestID', '$this->checkIn', '$this->checkOut', '$this->adultNumber', '$this->childNumber', '1','$this->paymentMethod','$this->totalAmount','$this->fullName', '$this->phoneNumber', '$this->email','$this->address');";
-        $query = mysqli_query($conn, $sql);
-        $fetch = mysqli_fetch_array($query);
+        $query = "call addReservation('$this->hotelID', '$this->guestID', '$this->checkIn', '$this->checkOut', '$this->adultNumber', '$this->childNumber', '1','$this->paymentMethod','$this->totalAmount','$this->fullName', '$this->phoneNumber', '$this->email','$this->address');";
+        $fetch = new Execute($query, "array");
         $this->bookingID = $fetch[0];
         $this->bookingCreated = true;
         $conn->close();
@@ -155,17 +144,12 @@ class Booking {
     }
 
     public function createBookingGuestNotExisted(){
-        $conn = new db();
-        $conn = $conn->getConnection();
         //Creating a booking
-        $sql = "call addReservationNoGuest('$this->hotelID',  '$this->checkIn', '$this->checkOut', '$this->adultNumber', '$this->childNumber', '$this->fullName', '$this->address', '$this->phoneNumber', '$this->email', '1','$this->paymentMethod','$this->totalAmount');";
-        $query = mysqli_query($conn, $sql);
-        $fetch = mysqli_fetch_array($query);
+        $query = "call addReservationNoGuest('$this->hotelID',  '$this->checkIn', '$this->checkOut', '$this->adultNumber', '$this->childNumber', '$this->fullName', '$this->address', '$this->phoneNumber', '$this->email', '1','$this->paymentMethod','$this->totalAmount');";
+        $fetch = new Execute($query, "array");
         $this->bookingID = $fetch[0];
         $this->bookingCreated = true;
-        $conn->close();
         return true;
-        
     }
 
     public function setBookingPassword($password){
@@ -192,11 +176,8 @@ class Booking {
     //check payment id availablity in the DB
     public function checkPaymentId($id){
         $return;
-        $conn = new db();
-        $conn = $conn->getConnection();
         $sql = "SELECT pID FROM payments;";
-        $result = $conn -> query($sql); 
-        $r = $result -> fetch_all(MYSQLI_ASSOC);//insert the array result to the variable
+        $r = (new Execute($query, "multi"))->result;
       
         if (array_key_exists($id, $r)) {
           $return =  true;
@@ -212,18 +193,15 @@ class Booking {
     
     public function setNumberOfRooms(){
         if($this->bookingCreated){
-            $conn = new db();
-            $conn = $conn->getConnection();
-            $sql = "SELECT sum(rbNumOfRooms) as numOfRooms FROM roomsbooked where rbBookingID = '$this->bookingID';";
-            $query = mysqli_query($conn, $sql);
-            if($fetch = mysqli_fetch_array($query)){
+            $query = "SELECT sum(rbNumOfRooms) as numOfRooms FROM roomsbooked where rbBookingID = '$this->bookingID';";
+            $fetch = (new Execute($query, "array"))->result;
+            if($fetch){
                 $this->numberOfRooms = $fetch['numOfRooms'];
             }
                 
 
         }
     }
-    
 
     //Convert Date from 2021-11-05 to Thu 20 Feb Format
     public static function dateConvert($date){
@@ -242,20 +220,20 @@ class Booking {
         //removing booking from the db;
         $sql = "DELETE FROM bookings WHERE bBookingID = '$this->bookingID'";
         $result = $conn->query($sql);
+        $conn-> close();
         if($result ){ return true;}
         else {return false;}
     }
 
     //update final price
     public function update(){
-        $conn = new db(); $conn = $conn->getConnection();
         //loop through all rooms and sum prices
         $totalAmount = 0;
         foreach ($this->rooms as $key => $room) {
             $totalAmount += $room->getPrice();
         }
         $query = "UPDATE `bookings` SET `totalAmount` = '$totalAmount' WHERE (`bBookingID` = '$this->bookingID');";
-        $result = $conn->query($query);
+        $result = (new Execute($query, "execute"))->result;
         if ($result) {
             $this->totalAmount = $totalAmount;
             return true;
@@ -272,8 +250,8 @@ class Booking {
          WHERE (`bBookingID` = '$this->bookingID');";
          echo "</br>full name before change:  $this->fullName";
          echo "</br>full name update:  $fullName";
-        $result = $conn->query($query);
-        if($result){//Date updated in the database
+        $result = new Execute($query, "execute");
+        if($result->result){//Date updated in the database
             $this->fullName = $fullName;
             echo "</br>full name after change:  $this->fullName";
             $this->email = $email;

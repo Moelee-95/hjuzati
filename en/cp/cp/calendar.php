@@ -1,4 +1,4 @@
-
+<?php require 'sections/main.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- BEGIN HEAD -->

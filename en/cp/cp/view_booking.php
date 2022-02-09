@@ -1,13 +1,4 @@
-<?php 
-
-
-# Execute query and get single value
-function execute_query($query){
-	
-}
-
-
-?>
+<?php require 'sections/main.php';?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -94,7 +85,7 @@ function execute_query($query){
 												</a>
 											</div>
 										</div> -->
-<!-- 										<div class="col-md-6 col-sm-6 col-6">
+										<!--<div class="col-md-6 col-sm-6 col-6">
 											<div class="btn-group pull-right">
 												<a class="btn deepPink-bgcolor  btn-outline dropdown-toggle"
 													data-toggle="dropdown">Tools
@@ -131,7 +122,6 @@ function execute_query($query){
 												<tr>
 													<th class="center"></th>
 													<th class="center"> Name </th>
-													<th class="center"> Check-<b class='text-success'>in</b>/<b class='text-primary'>Out</b>- Nights </th>
 													<th class="center"> Reservations </th>
 													<th class="center"> Action </th>
 													<th class="center"> Status </th>
@@ -159,16 +149,16 @@ function execute_query($query){
 													</td>
 
 													<td class="center"><?php echo $row["gFullName"];?></td>
-													<td class="center"><?php echo "<b class='text-success'>in: </b>". $row["bDateFrom"].
-													'</br>'."<b class='text-primary'>out: </b>".$row["bDateTo"].
-													"</br><b>Nights: ".ceil(abs((strtotime($row["bDateFrom"]) - strtotime($row["bDateTo"])) / 86400)) ;?></td>
+												
 										
 													<td class="center">
-
+														<?php echo $row["bDateFrom"].' - '.$row["bDateTo"].
+															"</br><b>Nights: ".ceil(abs((strtotime($row["bDateFrom"]) - strtotime($row["bDateTo"])) / 86400)) ;
+														?>
 														<table class="table order-column full-width border" id="example4">
 															<thead>
 																<tr>
-																	<th class="center"> Room Name </th>
+																	<th class="center"> Room Name</th>
 																	<th class="center"> Number of rooms </th>
 																	<th class="center"> price   </th>
 																</tr>

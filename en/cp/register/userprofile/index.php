@@ -1,16 +1,25 @@
 <?php session_start();
-
+require '../../../../classes/db.php';
 require '../../../../classes/room.php';
+require '../../../../classes/reserveRoom.php';
+require '../../../../classes/removeFiles.php';
 require '../../../../classes/hotel.php';
+require '../../../../classes/booking.php';
+require '../../../../classes/user.php';
 
 if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_COOKIE['userPassword'])) {
   if (isset($_SESSION['login_user'])) {
     $user_id =  $_SESSION['login_user'];
+    $user = unserialize($_SESSION['user']);
+    $hotels = $user->hotels;
+    // print_r($user);
   }
   else{
       $_SESSION['login_user'] = $_COOKIE['login_user'];
       $_SESSION['userName'] = $_COOKIE['userName'];
       $user_id =  $_SESSION['login_user'];
+      $user = unserialize($_SESSION['user']);
+      $hotels = $user->hotels;
   }
 
   if (isset($_GET['message'])){
@@ -204,39 +213,19 @@ elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
     </tr>
   </thead>
   <tbody>
-    <?php
-      include('../../../../db_connect.php');
-      $accomidation = "SELECT hHotelName,hHotelID,hState FROM hotels WHERE hUserID = '$user_id'";
-      $query = mysqli_query($conn, $accomidation);
-      $fetch = mysqli_fetch_all($query, MYSQLI_ASSOC);
-
-      // print_r($fetch);
-
-      // $array = array("Name" => "Mohammed","age" => "Ali");
-    ?>
     <?php 
-      foreach ($fetch as $key => $hotel) {
+      foreach ($hotels as $key => $hotel) {
        ?>
         <tr>
           <th scope="row"><?php $key ++; echo $key ?></th>
-          <td><?php echo $hotel['hHotelName']; ?></td>
+          <td><?php echo $hotel->name; ?></td>
           <td>
             <!-- <a href="#Remove Hotel" onclick="removeFunction();">Remove</a>/ -->
-            <a class="btn btn-primary" href="../edit_hotel.php?hotel_id=<?php echo $hotel['hHotelID']; ?>">Edit</a> , 
-            <a class="btn btn-success" href="../../cp/index.php?hotel_id=<?php echo $hotel['hHotelID'];?>">Manage</a> , 
-            <button class="btn btn-outline-danger" onclick="removeHotel(<?php echo $hotel['hHotelID']; ?>)">Delete</button>
+            <a class="btn btn-primary" href="../edit_hotel.php?hotel_id=<?php echo $hotel->id; ?>">Edit</a> , 
+            <a class="btn btn-success" href="../../cp/index.php?hotel_id=<?php echo $hotel->id;?>">Manage</a> , 
+            <button class="btn btn-outline-danger" onclick="removeHotel(<?php echo $hotel->id; ?>)">Delete</button>
           </td>
-          <td><?php
-            if ($hotel['hState'] == "") {
-              echo "<b class='text-danger'>Missing info </b><a href=../edit_hotel.php?hotel_id=".$hotel['hHotelID']." >Edit Now</a>";
-            }
-            elseif($hotel['hState'] == "1"){ 
-                echo "<b class='text-warning'>Hotel is satup, not public </b>";
-            }
-            elseif($hotel['hState'] == "0"){
-                echo "<b class='text-sucess'>Hotel is Online</b>";
-            }
-           ?></td>
+          <td><b class='text-warning'>State </b></td>
         </tr>
 
        <?php
@@ -306,26 +295,15 @@ elseif (!isset($_COOKIE['login_user']) and !isset($_SESSION['login_user'])) {
   <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-    crossorigin="anonymous"></script>
-    <!-- dialog box -->
-  <script>
-  function removeFunction() {
-    var r = confirm("Are you sure you want to delete <?php echo $hotel['hHotelName']; ?>!");
-    if (r == true) {
-      window.location.replace("../remove_hotel.php?hotel_id=<?php echo $hotel['hHotelID'];?>");
-    } else {
-      //Canceled
-    }
-  }
+    crossorigin="anonymous">
   </script>
-  <!-- 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  -->
-    <script src="../../../assets/vendor/jquery/dist/jquery.min.js"></script>
+
+    <!-- Jquery is already included -->
+    <!-- <script src="../../../assets/vendor/jquery/dist/jquery.min.js"></script> -->
     <script src="../../../assets/vendor/bootstrap/bootstrap.min.js"></script>
 
-    <script src="">
-    <script>window.jQuery || document.write('<script src="../add_hotel/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <!-- <script>window.jQuery || document.write('<script src="../add_hotel/assets/js/vendor/jquery.slim.min.js"><\/script>')</script> -->
+    
     <script src="../add_hotel/assets/dist/js/bootstrap.bundle.js"></script>
     <script src="offcanvas.js"></script>
   </body>

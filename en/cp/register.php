@@ -3,7 +3,13 @@
 session_start();
 
 include('../../db_connect.php');
+require "../../classes/db.php";
+require "../../classes/booking.php";
+require "../../classes/room.php";
+require "../../classes/reserveRoom.php";
 require "../../classes/removeFiles.php";
+require '../../classes/hotel.php';
+require '../../classes/user.php';
 $backPath = RemoveFiles::backPath();
 
 if (!empty($_SESSION['login_user'])) {
@@ -15,63 +21,44 @@ elseif (empty($_SESSION['login_user'])) {
             //echo "Nothing Post";
         }
     elseif (isset($_POST['email'])) {
-        $email = htmlspecialchars($_POST['email']);
-        $user_name = htmlspecialchars($_POST['user_name']);
-        // Coverting email address and username to lowcase
-        $email = strtolower($email);
-        $user_name = strtolower($user_name);
+        $email = strtolower(htmlspecialchars($_POST['email']));
+        $user_name = strtolower(htmlspecialchars($_POST['user_name']));
         $password = htmlspecialchars($_POST['password']);//pass
         $fullname = htmlspecialchars($_POST['fullname']);//full name
         $phone_number = htmlspecialchars($_POST['phone_number']);
 
-        $sql_e = "SELECT * FROM users WHERE uUserEmail ='$email'";
-        $sql_u = "SELECT * FROM users WHERE uUserName ='$user_name'";
-        $result_e = mysqli_query($conn, $sql_e) or die(mysqli_error($conn));
-        $result_u = mysqli_query($conn, $sql_u) or die(mysqli_error($conn));
-        
-        if (mysqli_num_rows($result_e) > 0) {
-            echo "Email is used before";
+        $user = new User();
+        $result = $user->register($email, $user_name, $password, $fullname, $phone_number);
+        if ($result['state']) {
+        // Set Sesstions
+            $_SESSION['login_user'] = $user->id;
+            $_SESSION['userName'] = $user->userName; // Represents the user Name
+
+        // Store in cookies for 7 days
+            setcookie('user',json_encode($user), time()+60*60*30, "/");
+            setcookie('login_user',$user->id, time()+60*60*7, "/");
+            setcookie('userName',$user->userName, time()+60*60*7, "/");
+            setcookie('userPassword',$user->password, time()+60*60*7, "/");
+
+        // Create User folder
+            mkdir("$backPath/users/$user_id",0777,true);
+            //Creat Hotels folder for the user hotels
+            mkdir("$backPath/users/$user_id/hotels",0777,true);
+            //Creat motels folder for the user motels
+            mkdir("$backPath/users/$user_id/motels",0777,true);
+            ///Creat appartmets folder for the user appartments
+            mkdir("$backPath/users/$user_id/appartments",0777,true);
+            // echo $user_id;
+        // Redirect user to dashboard
+            header('location:register/userprofile');
+
+        } else {
+            echo $result['message'];
+            unset($user);
         }
-        elseif (mysqli_num_rows($result_u) > 0) {
-            echo "User Name is taken";
-        }
-        else {
-            $sql = "CALL add_user('$email','$user_name','$password','$phone_number','$fullname')";
-            $qu = mysqli_query($conn, $sql);
-            $fetchit = mysqli_fetch_row($qu);
-            // print_r($fetchit);
-            $user_id = $fetchit[0];
-
-            if ($conn->query($sql) or $user_id > 0) {
-                $_SESSION['login_user'] = $user_id;
-                $_SESSION['userName'] = $user_name; // Represents the user Name
-                //Store in cookies for 7 days
-                setcookie('login_user',$user_id, time()+60*60*7, "/");
-                setcookie('userName',$user_name, time()+60*60*7, "/");
-                setcookie('userPassword',$password, time()+60*60*7, "/");
-
-                //Create User folder
-                mkdir("$backPath/users/$user_id",0777,true);
-                //Creat Hotels folder for the user hotels
-                mkdir("$backPath/users/$user_id/hotels",0777,true);
-                //Creat motels folder for the user motels
-                mkdir("$backPath/users/$user_id/motels",0777,true);
-                ///Creat appartmets folder for the user appartments
-                mkdir("$backPath/users/$user_id/appartments",0777,true);
-                // echo $user_id;
-              
-                header('location:register/userprofile');        
-           
-            }
-
-            else{
-                echo "filed to register";
-            }
-        }
-        }
-
-
-    }
+       
+    }// post email
+} // sesstion empty
 
 
 

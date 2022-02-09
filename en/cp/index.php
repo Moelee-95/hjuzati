@@ -1,8 +1,16 @@
 <?php
+require "../../classes/db.php";
+require "../../classes/booking.php";
+require "../../classes/room.php";
+require "../../classes/reserveRoom.php";
+require "../../classes/removeFiles.php";
+require '../../classes/hotel.php';
+require '../../classes/user.php';
 
 session_start();
 $display_msg = "none";
 include('../../db_connect.php');
+
 if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_COOKIE['userPassword'])) {
     if (isset($_SESSION['login_user'])) {
         header("location:cp/index.php");
@@ -16,56 +24,40 @@ if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_CO
 elseif (empty($_SESSION['login_user'])) {
   if (isset($_POST['submit'])) {
     $user_n_e = strtolower(htmlspecialchars($_POST['user_n_e']));
-    $password = strtolower(htmlspecialchars($_POST['password']));
-
-    //echo "User Name or Email: $user_n_e <br>";
-    //echo "Password: $password<br/>";
-
-    $sql = "SELECT uUserID,uUserName,uUserEmail,uUserPassword FROM users WHERE uUserEmail = '$user_n_e'  OR uUserName='$user_n_e' AND uUserPassword= '$password' ";
-    $query = mysqli_query($conn, $sql);
-    $fetch = mysqli_fetch_array($query);
-    $db_user_name =  $fetch['uUserName'];
-    $db_email = $fetch['uUserEmail'];
-    $db_password = $fetch['uUserPassword'];
-    $user_id = $fetch['uUserID'];
-      //echo "DB User Name: "."$db_user_name".'<br/>';
-      //echo "DB Email Address: "."$db_email".'<br/>';
-      //echo "DB Password: "."$db_password".'<br/>';
-    if ($db_user_name == $user_n_e || $db_email == $user_n_e) {
-        if ($db_password == $password) {
-        unset($_SESSION['guest_user']);
-        $_SESSION['login_user'] = $user_id;//Represents the user ID
-        $_SESSION['userName'] = $db_user_name; // Represents the user Name
-
-         // Store cookies for 30 days when remember me is clicked
+    $password = htmlspecialchars($_POST['password']);
+    
+    $user = new User();
+    $result = $user->login($user_n_e, $password);
+    if ($result){
+         unset($_SESSION['guest_user']);//logout from guest account
+        $_SESSION['login_user'] = $user->id;//Represents the user ID
+        $_SESSION['userName'] = $user->userName; // Represents the user Name
+        $_SESSION['user'] = serialize($user);
+        
          if (isset($_POST['remember'])) {
-            setcookie('login_user',$user_id, time()+60*60*30, "/");
-            setcookie('userName',$db_user_name, time()+60*60*30, "/");
-            setcookie('userPassword',$password, time()+60*60*30, "/");
+        // Store cookies for 30 days when remember me is clicked
+            //setcookie('user',json_encode($user), time()+60*60*30, "/");
+            setcookie('login_user',$user->id, time()+60*60*30, "/");
+            setcookie('userName',$user->userName, time()+60*60*30, "/");
+            setcookie('userPassword',$$user->password, time()+60*60*30, "/");
         }else{
         //Store in cookies for 7 days
-            setcookie('login_user',$user_id, time()+60*60*7, "/");
-            setcookie('userName',$db_user_name, time()+60*60*7, "/");
-            setcookie('userPassword',$password, time()+60*60*7, "/");
+            // setcookie('user',json_encode($user), time()+60*60*30, "/");
+            setcookie('login_user',$user->id, time()+60*60*7, "/");
+            setcookie('userName',$user->userName, time()+60*60*7, "/");
+            setcookie('userPassword',$user->password, time()+60*60*7, "/");
         }
         
         header("location:register/userprofile/");
 
-        }
-        else{
-        $msg = "Incorrect Password for [ $user_n_e ]";
+    } else { 
+        $msg = "Incorrect Login";
         $display_msg = "block";
-        echo "You have Enterd wrong password for $user_n_e";
-        }
-        // elseif (empty($_SESSION['login_user'])) {
-        // header('location:login.php'); 
     }
-    else {
-    $msg = "Incorrect User Name or Email";
-    $display_msg = "block";
-    }
-  }  
-}
+    
+
+  } //when post submit
+}//end if when user session is not set
    
 
 

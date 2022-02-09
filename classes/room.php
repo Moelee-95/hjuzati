@@ -51,7 +51,7 @@ class Room {
                 $this->numBathrooms = $fetch['num_bathrooms'];
                 $this->bedNum = $fetch['bed_num'];
                 $this->maxPassengers = $fetch['rMaxPas'];
-                $this->generatePhotos();
+                //$this->generatePhotos(); //problem (08004/1040): Too many connections
             }
         }else{ echo "Initilize guest id first: if there would be $this->id";}
       

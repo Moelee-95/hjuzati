@@ -1,3 +1,4 @@
+<?php require 'sections/main.php';?>
 
 
 <!DOCTYPE html>
@@ -66,7 +67,6 @@
 <?php
   // Database connection
   	include('../../../db_connect.php');
-	require "../../../classes/removeFiles.php";
 	$backPath = RemoveFiles::backPath();// back path
 	
 

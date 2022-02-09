@@ -32,13 +32,15 @@ class ReserveRoom extends room{
     }
  */
 
+    // not complete function, Used to get number of available rooms,
+    // used when editing the reserved rooms number
     public function availableRooms(){
         $conn = new db(); $conn = $conn->getConnection();
         $query = "SELECT rDate,rARoomsNum FROM rates where rRoomsID = '77' and (rDate = '2022-01-01' or rDate < '2022-01-04');";
         $result = $conn->query($query);
         if ($result) {
             $fetch = $result->fetch_all(MYSQLI_ASSOC);
-            print_r($fetch);
+            //print_r($fetch);
         }else{//echo "coudnot exextue query $query";
         }
 
@@ -130,7 +132,6 @@ class ReserveRoom extends room{
             $this->created = true;
             $this->generateInfo();
             $this->generateReservedDates();
-            $this->availableRooms();
             return true;
         }else{
             $this->created = false;
