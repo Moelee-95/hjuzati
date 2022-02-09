@@ -1,4 +1,6 @@
 <?php
+
+include 'sections/main.php';
 if (isset($_GET['room_id'])) {
 	$room_id = $_GET['room_id'];
 }
@@ -161,10 +163,7 @@ else{
 
 					<div class="page-bar">
 						<div class="page-title-breadcrumb">
-							<div class=" pull-left">
-								<div class="page-title">Edit Room Details</div>
-							</div>
-							<ol class="breadcrumb page-breadcrumb pull-right">
+							<ol class="breadcrumb page-breadcrumb pull-left">
 								<li><i class="fas fa-home"></i>&nbsp;<a class="parent-item"
 										href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>

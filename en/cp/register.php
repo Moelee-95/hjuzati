@@ -33,9 +33,8 @@ elseif (empty($_SESSION['login_user'])) {
         // Set Sesstions
             $_SESSION['login_user'] = $user->id;
             $_SESSION['userName'] = $user->userName; // Represents the user Name
-
+            $_SESSION['user'] = serialize($user);
         // Store in cookies for 7 days
-            setcookie('user',json_encode($user), time()+60*60*30, "/");
             setcookie('login_user',$user->id, time()+60*60*7, "/");
             setcookie('userName',$user->userName, time()+60*60*7, "/");
             setcookie('userPassword',$user->password, time()+60*60*7, "/");
