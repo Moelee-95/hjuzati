@@ -10,7 +10,7 @@ class ReserveRoom extends room{
     private $checkIn;
     private $checkOut;
     public $reservedDates = array();
-    private $totalPrice;
+    public $totalPrice ;
     public $numberOfAvailableRooms = array();//each date with number of available rooms
 
     public function __construct(){
@@ -83,8 +83,6 @@ class ReserveRoom extends room{
         $this->reservedDates = $reservedDates;
     }
 
-    
-
     //get Total price of the room based on reserved dates and number of rooms 
     public function getPrice(){
         $this->generateReservedDates();//refresh the dates and prices
@@ -108,8 +106,8 @@ class ReserveRoom extends room{
             $this->id = $id;
             $this->bookingID = $bookingID;
             $this->number = $number;
-            $this->generateInfo();
-            $this->generateReservedDates();
+            $this->generateInfo();//call in room class
+            $this->getPrice();
             $this->created = true;
             return true;
         } else {
@@ -130,8 +128,8 @@ class ReserveRoom extends room{
             $this->number = $fetch["0"];
             $this->id = $roomID;
             $this->created = true;
-            $this->generateInfo();
-            $this->generateReservedDates();
+            $this->generateInfo();//call in room class
+            $this->getPrice();
             return true;
         }else{
             $this->created = false;

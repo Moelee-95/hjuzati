@@ -8,7 +8,6 @@
 class Booking {
     public $hotelID;
     public $hotelName;
-    public $hotel;
     public $bookingID; // inisilized later
     public $checkIn;
     public $checkOut;
@@ -64,8 +63,8 @@ class Booking {
                     $room->setDate($this->checkIn, $this->checkOut);
                     $room->addToDB($this->bookingID, $id, $number); // booking id, room id, reserved numbers
                     $this->rooms[] = $room;
-                    $this->setNumberOfRooms();//setup rooms Numbers
                 }
+                $this->setNumberOfRooms();//setup rooms Numbers
             }
         }
         else{
@@ -76,8 +75,8 @@ class Booking {
                     $room->setDate($this->checkIn, $this->checkOut);
                     $room->addToDB($this->bookingID, $id, $number); // booking id, room id, reserved numbers
                     $this->rooms[] = $room;
-                    $this->setNumberOfRooms();//setup rooms Numbers
                 }
+                $this->setNumberOfRooms();//setup rooms Numbers
             }
         }
     }
@@ -96,9 +95,9 @@ class Booking {
                     $room->setDate($this->checkIn, $this->checkOut);
                     $room->getFromDB($this->bookingID, $roomID);
                     $this->rooms[] = $room;
-                    $this->setNumberOfRooms();
                 }
             }
+            $this->setNumberOfRooms();//setup rooms Numbers
         }
     }
 
@@ -135,10 +134,8 @@ class Booking {
     public function createBookingGuestExisted(){
         // echo $hotel_id." - ".$guest_id." - ".$check_in." - ".$check_out." - ".$psNumber." - ".$chNumber." - ". '1'."<br>";
         $query = "call addReservation('$this->hotelID', '$this->guestID', '$this->checkIn', '$this->checkOut', '$this->adultNumber', '$this->childNumber', '1','$this->paymentMethod','$this->totalAmount','$this->fullName', '$this->phoneNumber', '$this->email','$this->address');";
-        $fetch = new Execute($query, "array");
-        $this->bookingID = $fetch[0];
+        $this->bookingID = (new Execute($query, "single"))->result;
         $this->bookingCreated = true;
-        $conn->close();
         return true;
         
     }
@@ -146,8 +143,7 @@ class Booking {
     public function createBookingGuestNotExisted(){
         //Creating a booking
         $query = "call addReservationNoGuest('$this->hotelID',  '$this->checkIn', '$this->checkOut', '$this->adultNumber', '$this->childNumber', '$this->fullName', '$this->address', '$this->phoneNumber', '$this->email', '1','$this->paymentMethod','$this->totalAmount');";
-        $fetch = new Execute($query, "array");
-        $this->bookingID = $fetch[0];
+        $this->bookingID = (new Execute($query, "single"))->result;
         $this->bookingCreated = true;
         return true;
     }
@@ -176,7 +172,7 @@ class Booking {
     //check payment id availablity in the DB
     public function checkPaymentId($id){
         $return;
-        $sql = "SELECT pID FROM payments;";
+        $query = "SELECT pID FROM payments;";
         $r = (new Execute($query, "multi"))->result;
       
         if (array_key_exists($id, $r)) {
@@ -184,8 +180,6 @@ class Booking {
         } else{
           $return = false;
         }
-        $result -> free_result(); // close the resutls
-        $conn -> close(); //close the connection
         return $return; 
       
     }

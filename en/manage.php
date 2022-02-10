@@ -35,7 +35,7 @@
             if($manageBooking->updateTravelerInfo($fullName,$email,$city) &&
              updateCookiesInfo($manageBooking, $bookings)){
                 $updateTravelerInfo = true;
-                ;//update cookies bookings info
+                //update cookies bookings info
             }
             else{
                 //user info did't update, something wrong
@@ -251,13 +251,13 @@
                         <div class="row justify-content-between pb-2 mb-2 border-bottom">
                             <div class="">
                                 <h5 id="scroll-description" class="font-size-21 font-weight-bold text-dark mb-2">
-                                    Rooms
+                                    Reserved Rooms
                                 </h5>
                             </div>
-                            <div class="">
+                            <!-- <div class="">
                                 <span class="h4"><button class="btn btn-outline-primary border-0 py-2" 
                                 id="editBookingRooms" onclick="$('#editRoomsModal').modal('show')"><i class="fas fa-pencil-alt"></i></button></span>
-                            </div>
+                            </div> -->
                         </div>  
                         <div class="px-0">
                             <?php foreach ($manageBooking->rooms as $key => $room) { ?>
@@ -275,8 +275,10 @@
                                         
                                     </div>
                                     <div class="col col-3">
+                                        
                                         <div class="input-group m-0">
-                                            <select class="selectpicker">
+                                        <div class="p-3" ><?php print_r($room); ?></div>
+                                            <!-- <select class="selectpicker">
                                                 <option selected hidden="hidden" value="<?php echo $room->number;//number of reserved rooms ?>"><?php echo $room->number;//number of reserved rooms ?></option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -284,7 +286,7 @@
                                                 <option value="4">4</option>
                                                 <option value="5">5</option>
                                                 <option value="6">6</option>
-                                            </select>
+                                            </select> -->
                                         </div>
                                     </div>
                                 </div>

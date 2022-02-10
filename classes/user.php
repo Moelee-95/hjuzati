@@ -42,6 +42,7 @@ class User{
                     $this->email = $db_email; // email
                     $this->password = $db_password; //password
                     $this->phoneNumber = $db_phoneNumber; //phone number
+                    // $this->generateHotels();
                     return $this->loggedIn;
                 }
                 else{
@@ -120,8 +121,6 @@ class User{
 
         return $results;
     }
-
-    
 
     public static function removeUser($userID){
         $conn = new db();

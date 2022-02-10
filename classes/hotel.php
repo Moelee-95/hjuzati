@@ -59,10 +59,13 @@ class Hotel{
             $r = new Room();
             $r->id = $room['rRoomID'];
             $r->generateInfo();
+
             $this->rooms[] = $r;
         }
         
     }
+
+    
 
     //getting already created hotel from database
     public function generateHotel($id){
@@ -86,7 +89,7 @@ class Hotel{
             $bookings = $result->result;
             foreach ($bookings as $key => $booking) {
                 $b = new Booking();
-                //$b->getFromDB($booking['bBookingID']);
+                $b->getFromDB($booking['bBookingID']);
                 $this->bookings[] = $b;
                 unset($b); 
             }

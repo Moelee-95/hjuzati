@@ -76,7 +76,7 @@
 										<a class="t-close btn-color fa fa-times" href="javascript:;"></a>
 									</div> -->
 								</div>
-								<div class="card-body ">
+								<div class="card-body p-1">
 									<div class="row p-b-20">
 										<!-- <div class="col-md-6 col-sm-6 col-6">
 											<div class="btn-group">
@@ -120,40 +120,28 @@
 											id="example4">
 											<thead>
 												<tr>
-													<th class="center"></th>
 													<th class="center"> Name </th>
 													<th class="center"> Reservations </th>
 													<th class="center"> Action </th>
-													<th class="center"> Status </th>
 												</tr>
 											</thead>
 											<tbody>
 
 												<?php
 
-												 foreach ($fetch_all as $row) {
-												# Get the list of rooms
-												$bookingID = $row["bBookingID"];
-												$roomsQuery = "SELECT * FROM roomsbooked where rbBookingID = '$bookingID'";
-												$queryRooms = mysqli_query($conn, $roomsQuery);
-												$fetchRooms = mysqli_fetch_all($queryRooms, MYSQLI_ASSOC);
-												// print_r($fetchRooms);
+												 foreach ($manageHotel->bookings as $booking) {
 
 												 ?>
 
 												
 												<tr class="odd gradeX">
 
-													<td class="user-square-img">
-														<img hight="40" width="40" src="../../<?php echo $row['avatar']; ?>" alt="Guest Image">
-													</td>
-
-													<td class="center"><?php echo $row["gFullName"];?></td>
+													<td class="center"><?php echo $booking->fullName;?></td>
 												
 										
 													<td class="center">
-														<?php echo $row["bDateFrom"].' - '.$row["bDateTo"].
-															"</br><b>Nights: ".ceil(abs((strtotime($row["bDateFrom"]) - strtotime($row["bDateTo"])) / 86400)) ;
+														<?php echo $booking->checkIn.' - '.$booking->checkOut.
+															"</br><b>Nights: ".ceil(abs((strtotime($booking->checkIn) - strtotime($booking->checkOut)) / 86400)) ;
 														?>
 														<table class="table order-column full-width border" id="example4">
 															<thead>
@@ -166,14 +154,13 @@
 															<tbody>
 																<?php
 																$total = 0;
-																$price = 10;
-																 foreach ($fetchRooms as $roomsRow) {
-																 $total += $price; ?>
+																 foreach ($booking->rooms as $room) {
+																 $total += $room->totalPrice; ?>
 																 	
-												 				<tr class="odd gradeX" id="<?php echo $roomsRow['rbRoomBookedID'] ?>">
-																	<td class="user-circle-img">ID:<?php echo $roomsRow['rbRoomID'] ?></td>
-																	<td class="center"><?php echo $roomsRow['rbNumOfRooms'] ?></td>
-																	<td class="center"><?php echo $price ?>$</td>
+												 				<tr class="odd gradeX" id="<?php echo $room->id ?>">
+																	<td class="user-circle-img"><?php echo $room->type; ?></td>
+																	<td class="center"><?php echo $room->number; ?></td>
+																	<td class="center"><?php echo $room->totalPrice; ?>$</td>
 																</tr>
 																<?php }
 																 ?>
@@ -186,57 +173,30 @@
 														</table>
 													</td>
 													
-													<td class="center">
-														<!-- <button type="button" onclick="window.location.href = 'edit_booking.php?booking_id=<?php echo $row["booking_id"]; ?>'" class="mdl-button mdl-js-ripple-effect m-b-5	" style="color:#2196f3">
-															<i class="fas fa-pencil"></i>
-														</button> 
-														<button type="button" class="mdl-button mdl-js-ripple-effect m-b-5 btn-sweetalert-button" style="color:#e91e63" data-id="<?php echo $fetch_one['rbRoomID'] ?>" data-type="confirm">
-															<i class="fas fa-trash" ></i>
-														</button> -->
-														<?php 
-															if ($row['bBookingStatusID'] == '1') {
-																# wating for the hotel to confirm
-																echo "<button type='button' class='mdl-button mdl-js-ripple-effect m-b-5 btn btn-sweetalert-button' style='color:#50b71c' data-id='' data-type='confirm'>Confirm Availability</button></br><button type='button' class='mdl-button mdl-js-ripple-effect m-b-5 btn btn-sweetalert-button' style='color:#50b71c' data-id='' data-type='confirm'>Confirm Reservation</button>";
-															}
-															else if ($row['bBookingStatusID'] == '2') {
-																# Canceld by hotel
-																echo "<button disabled type='button' class='mdl-button mdl-js-ripple-effect m-b-5 btn btn-sweetalert-button' style='color:#e91e63' data-id='' data-type='confirm'>Canceld</button>";
-															}
-															else if ($row['bBookingStatusID'] == '3') {
-																# Canceled-guest
-																
-															}
-															else if ($row['bBookingStatusID'] == '4') {
-																# Cancel Reservation 
-
-																
-															}
-
-														?>
-														
+													<td class="center d-flex justify-content-start">
+														<div class="row">
+															<div class="col m-1">
+																<button type="button" onclick="" class="btn btn-outline-primary " >
+																 <span>Edit:&nbsp;&nbsp;</span><i class="fas fa-pencil"></i>
+																</button> 
+															</div>
+															<div class="col m-1">
+																<button type="button" class="btn btn-outline-primary" 
+															data-id="<?php echo $fetch_one['rbRoomID'] ?>" data-type="confirm"> Print
+																<i class="fas fa-print" ></i>
+																</button>
+															</div>
+														</div>
+														<div class="row border border-light">
+															<div class="div">
+																Paid:
+															</div>
+															<div class="div">
+																<?php $bookin ?>
+															</div>
+														</div>
 													</td>
-													<td class="center">
-														<?php
-															if ($row['bBookingStatusID'] == '1') {
-																# Pending
-																echo "<span class='label label-sm label-warning'>Pending</span>";
-															}
-															elseif ($row['bBookingStatusID'] == '2') {
-																# Canceled-hotel
-																echo "<span class='label label-sm label-danger'>Canceled-hotel</span>";
-															}
-															elseif ($row['bBookingStatusID'] == '3') {
-																# Canceled-guest
-																echo "<span class='label label-sm label-danger'>Canceled guest</span>";
-															}
-															elseif ($row['bBookingStatusID'] == '4') {
-																# Paid-confirmd
-																echo "<span class='label label-sm label-sucess'>Confirmd</span>";
-															}
-														?>
-
-														
-													</td>
+												
 
 												</tr>
 												<?php } ?>

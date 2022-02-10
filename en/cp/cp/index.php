@@ -340,7 +340,13 @@
 		 										 <b style="font-size: 15px">Calander</b>
 		 										</a>
 		 									</center>
-
+											 <center class="col mt-3">
+		 										<a href="view_booking.php.php" type="button" class="btn btn-outline-success btn-lg">
+		 										 <img src = "img/bookings.svg" alt="Calender" width="100" height="100" />
+		 										</br>
+		 										 <b style="font-size: 15px">Bookings</b>
+		 										</a>
+		 									</center>
 		 									<center class="col mt-3">
 		 										<a href="all_rooms.php" type="button" class="btn btn-outline-success btn-lg">
 		 										 <img src = "img/room.svg" alt="Calender" width="100" height="100" />
