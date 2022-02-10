@@ -173,7 +173,7 @@
 														</table>
 													</td>
 													
-													<td class="center d-flex justify-content-start">
+													<td class="">
 														<div class="row">
 															<div class="col m-1">
 																<button type="button" onclick="" class="btn btn-outline-primary " >
@@ -187,12 +187,28 @@
 																</button>
 															</div>
 														</div>
-														<div class="row border border-light">
-															<div class="div">
+														<div class="row ">
+															<div class="col">
 																Paid:
 															</div>
-															<div class="div">
-																<?php $bookin ?>
+															<div class="col">
+																<?php echo $booking->paidAmount; ?>
+															</div>
+														</div>
+														<div class="row border border-light">
+															<div class="col">
+																Remaining:
+															</div>
+															<div class="col">
+																<?php echo $booking->remainingAmount; ?>
+															</div>
+														</div>
+														<div class="row border border-light">
+															<div class="col">
+																Total:
+															</div>
+															<div class="col">
+																<?php echo $booking->totalAmount; ?>
 															</div>
 														</div>
 													</td>
