@@ -57,7 +57,7 @@
 						<div class="page-title-breadcrumb">
 							<ol class="breadcrumb page-breadcrumb pull-left">
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-										href="../../index.html">Hjuzati</a>&nbsp;<i class="fa fa-angle-right"></i>
+										href="../../">Hjuzati</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
 								<li><a class="parent-item" href="#">Booking</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>

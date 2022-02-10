@@ -119,28 +119,22 @@ $current_page =(basename($_SERVER['PHP_SELF']));
 							} ?>">
 								<a href="#" class="nav-link nav-toggle">
 									<i class="material-icons">business_center</i>
-									<span class="title">Booking</span>
+									<span class="title">Bookings</span>
 									<span class="arrow <?php if($current_page=="new_booking.php" ||$current_page=="view_booking.php" || $current_page=="edit_booking.php" ){
 										echo "open";
 										} ?>"></span>
 								</a>
 								<ul class="sub-menu ">
-									<li class="nav-item <?php if($current_page=="new_booking.php" ){
-								echo "active";} ?>">
-										<a href="new_booking.php" class="nav-link">
-											<span class="title">New Booking</span>
-											<?php if($current_page=="new_booking.php"){
-											?><span class="selected"></span><?php } ?>
-										</a>
-									</li>
+									
 									<li class="nav-item <?php if($current_page=="view_booking.php"){
 								echo "active";} ?>">
 										<a href="view_booking.php" class="nav-link ">
-											<span class="title">View Booking</span>
+											<span class="title">View Bookings</span>
 											<?php if($current_page=="view_booking.php"){
 											?><span class="selected"></span><?php } ?>
 										</a>
 									</li>
+									<?php /*
 									<li class="nav-item <?php if($current_page=="edit_booking.php" ){
 								echo "active";} ?>">
 										<a href="edit_booking.php" class="nav-link ">
@@ -149,6 +143,15 @@ $current_page =(basename($_SERVER['PHP_SELF']));
 											?><span class="selected"></span><?php } ?>
 										</a>
 									</li>
+									<li class="nav-item <?php if($current_page=="new_booking.php" ){
+								echo "active";} ?>">
+										<a href="new_booking.php" class="nav-link">
+											<span class="title">New Booking</span>
+											<?php if($current_page=="new_booking.php"){
+											?><span class="selected"></span><?php } ?>
+										</a>
+									</li>
+									*/ ?>
 								</ul>
 							</li>
 							 

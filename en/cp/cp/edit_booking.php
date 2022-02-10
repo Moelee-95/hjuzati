@@ -53,9 +53,9 @@
 							<div class=" pull-left">
 								<div class="page-title">Edit Room Booking</div>
 							</div>
-							<ol class="breadcrumb page-breadcrumb pull-right">
+							<ol class="breadcrumb page-breadcrumb pull-left">
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-										href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+										href="index.php">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
 								<li><a class="parent-item" href="#">Booking</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
