@@ -11,6 +11,7 @@ if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_CO
   if (isset($_SESSION['login_user'])) {
     $user_id =  $_SESSION['login_user'];
     $user = unserialize($_SESSION['user']);
+    $user->generateHotels();
     $hotels = $user->hotels;
     // print_r($user);
   }
@@ -19,6 +20,7 @@ if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_CO
       $_SESSION['userName'] = $_COOKIE['userName'];
       $user_id =  $_SESSION['login_user'];
       $user = unserialize($_SESSION['user']);
+      $user->generateHotels();
       $hotels = $user->hotels;
   }
 

@@ -42,7 +42,6 @@ class User{
                     $this->email = $db_email; // email
                     $this->password = $db_password; //password
                     $this->phoneNumber = $db_phoneNumber; //phone number
-                    $this->generateHotels();
                     return $this->loggedIn;
                 }
                 else{
@@ -145,10 +144,13 @@ class User{
 
 // print_r(User::removeUser("39"));
 // $user = new User();
-// // echo $user->login("m", "m1");
+// echo $user->login("m", "m1");
 // if ($user->login("m", "m")){
 //     $user->generateHotels();
 //     echo "logged in";
+//     foreach ($user->hotels as $key => $hotel) {
+//         echo $hotel->name;
+//     }
 // } else { echo "wrong Login";}
 
 ?>

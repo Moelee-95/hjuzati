@@ -1,10 +1,4 @@
 <?php
-$hotel_id = $_SESSION['hotel_id'];
-include('../../../db_connect.php');
-$get_data = "SELECT * FROM hotels WHERE hHotelID = $hotel_id";
-$query = mysqli_query($conn, $get_data);
-$row = mysqli_fetch_array($query);
-$hotel_name = $row['hHotelName'];
 
 $current_page =(basename($_SERVER['PHP_SELF']));
 ?>

@@ -4,6 +4,10 @@ session_start();
 
 //Connect to the database
 include('../../../db_connect.php');
+require "../../../classes/db.php";
+require "../../../classes/user.php";
+require "../../../classes/hotel.php";
+require "../../../classes/room.php";
 require "../../../classes/removeFiles.php";
 $backPath = RemoveFiles::backPath();
 

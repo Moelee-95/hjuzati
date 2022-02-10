@@ -25,6 +25,9 @@ class Hotel{
         //iterate through hotel rooms and create objects out of them and insert the object to the array
     }
 
+    public function createHotel(){
+        
+    }
 
     //remove hotel, including all of it's bookings, rooms and rates
     public static function removeHotel($userID,$hotelID){
@@ -61,6 +64,7 @@ class Hotel{
         
     }
 
+    //getting already created hotel from database
     public function generateHotel($id){
         $query = "SELECT * FROM hotels WHERE hHotelID = '$id'";
         $fetch = (new Execute($query, "array"))->result;
@@ -74,6 +78,7 @@ class Hotel{
         $this->generateBookings();//generate bookings
     }
 
+    //generate hotel bookings
     public function generateBookings(){
         $query = "SELECT bBookingID FROM hima.bookings where bHotelID = '$this->id'";
         $result = new Execute($query, "multi");
