@@ -29,6 +29,8 @@ class Booking {
     public $totalAmount;
     public $paidAmount;
     public $remainingAmount;
+    public $status; // String: "confirmed" or ""=>not confirmed
+    
     
     public function getHotelName(){
         $conn = new db();

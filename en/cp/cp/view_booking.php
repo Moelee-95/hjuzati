@@ -66,7 +66,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12">
+						<div class="col-md-12 p-1 m-4">
 							<div class="card card-box">
 								<div class="card-head">
 									<header>All Bookings</header>
@@ -109,18 +109,11 @@
 										</div> -->
 									</div>
 									<div class="table-scrollable">
-										<?php
-											$get_bookings = "SELECT * FROM bookings join guests on bGuestID = gGuestID WHERE bHotelID = '$hotel_id'";
-											$query_bookings = mysqli_query($conn, $get_bookings);
-											$fetch_all = mysqli_fetch_all($query_bookings, MYSQLI_ASSOC);
-											//print_r($fetch_all);
-
-											?>
-										<table class="table table-hover table-checkable order-column full-width"
+										
+										<table class="table table-hover  order-column full-width"
 											id="example4">
 											<thead>
 												<tr>
-													<th class="center"> Guest </th>
 													<th class="center"> Reservations </th>
 													<th class="center"> Action </th>
 												</tr>
@@ -134,18 +127,13 @@
 												 ?>
 
 												
-												<tr class="odd gradeX">
+												<tr class="">
 
-													<td class="center">
-														<button class="btn btn-outline-primary border-0">
-															<i class="fas fa-user"></i>
-												 		</button>
-													</td>
+											
 												
-										
 													<td class="center">
 														<?php echo $booking->checkIn.' - '.$booking->checkOut.
-															"</br><b>Nights: ".ceil(abs((strtotime($booking->checkIn) - strtotime($booking->checkOut)) / 86400)) ;
+															"</br><b>Nights: ".ceil(abs((strtotime($booking->checkIn) - strtotime($booking->checkOut)) / 86400))."</b>" ;
 														?>
 														<table class="table order-column full-width border" id="example4">
 															<thead>
@@ -168,30 +156,53 @@
 																</tr>
 																<?php }
 																 ?>
-																 <tr class="odd gradeX" id="">
-																	<td class="user-circle-img">Total</td>
-																	<td class="center"></td>
-																	<td class="center"><b><?php echo $total ?>$</b></td>
-																</tr>
 															</tbody>
 														</table>
+														<div class="row p-2">
+															<div class=" coltext-left px-5">
+																<i class="fas fa-user"></i>&nbsp;&nbsp;&nbsp;
+																<?php echo $booking->fullName; ?>
+															</div>
+														</div>
+														<div class="row p-2">
+															<div class=" coltext-left px-5">
+																<i class="fas fa-users"></i>&nbsp;&nbsp;&nbsp;X
+																<?php echo $booking->adultNumber; ?>
+															</div>
+														</div>	
+														<div class="row p-2">
+															<div class=" coltext-left px-5">
+																<i class="fas fa-phone"></i>&nbsp;&nbsp;&nbsp;
+																<?php echo $booking->phoneNumber; ?>
+															</div>
+															</div>
+														<div class="row p-2">
+															<div class=" coltext-left px-5">
+																<i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;
+																<?php echo $booking->email; ?>
+															</div>
+														</div>	
+
+														
 													</td>
 													
 													<td class="">
-														<div class="row">
-															<div class="col m-1">
-																<button type="button" onclick="" class="btn btn-outline-primary " >
-																 <span>Edit:&nbsp;&nbsp;</span><i class="fas fa-pencil"></i>
+														<div class="">
+															<div class="m-1 border p-2 d-flex justify-content-between align-items-center">
+																<span>Confirm:&nbsp;&nbsp;</span>
+																<button type="button" onclick="" class="btn btn-outline-success" >
+																<i class="fas fa-check"></i>
 																</button> 
 															</div>
-															<div class="col m-1">
+															<div class="m-1 border p-2 d-flex justify-content-between align-items-center">
+															<span>Print:&nbsp;&nbsp;</span>
 																<button type="button" class="btn btn-outline-primary" 
-															data-id="<?php echo $fetch_one['rbRoomID'] ?>" data-type="confirm"> Print
+															data-id="<?php echo $fetch_one['rbRoomID'] ?>" data-type="confirm"> 
 																<i class="fas fa-print" ></i>
 																</button>
 															</div>
 														</div>
-														<div class="row p-2">
+														<div class="row p-2 border-bottom">
 															<div class="col text-success">
 																Paid:
 															</div>
@@ -199,15 +210,15 @@
 																<?php echo $booking->paidAmount; ?>
 															</div>
 														</div>
-														<div class="row p-2">
+														<div class="row p-2 border-bottom">
 															<div class="col text-danger">
-																Remaining:
+																Remain:
 															</div>
 															<div class="col">
 																<?php echo $booking->remainingAmount; ?>
 															</div>
 														</div>
-														<div class="row p-2">
+														<div class="row p-2 border-bottom">
 															<div class="col text-primary">
 																Total:
 															</div>
