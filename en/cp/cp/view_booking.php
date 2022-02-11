@@ -158,26 +158,26 @@
 																 ?>
 															</tbody>
 														</table>
-														<div class="row p-2">
-															<div class=" coltext-left px-5">
+														<div class="row p-1">
+															<div class=" coltext-left px-4">
 																<i class="fas fa-user"></i>&nbsp;&nbsp;&nbsp;
 																<?php echo $booking->fullName; ?>
 															</div>
 														</div>
-														<div class="row p-2">
-															<div class=" coltext-left px-5">
+														<div class="row p-1">
+															<div class=" coltext-left px-4">
 																<i class="fas fa-users"></i>&nbsp;&nbsp;&nbsp;X
 																<?php echo $booking->adultNumber; ?>
 															</div>
 														</div>	
-														<div class="row p-2">
-															<div class=" coltext-left px-5">
+														<div class="row p-1">
+															<div class=" coltext-left px-4">
 																<i class="fas fa-phone"></i>&nbsp;&nbsp;&nbsp;
 																<?php echo $booking->phoneNumber; ?>
 															</div>
 															</div>
-														<div class="row p-2">
-															<div class=" coltext-left px-5">
+														<div class="row p-1">
+															<div class=" coltext-left px-4">
 																<i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;
 																<?php echo $booking->email; ?>
 															</div>
