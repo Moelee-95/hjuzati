@@ -123,14 +123,11 @@
 												<?php
 
 												 foreach ($manageHotel->bookings as $booking) {
-
+														if ($booking->status == "2"){
 												 ?>
 
 												
 												<tr class="">
-
-											
-												
 													<td class="center">
 														<?php echo $booking->checkIn.' - '.$booking->checkOut.
 															"</br><b>Nights: ".ceil(abs((strtotime($booking->checkIn) - strtotime($booking->checkOut)) / 86400))."</b>" ;
@@ -238,7 +235,9 @@
 												
 
 												</tr>
-												<?php } ?>
+												<?php }//end foreach
+												}//end if booking isn't confirmed
+												?>
 												</table>
 											</tbody>
 										</table>

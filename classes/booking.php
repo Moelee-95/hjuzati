@@ -43,15 +43,7 @@ class Booking {
         } else {$this->hotelName = "Error";}
     }
 
-    // accepts boolean
-    public function confirmBooking(){
-        $query = "UPDATE `bookings` SET `bBookingStatusID` = '1' WHERE (`bBookingID` = '$this->bookingID')";
-        if(new Execute($query, "execute")){
-            $this->status = "1";
-            return true;
-        }
-
-    }
+    
     public function __construct(){
         
     }
@@ -299,6 +291,17 @@ class Booking {
 
         }
         else { echo "error Qeury: $query";}
+    }
+
+
+    //working on it
+    public function confirmBooking(){
+        $query = "UPDATE `bookings` SET `bBookingStatusID` = '1' WHERE (`bBookingID` = '$this->bookingID')";
+        if(new Execute($query, "execute")){
+            $this->status = "1";
+            return true;
+        }
+
     }
 }
 
