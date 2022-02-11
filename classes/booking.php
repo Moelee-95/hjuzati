@@ -29,7 +29,7 @@ class Booking {
     public $totalAmount;
     public $paidAmount;
     public $remainingAmount;
-    public $status; // String: "confirmed" or ""=>not confirmed
+    public $status = "2"; // 1: confirmed 2:Not confirmed default:not confirmed
     
     
     public function getHotelName(){
@@ -41,6 +41,16 @@ class Booking {
             $fetch = $result->fetch_array();
             $this->hotelName = $fetch['hHotelName'];
         } else {$this->hotelName = "Error";}
+    }
+
+    // accepts boolean
+    public function confirmBooking(){
+        $query = "UPDATE `bookings` SET `bBookingStatusID` = '1' WHERE (`bBookingID` = '$this->bookingID')";
+        if(new Execute($query, "execute")){
+            $this->status = "1";
+            return true;
+        }
+
     }
     public function __construct(){
         
@@ -55,11 +65,11 @@ class Booking {
         }
         $this->hotelID = $hotelID;$this->hotelName = $hotelName;$this->checkIn = $checkIn;$this->checkOut = $checkOut;$this->nights = $nights;
         $this->adultNumber = $adultNumber;$this->childNumber = $childNumber;$this->reservedRooms=$reservedRooms;
-        $this->paymentMethod = $paymentMethod;$this->totalAmount = $totalAmount;
+        $this->paymentMethod = new PaymentMethod($paymentMethod);$this->totalAmount = $totalAmount;
         $this->fullName = $fullName; $this->phoneNumber = $phone; $this->email = $email; $this->address = $address;
 
         if ($guestID == null) {
-            if($this->createBookingGuestNotExisted()){
+            if($this->createBookingGuestNotExisted($paymentMethod)){
                 foreach ($reservedRooms as $id => $number){ // insert all rooms to the booking
                     $room = new ReserveRoom();
                     $room->setDate($this->checkIn, $this->checkOut);
@@ -71,7 +81,7 @@ class Booking {
         }
         else{
             $this->guestID = $guestID;
-            if($this->createBookingGuestExisted()){
+            if($this->createBookingGuestExisted($paymentMethod)){
                 foreach ($reservedRooms as $id => $number){ // insert all rooms to the booking
                     $room = new ReserveRoom();
                     $room->setDate($this->checkIn, $this->checkOut);
@@ -123,8 +133,9 @@ class Booking {
             $this->phoneNumber=$info['phoneNumber'];
             $this->email=$info['email'];
             $this->address=$info['address'];
-            $this->paymentMethod=$info['paymentMethod']; //change to values later
+            $this->paymentMethod=new PaymentMethod($info['paymentMethod']); //change to values later
             $this->paymentStatus = $info['bPaymentStatusID']; // change to values later
+            $this->status = $info['bBookingStatusID'];
             $this->getHotelName(); //Problem too many connections
             $this->getRoomsFromDB(); // Problem too many connections
             $this->bookingCreated = true;
@@ -133,18 +144,18 @@ class Booking {
         }
     }
 
-    public function createBookingGuestExisted(){
+    public function createBookingGuestExisted($paymentMethod){
         // echo $hotel_id." - ".$guest_id." - ".$check_in." - ".$check_out." - ".$psNumber." - ".$chNumber." - ". '1'."<br>";
-        $query = "call addReservation('$this->hotelID', '$this->guestID', '$this->checkIn', '$this->checkOut', '$this->adultNumber', '$this->childNumber', '1','$this->paymentMethod','$this->totalAmount','$this->fullName', '$this->phoneNumber', '$this->email','$this->address');";
+        $query = "call addReservation('$this->hotelID', '$this->guestID', '$this->checkIn', '$this->checkOut', '$this->adultNumber', '$this->childNumber', '1','$paymentMethod','$this->totalAmount','$this->fullName', '$this->phoneNumber', '$this->email','$this->address');";
         $this->bookingID = (new Execute($query, "single"))->result;
         $this->bookingCreated = true;
         return true;
         
     }
 
-    public function createBookingGuestNotExisted(){
+    public function createBookingGuestNotExisted($paymentMethod){
         //Creating a booking
-        $query = "call addReservationNoGuest('$this->hotelID',  '$this->checkIn', '$this->checkOut', '$this->adultNumber', '$this->childNumber', '$this->fullName', '$this->address', '$this->phoneNumber', '$this->email', '1','$this->paymentMethod','$this->totalAmount');";
+        $query = "call addReservationNoGuest('$this->hotelID',  '$this->checkIn', '$this->checkOut', '$this->adultNumber', '$this->childNumber', '$this->fullName', '$this->address', '$this->phoneNumber', '$this->email', '1','$paymentMethod','$this->totalAmount');";
         $this->bookingID = (new Execute($query, "single"))->result;
         $this->bookingCreated = true;
         return true;

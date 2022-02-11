@@ -94,7 +94,6 @@ class AlertMSG{
 
 
 class Calculate{
-
     //get number of nights between two dates
     public static function getNights($from, $to){
         $start_ts = strtotime($from); 
@@ -105,5 +104,25 @@ class Calculate{
     }
 
 }
+
+class PaymentMethod{
+    public $id;
+    public $name;
+    public $type;
+    public $path;
+
+    public function __construct($id){
+        $query = "SELECT * FROM hima.payments where `pID` = '$id'";
+        $payment = (new Execute($query, "array"))->result;
+        $this->id = $payment['pID'];
+        $this->name  = $payment['pName'];
+        $this->type  = $payment['pType'];
+        $this->path  = $payment['pPath'];
+        return true;
+    }
+}
+
+// $payment = new PaymentMethod("3");
+// echo $payment->name;
 
 ?>

@@ -159,25 +159,25 @@
 															</tbody>
 														</table>
 														<div class="row p-1">
-															<div class=" coltext-left px-4">
+															<div class=" col text-left px-4">
 																<i class="fas fa-user"></i>&nbsp;&nbsp;&nbsp;
 																<?php echo $booking->fullName; ?>
 															</div>
 														</div>
 														<div class="row p-1">
-															<div class=" coltext-left px-4">
-																<i class="fas fa-users"></i>&nbsp;&nbsp;&nbsp;X
-																<?php echo $booking->adultNumber; ?>
+															<div class=" col text-left px-4">
+																<i class="fas fa-users"></i>&nbsp;&nbsp;&nbsp;<b>X
+																<?php echo $booking->adultNumber; ?></b>
 															</div>
 														</div>	
 														<div class="row p-1">
-															<div class=" coltext-left px-4">
+															<div class=" col text-left px-4">
 																<i class="fas fa-phone"></i>&nbsp;&nbsp;&nbsp;
 																<?php echo $booking->phoneNumber; ?>
 															</div>
 															</div>
 														<div class="row p-1">
-															<div class=" coltext-left px-4">
+															<div class=" col text-left px-4">
 																<i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;
 																<?php echo $booking->email; ?>
 															</div>
@@ -200,6 +200,14 @@
 															data-id="<?php echo $fetch_one['rbRoomID'] ?>" data-type="confirm"> 
 																<i class="fas fa-print" ></i>
 																</button>
+															</div>
+														</div>
+														<div class="row p-2 border-bottom">
+															<div class="col-4 pl-4 pr-0 ">
+																<i class="fad fa-money-check-edit-alt"></i>
+															</div>
+															<div class="col-8">
+																<?php echo $booking->paymentMethod->name; ?>
 															</div>
 														</div>
 														<div class="row p-2 border-bottom">
