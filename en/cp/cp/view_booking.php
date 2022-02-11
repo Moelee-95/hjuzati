@@ -66,7 +66,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12 p-1 m-4">
+						<div class="col-md-12 p-1">
 							<div class="card card-box">
 								<div class="card-head">
 									<header>All Bookings</header>

@@ -8,20 +8,26 @@ require '../../../../classes/booking.php';
 require '../../../../classes/user.php';
 
 if (isset($_COOKIE['login_user']) and isset($_COOKIE['userName']) and isset($_COOKIE['userPassword'])) {
-  if (isset($_SESSION['login_user'])) {
-    $user_id =  $_SESSION['login_user'];
+  if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
     $user = unserialize($_SESSION['user']);
     $user->generateHotels();
     $hotels = $user->hotels;
+  } else {
+    $user = new User();
+    $user->login($_COOKIE['userName'], $_COOKIE['userPassword']);//cookies credintials
+    $_SESSION['user'] = serialize($user);
+    $user->generateHotels();
+    $hotels = $user->hotels;
+  }
+  if (isset($_SESSION['login_user'])) {
+    $user_id =  $_SESSION['login_user'];
+    
     // print_r($user);
   }
   else{
       $_SESSION['login_user'] = $_COOKIE['login_user'];
       $_SESSION['userName'] = $_COOKIE['userName'];
       $user_id =  $_SESSION['login_user'];
-      $user = unserialize($_SESSION['user']);
-      $user->generateHotels();
-      $hotels = $user->hotels;
   }
 
   if (isset($_GET['message'])){
