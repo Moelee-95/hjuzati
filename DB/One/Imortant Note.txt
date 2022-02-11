@@ -1,3 +1,12 @@
+
 please run the following command before executing the code:
 SET GLOBAL log_bin_trust_function_creators = 1;
 
+Run database file (from mysql code, should be inside the folder that contains the backup.sql):
+source backup.sql;
+
+Create New user:
+CREATE USER 'hjuzati'@'%' IDENTIFIED WITH mysql_native_password BY 'WorldNeeds1@me.anytime';
+
+Grant new user premissions:
+GRANT ALL ON hima.* TO 'hjuzati'@'%';

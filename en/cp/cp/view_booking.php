@@ -120,7 +120,7 @@
 											id="example4">
 											<thead>
 												<tr>
-													<th class="center"> Name </th>
+													<th class="center"> Guest </th>
 													<th class="center"> Reservations </th>
 													<th class="center"> Action </th>
 												</tr>
@@ -136,7 +136,11 @@
 												
 												<tr class="odd gradeX">
 
-													<td class="center"><?php echo $booking->fullName;?></td>
+													<td class="center">
+														<button class="btn btn-outline-primary border-0">
+															<i class="fas fa-user"></i>
+												 		</button>
+													</td>
 												
 										
 													<td class="center">
@@ -155,7 +159,7 @@
 																<?php
 																$total = 0;
 																 foreach ($booking->rooms as $room) {
-																 $total += $room->totalPrice; ?>
+																 $total += ($room->totalPrice * $room->number); ?>
 																 	
 												 				<tr class="odd gradeX" id="<?php echo $room->id ?>">
 																	<td class="user-circle-img"><?php echo $room->type; ?></td>
@@ -187,24 +191,24 @@
 																</button>
 															</div>
 														</div>
-														<div class="row ">
-															<div class="col">
+														<div class="row p-2">
+															<div class="col text-success">
 																Paid:
 															</div>
 															<div class="col">
 																<?php echo $booking->paidAmount; ?>
 															</div>
 														</div>
-														<div class="row border border-light">
-															<div class="col">
+														<div class="row p-2">
+															<div class="col text-danger">
 																Remaining:
 															</div>
 															<div class="col">
 																<?php echo $booking->remainingAmount; ?>
 															</div>
 														</div>
-														<div class="row border border-light">
-															<div class="col">
+														<div class="row p-2">
+															<div class="col text-primary">
 																Total:
 															</div>
 															<div class="col">
