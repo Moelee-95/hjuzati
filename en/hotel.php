@@ -141,16 +141,17 @@
             </div>
             <!-- Modal -->
             <div class="modal fade " id="360" tabindex="-1" role="dialog" aria-labelledby="360Title" aria-hidden="true">
-                <div class="modal-dialog  modal-lg" role="document">
+                <div class="modal-dialog  modal-lg mt-0" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
+                        <!-- <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLongTitle"><?php echo $fetch2['hHotelName']; ?></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            
+                        </div> -->
+                        <div class="modal-body p-1">
+                        <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
-                        </div>
-                        <div class="modal-body">
-                            <div id="panorama"></div>
+                            <div id="panorama" style="width:100%;height:600px;"></div>
                             <script>
                             pannellum.viewer('panorama', {   
                                 "default": {
@@ -199,7 +200,17 @@
                                     }
                                 }
                             });
-</script>
+                            </script>
+                            <script>
+                                window.onresize = panoramaResize;
+                                window.onload = panoramaResize;
+
+                                function panoramaResize() {
+                                    myHeight = (window.innerHeight)- 25;
+                                    // your size calculation code here
+                                    $("#panorama").css('height', myHeight + "px");
+                                };
+                            </script>
                         </div>
                         
                     </div>
