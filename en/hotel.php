@@ -141,13 +141,13 @@
             </div>
             <!-- Modal -->
             <div class="modal fade " id="360" tabindex="-1" role="dialog" aria-labelledby="360Title" aria-hidden="true">
-                <div class="modal-dialog  modal-lg mt-0" role="document">
+                <div class="modal-dialog  modal-xl mt-0" role="document">
                     <div class="modal-content">
                         <!-- <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLongTitle"><?php echo $fetch2['hHotelName']; ?></h5>
                             
                         </div> -->
-                        <div class="modal-body p-1">
+                        <div class="modal-body p-1 bg-dark">
                         <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
@@ -164,18 +164,22 @@
                                     "circle": {
                                         "title": "Mason Circle",
                                         "hfov": 200,
-                                        "pitch": -3,
+                                        "pitch": -2,
                                         "yaw": 117,
                                         "type": "equirectangular",
+                                        "showZoomCtrl":false,
                                         "panorama": "/images/from-tree.jpg",
-                                        "preview": "/images/from-tree.jpg",
+                                        "autoRotate":-3,
+                                        "autoRotateInactivityDelay":15000,
+                                        
                                         "hotSpots": [
                                             {
                                                 "pitch": -2.1,
                                                 "yaw": 132.9,
                                                 "type": "scene",
                                                 "text": "Spring House or Dairy j",
-                                                "sceneId": "house"
+                                                "sceneId": "house",
+                                                
                                             }
                                         ]
                                     },
