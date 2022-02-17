@@ -104,13 +104,10 @@
     
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
-
-        <!-- Title -->
-        <title>Hjuzati | Reserve</title>
+    <!-- Title -->
+    <title>Hjuzati | Reserve</title>
 
     <?php include('sections/head.html'); ?>
-   
-
     </head>
     <body>
        <!-- ========== HEADER ========== -->
@@ -142,6 +139,73 @@
                     </div>
                 </div>
             </div>
+            <!-- Modal -->
+            <div class="modal fade " id="360" tabindex="-1" role="dialog" aria-labelledby="360Title" aria-hidden="true">
+                <div class="modal-dialog  modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle"><?php echo $fetch2['hHotelName']; ?></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="panorama"></div>
+                            <script>
+                            pannellum.viewer('panorama', {   
+                                "default": {
+                                    "firstScene": "circle",
+                                    "author": "Matthew Petroff",
+                                    "sceneFadeDuration": 1000
+                                },
+
+                                "scenes": {
+                                    "circle": {
+                                        "title": "Mason Circle",
+                                        "hfov": 200,
+                                        "pitch": -3,
+                                        "yaw": 117,
+                                        "type": "equirectangular",
+                                        "panorama": "/images/from-tree.jpg",
+                                        "preview": "/images/from-tree.jpg",
+                                        "hotSpots": [
+                                            {
+                                                "pitch": -2.1,
+                                                "yaw": 132.9,
+                                                "type": "scene",
+                                                "text": "Spring House or Dairy j",
+                                                "sceneId": "house"
+                                            }
+                                        ]
+                                    },
+
+                                    "house": {
+                                        "title": "Spring House or Dairy",
+                                        "hfov": 110,
+                                        "yaw": 5,
+                                        "type": "equirectangular",
+                                        "panorama": "/images/bma-0.jpg",
+                                        "hotSpots": [
+                                            {
+                                                "pitch": -0.6,
+                                                "yaw": 37.1,
+                                                "type": "scene",
+                                                "text": "Mason Circle",
+                                                "sceneId": "circle",
+                                                "targetYaw": -23,
+                                                "targetPitch": 2
+                                            }
+                                        ]
+                                    }
+                                }
+                            });
+</script>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
             <div class="container">
                 <div class="row">
                     <div class="col">
@@ -175,18 +239,22 @@
 
                         </div>
                         <div class="row d-flex">
-                            <div class="col col-sm-12 col-lg-9 order-1">
+                            <div class="col col-12 col-lg-9 order-1">
+                            
                                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                    
                                     <ol class="carousel-indicators">
-                                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                            <button class="btn btn-primary" onclick="$('#360').modal('show')" >View 360 </button>
+                                            <?Php foreach ($fetchHPhotos as $key => $photo) { ?>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $key;  ?>" class="<?php if ($key == 0 ) echo 'active';?>"></li>
+                                            <?php } ?>
+
                                     </ol>
                                     <div class="carousel-inner">
                                         <?Php foreach ($fetchHPhotos as $key => $photo) { ?>
                                             <div class="carousel-item <?php if ($key == 0 ) echo 'active'?>">
                                             <img class="d-block w-100" src="<?php echo $photo['hpPath']; ?>" alt="<?php echo $photo['hpDescription']; ?>">
-                                        </div>
+                                            </div>
                                         <?php } ?>
                                     </div>
                                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -199,7 +267,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col col-sm-12 col-lg-3 order-2 ">
+                            <div class="col col-12 col-lg-3 order-2 mt-1 border">
                                 <div class="col " >
                                     <div class="row">
                                         <span class="font-weight-bold p-1 font-size-16" >Check-in Date</span>
