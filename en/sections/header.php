@@ -98,18 +98,19 @@
                         <span class="">Hjuzati</span>
                     </a>
                     <!-- End Logo -->
+                    <?Php /* disable 
                     <span class="flaticon-call"></span>
-                    <li class="list-inline-item mr-0"><a href="tel:(964) 770 - 8138928" class="u-header__navbar-link">(964) 770 - 813 -8928</a></li>
-                    <!-- Email Address -->
-                    <!-- <span class="flaticon-email"></span>
-                    <li class="list-inline-item mr-0"><a href="mailto:info@hjuzati.com" class="u-header__navbar-link">info@hjuzati.com</a></li> -->
+                        <li class="list-inline-item mr-0"><a href="tel:(964) 770 - 8138928" class="u-header__navbar-link">(964) 770 - 813 -8928</a></li>
+                        <!-- Email Address -->
+                        <!-- <span class="flaticon-email"></span>
+                        <li class="list-inline-item mr-0"><a href="mailto:info@hjuzati.com" class="u-header__navbar-link">info@hjuzati.com</a></li> -->
                         <li class="list-inline-item">
-                            <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent transition-3d-hover" href="https://www.facebook.com/hotels" target="_blank">
+                            <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent transition-3d-hover" href="https://www.facebook.com/hjuzati" target="_blank">
                                 <span class="fab fa-facebook-f btn-icon__inner"></span>
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent transition-3d-hover" href="https://www.instagram.com/hotels" target="_blank">
+                            <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent transition-3d-hover" href="https://www.instagram.com/hjuzati" target="_blank">
                                 <span class="fab fa-instagram btn-icon__inner"></span>
                             </a>
                         </li>
@@ -119,10 +120,12 @@
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent transition-3d-hover" href="http://m.me/hotels" target="_blank">
+                            <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent transition-3d-hover" href="http://m.me/hjuzati" target="_blank">
                                 <span class="fab fa-facebook-messenger btn-icon__inner"></span>
                             </a>
                         </li>   
+
+                        */ ?>
                 </ul>
                 <div class="ml-auto d-flex align-items-center">
                    
@@ -340,12 +343,12 @@
                             </a>
                         </li>
                         <span class="pt-1 font-weight-bold border-top">About us</span>
-                        <li class="nav-item u-header__nav-item p-2">
+                        <!-- <li class="nav-item u-header__nav-item p-2">
                             <a href="tel:(964) 770 - 8138928" class="text-dark">
                                 <i class="fas fa-phone-volume pr-2 h4"></i>
                                 (964) 770 - 813 -8928</a>
-                        </li>
-                        <li class="nav-item u-header__nav-item p-2">
+                        </li> -->
+                        <!-- <li class="nav-item u-header__nav-item p-2">
                             <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent 
                             transition-3d-hover px-3" href="http://m.me/Hjuzati" target="_blank">
                                 <span class="fab fa-facebook-messenger btn-icon__inner h5"></span>
@@ -362,8 +365,7 @@
                             transition-3d-hover px-3" href="https://www.instagram.com/hjuzati/" target="_blank">
                                 <span class="fab fa-instagram btn-icon__inner h5"></span>
                             </a>
-
-                        </li>
+                        </li> -->
                         <!-- End Home -->    
                     </ul>
                 </div>

@@ -119,37 +119,7 @@
 
 
         <!-- ========== MAIN CONTENT ========== -->
-        <div class="modal fade" id="createBookingPasswordModal" tabindex="-1" role="dialog" aria-labelledby="createBookingPasswordLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="createBookingPasswordLabel">Create Password For Your Booking</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    <div class="modal-body">
-                        <form class="" style="display:block" id="createPasswordForm" method="post" action="confirmation.php">
-                            <div class="row justify-content-center p-2">
-                                <input name="newBookingPassword" type="text" class="form-control mb-2 inptFielsd" id="newBookingPassword" placeholder="Eg. Ahmed#1995" required data-msg="Please Enter valid password."
-                                data-error-class="u-has-error"
-                                data-success-class="u-has-success"  />
-                            </div>
-                            <div class="row justify-content-center p-2">
-                                <button id="confirmPassword" type="button" class="btn btn-primary w-50" > Confirm </button>
-                                <span id="counter2" class="text-primary"> </span>
-                            </div>   
-                            <div class="row justify-content-center p-2">
-                                <span class="text-danger" id="passwordVerifyAlert"></span>
-                            </div>
-                        </form>
-                    <div class="" id="passwordAlwaysMessageDiv">
-                        <span class="col h6 p-1 text-danger" id="passwordAlwaysAlert"> </span> 
-                    </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        
         <main id="content">
             <!-- Breadcrumb -->
             <div class="border-bottom mb-7">
@@ -204,53 +174,67 @@
                             </div>
 
                         </div>
-                        <div class="pb-4 mb-2">
-                            <div class="position-relative">
-                                <!-- Images Carousel -->
-                                <div id="sliderSyncingNav" class="js-slick-carousel u-slick mb-2"
-                                    data-infinite="true"
-                                    data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle"
-                                    data-arrow-left-classes="flaticon-back u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-lg-2 ml-xl-4"
-                                    data-arrow-right-classes="flaticon-next u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4"
-                                    data-nav-for="#sliderSyncingThumb">
-
-                                    <?php foreach ($fetchHPhotos as  $photo) { ?>
-                                        <div class="js-slide">
-                                            <img class="img-fluid border-radius-3" src="<?php echo ('cp/'.substr($photo['hpPath'], 3)) ?>" alt="Image Description">
+                        <div class="row d-flex">
+                            <div class="col col-sm-12 col-lg-9 order-1">
+                                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <?Php foreach ($fetchHPhotos as $key => $photo) { ?>
+                                            <div class="carousel-item <?php if ($key == 0 ) echo 'active'?>">
+                                            <img class="d-block w-100" src="<?php echo $photo['hpPath']; ?>" alt="<?php echo $photo['hpDescription']; ?>">
                                         </div>
-                                    <?php } ?>
+                                        <?php } ?>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
                                 </div>
-
-                                <div id="sliderSyncingThumb" class="js-slick-carousel u-slick u-slick--gutters-4 u-slick--transform-off"
-                                    data-infinite="true"
-                                    data-slides-show="6"
-                                    data-is-thumbs="true"
-                                    data-nav-for="#sliderSyncingNav"
-                                    data-responsive='[{
-                                        "breakpoint": 992,
-                                        "settings": {
-                                            "slidesToShow": 4
-                                        }
-                                    }, {
-                                        "breakpoint": 768,
-                                        "settings": {
-                                            "slidesToShow": 3
-                                        }
-                                    }, {
-                                        "breakpoint": 554,
-                                        "settings": {
-                                            "slidesToShow": 2
-                                        }
-                                    }]'>
-                                     <?php foreach ($fetchHPhotos as  $photo) { ?>
-                                        <div class="js-slide" style="cursor: pointer;">
-                                            <img class="img-fluid border-radius-3 height-110" src="<?php echo ('cp/'.substr($photo['hpPath'], 3)) ?>" alt="Image Description">
-                                        </div>
-                                    <?php } ?>
+                            </div>
+                            <div class="col col-sm-12 col-lg-3 order-2 ">
+                                <div class="col " >
+                                    <div class="row">
+                                        <span class="font-weight-bold p-1 font-size-16" >Check-in Date</span>
+                                    </div>
+                                    <div class="row">
+                                        <a class="font-size-18 text-primary  p-1" data-toggle="modal" data-target=".bd-example-modal-lg"
+                                        ><?php echo $check_in ?></a>
+                                    </div>
+                                    <div class="row">
+                                        <span class="font-size-14 text-secondary">from From 00:00 until 23:30</span>
+                                    </div>
+                                </div>
+                                <div class="col" >
+                                    <span class="row font-weight-bold p-1 font-size-16">Check-out Date</span>
+                                    <a class="font-size-18 row font-weight-bold text-primary  p-1" data-toggle="modal" data-target=".bd-example-modal-lg"
+                                    ><?php echo $check_out; ?></a>
+                                    <span class="font-size-14 text-secondary row"><?php echo $nights; ?>-night stay</span>
+                                </div>
+                                <div class="col" >
+                                    <span class="row font-weight-bold p-1 font-size-16">Guests</span>
+                                    <a class="font-size-18 row font-weight-bold text-primary p-1" data-toggle="modal" data-target=".bd-example-modal-lg"
+                                    ><?php echo $adults; ?> adult</a>
                                     
                                 </div>
-                                <!-- End Images Carousel -->
+                                <div class="col" >
+                                    <span class="row font-weight-bold p-1 font-size-16">Rooms</span>
+                                    <a class="font-size-18 row font-weight-bold text-primary p-1" data-toggle="modal" data-target=".bd-example-modal-lg"
+                                    ><?php echo $roomsNum; ?></a>
+                                    
+                                </div>
+                                <div class="col" >
+                                    <button class="btn btn-primary text-white" data-toggle="modal" data-target=".bd-example-modal-lg">Change Search</button>
+                                </div>
                             </div>
+                        
                         </div>
                         <!-- Hotel description -->
                         <!-- <div class="border-bottom position-relative">
@@ -271,42 +255,8 @@
                         <!-- End Hotel description -->
                         
                         <!-- Edit Date modal -->
-                        <div class="col-sm-12 col-lg-9 d-lg-flex d-block border border-secondary p-3 m-2 row">
-                            <div class="col" >
-                                <div class="row">
-                                    <span class="font-weight-bold p-1 font-size-16" >Check-in Date</span>
-                                </div>
-                                <div class="row">
-                                    <a class="font-size-18 text-primary  p-1" data-toggle="modal" data-target=".bd-example-modal-lg"
-                                    ><?php echo $check_in ?></a>
-                                </div>
-                                <div class="row">
-                                    <span class="font-size-14 text-secondary">from From 00:00 until 23:30</span>
-                                </div>
-                            </div>
-                            <div class="col" >
-                                <span class="row font-weight-bold p-1 font-size-16">Check-out Date</span>
-                                <a class="font-size-18 row font-weight-bold text-primary  p-1" data-toggle="modal" data-target=".bd-example-modal-lg"
-                                ><?php echo $check_out; ?></a>
-                                <span class="font-size-14 text-secondary row"><?php echo $nights; ?>-night stay</span>
-                            </div>
-                            <div class="col" >
-                                <span class="row font-weight-bold p-1 font-size-16">Guests</span>
-                                <a class="font-size-18 row font-weight-bold text-primary p-1" data-toggle="modal" data-target=".bd-example-modal-lg"
-                                ><?php echo $adults; ?> adult</a>
-                                
-                            </div>
-                            <div class="col" >
-                                <span class="row font-weight-bold p-1 font-size-16">Rooms</span>
-                                <a class="font-size-18 row font-weight-bold text-primary p-1" data-toggle="modal" data-target=".bd-example-modal-lg"
-                                ><?php echo $roomsNum; ?></a>
-                                
-                            </div>
-                            <div class="col" >
-                                <button class="btn btn-primary text-white" data-toggle="modal" data-target=".bd-example-modal-lg">Change Search</button>
-                            </div>
-                        </div>
-                        <!-- Edit date modal -->
+
+                        
                         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content p-4">
