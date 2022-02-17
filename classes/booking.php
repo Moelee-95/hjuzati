@@ -299,7 +299,7 @@ class Booking {
         $query = "UPDATE `bookings` SET `bBookingStatusID` = '1' WHERE (`bBookingID` = '$this->bookingID')";
         if(new Execute($query, "execute")){
             $this->status = "1";
-            return true;//comment
+            return true;
         }
 
     }

@@ -347,7 +347,7 @@
                         </li>
                         <li class="nav-item u-header__nav-item p-2">
                             <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent 
-                            transition-3d-hover px-3" href="http://m.me/hotels" target="_blank">
+                            transition-3d-hover px-3" href="http://m.me/Hjuzati" target="_blank">
                                 <span class="fab fa-facebook-messenger btn-icon__inner h5"></span>
                             </a>
                             <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent 
@@ -355,11 +355,11 @@
                                 <span class="fab fa-whatsapp btn-icon__inner h5"></span>
                             </a>
                             <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent 
-                            transition-3d-hover px-3" href="https://www.facebook.com/hotels" target="_blank">
+                            transition-3d-hover px-3" href="https://www.facebook.com/Hjuzati" target="_blank">
                                 <span class="fab fa-facebook-f btn-icon__inner h5"></span>
                             </a>
                             <a class="btn btn-xs btn-icon btn-pill btn-soft-dark btn-bg-transparent 
-                            transition-3d-hover px-3" href="https://www.instagram.com/hotels" target="_blank">
+                            transition-3d-hover px-3" href="https://www.instagram.com/hjuzati/" target="_blank">
                                 <span class="fab fa-instagram btn-icon__inner h5"></span>
                             </a>
 

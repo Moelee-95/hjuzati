@@ -1,18 +1,70 @@
-<!DOCTYPE HTML> <html> <head> <meta charset="utf-8"> 
-    <meta name="viewport" content="width=device-width, 
-    initial-scale=1.0"> <title>A simple example</title> 
-    <link rel="stylesheet" 
-    href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/> 
-    <script type="text/javascript" 
-    src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script> 
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <style>
     #panorama {
-        width: 600px; height: 400px;
+        width: 600px;
+        height: 400px;
     }
-    </style> </head> <body> <div id="panorama"></div> 
-<script> pannellum.viewer('panorama', {
-    "type": "equirectangular", "panorama": 
-    "https://pannellum.org/images/alma.jpg"
+    </style>
+</head>
+<body>
+
+<div id="panorama"></div>
+<script>
+pannellum.viewer('panorama', {   
+    "default": {
+        "firstScene": "circle",
+        "author": "Matthew Petroff",
+        "sceneFadeDuration": 1000
+    },
+
+    "scenes": {
+        "circle": {
+            "title": "Mason Circle",
+            "hfov": 200,
+            "pitch": -3,
+            "yaw": 117,
+            "type": "equirectangular",
+            "panorama": "/images/from-tree.jpg",
+            "preview": "/images/from-tree.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -2.1,
+                    "yaw": 132.9,
+                    "type": "scene",
+                    "text": "Spring House or Dairy j",
+                    "sceneId": "house"
+                }
+            ]
+        },
+
+        "house": {
+            "title": "Spring House or Dairy",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "/images/bma-0.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Mason Circle",
+                    "sceneId": "circle",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        }
+    }
 });
-</script> </body>
+</script>
+
+</body>
 </html>

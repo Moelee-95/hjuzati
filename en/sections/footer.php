@@ -31,12 +31,12 @@
                                     </div>
                                     <ul class="list-inline mb-0">
                                         <li class="list-inline-item mr-2">
-                                            <a class="btn btn-icon btn-social btn-bg-transparent" href="https://www.facebook.com/hotels">
+                                            <a class="btn btn-icon btn-social btn-bg-transparent" href="https://www.facebook.com/hjuzati">
                                                 <span class="fab fa-facebook-f btn-icon__inner"></span>
                                             </a>
                                         </li>
                                         <li class="list-inline-item mr-2">
-                                            <a class="btn btn-icon btn-social btn-bg-transparent" href="https://www.instagram.com/hotels">
+                                            <a class="btn btn-icon btn-social btn-bg-transparent" href="https://www.instagram.com/hjuzati">
                                                 <span class="fab fa-instagram btn-icon__inner"></span>
                                             </a>
                                         </li>
@@ -47,7 +47,7 @@
                                         </li>
                                         
                                         <li class="list-inline-item mr-2">
-                                            <a class="btn btn-icon btn-social btn-bg-transparent" href="http://m.me/hotels">
+                                            <a class="btn btn-icon btn-social btn-bg-transparent" href="http://m.me/hjuzati">
                                                 <span class="fab fa-facebook-messenger btn-icon__inner"></span>
                                             </a>
                                         </li>
