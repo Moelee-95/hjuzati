@@ -969,26 +969,26 @@
 											
 									    </tr>
 									    <tr>
-									    	<th style="width: 100px;font-size: 10pt" >Standerd rate<br><span id="psNumbers" class=""></span><!-- <a style="padding-left: 4px" href="#someLink">Edit</a> --></th>
-											<th id="1sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="1sRate" name="" ></th>
-											<th id="2sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="2sRate" name="" ></th>
-											<th id="3sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="3sRate" name="" ></th>
-											<th id="4sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="4sRate" name="" ></th>
-											<th id="5sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="5sRate" name="" ></th>
-											<th id="6sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="6sRate" name="" ></th>
-											<th id="7sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="7sRate" name="" ></th>
-											<th id="8sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="8sRate" name="" ></th>
-											<th id="9sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="9sRate" name="" ></th>
-											<th id="10sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="10sRate" name="" ></th>
-											<th id="11sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="11sRate" name="" ></th>
-											<th id="12sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="12sRate" name="" ></th>
-											<th id="13sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="13sRate" name="" ></th>
-											<th id="14sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="14sRate" name="" ></th>
-											<th id="15sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="15sRate" name="" ></th>
-											<th id="16sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="16sRate" name="" ></th>
-											<th id="17sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="17sRate" name="" ></th>
-											<th id="18sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="18sRate" name="" ></th>
-											<th id="19sh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="19sRate" name="" ></th>
+									    	<th style="width: 100px;font-size: 10pt" >Standerd rate <b class="text-primary">IQD</b><br><span id="psNumbers" class=""></span><!-- <a style="padding-left: 4px" href="#someLink">Edit</a> --></th>
+											<th id="1sh" scope="row"><input class="editable no-border" type="number" id="1sRate" name="" ></th>
+											<th id="2sh" scope="row"><input class="editable no-border" type="number" id="2sRate" name="" ></th>
+											<th id="3sh" scope="row"><input class="editable no-border" type="number" id="3sRate" name="" ></th>
+											<th id="4sh" scope="row"><input class="editable no-border" type="number" id="4sRate" name="" ></th>
+											<th id="5sh" scope="row"><input class="editable no-border" type="number" id="5sRate" name="" ></th>
+											<th id="6sh" scope="row"><input class="editable no-border" type="number" id="6sRate" name="" ></th>
+											<th id="7sh" scope="row"><input class="editable no-border" type="number" id="7sRate" name="" ></th>
+											<th id="8sh" scope="row"><input class="editable no-border" type="number" id="8sRate" name="" ></th>
+											<th id="9sh" scope="row"><input class="editable no-border" type="number" id="9sRate" name="" ></th>
+											<th id="10sh" scope="row"><input class="editable no-border" type="number" id="10sRate" name="" ></th>
+											<th id="11sh" scope="row"><input class="editable no-border" type="number" id="11sRate" name="" ></th>
+											<th id="12sh" scope="row"><input class="editable no-border" type="number" id="12sRate" name="" ></th>
+											<th id="13sh" scope="row"><input class="editable no-border" type="number" id="13sRate" name="" ></th>
+											<th id="14sh" scope="row"><input class="editable no-border" type="number" id="14sRate" name="" ></th>
+											<th id="15sh" scope="row"><input class="editable no-border" type="number" id="15sRate" name="" ></th>
+											<th id="16sh" scope="row"><input class="editable no-border" type="number" id="16sRate" name="" ></th>
+											<th id="17sh" scope="row"><input class="editable no-border" type="number" id="17sRate" name="" ></th>
+											<th id="18sh" scope="row"><input class="editable no-border" type="number" id="18sRate" name="" ></th>
+											<th id="19sh" scope="row"><input class="editable no-border" type="number" id="19sRate" name="" ></th>
 									    </tr>
 									    <?php //disable breakfast rate temperory
 
@@ -996,25 +996,25 @@
 									    <tr hidden="hidden">
 											<th style="width: 100px;font-size: 10pt"  scope="row">Breakfast rate<br><span id="psNumbers2" class=""></span><!-- <a style="padding-left: 4px" href="#someLink">Edit</a> --></th>
 
-											<th id="1bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="1bRate" name="" ></th>
-											<th id="2bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="2bRate" name="" ></th>
-											<th id="3bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="3bRate" name="" ></th>
-											<th id="4bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="4bRate" name="" ></th>
-											<th id="5bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="5bRate" name="" ></th>
-											<th id="6bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="6bRate" name="" ></th>
-											<th id="7bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="7bRate" name="" ></th>
-											<th id="8bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="8bRate" name="" ></th>
-											<th id="9bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="9bRate" name="" ></th>
-											<th id="10bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="10bRate" name="" ></th>
-											<th id="11bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="11bRate" name="" ></th>
-											<th id="12bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="12bRate" name="" ></th>
-											<th id="13bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="13bRate" name="" ></th>
-											<th id="14bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="14bRate" name="" ></th>
-											<th id="15bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="15bRate" name="" ></th>
-											<th id="16bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="16bRate" name="" ></th>
-											<th id="17bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="17bRate" name="" ></th>
-											<th id="18bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="18bRate" name="" ></th>
-											<th id="19bh" scope="row"><span class="dollar">$</span><input class="editable no-border" type="number" id="19bRate" name="" ></th>
+											<th id="1bh" scope="row"><input class="editable no-border" type="number" id="1bRate" name="" ></th>
+											<th id="2bh" scope="row"><input class="editable no-border" type="number" id="2bRate" name="" ></th>
+											<th id="3bh" scope="row"><input class="editable no-border" type="number" id="3bRate" name="" ></th>
+											<th id="4bh" scope="row"><input class="editable no-border" type="number" id="4bRate" name="" ></th>
+											<th id="5bh" scope="row"><input class="editable no-border" type="number" id="5bRate" name="" ></th>
+											<th id="6bh" scope="row"><input class="editable no-border" type="number" id="6bRate" name="" ></th>
+											<th id="7bh" scope="row"><input class="editable no-border" type="number" id="7bRate" name="" ></th>
+											<th id="8bh" scope="row"><input class="editable no-border" type="number" id="8bRate" name="" ></th>
+											<th id="9bh" scope="row"><input class="editable no-border" type="number" id="9bRate" name="" ></th>
+											<th id="10bh" scope="row"><input class="editable no-border" type="number" id="10bRate" name="" ></th>
+											<th id="11bh" scope="row"><input class="editable no-border" type="number" id="11bRate" name="" ></th>
+											<th id="12bh" scope="row"><input class="editable no-border" type="number" id="12bRate" name="" ></th>
+											<th id="13bh" scope="row"><input class="editable no-border" type="number" id="13bRate" name="" ></th>
+											<th id="14bh" scope="row"><input class="editable no-border" type="number" id="14bRate" name="" ></th>
+											<th id="15bh" scope="row"><input class="editable no-border" type="number" id="15bRate" name="" ></th>
+											<th id="16bh" scope="row"><input class="editable no-border" type="number" id="16bRate" name="" ></th>
+											<th id="17bh" scope="row"><input class="editable no-border" type="number" id="17bRate" name="" ></th>
+											<th id="18bh" scope="row"><input class="editable no-border" type="number" id="18bRate" name="" ></th>
+											<th id="19bh" scope="row"><input class="editable no-border" type="number" id="19bRate" name="" ></th>
 									    </tr>
 									    
 									  </tbody>
