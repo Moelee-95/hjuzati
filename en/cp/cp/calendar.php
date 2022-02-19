@@ -132,6 +132,9 @@
 				background-color: #f6f9fd;
 			}
 			
+			.width-60{
+				width: 75px;
+			}
 
 
 	</style>
@@ -556,9 +559,11 @@
 													        });
 													    </script>
 													</label>
-									        		<div class="col col-lg-2 col-md-3 col-sm-3">
+									        		<div class="col-5">
 									        			<div class="input-group">
-									        				<span style="background-color: #f5f5f5;padding:5px;font-size:9pt;border: 1px solid #e7e7e7;" class="input-group-addon"><i style="color:#2fbe50" class="fa fa-dollar"></i></span>
+									        				<span class="input-group-addon border pt-1 px-1 bg-light text-primary">
+															IQD
+															</span>
 									        				<input id="sgl_rooms_prices" class="form-control col-12" type="number" name="roomsNumbers">
 									        			</div>
 											        	
@@ -970,25 +975,63 @@
 									    </tr>
 									    <tr>
 									    	<th style="width: 100px;font-size: 10pt" >Standerd rate <b class="text-primary">IQD</b><br><span id="psNumbers" class=""></span><!-- <a style="padding-left: 4px" href="#someLink">Edit</a> --></th>
-											<th id="1sh" scope="row"><input class="editable no-border" type="number" id="1sRate" name="" ></th>
-											<th id="2sh" scope="row"><input class="editable no-border" type="number" id="2sRate" name="" ></th>
-											<th id="3sh" scope="row"><input class="editable no-border" type="number" id="3sRate" name="" ></th>
-											<th id="4sh" scope="row"><input class="editable no-border" type="number" id="4sRate" name="" ></th>
-											<th id="5sh" scope="row"><input class="editable no-border" type="number" id="5sRate" name="" ></th>
-											<th id="6sh" scope="row"><input class="editable no-border" type="number" id="6sRate" name="" ></th>
-											<th id="7sh" scope="row"><input class="editable no-border" type="number" id="7sRate" name="" ></th>
-											<th id="8sh" scope="row"><input class="editable no-border" type="number" id="8sRate" name="" ></th>
-											<th id="9sh" scope="row"><input class="editable no-border" type="number" id="9sRate" name="" ></th>
-											<th id="10sh" scope="row"><input class="editable no-border" type="number" id="10sRate" name="" ></th>
-											<th id="11sh" scope="row"><input class="editable no-border" type="number" id="11sRate" name="" ></th>
-											<th id="12sh" scope="row"><input class="editable no-border" type="number" id="12sRate" name="" ></th>
-											<th id="13sh" scope="row"><input class="editable no-border" type="number" id="13sRate" name="" ></th>
-											<th id="14sh" scope="row"><input class="editable no-border" type="number" id="14sRate" name="" ></th>
-											<th id="15sh" scope="row"><input class="editable no-border" type="number" id="15sRate" name="" ></th>
-											<th id="16sh" scope="row"><input class="editable no-border" type="number" id="16sRate" name="" ></th>
-											<th id="17sh" scope="row"><input class="editable no-border" type="number" id="17sRate" name="" ></th>
-											<th id="18sh" scope="row"><input class="editable no-border" type="number" id="18sRate" name="" ></th>
-											<th id="19sh" scope="row"><input class="editable no-border" type="number" id="19sRate" name="" ></th>
+											<th id="1sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="1sRate" name="" >
+											</th>
+											<th id="2sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="2sRate" name="" >
+											</th>
+											<th id="3sh" scope="row" class="form-group width-60" >
+												<input class="editable form-control border-0 px-0" type="number" id="3sRate" name="" >
+											</th>
+											<th id="4sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="4sRate" name="" >
+											</th>
+											<th id="5sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="5sRate" name="" >
+											</th>
+											<th id="6sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="6sRate" name="" >
+											</th>
+											<th id="7sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="7sRate" name="" >
+											</th>
+											<th id="8sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="8sRate" name="" >
+											</th>
+											<th id="9sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="9sRate" name="" >
+											</th>
+											<th id="10sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="10sRate" name="" >
+											</th>
+											<th id="11sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="11sRate" name="" >
+											</th>
+											<th id="12sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="12sRate" name="" >
+											</th>
+											<th id="13sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="13sRate" name="" >
+											</th>
+											<th id="14sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="14sRate" name="" >
+											</th>
+											<th id="15sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="15sRate" name="" >
+											</th>
+											<th id="16sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="16sRate" name="" >
+											</th>
+											<th id="17sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="17sRate" name="" >
+											</th>
+											<th id="18sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0 px-0" type="number" id="18sRate" name="" >
+											</th>
+											<th id="19sh" scope="row" class="form-group width-60">
+												<input class="editable form-control border-0" type="number" id="19sRate" name="" >
+											</th>
 									    </tr>
 									    <?php //disable breakfast rate temperory
 
