@@ -86,7 +86,7 @@ elseif (empty($_SESSION['login_guest']) and empty($_COOKIE['login_guest'])) {
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="shortcut icon"  href="../assets/icons/logo.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Fontawesome CSS -->
