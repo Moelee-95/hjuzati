@@ -210,7 +210,7 @@
                                         "yaw": 117,
                                         "type": "equirectangular",
                                         "showZoomCtrl":false,
-                                        "panorama": "imgs/360three.jpeg",
+                                        "panorama": "imgs/360four.jpeg",
                                         "autoRotate":-3,
                                         "autoRotateInactivityDelay":15000,
                                         
