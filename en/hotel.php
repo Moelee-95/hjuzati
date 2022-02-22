@@ -189,7 +189,7 @@
                                         "hfov": 110,
                                         "yaw": 5,
                                         "type": "equirectangular",
-                                        "panorama": "imgs/360two.jpeg",
+                                        "panorama": "imgs/360two.jpg",
                                         "hotSpots": [
                                             {
                                                 "pitch": -0.6,
