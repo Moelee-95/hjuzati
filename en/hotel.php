@@ -155,20 +155,20 @@
                             <script>
                             pannellum.viewer('panorama', {   
                                 "default": {
-                                    "firstScene": "circle",
-                                    "author": "Matthew Petroff",
+                                    "firstScene": "room1",
+                                    "author": "ئوتیڵ اڤینیو",
                                     "sceneFadeDuration": 1000
                                 },
 
                                 "scenes": {
-                                    "circle": {
-                                        "title": "Mason Circle",
+                                    "room1": {
+                                        "title": "ژوری دوو نەفەری",
                                         "hfov": 200,
                                         "pitch": -2,
                                         "yaw": 117,
                                         "type": "equirectangular",
                                         "showZoomCtrl":false,
-                                        "panorama": "/images/from-tree.jpg",
+                                        "panorama": "imgs/360one.jpg",
                                         "autoRotate":-3,
                                         "autoRotateInactivityDelay":15000,
                                         
@@ -177,31 +177,55 @@
                                                 "pitch": -2.1,
                                                 "yaw": 132.9,
                                                 "type": "scene",
-                                                "text": "Spring House or Dairy j",
-                                                "sceneId": "house",
+                                                "text": "حەمام",
+                                                "sceneId": "room2",
                                                 
                                             }
                                         ]
                                     },
 
-                                    "house": {
-                                        "title": "Spring House or Dairy",
+                                    "room2": {
+                                        "title": "حەمام",
                                         "hfov": 110,
                                         "yaw": 5,
                                         "type": "equirectangular",
-                                        "panorama": "/images/bma-0.jpg",
+                                        "panorama": "imgs/360two.jpeg",
                                         "hotSpots": [
                                             {
                                                 "pitch": -0.6,
                                                 "yaw": 37.1,
                                                 "type": "scene",
-                                                "text": "Mason Circle",
-                                                "sceneId": "circle",
+                                                "text": "ژوری دوو نەفەری",
+                                                "sceneId": "room3",
                                                 "targetYaw": -23,
                                                 "targetPitch": 2
                                             }
                                         ]
-                                    }
+                                    },
+
+                                    "room3": {
+                                        "title": "ژوری",
+                                        "hfov": 200,
+                                        "pitch": -2,
+                                        "yaw": 117,
+                                        "type": "equirectangular",
+                                        "showZoomCtrl":false,
+                                        "panorama": "imgs/360three.jpeg",
+                                        "autoRotate":-3,
+                                        "autoRotateInactivityDelay":15000,
+                                        
+                                        "hotSpots": [
+                                            {
+                                                "pitch": -2.1,
+                                                "yaw": 132.9,
+                                                "type": "scene",
+                                                "text": "حەمام",
+                                                "sceneId": "room1",
+                                            }
+                                        ]
+                                    },
+
+                                    
                                 }
                             });
                             </script>
