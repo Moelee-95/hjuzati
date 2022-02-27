@@ -68,7 +68,6 @@ class Execute{
     }
 
     public function execute($query){
-        $results;
         $result = $this->conn -> query($query);
         if ($result){
             $results = true;
