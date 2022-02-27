@@ -1,14 +1,11 @@
 <?php
 
 class db{
-    // private $sName = "localhost";
-    // private $uName = "hjuzati";
-    // private $pw = "WorldNeeds1@me.anytime";
-    // private $dbname = "hima";
-    private $sName = "18.191.148.36";
-    private $uName = "falcon";
-    private $pw = "falcon";
-    private $dbname = "falcon";
+    private $sName = "localhost";
+    private $uName = "hjuzati";
+    private $pw = "WorldNeeds1@me.anytime";
+    private $dbname = "hima";
+
     protected $conn;
 
     public function __construct(){
