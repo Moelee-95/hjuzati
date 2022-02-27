@@ -1,10 +1,14 @@
 <?php
 
 class db{
-    private $sName = "localhost";
-    private $uName = "hjuzati";
-    private $pw = "WorldNeeds1@me.anytime";
-    private $dbname = "hima";
+    // private $sName = "localhost";
+    // private $uName = "hjuzati";
+    // private $pw = "WorldNeeds1@me.anytime";
+    // private $dbname = "hima";
+    private $sName = "18.191.148.36";
+    private $uName = "falcon";
+    private $pw = "falcon";
+    private $dbname = "falcon";
     protected $conn;
 
     public function __construct(){
@@ -24,7 +28,6 @@ class Execute{
         $conn = new db();
         $conn = $conn -> getConnection();
         $this->conn = $conn;
-        $result;
         switch ($type) {
             case 'execute':
                 $result = $this->execute($query);
