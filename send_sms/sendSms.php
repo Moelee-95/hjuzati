@@ -4,11 +4,11 @@ class SendSMS{
     public static function send($destNumber,$message){
         require_once __DIR__.'/vendor/autoload.php'; // include requried files
         // Public key = 'rm0CfahzLuYv0nQ/WJZOMAz3MMyBDcBkspnDpvqTX40=' //in case if we need it
-        /* 
+        /*
         \Telnyx\Telnyx::setApiKey('KEY017DB36C72E430D31C14C6271BEA1F70_cDzySR1p7vm3myVn6A3lxw');
         $your_telnyx_number = '+15732061611';
         $new_message = \Telnyx\Message::Create(['from' => $your_telnyx_number, 'to' => $destNumber, 'text' => $message]);
-         */
+        */
         //check what $new_message returns when it is sent
         return true;
     }
@@ -16,7 +16,7 @@ class SendSMS{
     //accepts phone number and returns $data
     public static function verifyNumber($destNumber){
         $code = strval(rand ( 10000 , 99999 )); //reandom code
-        $error; //  0 when no error, 1 when there is an error
+        $error = 0; //  0 when no error, 1 when there is an error
         $data = array(); // retruining data
         $fullSMS = "your verification code for Hjuzati is:".$code;
         if(SendSMS::send($destNumber, $fullSMS)){
@@ -35,6 +35,9 @@ class SendSMS{
 
 // $data = SendSMS::verifyNumber("+9647709999999");
 // echo $data['enCode'];
+
+//Testing the sms sending
+//SendSMS::send('+9647708138928', 'Test SMS from Falcontrac');
 
 
 
