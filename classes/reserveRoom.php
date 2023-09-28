@@ -66,10 +66,18 @@ class ReserveRoom extends room{
         $conn = new db();$conn=$conn->getConnection();
         $query = "SELECT rRate FROM rates WHERE rRoomsID = '$this->id' and rDate = '$date'";
         $result = $conn->query($query);
+        
         if ($result) {
-            $fetch = $result->fetch_array();
-            return $fetch['rRate'];
-        }
+            $fetch = $result-> fetch_array();
+            if (empty($fetch['rRate'])) {
+	          return null;
+            }
+            else {
+                $ratee = $fetch['rRate'];
+                return $fetch['rRate'];
+            }
+            
+        } 
     }
 
     //generate reserved dates and prices
