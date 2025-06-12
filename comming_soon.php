@@ -18,7 +18,7 @@
                 <div class="css-spinner"></div>
             </div>
         </div>
-        <div class="options-panel">
+        <div class="options-panel" style="display:none">
             <div class="content-panel">
                 <h2>Example Options</h2> <span class="ti-settings panel-button"></span>
                 <h4 class="pei">Particle Effect</h4>

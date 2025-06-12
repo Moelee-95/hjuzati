@@ -814,7 +814,7 @@
 											<td id="18state"> </td>
 											<td id="19state"> </td>
 									    </tr>
-									    <tr>
+									    <tr style="height: 50px; overflow: hidden;">
 											<th style="width: 100px;font-size: 10pt;padding-top:2px;padding-bottom: 2px">Open/Close:</th>
 											<th id="1opnclsh" class="for_hover">
 												<input class="editable no-border toggle_input2" type="checkbox" id="1opncls" name="" >
